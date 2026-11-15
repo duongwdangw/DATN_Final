@@ -1,510 +1,666 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESP32 Face AI - Quản lý khuôn mặt</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <style>
-        :root {
-            font-family: system-ui, Segoe UI, Arial, sans-serif;
-            background: #f2f5f9;
-            color: #162436;
-        }
+  <title>ESP32 Face AI — Quản lý khuôn mặt</title>
 
-        body { margin: 0; }
+  <style>
+    :root {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #17324d;
+      background: #f1f5f9;
+    }
 
-        header {
-            background: #0b315c;
-            color: white;
-            padding: 18px max(18px, calc((100% - 1000px)/2));
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        header h1 { margin: 0; font-size: 23px; }
-        header p { margin: 6px 0; color: #cbdff2; font-size: 13px; }
+    body {
+      margin: 0;
+    }
 
-        main {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: 1.25fr 1fr;
-            gap: 18px;
-        }
+    header {
+      background: #0f3154;
+      color: white;
+      padding: 24px max(20px, calc((100% - 1120px)/2));
+    }
 
-        .box {
-            background: white;
-            border: 1px solid #dfe7ef;
-            border-radius: 11px;
-            padding: 16px;
-            box-shadow: 0 2px 8px #0b315c08;
-        }
+    header h1 {
+      margin: 0;
+      font-size: 27px;
+    }
 
-        .box h2 { margin: 0 0 14px; font-size: 18px; }
-        .wide { grid-column: 1/-1; }
+    header p {
+      margin: 8px 0 0;
+      color: #cfddf0;
+    }
 
-        img {
-            width: 100%;
-            min-height: 250px;
-            aspect-ratio: 4/3;
-            object-fit: contain;
-            background: #09101a;
-            border-radius: 7px;
-        }
+    main {
+      max-width: 1120px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
 
-        label {
-            font-weight: 600;
-            font-size: 13px;
-            display: block;
-            margin: 12px 0 5px;
-        }
+    .grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 20px;
+    }
 
-        input {
-            box-sizing: border-box;
-            width: 100%;
-            border: 1px solid #bacbdc;
-            border-radius: 6px;
-            padding: 10px;
-            font-size: 15px;
-        }
+    .panel {
+      background: white;
+      border: 1px solid #dbe3ec;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
 
-        button {
-            background: #1764b3;
-            border: 0;
-            border-radius: 6px;
-            padding: 10px 13px;
-            color: white;
-            font-weight: 650;
-            cursor: pointer;
-            margin: 9px 5px 0 0;
-        }
+    .panel h2 {
+      margin: 0 0 18px;
+      font-size: 20px;
+    }
 
-        button.alt { background: #677b8c; }
-        button.danger { background: #b43636; }
-        button:hover { filter: brightness(1.12); }
+    .field {
+      margin-bottom: 14px;
+    }
 
-        small { color: #526375; }
+    label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: 600;
+      font-size: 14px;
+    }
 
-        #msg {
-            white-space: pre-wrap;
-            color: #07559b;
-        }
+    input {
+      display: block;
+      width: 100%;
+      font-size: 16px;
+      padding: 12px;
+      border: 1px solid #b9c8d5;
+      border-radius: 7px;
+    }
 
-        #state {
-            font-weight: 650;
-            color: #1764b3;
-        }
+    input:focus {
+      outline: 2px solid #2a7cbd;
+    }
 
-        progress { width: 100%; height: 18px; }
+    .btns {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
 
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
+    button {
+      padding: 11px 14px;
+      background: #1468af;
+      color: white;
+      border: 0;
+      border-radius: 7px;
+      font-weight: 600;
+      cursor: pointer;
+    }
 
-        td, th {
-            padding: 9px;
-            border-bottom: 1px solid #e6ecf1;
-            text-align: left;
-        }
+    button.secondary {
+      background: #687887;
+    }
 
-        th { background: #f6f9fc; }
-        #preview { display: none; }
+    button.danger {
+      background: #bd3d43;
+    }
 
-        @media(max-width:760px) {
-            main { grid-template-columns: 1fr; }
-            .wide { grid-column: auto; }
-        }
-    </style>
+    button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    .preview {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: #dce5ed;
+      object-fit: contain;
+      border-radius: 7px;
+    }
+
+    #notice {
+      padding: 12px;
+      border-radius: 8px;
+      background: #edf4fb;
+      min-height: 44px;
+      margin-top: 12px;
+      white-space: pre-wrap;
+    }
+
+    .muted {
+      color: #607587;
+      font-size: 14px;
+    }
+
+    .metrics {
+      margin-top: 10px;
+    }
+
+    progress {
+      width: 100%;
+      height: 18px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 11px 9px;
+      text-align: left;
+      border-bottom: 1px solid #e4eaf0;
+    }
+
+    td:last-child {
+      text-align: right;
+    }
+
+    @media (max-width: 760px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        margin: 14px auto;
+      }
+
+      header {
+        padding: 22px 16px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<header>
+  <header>
     <h1>ESP32 Face AI</h1>
-    <p>ESP32-S3 OV3660 · YuNet + CNN SFace · Quản lý dữ liệu trên laptop</p>
-</header>
+    <p>
+      ESP32-S3 OV3660 · YuNet + SFace ·
+      Một ID dùng chung RFID, vân tay và khuôn mặt
+    </p>
+  </header>
 
-<main>
-    <section class="box">
+  <main>
+    <div class="grid">
+
+      <!-- CAMERA PREVIEW -->
+
+      <section class="panel">
         <h2>Hình ảnh từ camera</h2>
 
-        <img id="preview" alt="Ảnh camera trực tiếp">
+        <img
+          class="preview"
+          id="camera"
+          alt="Hình ảnh mới nhất từ ESP32-S3-CAM"
+        >
 
-        <div id="noPreview">
-            Chưa có khung hình hoặc chưa nhập khóa quản trị
-        </div>
-
-        <p>
-            <b>Trạng thái:</b>
-            <span id="state">Chưa kết nối</span>
+        <p
+          class="metrics"
+          id="cameraStatus"
+        >
+          Chưa kết nối
         </p>
 
-        <p id="quality"></p>
-    </section>
+        <p
+          class="muted"
+          id="metrics"
+        >
+          Đang chờ dữ liệu...
+        </p>
+      </section>
 
-    <section class="box">
+      <!-- FACE ENROLLMENT -->
+
+      <section class="panel">
         <h2>Đăng ký khuôn mặt mới</h2>
 
-        <label>Khóa quản trị (admin_key trong config.json)</label>
-        <input
-            id="secret"
+        <div class="field">
+          <label for="key">
+            Khóa quản trị (admin_key trong config.json)
+          </label>
+
+          <input
+            id="key"
             type="password"
-            placeholder="Khóa truy cập quản trị"
-        >
+            autocomplete="off"
+            placeholder="Nhập khóa quản trị"
+          >
+        </div>
 
-        <button class="alt" onclick="connectUI()">
-            Kết nối / tải lại
-        </button>
+        <div class="field">
+          <label for="empId">
+            Mã nhân viên (đã có RFID + vân tay trên MAIN)
+          </label>
 
-        <label>Mã nhân viên (trùng ID RFID/vân tay)</label>
-        <input
+          <input
             id="empId"
             inputmode="numeric"
-            placeholder="12"
-        >
+            maxlength="5"
+            placeholder="Ví dụ: 101"
+          >
+        </div>
 
-        <label>Họ tên (lưu trên laptop)</label>
-        <input
-            id="name"
-            placeholder="Nguyễn Văn A"
-        >
+        <div class="field">
+          <label for="empName">
+            Họ tên
+          </label>
 
-        <button onclick="startEnroll()">
+          <input
+            id="empName"
+            maxlength="64"
+            placeholder="Họ tên nhân viên"
+          >
+        </div>
+
+        <div class="btns">
+          <button id="connectBtn">
+            Kết nối / tải lại
+          </button>
+
+          <button id="startBtn">
             Bắt đầu chụp 30 ảnh
-        </button>
+          </button>
 
-        <button class="danger" onclick="cancelEnroll()">
+          <button
+            id="cancelBtn"
+            class="danger"
+          >
             Hủy
-        </button>
+          </button>
+        </div>
 
-        <p id="msg" aria-live="polite"></p>
+        <div
+          id="notice"
+          role="status"
+        >
+          Nhập khóa quản trị rồi chọn Kết nối.
+        </div>
 
-        <p><b id="count">0/30 ảnh</b></p>
+        <p id="progressTitle">
+          Không đăng ký
+        </p>
 
         <progress
-            id="progress"
-            max="30"
-            value="0"
+          id="progress"
+          value="0"
+          max="30"
         ></progress>
 
-        <p>
-            <b>Hướng dẫn góc mặt:</b>
-            <span id="pose">
-                Nhìn thẳng / nghiêng trái / nghiêng phải / ngẩng / cúi
-            </span>
+        <p class="muted">
+          Hệ thống sẽ hỏi ESP32 MAIN để kiểm tra
+          RFID và mẫu vân tay của ID trước khi
+          cho phép chụp ảnh. Một ID chỉ có một
+          hồ sơ mặt đang hoạt động.
         </p>
+      </section>
 
-        <small>
-            Ảnh được lưu trên laptop, tối đa 1 ảnh/giây.
-            Nhìn vào camera với khuôn mặt rõ và
-            thay đổi góc mặt theo hướng dẫn.
-        </small>
+    </div>
+
+    <!-- REGISTERED PEOPLE -->
+
+    <section class="panel">
+      <h2>Nhân viên đã đăng ký khuôn mặt</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Họ tên</th>
+            <th>Số mẫu</th>
+            <th>Quản lý</th>
+          </tr>
+        </thead>
+
+        <tbody id="people">
+          <tr>
+            <td colspan="4">
+              Chưa tải dữ liệu
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </section>
+  </main>
 
-    <section class="box wide">
-        <h2>Nhân viên đã đăng ký</h2>
+  <script>
+    'use strict';
 
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Họ tên</th>
-                    <th>Số ảnh</th>
-                    <th>Thao tác</th>
-                </tr>
-            </thead>
-            <tbody id="people">
-                <tr>
-                    <td colspan="4">Chưa tải</td>
-                </tr>
-            </tbody>
-        </table>
+    const $ = id => document.getElementById(id);
 
-        <p>
-            <small>
-                Nút Xóa sẽ xóa dữ liệu khuôn mặt
-                và ảnh lưu trên laptop.
-            </small>
-        </p>
-    </section>
-</main>
+    let active = false;
+    let lastError = '';
 
-<script>
-"use strict";
-
-const $ = id => document.getElementById(id);
-
-let key = sessionStorage.getItem("faceAdminKey") || "";
-let updating = false;
-
-$("secret").value = key;
-
-function notice(message) {
-    $("msg").textContent = message;
-}
-
-async function request(path, method = "GET", body = undefined) {
-    const options = {
-        method: method,
-        headers: {
-            "X-Admin-Key": key
-        },
-        cache: "no-store"
-    };
-
-    if (body !== undefined) {
-        options.headers["Content-Type"] = "application/json";
-        options.body = JSON.stringify(body);
+    function message(text) {
+      $('notice').textContent = text;
     }
 
-    const response = await fetch(path, options);
+    function headers(json = false) {
+      const h = {
+        'X-Admin-Key': $('key').value
+      };
 
-    let data;
+      if (json) {
+        h['Content-Type'] = 'application/json';
+      }
 
-    try {
-        data = await response.json();
-    } catch (error) {
-        throw new Error("Server trả về dữ liệu không hợp lệ");
+      return h;
     }
 
-    if (!response.ok) {
-        throw new Error(data.error || "HTTP " + response.status);
+    async function api(
+      path,
+      method = 'GET',
+      payload = null
+    ) {
+      const args = {
+        method,
+        headers: headers(payload !== null),
+        cache: 'no-store'
+      };
+
+      if (payload !== null) {
+        args.body = JSON.stringify(payload);
+      }
+
+      const resp = await fetch(path, args);
+      const data = await resp.json();
+
+      if (!resp.ok) {
+        throw new Error(
+          data.error || `HTTP ${resp.status}`
+        );
+      }
+
+      return data;
     }
 
-    return data;
-}
-
-async function connectUI() {
-    key = $("secret").value.trim();
-
-    if (!key) {
-        notice("Vui lòng nhập khóa quản trị.");
-        return;
+    function personId() {
+      return $('empId').value.trim();
     }
 
-    sessionStorage.setItem("faceAdminKey", key);
+    function row(person) {
+      const tr = document.createElement('tr');
 
-    notice("Đang kiểm tra kết nối...");
+      const id = document.createElement('td');
+      id.textContent = person.id;
 
-    await update(true);
-}
+      const name = document.createElement('td');
+      name.textContent = person.name;
 
-async function startEnroll() {
-    try {
-        const id = $("empId").value.trim();
-        const name = $("name").value.trim();
+      const images = document.createElement('td');
+      images.textContent = person.images;
 
-        if (!id || !name) {
-            notice("Vui lòng nhập mã nhân viên và họ tên.");
+      const action = document.createElement('td');
+
+      const button = document.createElement('button');
+
+      button.className = 'danger';
+      button.textContent = 'Xóa khuôn mặt';
+
+      button.addEventListener(
+        'click',
+        async () => {
+          const confirmed = window.confirm(
+            `Xóa khuôn mặt ID ${person.id}? ` +
+            `RFID và vân tay không bị xóa.`
+          );
+
+          if (!confirmed) {
             return;
+          }
+
+          try {
+            await api(
+              '/api/people/delete',
+              'POST',
+              {id: person.id}
+            );
+
+            message(
+              `Đã yêu cầu xóa mặt ID ${person.id}.`
+            );
+
+            await refresh();
+
+          } catch (e) {
+            message(
+              'Lỗi xóa: ' + e.message
+            );
+          }
         }
+      );
 
-        const result = await request(
-            "/api/enroll/start",
-            "POST",
-            {
-                id: id,
-                name: name
-            }
-        );
+      action.appendChild(button);
 
-        notice(result.message || "Đã bắt đầu đăng ký khuôn mặt.");
+      tr.append(
+        id,
+        name,
+        images,
+        action
+      );
 
-        await update(false);
-
-    } catch (error) {
-        notice("Lỗi đăng ký: " + error.message);
+      return tr;
     }
-}
 
-async function cancelEnroll() {
-    try {
-        await request("/api/enroll/cancel", "POST", {});
-
-        notice("Đã hủy đăng ký khuôn mặt.");
-
-        await update(false);
-
-    } catch (error) {
-        notice("Lỗi: " + error.message);
-    }
-}
-
-async function deletePerson(id) {
-    const confirmed = confirm(
-        "Bạn chắc chắn muốn xóa dữ liệu khuôn mặt ID " + id + "?"
-    );
-
-    if (!confirmed) return;
-
-    try {
-        await request(
-            "/api/people/delete",
-            "POST",
-            { id: id }
-        );
-
-        notice("Đã xóa dữ liệu khuôn mặt ID " + id);
-
-        await update(false);
-
-    } catch (error) {
-        notice("Lỗi xóa: " + error.message);
-    }
-}
-
-async function loadPreview() {
-    const response = await fetch("/api/preview", {
-        headers: {
-            "X-Admin-Key": key
-        },
-        cache: "no-store"
-    });
-
-    if (!response.ok) {
-        if (response.status === 401 || response.status === 403) {
-            throw new Error("Khóa quản trị không hợp lệ");
-        }
+    async function refresh() {
+      if (
+        !active ||
+        document.visibilityState === 'hidden'
+      ) {
         return;
-    }
+      }
 
-    const blob = await response.blob();
+      try {
+        const [status, people] = await Promise.all([
+          api('/api/status'),
+          api('/api/people')
+        ]);
 
-    if (!blob.type.startsWith("image/")) {
-        return;
-    }
+        const list = $('people');
 
-    const url = URL.createObjectURL(blob);
-    const preview = $("preview");
-    const oldUrl = preview.dataset.url;
+        list.replaceChildren();
 
-    preview.src = url;
-    preview.dataset.url = url;
-    preview.style.display = "block";
+        if (!people.people.length) {
+          const tr = document.createElement('tr');
+          const td = document.createElement('td');
 
-    $("noPreview").style.display = "none";
+          td.colSpan = 4;
+          td.textContent =
+            'Chưa có nhân viên đăng ký mặt';
 
-    if (oldUrl) {
-        URL.revokeObjectURL(oldUrl);
-    }
-}
+          tr.appendChild(td);
+          list.appendChild(tr);
 
-async function loadPeople() {
-    const result = await request("/api/people");
-    const tbody = $("people");
-
-    tbody.replaceChildren();
-
-    for (const person of result.people) {
-        const tr = document.createElement("tr");
-
-        const values = [
-            person.id,
-            person.name,
-            String(person.images)
-        ];
-
-        for (const value of values) {
-            const td = document.createElement("td");
-            td.textContent = value;
-            tr.appendChild(td);
+        } else {
+          people.people.forEach(
+            person => list.appendChild(
+              row(person)
+            )
+          );
         }
 
-        const actionCell = document.createElement("td");
-        const button = document.createElement("button");
+        $('cameraStatus').textContent =
+          `Trạng thái: ${status.status || 'Chờ ảnh'}`;
 
-        button.className = "danger";
-        button.textContent = "Xóa";
-        button.onclick = () => deletePerson(person.id);
-
-        actionCell.appendChild(button);
-        tr.appendChild(actionCell);
-
-        tbody.appendChild(tr);
-    }
-
-    if (!result.people.length) {
-        const tr = document.createElement("tr");
-        const td = document.createElement("td");
-
-        td.colSpan = 4;
-        td.textContent = "Chưa có nhân viên";
-
-        tr.appendChild(td);
-        tbody.appendChild(tr);
-    }
-}
-
-async function update(showMessage = false) {
-    if (!key || updating) return;
-
-    updating = true;
-
-    try {
-        const status = await request("/api/status");
-
-        $("state").textContent = status.status;
-
-        $("quality").textContent =
-            "Số khuôn mặt: " + status.face_count +
-            " | Điểm cosine: " + status.score +
-            " | Số nhân viên: " + status.people_count;
+        $('metrics').textContent =
+          `Số khuôn mặt: ${status.face_count ?? 0}` +
+          ` | Điểm cosine: ${status.score ?? '-'}` +
+          ` | Số nhân viên: ${status.people_count ?? 0}`;
 
         const enrollment = status.enrollment;
 
-        if (enrollment) {
-            $("count").textContent =
-                enrollment.count + "/" +
-                enrollment.target + " ảnh";
+        // MAIN is checking RFID and fingerprint.
 
-            $("progress").value = enrollment.count;
-            $("progress").max = enrollment.target;
+        if (status.pending) {
+          message(
+            'Đang chờ ESP32 MAIN kiểm tra ID ' +
+            status.pending.id +
+            ': phải có đủ RFID và vân tay.'
+          );
 
-            $("pose").textContent = enrollment.pose_guide;
+          $('progressTitle').textContent =
+            'Đang xác minh nhân viên';
+
+          $('progress').value = 0;
+
+        // MAIN rejected or request expired.
+
+        } else if (status.pending_error) {
+          message(
+            'Không thể đăng ký: ' +
+            status.pending_error
+          );
+
+          $('progressTitle').textContent =
+            'Chưa đăng ký';
+
+          $('progress').value = 0;
+
+        // Camera is capturing enrollment frames.
+
+        } else if (
+          enrollment &&
+          typeof enrollment === 'object' &&
+          (
+            enrollment.id ||
+            enrollment.count
+          )
+        ) {
+          const count = enrollment.count ?? 0;
+          const target = enrollment.target ?? 30;
+          const id = enrollment.id ?? '-';
+
+          $('progressTitle').textContent =
+            `Đang chụp ${count}/${target} ảnh ` +
+            `(ID ${id})`;
+
+          $('progress').max = target;
+          $('progress').value = count;
 
         } else {
-            $("count").textContent = "Không đăng ký";
-            $("progress").value = 0;
-            $("progress").max = 30;
-            $("pose").textContent = "—";
+          $('progressTitle').textContent =
+            'Không đăng ký';
+
+          $('progress').value = 0;
         }
 
-        await loadPeople();
+        // Update the live preview.
 
-        if (showMessage) {
-            notice("Kết nối thành công.");
+        const picture = await fetch(
+          '/api/preview',
+          {
+            headers: headers(),
+            cache: 'no-store'
+          }
+        );
+
+        if (picture.ok) {
+          const blob = await picture.blob();
+
+          const url = URL.createObjectURL(blob);
+
+          const old = $('camera').dataset.url;
+
+          $('camera').src = url;
+          $('camera').dataset.url = url;
+
+          if (old) {
+            URL.revokeObjectURL(old);
+          }
         }
 
-        try {
-            await loadPreview();
-        } catch (previewError) {
-            // Không làm gián đoạn cập nhật trạng thái
-            // nếu camera chưa gửi ảnh.
+        lastError = '';
+
+      } catch (e) {
+        if (e.message !== lastError) {
+          message(
+            'Lỗi kết nối: ' + e.message
+          );
         }
 
-    } catch (error) {
-        $("state").textContent = "Lỗi kết nối";
-
-        if (showMessage) {
-            notice("Kết nối thất bại: " + error.message);
-        }
-
-    } finally {
-        updating = false;
+        lastError = e.message;
+      }
     }
-}
 
-// Tự động cập nhật giao diện mỗi giây.
-setInterval(() => {
-    update(false);
-}, 1000);
+    $('connectBtn').onclick = async () => {
+      active = true;
+      lastError = '';
 
-// Tự động kết nối lại khi tải trang nếu đã lưu khóa.
-if (key) {
-    update(true);
-}
-</script>
+      message('Đang kết nối...');
 
+      await refresh();
+    };
+
+    $('startBtn').onclick = async () => {
+      if (!active) {
+        message('Hãy kết nối trước.');
+        return;
+      }
+
+      try {
+        const result = await api(
+          '/api/enroll/start',
+          'POST',
+          {
+            id: personId(),
+            name: $('empName').value.trim()
+          }
+        );
+
+        if (result.pending) {
+          message(
+            'Đã gửi yêu cầu. ' +
+            'Đang chờ ESP32 MAIN kiểm tra ID...'
+          );
+        }
+
+        await refresh();
+
+      } catch (e) {
+        message(
+          'Không thể bắt đầu: ' + e.message
+        );
+      }
+    };
+
+    $('cancelBtn').onclick = async () => {
+      try {
+        await api(
+          '/api/enroll/cancel',
+          'POST',
+          {}
+        );
+
+        message(
+          'Đã hủy yêu cầu đăng ký.'
+        );
+
+        await refresh();
+
+      } catch (e) {
+        message(
+          'Không thể hủy: ' + e.message
+        );
+      }
+    };
+
+    // Refresh status automatically.
+
+    setInterval(
+      () => {
+        if (active) {
+          refresh();
+        }
+      },
+      1200
+    );
+  </script>
 </body>
 </html>

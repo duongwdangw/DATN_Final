@@ -1,204 +1,903 @@
-"""Local HTTP camera ingestion + face recognition + admin enrollment UI.
-Runs without cloud or paid services, on a LAN-hosted Windows laptop.
+
+"""ESP32 Face AI HTTP server: website enrollment authorized by ESP32 MAIN.
+
+Compatible with the original FaceEngine, gallery and FCR1 protocol.
+Uses Python 3.11; runs on the laptop LAN address bound in config.json.
 """
 from __future__ import annotations
+
 import json
 import re
-from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
+import secrets
+import threading
+import time
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlsplit
+
 from face_engine import FaceEngine
 from protocol import response, STATUS_ERROR
 
 ROOT = Path(__file__).resolve().parent
-CONFIG_FILE = ROOT / 'config.json'
-REQUIRED_CONFIG = ('device_key','admin_key','bind','port')
+ID_RE = re.compile(r"[1-9][0-9]{0,4}")
+TOKEN_RE = re.compile(r"[0-9a-f]{8}")
+PENDING_TTL = 90.0
 
 
-def read_config():
-    if not CONFIG_FILE.exists():
-        raise RuntimeError('No config.json! Copy config.example.json to config.json and edit both keys.')
-    config = json.loads(CONFIG_FILE.read_text(encoding='utf-8'))
-    for k in REQUIRED_CONFIG:
-        if k not in config:
-            raise RuntimeError(f'Missing config key {k}')
-    for k in ('device_key','admin_key'):
-        if len(str(config[k]))<20 or str(config[k]).startswith('REPLACE'):
-            raise RuntimeError(f'Set a different random secret for {k} (>=20 chars)')
-    if config['device_key']==config['admin_key']:
-        raise RuntimeError('Use different keys for device and admin')
-    return config
+def cfg_load():
+    cfg = json.loads((ROOT / "config.json").read_text(encoding="utf-8"))
+
+    for key in ("device_key", "admin_key"):
+        if len(str(cfg.get(key, ""))) < 12:
+            raise RuntimeError(
+                f"config.json needs {key} (>=12 chars)"
+            )
+
+    if cfg["admin_key"] == cfg["device_key"]:
+        raise RuntimeError(
+            "admin_key and device_key must differ"
+        )
+
+    cfg.setdefault("bind", "0.0.0.0")
+    cfg.setdefault("port", 5000)
+
+    return cfg
 
 
-class Handler(BaseHTTPRequestHandler):
-    server_version = 'FaceLAN/1.0'
+def employee_id(value):
+    s = str(value).strip()
 
-    @property
-    def engine(self): return self.server.engine
-    @property
-    def cfg(self): return self.server.cfg
+    if (
+        not s.isascii()
+        or not s.isdecimal()
+        or not 1 <= int(s) <= 65535
+    ):
+        raise ValueError(
+            "Employee ID must be 1..65535"
+        )
 
-    def reply(self, code:int, body:bytes, content_type='application/json; charset=utf-8'):
+    return str(int(s))
+
+
+class FaceHTTP(ThreadingHTTPServer):
+    daemon_threads = True
+    allow_reuse_address = True
+
+    def __init__(self, address, config, engine):
+        super().__init__(address, FaceRequest)
+
+        self.config = config
+        self.engine = engine
+        self.lock = threading.RLock()
+
+        self.pending = None
+        self.pending_error = ""
+        self.completed = None
+
+    def expired(self):
+        if (
+            self.pending
+            and time.monotonic() -
+                self.pending["created"] > PENDING_TTL
+        ):
+            self.pending_error = (
+                "ESP32 MAIN không xác minh ID kịp thời."
+            )
+
+            self.pending = None
+
+
+class FaceRequest(BaseHTTPRequestHandler):
+    server: FaceHTTP
+    server_version = "ESP32FaceAI/2"
+
+    def log_message(self, fmt, *args):
+        print(
+            "[WEB]",
+            self.address_string(),
+            fmt % args,
+            flush=True
+        )
+
+    def send_data(
+        self,
+        code,
+        data: bytes,
+        mime="application/json; charset=utf-8"
+    ):
         self.send_response(code)
-        self.send_header('Content-Type',content_type)
-        self.send_header('Content-Length',str(len(body)))
-        self.send_header('Cache-Control','no-store')
-        self.send_header('X-Content-Type-Options','nosniff')
-        self.send_header('X-Frame-Options','DENY')
+
+        self.send_header(
+            "Content-Type",
+            mime
+        )
+
+        self.send_header(
+            "Content-Length",
+            str(len(data))
+        )
+
+        self.send_header(
+            "Cache-Control",
+            "no-store"
+        )
+
+        self.send_header(
+            "X-Content-Type-Options",
+            "nosniff"
+        )
+
+        self.send_header(
+            "X-Frame-Options",
+            "DENY"
+        )
+
         self.end_headers()
-        try:self.wfile.write(body)
-        except (BrokenPipeError,ConnectionResetError):pass
 
-    def json_reply(self, code, payload):
-        self.reply(code,json.dumps(payload,ensure_ascii=False).encode('utf8'))
+        try:
+            self.wfile.write(data)
 
-    def _admin_ok(self):
-        return self.headers.get('X-Admin-Key') == self.cfg['admin_key']
+        except (
+            BrokenPipeError,
+            ConnectionResetError
+        ):
+            pass
 
-    def _admin_required(self):
-        if not self._admin_ok():
-            self.json_reply(403,{'error':'Invalid admin key'})
+    def json(self, code, obj):
+        self.send_data(
+            code,
+            json.dumps(
+                obj,
+                ensure_ascii=False
+            ).encode("utf-8")
+        )
+
+    def text(self, code, msg):
+        self.send_data(
+            code,
+            msg.encode("ascii"),
+            "text/plain; charset=ascii"
+        )
+
+    def authenticated(self, role):
+        header = (
+            "X-Admin-Key"
+            if role == "admin"
+            else "X-Device-Key"
+        )
+
+        key = self.server.config[
+            "admin_key"
+            if role == "admin"
+            else "device_key"
+        ]
+
+        if not secrets.compare_digest(
+            self.headers.get(header, ""),
+            key
+        ):
+            self.json(
+                403,
+                {
+                    "error":
+                        "Invalid " + role + " credential"
+                }
+            )
+
             return False
+
         return True
 
-    def _read_body(self, limit):
-        try:n=int(self.headers.get('Content-Length','0'))
-        except ValueError:n=0
-        if n<1 or n>limit: raise ValueError(f'Body size must be 1..{limit} bytes')
-        body=self.rfile.read(n)
-        if len(body)!=n: raise ValueError('Incomplete request')
+    def request_body(self, limit):
+        try:
+            n = int(
+                self.headers.get(
+                    "Content-Length",
+                    "0"
+                )
+            )
+
+        except ValueError as exc:
+            raise ValueError(
+                "Invalid Content-Length"
+            ) from exc
+
+        if not 0 < n <= limit:
+            raise ValueError(
+                "Body missing or too large"
+            )
+
+        body = self.rfile.read(n)
+
+        if len(body) != n:
+            raise ValueError(
+                "Incomplete request"
+            )
+
         return body
 
+    def json_body(self, limit=2048):
+        return json.loads(
+            self.request_body(limit).decode("utf-8")
+        )
+
     def do_GET(self):
-        route=urlsplit(self.path).path
-        if route=='/':
-            self.reply(200,(ROOT/'templates'/'index.html').read_bytes(),'text/html; charset=utf-8');return
-        if route=='/api/health':
-            self.json_reply(200,{'ready':True,'service':'OpenCV YuNet + SFace CNN'});return
-        if route == '/api/device/enroll/state':
-            if self.headers.get('X-Device-Key') != self.cfg['device_key']:
-                self.reply(403,b'DENIED','text/plain');return
-            with self.engine.lock:
-                active=self.engine.enrollment
-                if active:
-                    result=f'ENROLLING:{active["id"]}:{active["count"]}'
-                elif self.engine.enroll_result_id:
-                    result=f'DONE:{self.engine.enroll_result_id}'
-                else:
-                    result='IDLE'
-            self.reply(200,result.encode('ascii'),'text/plain; charset=ascii')
+        path = urlsplit(self.path).path
+
+        # ----------------------------------------------------
+        # Website home page
+        # ----------------------------------------------------
+
+        if path == "/":
+            page = ROOT / "templates" / "index.html"
+
+            if not page.is_file():
+                self.json(
+                    500,
+                    {
+                        "error":
+                            "Missing templates/index.html"
+                    }
+                )
+
+            else:
+                self.send_data(
+                    200,
+                    page.read_bytes(),
+                    "text/html; charset=utf-8"
+                )
+
             return
-        if route in ('/api/preview','/api/status','/api/people'):
-            if not self._admin_required():return
-            with self.engine.lock:
-                if route=='/api/preview':
-                    if self.engine.last_preview is None:
-                        self.json_reply(404,{'error':'No camera frame received yet'})
-                    else:self.reply(200,self.engine.last_preview,'image/jpeg')
-                    return
-                if route=='/api/status':
-                    self.json_reply(200,{'status':self.engine.last_status,
-                       'score':round(self.engine.last_score,3),
-                       'face_count':self.engine.last_face_count,
-                       'enrollment':self.engine.enroll_status(),
-                       'people_count':len(self.engine.gallery.people),
-                       'camera_frame_received':self.engine.last_preview is not None})
-                    return
-                self.json_reply(200,{'people':[{'id':k,'name':v,'images':int(sum(self.engine.gallery.ids==k))}
-                                                   for k,v in self.engine.gallery.people.items()]})
+
+        # ----------------------------------------------------
+        # Health check
+        # ----------------------------------------------------
+
+        if path == "/api/health":
+            self.json(
+                200,
+                {"ready": True}
+            )
+
+            return
+
+        # ----------------------------------------------------
+        # Website pending employee registration
+        #
+        # S3 polls this endpoint and asks MAIN whether the
+        # employee already has RFID and fingerprint data.
+        # ----------------------------------------------------
+
+        if path == "/api/device/enroll/pending":
+            if not self.authenticated("device"):
                 return
-        self.json_reply(404,{'error':'Not found'})
+
+            with self.server.lock:
+                self.server.expired()
+
+                p = self.server.pending
+
+                self.text(
+                    200,
+                    (
+                        f"CHECK:{p['id']}:{p['token']}\n"
+                        if p
+                        else "NONE\n"
+                    )
+                )
+
+            return
+
+        # ----------------------------------------------------
+        # Enrollment capture mode
+        #
+        # While capturing 30 images, S3 must continue
+        # uploading camera frames even without radar presence.
+        # ----------------------------------------------------
+
+        if path == "/api/device/enroll/mode":
+            if not self.authenticated("device"):
+                return
+
+            with self.server.engine.lock:
+                active = bool(
+                    self.server.engine.enrollment
+                )
+
+            self.text(
+                200,
+                (
+                    "ACTIVE:1\n"
+                    if active
+                    else "ACTIVE:0\n"
+                )
+            )
+
+            return
+
+        # ----------------------------------------------------
+        # Enrolled face roster
+        #
+        # Example:
+        # IDS:101,102,103
+        #
+        # S3 transfers this to MAIN using UART STATUS frames.
+        # ----------------------------------------------------
+
+        if path == "/api/device/face/roster":
+            if not self.authenticated("device"):
+                return
+
+            with self.server.engine.lock:
+                ids = sorted({
+                    int(k)
+                    for k
+                    in self.server.engine.gallery.people
+                })
+
+            if (
+                len(ids) > 512
+                or any(
+                    not 0 < i <= 65535
+                    for i in ids
+                )
+            ):
+                self.json(
+                    503,
+                    {
+                        "error":
+                            "Face roster exceeds bounds"
+                    }
+                )
+
+                return
+
+            roster = (
+                "IDS:" +
+                ",".join(map(str, ids)) +
+                "\n"
+            )
+
+            if len(roster) >= 4096:
+                self.json(
+                    503,
+                    {
+                        "error":
+                            "Face roster too large"
+                    }
+                )
+
+                return
+
+            self.text(200, roster)
+            return
+
+        # ----------------------------------------------------
+        # Admin-only APIs
+        # ----------------------------------------------------
+
+        if path not in (
+            "/api/preview",
+            "/api/status",
+            "/api/people"
+        ):
+            self.json(
+                404,
+                {"error": "Not found"}
+            )
+
+            return
+
+        if not self.authenticated("admin"):
+            return
+
+        engine = self.server.engine
+
+        with self.server.lock:
+            self.server.expired()
+
+            pending = self.server.pending
+
+            pending_status = (
+                {
+                    "id": pending["id"],
+                    "state": "WAITING_MAIN"
+                }
+                if pending
+                else None
+            )
+
+            pending_error = (
+                self.server.pending_error
+            )
+
+        with engine.lock:
+
+            # Live camera preview
+
+            if path == "/api/preview":
+                preview = engine.last_preview
+
+                if preview:
+                    self.send_data(
+                        200,
+                        preview,
+                        "image/jpeg"
+                    )
+
+                else:
+                    self.json(
+                        404,
+                        {
+                            "error":
+                                "No camera frame"
+                        }
+                    )
+
+            # System status and registration progress
+
+            elif path == "/api/status":
+                self.json(
+                    200,
+                    {
+                        "status":
+                            engine.last_status,
+
+                        "score":
+                            round(
+                                float(engine.last_score),
+                                3
+                            ),
+
+                        "face_count":
+                            int(engine.last_face_count),
+
+                        "enrollment":
+                            engine.enroll_status(),
+
+                        "pending":
+                            pending_status,
+
+                        "pending_error":
+                            pending_error,
+
+                        "people_count":
+                            len(
+                                engine.gallery.people
+                            ),
+
+                        "camera_frame_received":
+                            bool(engine.last_preview)
+                    }
+                )
+
+            # Registered employees
+
+            else:
+                result = []
+
+                for pid, name in (
+                    engine.gallery.people.items()
+                ):
+                    result.append(
+                        {
+                            "id": str(pid),
+                            "name": name,
+                            "images": int(
+                                sum(
+                                    engine.gallery.ids == pid
+                                )
+                            )
+                        }
+                    )
+
+                self.json(
+                    200,
+                    {"people": result}
+                )
 
     def do_POST(self):
-        route=urlsplit(self.path).path
-        if route=='/api/frame':
-            if self.headers.get('X-Device-Key')!=self.cfg['device_key']:
-                self.reply(403,b'', 'application/octet-stream');return
-            if self.headers.get('Content-Type','').split(';')[0].strip()!='image/jpeg':
-                self.reply(415,b'', 'application/octet-stream');return
-            try:
-                jpg=self._read_body(180_000)
-                data=self.engine.process(jpg)
-                self.reply(200,data,'application/octet-stream')
-            except ValueError as exc:
-                self.log_error('Bad camera frame: %s',exc)
-                self.reply(400,b'', 'application/octet-stream')
-            except Exception as exc:
-                self.log_error('Frame processing error: %s',exc)
-                self.reply(200,response(STATUS_ERROR),'application/octet-stream')
-            return
-        # Physical ESP32-MAIN admin PIN authorizes these commands.
-        # S3 is authenticated by X-Device-Key, and all are restricted to LAN.
-        if route in ('/api/device/enroll/start','/api/device/enroll/cancel','/api/device/face/delete'):
-            if self.headers.get('X-Device-Key') != self.cfg['device_key']:
-                self.reply(403,b'DENIED','text/plain');return
-            try:
-                payload=json.loads(self._read_body(256).decode('utf8'))
-                pid=str(payload.get('id','')).strip()
-                if not re.fullmatch(r'[0-9]{1,5}',pid) or not 1 <= int(pid) <= 65535:
-                    raise ValueError('Invalid employee ID')
-                pid=str(int(pid))
-                if route == '/api/device/enroll/start':
-                    self.engine.start_enroll(pid,f'EMPLOYEE {pid}')
-                    result=f'STARTED:{pid}'
-                elif route == '/api/device/enroll/cancel':
-                    self.engine.cancel_enroll_if(pid)
-                    result=f'CANCELLED:{pid}'
-                else:
-                    with self.engine.lock:
-                        if self.engine.enrollment is not None:
-                            raise ValueError('Enrollment in progress; retry delete later')
-                        self.engine.gallery.delete(pid)
-                        if self.engine.enroll_result_id == pid:
-                            self.engine.enroll_result_id = None
-                    result=f'DELETED:{pid}'
-                self.reply(200,result.encode('ascii'),'text/plain; charset=ascii')
-            except (ValueError, json.JSONDecodeError) as exc:
-                self.reply(409,f'ERROR:{exc}'.encode('utf-8'),'text/plain; charset=utf-8')
-            except Exception as exc:
-                self.log_error('Device operation failure: %s',exc)
-                self.reply(500,b'ERROR:SERVER','text/plain')
-            return
-        if route not in ('/api/enroll/start','/api/enroll/cancel','/api/people/delete'):
-            self.json_reply(404,{'error':'Not found'});return
-        if not self._admin_required():return
+        path = urlsplit(self.path).path
+
         try:
-            payload=json.loads(self._read_body(4096).decode('utf8'))
-            if route=='/api/enroll/start':
-                pid=str(payload.get('id','')).strip()
-                name=str(payload.get('name','')).strip()
-                if not re.fullmatch(r'[0-9]{1,5}',pid) or int(pid)==0:
-                    raise ValueError('Employee ID must be a number 1..99999, consistent with ESP32 main')
-                if not 1<=len(name)<=64:raise ValueError('Name must contain 1..64 characters')
-                self.engine.start_enroll(pid,name)
-                self.json_reply(200,{'ok':True,'message':'Enrollment started; face camera and rotate head'})
-            elif route=='/api/enroll/cancel':
-                self.json_reply(200,{'ok':self.engine.cancel_enroll()})
-            else:
-                pid=str(payload.get('id','')).strip()
-                with self.engine.lock:
-                    if self.engine.enrollment:raise ValueError('Finish enrollment before deleting')
-                    deleted=self.engine.gallery.delete(pid)
-                self.json_reply(200,{'ok':deleted})
-        except (ValueError,KeyError,json.JSONDecodeError) as exc:
-            self.json_reply(400,{'error':str(exc)})
+
+            # ------------------------------------------------
+            # Camera JPEG upload
+            #
+            # S3 -> Python AI -> FCR1 binary response
+            # ------------------------------------------------
+
+            if path == "/api/frame":
+                if not self.authenticated("device"):
+                    return
+
+                content_type = (
+                    self.headers.get(
+                        "Content-Type",
+                        ""
+                    ).split(";")[0].strip()
+                )
+
+                if content_type != "image/jpeg":
+                    self.send_data(
+                        415,
+                        b"",
+                        "application/octet-stream"
+                    )
+
+                    return
+
+                img = self.request_body(180000)
+
+                try:
+                    out = (
+                        self.server.engine.process(img)
+                    )
+
+                except Exception as exc:
+                    print(
+                        "[AI] process failed:",
+                        repr(exc),
+                        flush=True
+                    )
+
+                    out = response(
+                        STATUS_ERROR
+                    )
+
+                self.send_data(
+                    200,
+                    out,
+                    "application/octet-stream"
+                )
+
+                return
+
+            # ------------------------------------------------
+            # S3 submits MAIN's employee verification result
+            # ------------------------------------------------
+
+            if path == "/api/device/enroll/decision":
+                if not self.authenticated("device"):
+                    return
+
+                p = self.json_body(512)
+
+                eid = employee_id(
+                    p.get("id")
+                )
+
+                token = str(
+                    p.get("token", "")
+                )
+
+                exists = p.get("exists")
+
+                if (
+                    type(exists) is not bool
+                    or not TOKEN_RE.fullmatch(token)
+                ):
+                    raise ValueError(
+                        "Invalid decision"
+                    )
+
+                with self.server.lock:
+                    self.server.expired()
+
+                    pending = self.server.pending
+
+                    if (
+                        not pending
+                        or pending["token"] != token
+                        or pending["id"] != eid
+                    ):
+                        self.json(
+                            200,
+                            {
+                                "ok": False,
+                                "state": "IGNORED"
+                            }
+                        )
+
+                        return
+
+                    self.server.pending = None
+
+                    if not exists:
+                        self.server.pending_error = (
+                            "ID chưa có đủ RFID và vân tay "
+                            "trên ESP32 MAIN."
+                        )
+
+                        self.json(
+                            200,
+                            {
+                                "ok": False,
+                                "state": "DENIED"
+                            }
+                        )
+
+                        return
+
+                    try:
+                        with self.server.engine.lock:
+
+                            if (
+                                self.server.engine.enrollment
+                            ):
+                                raise ValueError(
+                                    "Another enrollment is active"
+                                )
+
+                            if any(
+                                int(k) == int(eid)
+                                for k
+                                in self.server.engine.gallery.people
+                            ):
+                                raise ValueError(
+                                    "This employee already has a face"
+                                )
+
+                            self.server.engine.start_enroll(
+                                eid,
+                                pending["name"]
+                            )
+
+                    except ValueError as exc:
+                        self.server.pending_error = str(exc)
+
+                        self.json(
+                            409,
+                            {"error": str(exc)}
+                        )
+
+                        return
+
+                    self.server.pending_error = ""
+
+                self.json(
+                    200,
+                    {
+                        "ok": True,
+                        "state": "CAPTURING"
+                    }
+                )
+
+                return
+
+            # ------------------------------------------------
+            # MAIN requests face deletion through S3
+            # ------------------------------------------------
+
+            if path == "/api/device/face/delete":
+                if not self.authenticated("device"):
+                    return
+
+                p = self.json_body(512)
+
+                eid = employee_id(
+                    p.get("id")
+                )
+
+                with (
+                    self.server.lock,
+                    self.server.engine.lock
+                ):
+                    if (
+                        self.server.engine.enrollment
+                        and
+                        self.server.engine.enrollment["id"]
+                        == eid
+                    ):
+                        self.server.engine.cancel_enroll()
+
+                    self.server.engine.gallery.delete(eid)
+
+                self.text(
+                    200,
+                    f"DELETED:{eid}"
+                )
+
+                return
+
+            # ------------------------------------------------
+            # Admin-only commands
+            # ------------------------------------------------
+
+            if path not in (
+                "/api/enroll/start",
+                "/api/enroll/cancel",
+                "/api/people/delete"
+            ):
+                self.json(
+                    404,
+                    {"error": "Not found"}
+                )
+
+                return
+
+            if not self.authenticated("admin"):
+                return
+
+            p = self.json_body(2048)
+
+            # ------------------------------------------------
+            # Begin face enrollment through website
+            #
+            # Important:
+            # This does NOT immediately start taking images.
+            # MAIN must verify the employee first.
+            # ------------------------------------------------
+
+            if path == "/api/enroll/start":
+                eid = employee_id(
+                    p.get("id")
+                )
+
+                name = str(
+                    p.get("name", "")
+                ).strip()
+
+                if not 1 <= len(name) <= 64:
+                    raise ValueError(
+                        "Employee name must be 1..64 characters"
+                    )
+
+                with self.server.lock:
+                    self.server.expired()
+
+                    if self.server.pending:
+                        raise ValueError(
+                            "Another employee is waiting for MAIN"
+                        )
+
+                    with self.server.engine.lock:
+
+                        if self.server.engine.enrollment:
+                            raise ValueError(
+                                "Another enrollment is active"
+                            )
+
+                        if any(
+                            int(k) == int(eid)
+                            for k
+                            in self.server.engine.gallery.people
+                        ):
+                            raise ValueError(
+                                "ID already has a face. Delete first."
+                            )
+
+                    self.server.pending = {
+                        "id": eid,
+                        "name": name,
+                        "token": secrets.token_hex(4),
+                        "created": time.monotonic()
+                    }
+
+                    self.server.pending_error = ""
+
+                self.json(
+                    200,
+                    {
+                        "ok": True,
+                        "pending": True
+                    }
+                )
+
+                return
+
+            # ------------------------------------------------
+            # Cancel pending or active enrollment
+            # ------------------------------------------------
+
+            if path == "/api/enroll/cancel":
+                with self.server.lock:
+                    self.server.pending = None
+                    self.server.pending_error = ""
+
+                self.server.engine.cancel_enroll()
+
+                self.json(
+                    200,
+                    {"ok": True}
+                )
+
+                return
+
+            # ------------------------------------------------
+            # Delete one registered face through website
+            #
+            # RFID and fingerprint are not deleted.
+            # Updated roster automatically removes FACE
+            # permission from MAIN after synchronization.
+            # ------------------------------------------------
+
+            if path == "/api/people/delete":
+                eid = employee_id(
+                    p.get("id")
+                )
+
+                with (
+                    self.server.lock,
+                    self.server.engine.lock
+                ):
+                    if self.server.engine.enrollment:
+                        raise ValueError(
+                            "Cancel active enrollment before delete"
+                        )
+
+                    removed = (
+                        self.server.engine.gallery.delete(eid)
+                    )
+
+                self.json(
+                    200,
+                    {"ok": bool(removed)}
+                )
+
+                return
+
+        except (
+            ValueError,
+            TypeError,
+            KeyError,
+            json.JSONDecodeError
+        ) as exc:
+            self.json(
+                400,
+                {"error": str(exc)}
+            )
+
         except Exception as exc:
-            self.log_error('Admin error %s',exc)
-            self.json_reply(500,{'error':'Server error; check terminal logs'})
+            print(
+                "[HTTP] unexpected error:",
+                repr(exc),
+                flush=True
+            )
+
+            self.json(
+                500,
+                {
+                    "error":
+                        "Internal server error"
+                }
+            )
 
 
 def main():
-    config=read_config()
-    engine=FaceEngine(config)
-    host=ThreadingHTTPServer((config['bind'],int(config['port'])),Handler)
-    host.engine=engine
-    host.cfg=config
-    print(f'AI server started on http://127.0.0.1:{config["port"]}',flush=True)
-    print('LAN: use http://YOUR_LAPTOP_IPV4:5000 for UI',flush=True)
-    print('Open browser and enter the ADMIN KEY to control enrollment.',flush=True)
-    try:host.serve_forever(poll_interval=0.5)
-    except KeyboardInterrupt:pass
-    finally:host.server_close()
+    config = cfg_load()
+
+    engine = FaceEngine(config)
+
+    server = FaceHTTP(
+        (
+            str(config["bind"]),
+            int(config["port"])
+        ),
+        config,
+        engine
+    )
+
+    print(
+        f"AI server listening on "
+        f"{config['bind']}:{config['port']}",
+        flush=True
+    )
+
+    try:
+        server.serve_forever(
+            poll_interval=0.3
+        )
+
+    except KeyboardInterrupt:
+        print(
+            "Stopping server",
+            flush=True
+        )
+
+    finally:
+        server.server_close()
 
 
-if __name__=='__main__':main()
+if __name__ == "__main__":
+    main()

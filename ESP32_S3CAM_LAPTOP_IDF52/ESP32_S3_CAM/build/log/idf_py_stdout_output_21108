@@ -1,0 +1,88 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\DATN\DATN_V5\DATN_V5\ESP32_S3CAM_LAPTOP_IDF52\ESP32_S3_CAM\build\bootloader\esp-idf\esptool_py && E:\Espressif\python_env\idf5.2_py3.11_env\Scripts\python.exe E:/Espressif/frameworks/esp-idf-v5.2.7/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 D:/DATN/DATN_V5/DATN_V5/ESP32_S3CAM_LAPTOP_IDF52/ESP32_S3_CAM/build/bootloader/bootloader.bin"
+Bootloader binary size 0x53b0 bytes. 0x2c50 bytes (35%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/app_main.c.obj
+[5/10] Linking C static library esp-idf\main\libmain.a
+[6/10] Generating ld/sections.ld
+[7/10] Linking CXX executable face_cam_s3.elf
+[8/10] Generating binary image from built executable
+esptool.py v4.11.0
+Creating esp32s3 image...
+Merged 2 ELF sections
+Successfully created esp32s3 image.
+Generated D:/DATN/DATN_V5/DATN_V5/ESP32_S3CAM_LAPTOP_IDF52/ESP32_S3_CAM/build/face_cam_s3.bin
+[9/10] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\DATN\DATN_V5\DATN_V5\ESP32_S3CAM_LAPTOP_IDF52\ESP32_S3_CAM\build\esp-idf\esptool_py && E:\Espressif\python_env\idf5.2_py3.11_env\Scripts\python.exe E:/Espressif/frameworks/esp-idf-v5.2.7/components/partition_table/check_sizes.py --offset 0x8000 partition --type app D:/DATN/DATN_V5/DATN_V5/ESP32_S3CAM_LAPTOP_IDF52/ESP32_S3_CAM/build/partition_table/partition-table.bin D:/DATN/DATN_V5/DATN_V5/ESP32_S3CAM_LAPTOP_IDF52/ESP32_S3_CAM/build/face_cam_s3.bin"
+face_cam_s3.bin binary size 0xef250 bytes. Smallest app partition is 0x177000 bytes. 0x87db0 bytes (36%) free.
+[9/10] C:\WINDOWS\system32\cmd.exe /C "cd /D E:\Espressif\frameworks\esp-idf-v5.2.7\components\esptool_py && E:\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=E:/Espressif/frameworks/esp-idf-v5.2.7 -D SERIAL_TOOL=E:/Espressif/python_env/idf5.2_py3.11_env/Scripts/python.exe;;E:/Espressif/frameworks/esp-idf-v5.2.7/components/esptool_py/esptool/esptool.py;--chip;esp32s3 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=D:/DATN/DATN_V5/DATN_V5/ESP32_S3CAM_LAPTOP_IDF52/ESP32_S3_CAM/build -P E:/Espressif/frameworks/esp-idf-v5.2.7/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32s3 -p COM15 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x0 bootloader/bootloader.bin 0x10000 face_cam_s3.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.11.0
+Serial port COM15
+Connecting...
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded PSRAM 8MB (AP_3v3)
+Crystal is 40MHz
+USB mode: USB-Serial/JTAG
+MAC: e0:72:a1:d6:c7:e0
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x000fffff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 21424 bytes to 13151...
+Writing at 0x00000000... (100 %)
+Wrote 21424 bytes (13151 compressed) at 0x00000000 in 0.3 seconds (effective 536.1 kbit/s)...
+Hash of data verified.
+Compressed 979536 bytes to 602686...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001d4de... (5 %)
+Writing at 0x00028524... (8 %)
+Writing at 0x0003196e... (10 %)
+Writing at 0x0003baaf... (13 %)
+Writing at 0x000417d1... (16 %)
+Writing at 0x00047b66... (18 %)
+Writing at 0x0004d942... (21 %)
+Writing at 0x000550f3... (24 %)
+Writing at 0x0005bd79... (27 %)
+Writing at 0x00061dad... (29 %)
+Writing at 0x00067d9a... (32 %)
+Writing at 0x0006dbad... (35 %)
+Writing at 0x00074088... (37 %)
+Writing at 0x000792d8... (40 %)
+Writing at 0x0007e804... (43 %)
+Writing at 0x0008401c... (45 %)
+Writing at 0x000894e8... (48 %)
+Writing at 0x0008e83d... (51 %)
+Writing at 0x00093e1d... (54 %)
+Writing at 0x0009a111... (56 %)
+Writing at 0x0009fbe0... (59 %)
+Writing at 0x000a57e9... (62 %)
+Writing at 0x000ab42e... (64 %)
+Writing at 0x000b0e67... (67 %)
+Writing at 0x000b687a... (70 %)
+Writing at 0x000bc58a... (72 %)
+Writing at 0x000c2c1b... (75 %)
+Writing at 0x000c8799... (78 %)
+Writing at 0x000ce2b1... (81 %)
+Writing at 0x000d3960... (83 %)
+Writing at 0x000d9c8a... (86 %)
+Writing at 0x000e21ce... (89 %)
+Writing at 0x000e864f... (91 %)
+Writing at 0x000ee863... (94 %)
+Writing at 0x000f4b6b... (97 %)
+Writing at 0x000fa953... (100 %)
+Wrote 979536 bytes (602686 compressed) at 0x00010000 in 6.4 seconds (effective 1228.0 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 105...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (105 compressed) at 0x00008000 in 0.0 seconds (effective 511.4 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

@@ -1,0 +1,37 @@
+HƯỚNG DẪN CHẠY AI SERVER
+
+1. Mở thư mục:
+D:\DATN\DATN_V5\DATN_V5\ESP32_S3CAM_LAPTOP_IDF52\LAPTOP_SERVER
+
+2. Nhấp vào thanh địa chỉ, nhập:
+powershell
+
+3. Chạy Python Server:
+py -3.11 server.py
+
+4. Mở website:
+http://127.0.0.1:5000
+
+5. Dừng Server:
+Ctrl + C
+
+LƯU Ý:
+- Giữ cửa sổ PowerShell mở khi sử dụng.
+- Không cần nạp lại ESP32.
+- File .txt chỉ dùng để ghi nhớ, không ảnh hưởng code.
+
+
+{
+  "bind": "0.0.0.0",
+  "port": 5000,
+  "device_key": "S3CameraDevice_2026_X7p9K2m8R4q6",
+"admin_key": "AdminLaptop_2026_N8v3T6y2L5z9",
+  "minimum_cosine": 0.43,
+  "minimum_margin": 0.025,
+  "required_confirmations": 3,
+  "minimum_face_width": 65,
+  "minimum_blur_variance": 28.0,
+  "enroll_images": 30,
+  "enroll_interval_seconds": 1.0,
+  "match_cooldown_seconds": 10.0
+}
