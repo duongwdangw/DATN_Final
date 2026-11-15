@@ -1,0 +1,992 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15632
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 15 2026 22:12:24[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=338f8h (211192) map[0m
+[0;32mI (177) esp_image: segment 1: paddr=00043920 vaddr=3ffb0000 size=04368h ( 17256) load[0m
+[0;32mI (183) esp_image: segment 2: paddr=00047c90 vaddr=40080000 size=08388h ( 33672) load[0m
+[0;32mI (197) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=ae520h (714016) map[0m
+[0;32mI (442) esp_image: segment 4: paddr=000fe548 vaddr=40088388 size=12278h ( 74360) load[0m
+[0;32mI (484) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (484) boot: Disabling RNG early entropy source...[0m
+[0;32mI (496) cpu_start: Multicore app[0m
+[0;32mI (505) cpu_start: Pro cpu start user code[0m
+[0;32mI (505) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (505) cpu_start: Application information:[0m
+[0;32mI (508) cpu_start: Project name:     esp32main[0m
+[0;32mI (513) cpu_start: App version:      1[0m
+[0;32mI (518) cpu_start: Compile time:     Oct 15 2026 22:11:37[0m
+[0;32mI (524) cpu_start: ELF file SHA256:  c126ec1dc...[0m
+[0;32mI (529) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (534) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (539) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (544) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (549) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (556) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (562) heap_init: At 3FFC73F0 len 00018C10 (99 KiB): DRAM[0m
+[0;32mI (568) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (574) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (581) heap_init: At 4009A600 len 00005A00 (22 KiB): IRAM[0m
+[0;32mI (588) spi_flash: detected chip: generic[0m
+[0;32mI (592) spi_flash: flash io: dio[0m
+[0;32mI (596) main_task: Started on CPU0[0m
+[0;32mI (600) main_task: Calling app_main()[0m
+[0;32mI (625) WIFI_TIME: Initializing Wi-Fi + NTP...[0m
+[0;32mI (630) wifi:wifi driver task: 3ffcf728, prio:23, stack:6656, core=0[0m
+[0;32mI (640) wifi:wifi firmware version: ff41b26[0m
+[0;32mI (640) wifi:wifi certification version: v7.0[0m
+[0;32mI (640) wifi:config NVS flash: enabled[0m
+[0;32mI (641) wifi:config nano formating: disabled[0m
+[0;32mI (645) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (650) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (654) wifi:Init management short buffer num: 32[0m
+[0;32mI (658) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (662) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (666) wifi:Init static rx buffer num: 10[0m
+[0;32mI (670) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (675) wifi_init: rx ba win: 6[0m
+[0;32mI (678) wifi_init: tcpip mbox: 32[0m
+[0;32mI (681) wifi_init: udp mbox: 6[0m
+[0;32mI (685) wifi_init: tcp mbox: 6[0m
+[0;32mI (689) wifi_init: tcp tx win: 5760[0m
+[0;32mI (693) wifi_init: tcp rx win: 5760[0m
+[0;32mI (697) wifi_init: tcp mss: 1440[0m
+[0;32mI (701) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (706) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (711) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (720) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (803) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (819) wifi:mode : sta (00:70:07:1a:13:c0)[0m
+[0;32mI (820) wifi:enable tsf[0m
+[0;32mI (822) WIFI_TIME: Connecting to Wi-Fi: Hai Dang[0m
+[0;32mI (902) wifi:new:<13,0>, old:<1,0>, ap:<255,255>, sta:<13,0>, prof:1[0m
+[0;32mI (904) wifi:state: init -> auth (b0)[0m
+[0;32mI (913) wifi:state: auth -> assoc (0)[0m
+[0;32mI (924) wifi:state: assoc -> run (10)[0m
+[0;32mI (932) wifi:<ba-add>idx:0 (ifx:0, 24:0b:2a:53:3c:39), tid:5, ssn:0, winSize:64[0m
+[0;32mI (1033) wifi:<ba-add>idx:1 (ifx:0, 24:0b:2a:53:3c:39), tid:0, ssn:1, winSize:64[0m
+[0;32mI (1036) wifi:connected with Hai Dang, aid = 5, channel 13, BW20, bssid = 24:0b:2a:53:3c:39[0m
+[0;32mI (1038) wifi:security: WPA2-PSK, phy: bgn, rssi: -34, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (1049) wifi:pm start, type: 1[0m
+
+[0;32mI (1049) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1104) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2062) esp_netif_handlers: sta ip: 192.168.1.9, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (2063) WIFI_TIME: Wi-Fi OK, IP: 192.168.1.9[0m
+[0;32mI (2219) WIFI_TIME: NTP: time synchronized[0m
+[0;32mI (2317) WIFI_TIME: Local time: 21:42:46 04/11/2026[0m
+[0;32mI (2318) GSHEET: Google Sheet logging task started[0m
+[0;32mI (2318) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (2380) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (2694) ACCESS: AS608 online, template capacity: 300[0m
+[0;32mI (2696) ACCESS: CAM UART receiver started: UART1 RX=GPIO32 TX=GPIO33, 115200 baud[0m
+[0;32mI (2697) ACCESS: LD2410C presence=1[0m
+[0;32mI (2702) ACCESS: ============================================[0m
+[0;32mI (2708) ACCESS: SYSTEM READY.[0m
+[0;32mI (2711) ACCESS: ADMIN: * | A:next | B:back/delete | C:select | #:exit[0m
+[0;32mI (2719) ACCESS: ============================================[0m
+[0;32mI (2725) main_task: Returned from app_main()[0m
+[0;32mI (15975) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (19495) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (19496) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (19499) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (17709) ACCESS: AS608 online, template capacity: 300[0m
+[0;32mI (17711) ACCESS: CAM UART receiver started: UART1 RX=GPIO32 TX=GPIO33, 115200 baud[0m
+[0;32mI (17713) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (17719) ACCESS: LD2410C presence=1[0m
+[0;32mI (17726) ACCESS: ============================================[0m
+[0;32mI (17730) ACCESS: SYSTEM READY.[0m
+[0;32mI (17734) ACCESS: ADMIN: * | A:next | B:back/delete | C:select | #:exit[0m
+[0;32mI (17741) ACCESS: ============================================[0m
+[0;32mI (17748) main_task: Returned from app_main()[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15632
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 15 2026 22:12:24[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=338f8h (211192) map[0m
+[0;32mI (177) esp_image: segment 1: paddr=00043920 vaddr=3ffb0000 size=04368h ( 17256) load[0m
+[0;32mI (183) esp_image: segment 2: paddr=00047c90 vaddr=40080000 size=08388h ( 33672) load[0m
+[0;32mI (197) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=ae520h (714016) map[0m
+[0;32mI (442) esp_image: segment 4: paddr=000fe548 vaddr=40088388 size=12278h ( 74360) load[0m
+[0;32mI (484) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (484) boot: Disabling RNG early entropy source...[0m
+[0;32mI (496) cpu_start: Multicore app[0m
+[0;32mI (505) cpu_start: Pro cpu start user code[0m
+[0;32mI (505) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (505) cpu_start: Application information:[0m
+[0;32mI (508) cpu_start: Project name:     esp32main[0m
+[0;32mI (513) cpu_start: App version:      1[0m
+[0;32mI (518) cpu_start: Compile time:     Oct 15 2026 22:11:37[0m
+[0;32mI (524) cpu_start: ELF file SHA256:  c126ec1dc...[0m
+[0;32mI (529) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (534) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (539) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (544) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (549) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (556) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (562) heap_init: At 3FFC73F0 len 00018C10 (99 KiB): DRAM[0m
+[0;32mI (568) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (574) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (581) heap_init: At 4009A600 len 00005A00 (22 KiB): IRAM[0m
+[0;32mI (588) spi_flash: detected chip: generic[0m
+[0;32mI (592) spi_flash: flash io: dio[0m
+[0;32mI (596) main_task: Started on CPU0[0m
+[0;32mI (600) main_task: Calling app_main()[0m
+[0;32mI (625) WIFI_TIME: Initializing Wi-Fi + NTP...[0m
+[0;32mI (630) wifi:wifi driver task: 3ffcf728, prio:23, stack:6656, core=0[0m
+[0;32mI (640) wifi:wifi firmware version: ff41b26[0m
+[0;32mI (640) wifi:wifi certification version: v7.0[0m
+[0;32mI (640) wifi:config NVS flash: enabled[0m
+[0;32mI (641) wifi:config nano formating: disabled[0m
+[0;32mI (645) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (650) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (654) wifi:Init management short buffer num: 32[0m
+[0;32mI (658) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (662) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (666) wifi:Init static rx buffer num: 10[0m
+[0;32mI (670) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (675) wifi_init: rx ba win: 6[0m
+[0;32mI (678) wifi_init: tcpip mbox: 32[0m
+[0;32mI (681) wifi_init: udp mbox: 6[0m
+[0;32mI (685) wifi_init: tcp mbox: 6[0m
+[0;32mI (689) wifi_init: tcp tx win: 5760[0m
+[0;32mI (693) wifi_init: tcp rx win: 5760[0m
+[0;32mI (697) wifi_init: tcp mss: 1440[0m
+[0;32mI (701) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (706) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (711) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (720) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (799) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (815) wifi:mode : sta (00:70:07:1a:13:c0)[0m
+[0;32mI (816) wifi:enable tsf[0m
+[0;32mI (818) WIFI_TIME: Connecting to Wi-Fi: Hai Dang[0m
+[0;32mI (929) wifi:new:<13,0>, old:<1,0>, ap:<255,255>, sta:<13,0>, prof:1[0m
+[0;32mI (930) wifi:state: init -> auth (b0)[0m
+[0;32mI (937) wifi:state: auth -> assoc (0)[0m
+[0;32mI (954) wifi:state: assoc -> run (10)[0m
+[0;32mI (962) wifi:<ba-add>idx:0 (ifx:0, 24:0b:2a:53:3c:39), tid:5, ssn:0, winSize:64[0m
+[0;32mI (1061) wifi:connected with Hai Dang, aid = 5, channel 13, BW20, bssid = 24:0b:2a:53:3c:39[0m
+[0;32mI (1062) wifi:security: WPA2-PSK, phy: bgn, rssi: -41, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (1070) wifi:pm start, type: 1[0m
+
+[0;32mI (1070) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1130) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2083) esp_netif_handlers: sta ip: 192.168.1.9, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (2084) WIFI_TIME: Wi-Fi OK, IP: 192.168.1.9[0m
+[0;32mI (3180) wifi:<ba-add>idx:1 (ifx:0, 24:0b:2a:53:3c:39), tid:0, ssn:4, winSize:64[0m
+[0;31mE (17088) WIFI_TIME: NTP: TIMEOUT, time not synced[0m
+[0;31mE (17088) WIFI_TIME: Skipping NTP because time sync failed[0m
+[0;32mI (17089) GSHEET: Google Sheet logging task started[0m
+[0;32mI (17094) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (17158) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (17471) ACCESS: AS608 online, template capacity: 300[0m
+[0;32mI (17473) ACCESS: CAM UART receiver started: UART1 RX=GPIO32 TX=GPIO33, 115200 baud[0m
+[0;32mI (17474) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (17481) ACCESS: LD2410C presence=1[0m
+[0;32mI (17487) ACCESS: ============================================[0m
+[0;32mI (17492) ACCESS: SYSTEM READY.[0m
+[0;32mI (17495) ACCESS: ADMIN: * | A:next | B:back/delete | C:select | #:exit[0m
+[0;32mI (17503) ACCESS: ============================================[0m
+[0;32mI (17510) main_task: Returned from app_main()[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15632
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 15 2026 22:12:24[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=338f8h (211192) map[0m
+[0;32mI (177) esp_image: segment 1: paddr=00043920 vaddr=3ffb0000 size=04368h ( 17256) load[0m
+[0;32mI (183) esp_image: segment 2: paddr=00047c90 vaddr=40080000 size=08388h ( 33672) load[0m
+[0;32mI (197) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=ae520h (714016) map[0m
+[0;32mI (442) esp_image: segment 4: paddr=000fe548 vaddr=40088388 size=12278h ( 74360) load[0m
+[0;32mI (484) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (484) boot: Disabling RNG early entropy source...[0m
+[0;32mI (496) cpu_start: Multicore app[0m
+[0;32mI (505) cpu_start: Pro cpu start user code[0m
+[0;32mI (505) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (505) cpu_start: Application information:[0m
+[0;32mI (508) cpu_start: Project name:     esp32main[0m
+[0;32mI (513) cpu_start: App version:      1[0m
+[0;32mI (518) cpu_start: Compile time:     Oct 15 2026 22:11:37[0m
+[0;32mI (524) cpu_start: ELF file SHA256:  c126ec1dc...[0m
+[0;32mI (529) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (534) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (539) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (544) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (549) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (556) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (562) heap_init: At 3FFC73F0 len 00018C10 (99 KiB): DRAM[0m
+[0;32mI (568) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (574) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (581) heap_init: At 4009A600 len 00005A00 (22 KiB): IRAM[0m
+[0;32mI (588) spi_flash: detected chip: generic[0m
+[0;32mI (592) spi_flash: flash io: dio[0m
+[0;32mI (596) main_task: Started on CPU0[0m
+[0;32mI (600) main_task: Calling app_main()[0m
+[0;32mI (625) WIFI_TIME: Initializing Wi-Fi + NTP...[0m
+[0;32mI (629) wifi:wifi driver task: 3ffcf728, prio:23, stack:6656, core=0[0m
+[0;32mI (639) wifi:wifi firmware version: ff41b26[0m
+[0;32mI (639) wifi:wifi certification version: v7.0[0m
+[0;32mI (639) wifi:config NVS flash: enabled[0m
+[0;32mI (640) wifi:config nano formating: disabled[0m
+[0;32mI (644) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (649) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (653) wifi:Init management short buffer num: 32[0m
+[0;32mI (657) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (661) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (665) wifi:Init static rx buffer num: 10[0m
+[0;32mI (669) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (674) wifi_init: rx ba win: 6[0m
+[0;32mI (676) wifi_init: tcpip mbox: 32[0m
+[0;32mI (680) wifi_init: udp mbox: 6[0m
+[0;32mI (684) wifi_init: tcp mbox: 6[0m
+[0;32mI (688) wifi_init: tcp tx win: 5760[0m
+[0;32mI (692) wifi_init: tcp rx win: 5760[0m
+[0;32mI (696) wifi_init: tcp mss: 1440[0m
+[0;32mI (700) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (705) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (710) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (719) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (804) wifi:mode : sta (00:70:07:1a:13:c0)[0m
+[0;32mI (805) wifi:enable tsf[0m
+[0;32mI (808) WIFI_TIME: Connecting to Wi-Fi: Hai Dang[0m
+[0;32mI (833) wifi:new:<13,0>, old:<1,0>, ap:<255,255>, sta:<13,0>, prof:1[0m
+[0;32mI (835) wifi:state: init -> auth (b0)[0m
+[0;32mI (841) wifi:state: auth -> assoc (0)[0m
+[0;32mI (852) wifi:state: assoc -> run (10)[0m
+[0;32mI (859) wifi:<ba-add>idx:0 (ifx:0, 24:0b:2a:53:3c:39), tid:5, ssn:0, winSize:64[0m
+[0;32mI (965) wifi:<ba-add>idx:1 (ifx:0, 24:0b:2a:53:3c:39), tid:0, ssn:1, winSize:64[0m
+[0;32mI (972) wifi:connected with Hai Dang, aid = 5, channel 13, BW20, bssid = 24:0b:2a:53:3c:39[0m
+[0;32mI (972) wifi:security: WPA2-PSK, phy: bgn, rssi: -37, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (980) wifi:pm start, type: 1[0m
+
+[0;32mI (981) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1036) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1993) esp_netif_handlers: sta ip: 192.168.1.9, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (1994) WIFI_TIME: Wi-Fi OK, IP: 192.168.1.9[0m
+[0;31mE (17247) WIFI_TIME: NTP: TIMEOUT, time not synced[0m
+[0;31mE (17247) WIFI_TIME: Skipping NTP because time sync failed[0m
+[0;32mI (17248) GSHEET: Google Sheet logging task started[0m
+[0;32mI (17253) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (17318) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (17630) ACCESS: AS608 online, template capacity: 300[0m
+[0;32mI (17632) ACCESS: CAM UART receiver started: UART1 RX=GPIO32 TX=GPIO33, 115200 baud[0m
+[0;32mI (17634) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (17640) ACCESS: LD2410C presence=1[0m
+[0;32mI (17647) ACCESS: ============================================[0m
+[0;32mI (17651) ACCESS: SYSTEM READY.[0m
+[0;32mI (17655) ACCESS: ADMIN: * | A:next | B:back/delete | C:select | #:exit[0m
+[0;32mI (17662) ACCESS: ============================================[0m
+[0;32mI (17668) main_task: Returned from app_main()[0m
+[0;32mI (32744) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (32754) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (32755) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (32758) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15632
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 15 2026 22:12:24[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=338f8h (211192) map[0m
+[0;32mI (177) esp_image: segment 1: paddr=00043920 vaddr=3ffb0000 size=04368h ( 17256) load[0m
+[0;32mI (183) esp_image: segment 2: paddr=00047c90 vaddr=40080000 size=08388h ( 33672) load[0m
+[0;32mI (197) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=ae520h (714016) map[0m
+[0;32mI (442) esp_image: segment 4: paddr=000fe548 vaddr=40088388 size=12278h ( 74360) load[0m
+[0;32mI (484) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (484) boot: Disabling RNG early entropy source...[0m
+[0;32mI (496) cpu_start: Multicore app[0m
+[0;32mI (505) cpu_start: Pro cpu start user code[0m
+[0;32mI (505) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (505) cpu_start: Application information:[0m
+[0;32mI (508) cpu_start: Project name:     esp32main[0m
+[0;32mI (513) cpu_start: App version:      1[0m
+[0;32mI (518) cpu_start: Compile time:     Oct 15 2026 22:11:37[0m
+[0;32mI (524) cpu_start: ELF file SHA256:  c126ec1dc...[0m
+[0;32mI (529) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (534) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (539) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (544) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (549) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (556) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (562) heap_init: At 3FFC73F0 len 00018C10 (99 KiB): DRAM[0m
+[0;32mI (568) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (574) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (581) heap_init: At 4009A600 len 00005A00 (22 KiB): IRAM[0m
+[0;32mI (588) spi_flash: detected chip: generic[0m
+[0;32mI (592) spi_flash: flash io: dio[0m
+[0;32mI (596) main_task: Started on CPU0[0m
+[0;32mI (600) main_task: Calling app_main()[0m
+[0;32mI (625) WIFI_TIME: Initializing Wi-Fi + NTP...[0m
+[0;32mI (629) wifi:wifi driver task: 3ffcf728, prio:23, stack:6656, core=0[0m
+[0;32mI (639) wifi:wifi firmware version: ff41b26[0m
+[0;32mI (639) wifi:wifi certification version: v7.0[0m
+[0;32mI (639) wifi:config NVS flash: enabled[0m
+[0;32mI (640) wifi:config nano formating: disabled[0m
+[0;32mI (644) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (649) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (653) wifi:Init management short buffer num: 32[0m
+[0;32mI (657) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (661) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (665) wifi:Init static rx buffer num: 10[0m
+[0;32mI (669) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (674) wifi_init: rx ba win: 6[0m
+[0;32mI (677) wifi_init: tcpip mbox: 32[0m
+[0;32mI (681) wifi_init: udp mbox: 6[0m
+[0;32mI (684) wifi_init: tcp mbox: 6[0m
+[0;32mI (688) wifi_init: tcp tx win: 5760[0m
+[0;32mI (692) wifi_init: tcp rx win: 5760[0m
+[0;32mI (696) wifi_init: tcp mss: 1440[0m
+[0;32mI (700) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (705) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (710) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (719) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (801) wifi:mode : sta (00:70:07:1a:13:c0)[0m
+[0;32mI (802) wifi:enable tsf[0m
+[0;32mI (804) WIFI_TIME: Connecting to Wi-Fi: Hai Dang[0m
+[0;32mI (872) wifi:new:<13,0>, old:<1,0>, ap:<255,255>, sta:<13,0>, prof:1[0m
+[0;32mI (874) wifi:state: init -> auth (b0)[0m
+[0;32mI (881) wifi:state: auth -> assoc (0)[0m
+[0;32mI (901) wifi:state: assoc -> run (10)[0m
+[0;32mI (906) wifi:<ba-add>idx:0 (ifx:0, 24:0b:2a:53:3c:39), tid:5, ssn:0, winSize:64[0m
+[0;32mI (1005) wifi:connected with Hai Dang, aid = 5, channel 13, BW20, bssid = 24:0b:2a:53:3c:39[0m
+[0;32mI (1006) wifi:security: WPA2-PSK, phy: bgn, rssi: -47, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (1014) wifi:pm start, type: 1[0m
+
+[0;32mI (1014) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1025) wifi:<ba-add>idx:1 (ifx:0, 24:0b:2a:53:3c:39), tid:0, ssn:2, winSize:64[0m
+[0;32mI (1073) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2033) esp_netif_handlers: sta ip: 192.168.1.9, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (2034) WIFI_TIME: Wi-Fi OK, IP: 192.168.1.9[0m
+[0;32mI (2826) WIFI_TIME: NTP: time synchronized[0m
+[0;32mI (3037) WIFI_TIME: Local time: 21:51:23 04/11/2026[0m
+[0;32mI (3038) GSHEET: Google Sheet logging task started[0m
+[0;32mI (3038) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3100) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3414) ACCESS: AS608 online, template capacity: 300[0m
+[0;32mI (3416) ACCESS: CAM UART receiver started: UART1 RX=GPIO32 TX=GPIO33, 115200 baud[0m
+[0;32mI (3417) ACCESS: LD2410C presence=1[0m
+[0;32mI (3424) ACCESS: ============================================[0m
+[0;32mI (3428) ACCESS: SYSTEM READY.[0m
+[0;32mI (3432) ACCESS: ADMIN: * | A:next | B:back/delete | C:select | #:exit[0m
+[0;32mI (3439) ACCESS: ============================================[0m
+[0;32mI (3445) main_task: Returned from app_main()[0m
+[0;32mI (8545) ACCESS: === AUTHENTICATION SUCCESSFUL! RFID, ID: 102 ===[0m
+[0;32mI (9718) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (12251) ACCESS: === AUTHENTICATION SUCCESSFUL! RFID, ID: 105 ===[0m
+[0;32mI (14503) GSHEET: Following redirect (hop 0): 302 -> https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnTCs863NnicXozp7qUkvpc5wLx9j61QFoM-ru2YGphd3sf9g7ZYeQxip4chQCeDfIusjEjMzfnRmZB7kRLG-ViFcevVk-q34nX7YkpOE0wVY8PofMvF9lnkAQQ9vlZ1_iy_-fAxOp3DMlP8-_3pRahPTgHs1trtUrq3B4NgoEsZtkZzL99akLOUksNisa_I-0wL3JFFXmp2MHid97lHrYzTR706HNB49CVT56w6mAqksk51CapEQQlVDraBlCM_7ktwvJC9HB0eCoCWymRrkC3WzxgNrg&lib=MvZiUbeITAqCejb-8b4VxUJ0KOsqWi_zh[0m
+[0;32mI (15563) ACCESS: === AUTHENTICATION SUCCESSFUL! RFID, ID: 104 ===[0m
+[0;32mI (15635) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (15693) esp-x509-crt-bundle: Certificate validated[0m
+[0;33mW (17114) GSHEET: HTTP status 405, body: [0m
+[0;32mI (18213) esp-x509-crt-bundle: Certificate validated[0m
+[0;33mW (18655) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (18656) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (18659) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;33mW (19169) ACCESS: Unregistered RFID card[0m
+[0;33mW (20076) ACCESS: Unregistered RFID card[0m
+[0;33mW (21078) ACCESS: Unregistered RFID card[0m
+[0;32mI (22689) GSHEET: Following redirect (hop 0): 302 -> https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnS-y69IHGQwDFasy9vv6OzJOD1h6qZXpOr0QgwWLB-2giyIBb4OZy4Mu-fR5zMykOAus2883U2mAhVQ6XHcgz5oScQNR-QL2-UaL9bku9kRelUBZ5GpJhzNM6em8HKVx58a430HjQI0BJE7KHF2xpSVmCt6s_iZR47y0ENL3JYyUPQQdk5fsFUVuqfCBZRhuUxB2FDBB3Kb3piB7L-WgwlYTV-ZL1b1faCcdaaq63pQUCG4w0i0wTCDZ3vac5mHXZi-Os49yAyZsY97YZ9SZ6PeSoxKEw&lib=MvZiUbeITAqCejb-8b4VxUJ0KOsqWi_zh[0m
+[0;32mI (23824) esp-x509-crt-bundle: Certificate validated[0m
+[0;33mW (24783) ACCESS: Unregistered RFID card[0m
+[0;33mW (24878) GSHEET: HTTP status 405, body: [0m
+[0;32mI (25975) esp-x509-crt-bundle: Certificate validated[0m
+[0;33mW (27438) ACCESS: Unregistered RFID card[0m
+[0;33mW (28345) ACCESS: Unregistered RFID card[0m
+[0;32mI (29347) GSHEET: Following redirect (hop 0): 302 -> https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnQfnbaffz8aCFupcBShUddjfSEhDbdT_CzlfIyDCMbQEsvVdOBQoKmpJDpCYYwpkktYSE_WFA7DBiqQ38guh3-EkdNSHyE-R_mRbxIKzYNUIqW5p-xxyJnkoA8exIJ4L0ET2-6l6tQjREeyRquqnPy6PnImYJh_hh0snTJPS6jUKto_znpZzmMiGBzMaD5z_837tFGhBKuRG0Uz-4L51WAsvjUkvB5ga133ZuyyPMQ7x0_pS0pkMwo4Ak47UfwmjSgoefVKfu6Cq2qzc5DJsuGM8iwGkQ&lib=MvZiUbeITAqCejb-8b4VxUJ0KOsqWi_zh[0m
+[0;32mI (30490) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (30685) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (31536) GSHEET: HTTP status 405, body: [0m
+[0;33mW (36715) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (36716) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (36719) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (42244) ACCESS: === AUTHENTICATION SUCCESSFUL! RFID, ID: 101 ===[0m
+[0;32mI (43351) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (45736) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (49009) GSHEET: Following redirect (hop 0): 302 -> https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnSLZ7cz15u9qVSU1fso8su8IrFL9GeotfqplC0CJD5ARMpPDyehvbRlKeS-vOS-RpLxs2D7CMjYk37EA1_hDAuf01bhiEUgPA4F9qU4TBE2hG762OYESbKmeaGBgPP7X0vD_fbV6LG7rzDS4t2XG8JHCxXTeSnHdEfGyRNxK2ykb2aica1DOi4ywJOoD3GNYJ3le3HGPinKt2TofAQlUNfjPA27Sc7zl8jzIxL240lGx7Rtymu3SPXO7_-H2GOtQeENlNmMce_c4G7a_4laudQ7HGmzZw&lib=MvZiUbeITAqCejb-8b4VxUJ0KOsqWi_zh[0m
+[0;32mI (50178) esp-x509-crt-bundle: Certificate validated[0m
+[0;33mW (51412) GSHEET: HTTP status 405, body: [0m
+[0;33mW (54775) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (54776) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (54779) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (60786) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (72022) ACCESS: LD2410C presence=0[0m
+[0;33mW (72836) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (72836) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (72839) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (76346) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (90896) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (90897) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (90899) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (91606) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (106946) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (108956) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (108957) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (108960) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (121996) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (127016) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (127017) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (127020) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (137046) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (145076) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (145077) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (145080) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (152096) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (163136) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (163137) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (163140) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (167146) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (181196) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (181197) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (181200) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (182407) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (197746) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (199256) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (199257) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (199260) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (212797) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (217317) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (217317) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (217320) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (227847) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (235377) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (235378) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (235380) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (242897) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (253437) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (253438) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (253441) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (257947) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (271497) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (271498) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (271501) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (273208) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (288547) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (289557) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (289558) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (289561) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (303597) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (307617) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (307618) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (307621) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (310822) ACCESS: LD2410C presence=1[0m
+[0;32mI (318657) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (325687) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (325688) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (325691) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (333707) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (343747) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (343748) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (343751) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (348757) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (361808) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (361809) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (361811) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (364018) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (379358) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (379868) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (379869) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (379871) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (394408) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (397928) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (397929) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (397931) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (409458) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (415988) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (415989) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (415992) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (424508) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (434048) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (434049) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (434052) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (439558) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (452108) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (452109) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (452112) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (454819) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (470158) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (470168) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (470169) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (470172) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (485208) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (488228) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (488229) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (488232) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (500259) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (506289) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (506289) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (506292) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (515309) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (524349) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (524350) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (524353) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (530359) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (542409) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (542410) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (542413) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (545919) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (551157) ACCESS: Fingerprint match ID=101 score=161[0m
+[0;32mI (551160) ACCESS: === AUTHENTICATION SUCCESSFUL! FINGER, ID: 101 ===[0m
+[0;32mI (552292) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (555794) ACCESS: Fingerprint match ID=102 score=53[0m
+[0;32mI (555797) ACCESS: === AUTHENTICATION SUCCESSFUL! FINGER, ID: 102 ===[0m
+[0;32mI (558361) GSHEET: Following redirect (hop 0): 302 -> https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnTVTb1ULkSoz8VoSR17J5G7QV7kRRHCdWVaj3KryyJdmcnYvcXmHK-rce6NllS3-dD3-L_4BgA8IQ2mcLHpBXKFy8k-Tkx3ugMxbGfqVNWKJLCM74H7-hBat7XrJv58KqD6EvH1EyF0GzVI6-vpTNJBjdzbjnJUffQrXs8073VQmObSa3HamOxi5GKpokpdwj5V8HWgdo5Qjsig_WlpDM5wzTZ4aJ2Ax7h7yxwR6zaVl3MZRoWfaKeCCtEHjRqbAw-B_d1hq3SbwEpzdfB-RyQh8-7n7Q&lib=MvZiUbeITAqCejb-8b4VxUJ0KOsqWi_zh[0m
+[0;33mW (558395) ACCESS: Fingerprint no match (AS608 status=0x09)[0m
+[0;32mI (559788) esp-x509-crt-bundle: Certificate validated[0m
+[0;33mW (559852) ACCESS: Fingerprint no match (AS608 status=0x09)[0m
+[0;33mW (560469) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (560471) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (560473) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;33mW (560864) GSHEET: HTTP status 405, body: [0m
+[0;32mI (561180) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (561770) ACCESS: Fingerprint match ID=103 score=82[0m
+[0;32mI (561774) ACCESS: === AUTHENTICATION SUCCESSFUL! FINGER, ID: 103 ===[0m
+[0;32mI (562120) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (564731) ACCESS: Fingerprint match ID=104 score=275[0m
+[0;32mI (564735) ACCESS: === AUTHENTICATION SUCCESSFUL! FINGER, ID: 104 ===[0m
+[0;32mI (567168) GSHEET: Following redirect (hop 0): 302 -> https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnQTuia1uLIbQmUulRQh9NFXB4BDob1zRspvvfj1q9gUx-Pfeqfs7B68QjJFddoXcAkysEiph_VsFktgX3mnPxch2U5LQAu_vf-UKY0Py2Wxd0yCfO9o_vBKKn-BYaRZjEi3u0bLKaGEwwhh5210Bici_MWn8BqZBNfrpgt37_My5bWYcbHvVEMWJW7xVSR95ZdajIrrJALQREnIDYxZLcokVTOUx6-pzRzjWYHvp06YWWD4GDPyEnQnE7KMnTbPbz4gvcOwxUKmlllCo9xNgmR1pG2yjA&lib=MvZiUbeITAqCejb-8b4VxUJ0KOsqWi_zh[0m
+[0;32mI (569127) ACCESS: Fingerprint match ID=105 score=65[0m
+[0;32mI (569131) ACCESS: === AUTHENTICATION SUCCESSFUL! FINGER, ID: 105 ===[0m
+[0;32mI (569804) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (576519) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (578529) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (578530) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (578533) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;33mW (579783) HTTP_CLIENT: Connection timed out before data was ready![0m
+[0;31mE (579783) GSHEET: HTTP request failed (hop 1): ESP_ERR_HTTP_EAGAIN[0m
+[0;32mI (580862) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (584990) GSHEET: Following redirect (hop 0): 302 -> https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnQ76oXTYEfNNQJhNmIU1ARW_EaLJsCF3SWl0P3prAeF5AwNdvFsY0AA221G8wxMmKrAD_kLHHGRPb0gEshcVCi0IspVWjrDxmvCbWPTH9YdFoxfFGdeOrarsmjyulP2_je_CwNDtfRiH0eyXTpSIohNkLWZMtSlLcO_7_0ywzsgDEPDu-IZVkTdBJHLROdK8cWpghyCeSmOXKI9PzjOg0foP1WB9UAjEhROeL5mHsqOe987b5AipVaW6J5zpFWFD12dEvODm4u_YfSkZkpywTEQStrFog&lib=MvZiUbeITAqCejb-8b4VxUJ0KOsqWi_zh[0m
+[0;32mI (589240) esp-x509-crt-bundle: Certificate validated[0m
+[0;33mW (590346) GSHEET: HTTP status 405, body: [0m
+[0;32mI (591455) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (591569) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (594819) GSHEET: Following redirect (hop 0): 302 -> https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnQZDRoV7ysImxe_GAJ6RyNHtd7CfH6UnaKzN5PojfBoYJ-yYuWE3Pu4y7OiZQcXkC4k9dv7xy9AYeJ9AH0o19hcsQU-neu9-RmK-rkQ3DAUQ4TDHZ5TPHrUTO9JviqBJmllnOyvzUNPv-O9iz5p30zxNtTnEvTTW0hdMkd38HJtjVgcfVuGhHrbmP_Sk-cniHSOztJNBmnWFfyoKHgrNDYq1n-ZFuMEIvz5_5g8L8BEzh6bZ78ai8LttGjuveaQW80MI4kxGrvc-hVJd_WC8eaiXNnyIQ&lib=MvZiUbeITAqCejb-8b4VxUJ0KOsqWi_zh[0m
+[0;32mI (596358) esp-x509-crt-bundle: Certificate validated[0m
+[0;33mW (596589) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (596591) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (596593) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;33mW (597932) GSHEET: HTTP status 405, body: [0m
+[0;32mI (599026) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (604749) GSHEET: Following redirect (hop 0): 302 -> https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnQGeeopXLuoV1OiUMyKaA4cBr9VHPgGZmQ2U4CjUVgQnkZ4Aw4erPcSlP9tIydgw2YxFHBZMlAyDpsbD5-ZFYSWi_2dNz53GHFTS7No913bUdQg3tFpERbM2Ywuu8pUlAxW37Fk1cKhYokaH0SiUDn2Ds5fa_rO6wWju2zTgUDiQD8SmBAve00hpD3jn_UIPXGKqPbTDA9kQlmKlBO4-Rka0hNtLgSJtMVCVvNU2dgsSTKeNswwTOYkP2oZbtLYrzn1IzTFNVVTa6MgxlpALw-Ht2dG9Q&lib=MvZiUbeITAqCejb-8b4VxUJ0KOsqWi_zh[0m
+[0;32mI (606619) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (607353) esp-x509-crt-bundle: Certificate validated[0m
+[0;33mW (614649) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (614650) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (614653) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;33mW (620305) HTTP_CLIENT: Connection timed out before data was ready![0m
+[0;31mE (620305) GSHEET: HTTP request failed (hop 1): ESP_ERR_HTTP_EAGAIN[0m
+[0;32mI (621669) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (632709) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (632710) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (632713) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (636720) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (650770) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (650771) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (650773) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (651980) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (667320) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (668830) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (668831) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (668833) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (682370) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (686890) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (686891) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (686893) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (697420) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (704950) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (704951) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (704954) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (712470) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (723010) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (723011) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (723014) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (727520) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (741070) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (741071) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (741074) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (742781) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (758120) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (759130) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (759131) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (759134) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (773170) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (777190) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (777191) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (777194) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (788221) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (795250) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (795251) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (795254) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (803271) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (813311) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (813312) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (813314) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (818321) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (831371) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (831372) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (831375) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (833582) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (848921) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (849431) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (849432) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (849435) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (863971) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (867491) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (867492) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (867495) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (879021) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (885551) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (885552) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (885555) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (894071) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (903611) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (903612) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (903615) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (909121) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (921671) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (921672) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (921675) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (924382) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (939722) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (939732) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (939732) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (939735) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (954772) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (957792) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (957793) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (957795) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (969822) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (975852) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (975852) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (975855) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (984872) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (993912) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (993913) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (993916) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (999922) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1011972) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1011973) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1011976) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1015482) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1030032) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1030033) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1030036) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1030743) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (1046082) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1048092) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1048093) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1048096) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1061132) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1066153) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1066153) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1066156) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1076183) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1084213) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1084214) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1084217) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1091233) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1102273) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1102274) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1102277) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1106283) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1120333) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1120334) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1120337) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1121544) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (1136883) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1138393) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1138394) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1138397) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1151933) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1156453) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1156454) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1156457) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1166983) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1174513) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1174514) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1174517) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1182033) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1192573) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1192574) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1192577) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1197084) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1210634) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1210635) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1210637) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1212344) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (1227684) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1228694) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1228695) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1228698) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1242734) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1246754) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1246754) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1246758) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1257784) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1264814) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1264815) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1264818) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1272834) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1282874) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1282875) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1282878) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1287884) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1300934) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1300935) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1300938) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1303145) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (1318484) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1318994) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1318995) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1318998) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1333535) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1337054) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1337055) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1337058) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1348585) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1355115) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1355116) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1355118) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1363635) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1373175) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1373177) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1373179) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1378685) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1391235) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1391236) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1391239) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1393946) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (1409285) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1409295) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1409295) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1409298) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1424335) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1427355) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1427356) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1427359) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1439385) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1445415) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1445416) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1445419) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1454435) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1463475) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1463476) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1463479) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1469485) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1481536) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1481536) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1481539) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1485046) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1499596) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1499597) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1499599) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1500307) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (1515646) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1517656) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1517657) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1517660) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1530696) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1535716) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1535717) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1535720) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1545746) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1553776) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1553777) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1553780) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1560796) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1571836) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1571837) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1571840) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1575846) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1589896) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1589897) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1589900) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1591107) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (1606446) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1607956) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1607957) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1607960) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1621497) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1626017) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1626018) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1626020) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1636547) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1644077) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1644078) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1644081) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1651597) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1662137) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1662138) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1662141) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1666647) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1680197) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1680198) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1680201) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1681908) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (1697247) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1698257) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1698258) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1698261) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1712297) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1716317) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1716318) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1716321) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1727347) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1734377) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1734378) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1734381) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1742397) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1752438) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1752439) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1752441) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1757448) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1770498) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1770499) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1770502) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1772709) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (1788048) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1788558) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1788559) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1788562) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1803098) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1806618) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1806619) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1806622) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1818148) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1824678) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1824679) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1824682) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1833198) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1842738) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1842739) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1842742) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1848248) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1860798) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1860799) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1860802) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1863509) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (1878848) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1878858) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1878859) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1878862) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1893899) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1896919) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1896919) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1896922) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1908949) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1914979) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1914979) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1914982) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1923999) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1933039) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1933040) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1933043) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1939049) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1951099) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1951100) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1951103) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1954609) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1969159) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1969160) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1969163) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (1969870) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;32mI (1985209) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (1987219) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (1987220) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (1987223) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (2000259) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (2005279) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (2005280) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (2005283) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (2015309) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (2023340) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (2023340) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33mW (2023343) ACCESS: 00 00 00 00 55 54 53 54 01 00 00 00 00 00 00 00 [0m
+[0;32mI (2030360) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (2041400) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (2041400) ACCESS: 55 54 53 54 01 00 00 00 00 00 00 00 00 00 00 00 [0m
+[0;33

@@ -1,0 +1,1863 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15632
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 15 2026 22:12:24[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=338f8h (211192) map[0m
+[0;32mI (177) esp_image: segment 1: paddr=00043920 vaddr=3ffb0000 size=04368h ( 17256) load[0m
+[0;32mI (183) esp_image: segment 2: paddr=00047c90 vaddr=40080000 size=08388h ( 33672) load[0m
+[0;32mI (197) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=ae56ch (714092) map[0m
+[0;32mI (442) esp_image: segment 4: paddr=000fe594 vaddr=40088388 size=12278h ( 74360) load[0m
+[0;32mI (484) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (484) boot: Disabling RNG early entropy source...[0m
+[0;32mI (496) cpu_start: Multicore app[0m
+[0;32mI (505) cpu_start: Pro cpu start user code[0m
+[0;32mI (505) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (505) cpu_start: Application information:[0m
+[0;32mI (508) cpu_start: Project name:     esp32main[0m
+[0;32mI (514) cpu_start: App version:      1[0m
+[0;32mI (518) cpu_start: Compile time:     Oct 15 2026 22:11:37[0m
+[0;32mI (524) cpu_start: ELF file SHA256:  5089def5a...[0m
+[0;32mI (529) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (534) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (539) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (544) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (549) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (556) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (562) heap_init: At 3FFC73F0 len 00018C10 (99 KiB): DRAM[0m
+[0;32mI (568) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (574) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (581) heap_init: At 4009A600 len 00005A00 (22 KiB): IRAM[0m
+[0;32mI (588) spi_flash: detected chip: generic[0m
+[0;32mI (592) spi_flash: flash io: dio[0m
+[0;32mI (596) main_task: Started on CPU0[0m
+[0;32mI (600) main_task: Calling app_main()[0m
+[0;32mI (625) WIFI_TIME: Initializing Wi-Fi + NTP...[0m
+[0;32mI (630) wifi:wifi driver task: 3ffcf728, prio:23, stack:6656, core=0[0m
+[0;32mI (640) wifi:wifi firmware version: ff41b26[0m
+[0;32mI (640) wifi:wifi certification version: v7.0[0m
+[0;32mI (641) wifi:config NVS flash: enabled[0m
+[0;32mI (641) wifi:config nano formating: disabled[0m
+[0;32mI (645) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (650) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (654) wifi:Init management short buffer num: 32[0m
+[0;32mI (658) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (662) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (666) wifi:Init static rx buffer num: 10[0m
+[0;32mI (670) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (675) wifi_init: rx ba win: 6[0m
+[0;32mI (678) wifi_init: tcpip mbox: 32[0m
+[0;32mI (682) wifi_init: udp mbox: 6[0m
+[0;32mI (685) wifi_init: tcp mbox: 6[0m
+[0;32mI (689) wifi_init: tcp tx win: 5760[0m
+[0;32mI (693) wifi_init: tcp rx win: 5760[0m
+[0;32mI (697) wifi_init: tcp mss: 1440[0m
+[0;32mI (701) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (706) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (712) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (720) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (803) wifi:mode : sta (00:70:07:1a:13:c0)[0m
+[0;32mI (804) wifi:enable tsf[0m
+[0;32mI (806) WIFI_TIME: Connecting to Wi-Fi: Hai Dang[0m
+[0;32mI (910) wifi:new:<13,0>, old:<1,0>, ap:<255,255>, sta:<13,0>, prof:1[0m
+[0;32mI (911) wifi:state: init -> auth (b0)[0m
+[0;32mI (917) wifi:state: auth -> assoc (0)[0m
+[0;32mI (938) wifi:state: assoc -> run (10)[0m
+[0;32mI (944) wifi:<ba-add>idx:0 (ifx:0, 24:0b:2a:53:3c:39), tid:5, ssn:0, winSize:64[0m
+[0;32mI (1095) wifi:<ba-add>idx:1 (ifx:0, 24:0b:2a:53:3c:39), tid:0, ssn:1, winSize:64[0m
+[0;32mI (1098) wifi:connected with Hai Dang, aid = 4, channel 13, BW20, bssid = 24:0b:2a:53:3c:39[0m
+[0;32mI (1100) wifi:security: WPA2-PSK, phy: bgn, rssi: -41, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (1111) wifi:pm start, type: 1[0m
+
+[0;32mI (1111) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1120) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2130) esp_netif_handlers: sta ip: 192.168.1.7, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (2131) WIFI_TIME: Wi-Fi OK, IP: 192.168.1.7[0m
+[0;32mI (2253) WIFI_TIME: NTP: time synchronized[0m
+[0;32mI (2386) WIFI_TIME: Local time: 22:31:03 22/10/2026[0m
+[0;32mI (2387) GSHEET: Google Sheet logging task started[0m
+[0;32mI (2387) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (2449) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (2762) ACCESS: AS608 online, template capacity: 300[0m
+[0;32mI (2764) ACCESS: CAM UART receiver started: UART1 RX=GPIO32 TX=GPIO33, 115200 baud[0m
+[0;33mW (2767) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (2773) ACCESS: 00 60 11 70 4f 04 20 93 4e a8 89 ce 78 c9 8d 20 [0m
+[0;32mI (2774) ACCESS: LD2410C presence=1[0m
+[0;33mW (2780) ACCESS: 03 12 cd 34 69 47 94 00 8b 28 95 24 65 e6 ac 43 [0m
+[0;32mI (2776) ACCESS: ============================================[0m
+[0;32mI (2797) ACCESS: SYSTEM READY.[0m
+[0;32mI (2801) ACCESS: ADMIN: * | A:next | B:back/delete | C:select | #:exit[0m
+[0;32mI (2808) ACCESS: ============================================[0m
+[0;32mI (2814) main_task: Returned from app_main()[0m
+[0;33mW (3343) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (3344) ACCESS: e4 ee f5 de 14 e9 f8 20 54 48 89 9f e0 70 7c 08 [0m
+[0;33mW (3347) ACCESS: 40 b1 c3 6f c0 8a 68 b2 02 c4 20 25 14 a0 66 52 [0m
+[0;33mW (3738) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (3739) ACCESS: 05 2c d6 18 10 c9 f0 02 9b 00 c4 09 2f 13 ad 44 [0m
+[0;33mW (3741) ACCESS: 7c 93 c2 02 20 cb 20 01 0f 45 c1 0b 4a a9 b6 9b [0m
+[0;33mW (4085) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (4086) ACCESS: 22 30 82 a3 ae 6d 6b 6c e9 85 d5 c2 97 f7 34 09 [0m
+[0;33mW (4088) ACCESS: e6 cc 41 da 06 20 3b 89 78 26 e9 27 be c6 7b 82 [0m
+[0;33mW (4589) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (4590) ACCESS: 15 76 06 82 06 42 fd 24 c5 b7 58 22 b0 5b 53 21 [0m
+[0;33mW (4592) ACCESS: 23 ba e2 20 6a 01 bc 1b 77 10 ea 44 1a 1c 19 e0 [0m
+[0;33mW (5059) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (5060) ACCESS: 51 b0 32 1b 40 44 11 64 5b e8 15 08 d8 bb d8 8a [0m
+[0;33mW (5062) ACCESS: 31 4b 09 20 36 93 15 0b c9 84 42 d4 a4 00 65 de [0m
+[0;33mW (5840) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (5841) ACCESS: 58 c0 ee 9a 00 cc e1 90 07 14 08 9c e1 8a 92 da [0m
+[0;33mW (5844) ACCESS: 15 80 35 08 12 02 6c 03 20 41 d1 6e 44 61 ce e7 [0m
+[0;33mW (6837) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (6838) ACCESS: 52 5f cd e9 01 8d 46 f6 72 19 03 20 0f 43 3d 27 [0m
+[0;33mW (6840) ACCESS: cd cb 08 40 4a 42 1d 3c 9d e1 e0 18 5d 84 13 2e [0m
+[0;33mW (8618) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (8619) ACCESS: 2e 81 93 1c 05 7c 20 7d 58 92 7d 0c 79 27 d4 36 [0m
+[0;33mW (8621) ACCESS: 85 c2 e9 c0 82 7b 80 36 40 80 18 1f 90 48 a5 00 [0m
+[0;33mW (9127) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (9128) ACCESS: 0e 00 fc 06 14 0c 17 96 95 e2 0c 45 89 c2 2b 2e [0m
+[0;33mW (9130) ACCESS: 12 d5 78 c7 00 82 2d 30 14 8b 8a 20 20 0e ca 37 [0m
+[0;33mW (10475) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (10476) ACCESS: 09 fe 64 84 e5 82 00 81 f1 00 ac 03 18 de 45 78 [0m
+[0;33mW (10479) ACCESS: 64 21 05 10 05 ca d5 cc 4d ea 42 4e 74 d2 03 bc [0m
+[0;33mW (10957) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (10958) ACCESS: e1 64 4c 4d d5 30 50 00 20 e4 04 26 b2 1b dc eb [0m
+[0;33mW (10960) ACCESS: 23 57 56 10 bd c9 09 86 92 3a c2 87 03 68 00 20 [0m
+[0;33mW (11615) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (11616) ACCESS: fe 09 0e 14 95 80 41 2d 9c 6b 31 83 82 08 38 4e [0m
+[0;33mW (11618) ACCESS: 85 74 d3 e4 65 00 fc 1e 3c c0 19 94 92 c5 6b e2 [0m
+[0;33mW (12073) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (12074) ACCESS: 02 de ae 61 97 a2 80 48 04 38 c8 00 fc 12 c8 b0 [0m
+[0;33mW (12077) ACCESS: 0f 38 39 0e c1 59 ba 34 d8 13 47 7d 84 ca 88 88 [0m
+[0;33mW (12447) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (12448) ACCESS: c8 e2 44 cc ad 25 c1 4f ce 02 19 00 20 a3 10 33 [0m
+[0;33mW (12450) ACCESS: a5 78 61 d2 93 03 ef a8 23 04 98 01 4c 5b 9f 03 [0m
+[0;33mW (14151) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (14152) ACCESS: 50 0f 82 82 df 13 e0 4b 0c 39 4e 80 dc 81 f9 da [0m
+[0;33mW (14155) ACCESS: 00 20 2e d1 a0 36 f4 44 11 59 a2 43 39 72 17 42 [0m
+[0;32mI (15689) ACCESS: CAM UART receiver alive (RX pending=6 bytes)[0m
+[0;33mW (16418) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (16419) ACCESS: 50 ad f2 69 71 43 7c e6 63 cb 64 b4 02 20 18 15 [0m
+[0;33mW (16421) ACCESS: 04 8a 01 9c 42 4c 01 d4 fc 74 3f ce 58 bd 55 d8 [0m
+[0;33mW (17786) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (17787) ACCESS: 04 92 db 24 20 00 20 2c 91 c9 01 18 8b c2 c4 c9 [0m
+[0;33mW (17789) ACCESS: e2 6e e1 bc 65 ac 1c 2a 05 19 20 c2 66 2c 65 39 [0m
+[0;33mW (18879) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (18880) ACCESS: 98 80 f0 3a ce 00 05 0b 66 6a fb 67 b8 ea e2 11 [0m
+[0;33mW (18882) ACCESS: e9 4d 63 ac d9 e8 5a d5 aa c0 1e a6 00 20 27 3a [0m
+[0;33mW (19716) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (19717) ACCESS: b9 5b 1b f4 04 6a a4 ca c7 fa a9 19 1c 22 88 20 [0m
+[0;33mW (19719) ACCESS: 00 a1 99 73 b4 c4 3a df cb 98 18 3f b2 a4 ce 30 [0m
+[0;33mW (21050) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (21051) ACCESS: 31 68 2a aa 54 25 93 2e 78 48 dd 64 12 75 58 e2 [0m
+[0;33mW (21054) ACCESS: ca 57 65 3e 95 fc 39 a5 41 20 84 a0 c4 d7 a0 a6 [0m
+[0;33mW (22159) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (22160) ACCESS: 58 16 05 71 8f f2 1c 67 9a 00 20 a0 2d 0b 9d 0c [0m
+[0;33mW (22163) ACCESS: bf 92 eb 27 37 b3 d0 48 26 94 9c 02 0c 36 52 e4 [0m
+[0;33mW (22721) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (22722) ACCESS: 80 80 a9 59 80 ea fe 5c e7 98 5e 77 f5 63 a4 f0 [0m
+[0;33mW (22725) ACCESS: 84 60 5f da 05 43 0b 30 86 79 0b fa 00 20 14 f2 [0m
+[0;33mW (24351) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (24352) ACCESS: 1e 22 20 00 20 14 a1 f0 82 d7 00 d8 67 12 0b 88 [0m
+[0;33mW (24354) ACCESS: 23 13 a1 73 8e 40 33 5c bf d5 1b 93 02 20 60 c6 [0m
+[0;33mW (24738) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (24739) ACCESS: ac 14 41 b5 d8 10 01 20 32 2a 08 fa a9 09 c2 43 [0m
+[0;33mW (24742) ACCESS: 0e d8 8b 62 50 88 3a 06 d0 90 01 04 20 34 03 6e [0m
+[0;33mW (25938) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (25939) ACCESS: a4 80 88 5d 14 30 14 20 66 06 c2 16 14 75 87 25 [0m
+[0;33mW (25942) ACCESS: 22 43 00 2f 94 48 26 10 fb a1 84 70 06 8f 21 fc [0m
+[0;33mW (26849) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (26850) ACCESS: 66 00 87 90 00 20 45 b8 d1 00 33 70 3e 89 2e 82 [0m
+[0;33mW (26853) ACCESS: a4 1b a8 22 3a fc 5d c5 4f 17 44 f2 c1 00 20 13 [0m
+[0;33mW (28506) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (28507) ACCESS: a2 59 b2 4b 19 25 a4 01 20 a4 22 58 00 44 b0 39 [0m
+[0;33mW (28509) ACCESS: fc 4d 03 7e 4a 00 05 94 8e d3 27 1e b5 69 be c0 [0m
+[0;33mW (29408) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (29409) ACCESS: d8 80 45 c2 ca f9 07 a2 24 06 74 01 90 21 83 c4 [0m
+[0;33mW (29412) ACCESS: e2 00 20 00 11 4b 50 c9 aa 91 14 10 03 11 01 49 [0m
+[0;32mI (30759) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (31080) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (31081) ACCESS: a6 10 a0 03 58 1d 3e 2e 16 d8 01 20 a6 1f 45 43 [0m
+[0;33mW (31083) ACCESS: 5f c5 c6 0f 22 df 5a 51 10 82 ea 2d 8a 66 48 e0 [0m
+[0;33mW (31519) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (31520) ACCESS: 01 97 d2 16 eb 2d 8d 4e 00 20 80 3e 50 7f 85 4b [0m
+[0;33mW (31523) ACCESS: d8 43 92 24 4c 48 71 e2 0b 11 c1 45 10 85 20 58 [0m
+[0;33mW (33298) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (33299) ACCESS: a7 71 08 26 9a ac 91 21 45 15 d8 3f d0 34 2b 84 [0m
+[0;33mW (33302) ACCESS: 60 19 34 02 04 20 1e 63 e0 17 fe 81 25 41 62 01 [0m
+[0;33mW (34511) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (34511) ACCESS: 3e 44 58 53 00 1e c2 03 20 54 63 02 6f 25 5b 02 [0m
+[0;33mW (34514) ACCESS: 68 d0 05 7b 38 08 c0 2d 01 22 33 91 01 d4 2f 2d [0m
+[0;33mW (35255) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (35256) ACCESS: 62 60 c0 63 d5 33 5c 39 36 69 01 dd 00 fc 50 5d [0m
+[0;33mW (35259) ACCESS: 30 9a 2a 9d 02 4c 02 19 45 25 2c b0 18 2f c9 d6 [0m
+[0;33mW (35747) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (35748) ACCESS: 02 91 59 2c d5 44 40 29 04 88 88 e1 61 39 30 1a [0m
+[0;33mW (35751) ACCESS: 41 6c 8a 41 15 20 00 20 64 63 5f 04 25 83 05 bc [0m
+[0;33mW (37254) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (37254) ACCESS: 4b b0 08 07 41 d5 24 7d 90 a1 22 58 03 3f 82 60 [0m
+[0;33mW (37257) ACCESS: 72 26 58 e4 7e 73 01 fc 64 4a ad 58 80 5e b0 c0 [0m
+[0;33mW (37805) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (37806) ACCESS: 7a 02 20 51 e2 ab 21 9b 83 b1 80 94 40 2a 01 b0 [0m
+[0;33mW (37808) ACCESS: 18 19 f4 d8 d1 a5 aa 82 e9 b5 00 20 57 10 6d d2 [0m
+[0;33mW (39001) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (39002) ACCESS: 28 1f ac 3b e0 d8 05 98 9f 5a 48 60 cd 36 01 20 [0m
+[0;33mW (39005) ACCESS: 50 00 18 0c c3 78 f1 81 3f 20 5c 4b 08 26 64 00 [0m
+[0;33mW (40687) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (40687) ACCESS: 80 36 da 00 20 e1 86 c6 4c d2 05 c3 00 40 49 c8 [0m
+[0;33mW (40690) ACCESS: 63 3c 1c aa c9 b2 c8 69 79 24 31 9c 05 20 46 0c [0m
+[0;33mW (41485) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (41486) ACCESS: 4b 01 20 a2 8d e8 c6 28 a6 af 31 18 84 66 05 de [0m
+[0;33mW (41489) ACCESS: d2 7f c1 bf 31 14 44 00 05 66 06 20 71 a6 34 69 [0m
+[0;33mW (42325) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (42326) ACCESS: 60 11 95 a0 c3 f3 78 03 20 ca 29 87 12 4a 34 54 [0m
+[0;33mW (42328) ACCESS: 0b a8 51 2d c4 48 8e 9a 36 30 43 eb 22 21 02 a2 [0m
+[0;33mW (43267) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (43268) ACCESS: 6e 37 80 32 22 56 02 bc dd a0 9a 28 67 d6 35 97 [0m
+[0;33mW (43271) ACCESS: 8b 46 30 52 29 14 0e 44 60 97 35 34 9d 18 36 05 [0m
+[0;33mW (43612) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (43613) ACCESS: e5 73 71 70 18 46 03 30 ce 51 a3 21 7f 76 00 00 [0m
+[0;33mW (43615) ACCESS: 20 c6 78 56 cb 42 52 41 36 e6 20 26 8a 88 22 4c [0m
+[0;33mW (44188) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (44189) ACCESS: 20 89 50 9e 84 7e 5c 54 8a 5d 8a 6a a9 fa 4b e1 [0m
+[0;33mW (44191) ACCESS: 0f 6a 20 1c da 11 8f 50 05 20 0c 56 6c a0 f2 3a [0m
+[0;33mW (45009) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (45010) ACCESS: 30 91 14 90 06 20 86 48 81 17 94 1a 02 c0 24 bc [0m
+[0;33mW (45012) ACCESS: 01 e4 35 12 ab 93 24 d5 72 29 64 a0 9e 00 20 10 [0m
+[0;33mW (45549) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (45550) ACCESS: 99 00 b3 6a b2 44 10 91 2b 0f 06 4d d3 db e5 09 [0m
+[0;33mW (45553) ACCESS: 44 93 00 20 11 9c ea 00 90 41 8f c2 25 c4 26 56 [0m
+[0;33mW (45892) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (45893) ACCESS: f9 00 00 20 80 ef c0 4b 4b d1 ea 10 03 63 40 4a [0m
+[0;33mW (45896) ACCESS: 99 3d b2 a0 1d 0e a0 32 79 83 17 01 bc 90 0e 34 [0m
+[0;32mI (45917) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (46745) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (46746) ACCESS: 02 20 a0 06 ab 9f e1 00 f1 bc 24 ae 85 b7 ab 3d [0m
+[0;33mW (46748) ACCESS: 94 80 90 01 52 0c 03 e1 b3 01 20 20 43 56 70 25 [0m
+[0;33mW (48912) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (48913) ACCESS: c0 b4 40 40 28 f3 63 5e 05 fc 4a 26 24 62 32 20 [0m
+[0;33mW (48915) ACCESS: dc 91 01 94 89 a4 bf fb b0 04 cd 0e 20 4d 80 61 [0m
+[0;33mW (50010) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (50011) ACCESS: 5c a0 48 80 00 fa b2 84 09 bc 04 43 93 08 31 7e [0m
+[0;33mW (50014) ACCESS: 65 04 fc 08 a9 d2 8f b2 18 80 a3 a0 10 39 8d b7 [0m
+[0;33mW (51001) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (51002) ACCESS: bf 42 00 20 cd 56 61 4e f9 67 12 b8 09 90 0b d3 [0m
+[0;33mW (51004) ACCESS: d1 f6 7b 7f 48 79 04 20 b7 18 9a 06 fc e8 6e 7a [0m
+[0;33mW (51780) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (51781) ACCESS: 15 6f 77 68 a4 10 d8 05 20 c0 a3 81 e4 d0 9a 2f [0m
+[0;33mW (51784) ACCESS: 4b 75 f5 05 ba b3 a8 d8 ca 1d 1b af 1c 09 4e 24 [0m
+[0;33mW (52591) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (52592) ACCESS: 4c 50 12 d5 37 e1 00 20 34 77 1b bc d9 8b 77 de [0m
+[0;33mW (52595) ACCESS: a8 ff 14 18 00 ac 72 2a d0 16 00 01 af 4e 06 20 [0m
+[0;33mW (53612) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (53614) ACCESS: 89 1e 63 98 02 f3 a1 4f cc 89 03 06 6a 50 08 fe [0m
+[0;33mW (53616) ACCESS: 40 00 20 73 d0 1b 1b d9 0b 32 21 c4 29 20 96 50 [0m
+[0;33mW (54561) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (54562) ACCESS: f8 06 2b 12 f6 e4 09 0f 53 03 20 39 00 90 87 50 [0m
+[0;33mW (54565) ACCESS: 70 63 95 18 f7 33 05 d2 20 58 21 ba 98 95 cf f8 [0m
+[0;33mW (55316) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (55317) ACCESS: 64 08 b2 44 d0 05 19 b7 4e 0e 81 10 60 80 d4 40 [0m
+[0;33mW (55320) ACCESS: c6 34 c1 0b 4b e1 d5 02 20 98 8d 51 f1 95 a0 d2 [0m
+[0;33mW (55779) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (55780) ACCESS: 21 b2 12 f6 6e 7d cf 16 30 4e 79 24 20 02 18 6a [0m
+[0;33mW (55783) ACCESS: 88 56 a1 2c e0 5c c9 33 42 20 18 10 32 32 86 7a [0m
+[0;33mW (59377) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (59378) ACCESS: fc 0c fa 58 6a 30 d2 22 0e a8 c0 f2 13 d0 00 20 [0m
+[0;33mW (59381) ACCESS: b0 24 e6 a1 63 04 a2 8e 08 02 01 84 b1 03 68 8b [0m
+[0;33mW (60226) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (60227) ACCESS: 4f 96 d0 91 19 00 11 6d 17 be 06 d7 66 b1 00 20 [0m
+[0;33mW (60230) ACCESS: 48 23 34 f6 05 a1 c4 08 68 02 81 67 60 bb 67 72 [0m
+[0;33mW (60605) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (60606) ACCESS: 88 34 b1 54 ab b1 43 b2 b0 96 68 00 20 a8 dc 3d [0m
+[0;33mW (60609) ACCESS: 94 f0 ff 26 52 43 02 43 3f 50 17 64 68 94 a0 d9 [0m
+[0;33mW (60957) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (60958) ACCESS: 02 12 cc 36 00 a8 a5 68 5b b2 94 f2 62 cf 39 63 [0m
+[0;33mW (60961) ACCESS: 00 fc 34 21 15 d6 32 30 00 a0 69 53 8c 21 03 08 [0m
+[0;32mI (61558) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (61858) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (61859) ACCESS: 8b 5e 8f 26 8b 2e 80 4b 5e 86 b9 61 dd c6 16 33 [0m
+[0;33mW (61862) ACCESS: e2 e4 b9 31 00 45 00 20 e0 c5 73 54 db 30 67 f1 [0m
+[0;33mW (62334) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (62335) ACCESS: 45 20 60 26 91 12 db 54 8c 4b 72 8e 10 04 00 ac [0m
+[0;33mW (62338) ACCESS: 52 c0 3f 37 05 b3 c5 8a 1b 03 08 20 ad c5 1a 21 [0m
+[0;33mW (62670) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (62671) ACCESS: 52 95 96 58 90 8d 8d f3 67 25 0f 50 e1 52 30 5d [0m
+[0;33mW (62673) ACCESS: 00 20 85 41 13 80 64 48 93 23 4c 21 20 2a 13 0e [0m
+[0;33mW (63424) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (63425) ACCESS: 16 f8 c4 00 20 90 b1 60 d8 bd 71 ba 03 48 63 c9 [0m
+[0;33mW (63427) ACCESS: 42 c0 08 25 1c 30 b9 ab 4f 52 be 69 5c 7a 00 20 [0m
+[0;33mW (64242) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (64243) ACCESS: 60 00 20 98 4b 2b 6f 00 3a 1a 3a fc 04 3a 02 40 [0m
+[0;33mW (64245) ACCESS: a8 1c 1f 2f 95 1a 03 11 64 5d 37 11 00 20 10 c9 [0m
+[0;33mW (64554) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (64555) ACCESS: fc c8 e4 07 26 8b d2 2a c1 11 7e 6e 32 23 e8 23 [0m
+[0;33mW (64558) ACCESS: a0 00 20 9b e5 a8 1d 11 e3 34 1d cb 10 25 42 28 [0m
+[0;33mW (65279) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (65280) ACCESS: b3 10 79 93 6e bf 4c 13 c5 25 7a b7 bc a2 80 e9 [0m
+[0;33mW (65283) ACCESS: 50 b4 40 40 20 90 63 24 98 1c a1 b3 b4 b1 53 ed [0m
+[0;33mW (66436) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (66437) ACCESS: 18 84 00 33 e3 21 a5 10 9c 08 02 ee 13 d2 3b df [0m
+[0;33mW (66440) ACCESS: 7f 00 fc a4 06 20 e7 30 60 8e 02 cb 30 2e 01 14 [0m
+[0;33mW (67148) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (67148) ACCESS: 40 72 34 60 a3 a8 43 a2 86 30 e6 bd 15 df 62 e9 [0m
+[0;33mW (67151) ACCESS: 1b 00 ac d0 33 98 1c 2c a5 36 20 00 12 8b 04 20 [0m
+[0;33mW (67672) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (67673) ACCESS: 2a 89 41 c8 bd 2c e0 c0 b1 00 20 b3 5c 48 9e a3 [0m
+[0;33mW (67675) ACCESS: c8 58 92 e2 b8 c3 42 85 87 1a 0b d3 64 06 0c 04 [0m
+[0;33mW (68237) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (68239) ACCESS: a1 34 98 94 49 43 a0 5a 03 00 20 c8 a1 97 67 77 [0m
+[0;33mW (68241) ACCESS: e2 b8 80 c0 90 85 e0 72 8c 18 2b 1c 78 28 a8 14 [0m
+[0;33mW (69184) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (69186) ACCESS: 06 98 38 34 20 46 42 ae 80 c5 8c a9 14 83 f4 00 [0m
+[0;33mW (69188) ACCESS: 20 10 4f 49 e5 04 b7 26 03 b2 ba 09 a5 75 08 26 [0m
+[0;33mW (69992) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (69993) ACCESS: 89 00 00 20 14 05 c1 6e 28 51 a2 1c 5e 25 23 22 [0m
+[0;33mW (69996) ACCESS: e0 a1 07 68 f7 47 03 9b 0b 40 10 19 f2 00 20 8c [0m
+[0;33mW (70378) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (70379) ACCESS: 84 7f 08 18 12 90 34 79 4d a3 fb b3 67 c8 9d 02 [0m
+[0;33mW (70381) ACCESS: 00 53 20 00 20 21 0e e0 48 81 02 cd 22 ea 48 94 [0m
+[0;33mW (71301) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (71302) ACCESS: ae 09 99 24 04 17 bf a4 11 b7 aa 35 0c 20 29 36 [0m
+[0;33mW (71305) ACCESS: 3b 20 f4 29 e0 00 20 10 82 40 52 a2 cc 7d 50 eb [0m
+[0;33mW (72838) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (72839) ACCESS: 09 5c 1d 7c 83 1a 50 49 c5 cc 38 36 28 3a 2d 00 [0m
+[0;33mW (72842) ACCESS: ac 2a a5 41 75 00 b9 15 00 64 10 43 b5 fe 85 3c [0m
+[0;33mW (73496) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (73496) ACCESS: 9e a0 09 4b 33 c4 06 f2 01 00 20 78 93 04 b9 d4 [0m
+[0;33mW (73499) ACCESS: 71 1d 72 23 c6 d8 54 f9 3b 07 92 2b 1a 3e db db [0m
+[0;33mW (74279) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (74280) ACCESS: ab 03 90 c0 85 2d 70 60 43 c6 0e a3 00 fc d4 ce [0m
+[0;33mW (74283) ACCESS: 32 00 11 e0 a9 0f 40 9c 07 92 50 0c b3 09 03 3c [0m
+[0;33mW (74644) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (74645) ACCESS: 71 3f 1f 95 2c 25 9a f4 f4 88 99 9a 00 20 91 90 [0m
+[0;33mW (74648) ACCESS: 70 4e ac e2 14 8f 4e 3d 01 07 28 e8 37 c5 68 28 [0m
+[0;33mW (75348) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (75349) ACCESS: 01 26 2c 8e 01 39 02 a3 94 69 25 8a a2 00 29 7e [0m
+[0;33mW (75352) ACCESS: 92 56 00 20 62 50 00 68 26 0c 81 54 c8 68 38 65 [0m
+[0;32mI (76597) ACCESS: CAM UART receiver alive (RX pending=10 bytes)[0m
+[0;33mW (76877) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (76878) ACCESS: d1 a5 f9 b4 03 46 79 0c d8 84 7d ee 01 20 8c 50 [0m
+[0;33mW (76881) ACCESS: ed ee 9a 32 3c 78 10 55 95 12 74 55 12 83 90 6f [0m
+[0;33mW (77424) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (77425) ACCESS: 1b c3 a1 55 25 77 a8 a0 ab 34 03 a2 16 db 33 4a [0m
+[0;33mW (77428) ACCESS: fd a6 7d fb 86 05 00 20 b6 c2 35 47 70 60 86 18 [0m
+[0;33mW (78333) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (78334) ACCESS: f8 28 ef 8a 7f 0c 09 e0 25 00 20 2a 5a e1 ba 40 [0m
+[0;33mW (78337) ACCESS: 63 de 6e c6 00 a3 05 68 40 2e 26 a3 80 2b 25 19 [0m
+[0;33mW (78912) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (78913) ACCESS: 26 ce 54 4c 4c 00 20 40 a9 5c fa a6 3d 0b 60 b4 [0m
+[0;33mW (78916) ACCESS: 53 d1 90 07 90 94 33 01 81 0c 8e ce 23 4d 49 03 [0m
+[0;33mW (79617) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (79618) ACCESS: cf 59 04 84 54 44 1b 8a 6a f0 50 12 0f cd 42 28 [0m
+[0;33mW (79620) ACCESS: 51 20 82 44 74 08 de f8 33 a1 23 1d 82 28 16 90 [0m
+[0;33mW (80660) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (80661) ACCESS: 98 b8 7a 75 e0 9e f6 03 00 20 b2 a2 87 27 e0 8e [0m
+[0;33mW (80663) ACCESS: 20 b2 5a dd 74 61 0b 50 86 c4 2c 82 56 6d f5 6c [0m
+[0;33mW (81359) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (81359) ACCESS: 63 8d c0 a3 d7 0c 40 65 08 91 20 ac 8d 26 4f f5 [0m
+[0;33mW (81362) ACCESS: 06 43 08 20 c0 6d c2 a0 2a 46 55 34 a8 79 22 6e [0m
+[0;33mW (82655) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (82656) ACCESS: 17 8e 43 c9 9a 27 43 14 4f 38 2a 0b 1c 9a 55 52 [0m
+[0;33mW (82659) ACCESS: 48 22 00 20 f4 5a c3 ed 29 28 4a 13 21 90 5b 35 [0m
+[0;33mW (84083) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (84084) ACCESS: a0 a0 d6 b3 f6 a0 5a 31 52 1d 98 05 61 00 15 de [0m
+[0;33mW (84086) ACCESS: b3 a7 44 41 04 9b 03 20 95 c0 58 81 0b c1 01 22 [0m
+[0;33mW (84694) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (84695) ACCESS: 24 80 93 c6 14 b8 15 8b 00 20 81 1f ac dd 2e 06 [0m
+[0;33mW (84697) ACCESS: a0 70 a4 00 30 06 8b 03 82 18 e3 d6 aa 99 56 20 [0m
+[0;33mW (85537) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (85538) ACCESS: 03 2c 88 19 73 98 90 6f c2 38 67 0c 9b d6 00 20 [0m
+[0;33mW (85540) ACCESS: 64 8f 00 43 53 52 55 f4 22 d1 ca a5 68 16 32 38 [0m
+[0;33mW (86731) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (86732) ACCESS: 0e 20 44 e6 75 d6 09 a2 2f 90 59 5b d3 90 15 98 [0m
+[0;33mW (86734) ACCESS: 15 4a b5 09 c5 60 4c 85 05 01 20 4c b4 04 18 53 [0m
+[0;33mW (87300) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (87301) ACCESS: 20 b8 50 10 43 c8 b0 0f a4 94 24 19 d6 38 a7 00 [0m
+[0;33mW (87304) ACCESS: 9e 0c c0 0c 1a 31 48 fd 01 20 42 48 26 1c d4 b0 [0m
+[0;33mW (87745) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (87746) ACCESS: 20 e0 86 40 8b 12 83 29 2c d8 31 dc b8 42 81 0f [0m
+[0;33mW (87748) ACCESS: be 57 80 73 73 86 55 b1 02 20 cb f3 b9 cc 83 33 [0m
+[0;33mW (88296) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (88297) ACCESS: 60 e5 10 23 02 20 41 31 13 8c 2f 22 76 8d 14 42 [0m
+[0;33mW (88299) ACCESS: 02 a1 75 0b 86 24 b4 9f c0 8f 22 66 58 02 20 5b [0m
+[0;33mW (89138) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (89139) ACCESS: 08 47 b5 63 1a 9e 72 62 4d 57 94 10 00 20 88 e0 [0m
+[0;33mW (89142) ACCESS: 11 31 fc 00 d9 26 31 a1 f1 b1 2a 41 38 68 6d ee [0m
+[0;33mW (90795) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (90796) ACCESS: 81 c0 62 99 81 e9 94 e0 1c ca b5 46 ce 08 20 12 [0m
+[0;33mW (90799) ACCESS: b6 35 1b 22 73 17 05 10 80 24 86 65 90 01 17 c2 [0m
+[0;32mI (91719) ACCESS: CAM UART receiver alive (RX pending=9 bytes)[0m
+[0;33mW (92421) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (92422) ACCESS: 49 01 20 80 44 22 1b 87 b0 40 b8 22 ed 9b 44 00 [0m
+[0;33mW (92425) ACCESS: 14 f4 e7 41 38 74 35 a5 da 00 00 ac b4 9e c3 80 [0m
+[0;33mW (93286) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (93287) ACCESS: d7 01 20 d8 0c ca 22 3d 16 ff 88 13 e3 d1 26 10 [0m
+[0;33mW (93289) ACCESS: 71 82 db fb 40 c2 c0 b7 d3 6c 00 20 15 f2 76 40 [0m
+[0;33mW (93749) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (93750) ACCESS: 00 00 4e 70 f2 60 27 1c 00 17 f5 73 09 20 80 39 [0m
+[0;33mW (93752) ACCESS: 43 8a 0b 08 21 8c 83 06 31 00 1a 09 17 d1 01 60 [0m
+[0;33mW (94864) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (94865) ACCESS: b4 1c 29 d9 08 b4 d3 cb 0b fc 38 40 6e 27 a4 89 [0m
+[0;33mW (94868) ACCESS: 4f d4 36 50 08 ce e0 d4 d5 70 81 1d 99 64 33 08 [0m
+[0;33mW (97457) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (97458) ACCESS: e0 96 fc 42 d7 56 0f 00 20 d2 2a 42 b8 f4 69 10 [0m
+[0;33mW (97461) ACCESS: 90 eb 99 be c6 58 a8 64 80 23 24 82 20 04 52 b0 [0m
+[0;33mW (98503) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (98504) ACCESS: 0c 22 b4 1d ae b3 84 b0 13 31 ca a1 ec 00 03 bc [0m
+[0;33mW (98507) ACCESS: 78 cd 48 7a 8d 31 6d fd 88 0b 20 29 d7 6c 00 b5 [0m
+[0;33mW (99368) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (99369) ACCESS: 20 d0 01 36 91 40 c7 23 2e 57 a1 3c e3 83 20 c9 [0m
+[0;33mW (99371) ACCESS: c1 c1 c9 e3 12 52 e4 04 20 53 87 fd 93 42 82 c9 [0m
+[0;33mW (100868) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (100869) ACCESS: 01 20 38 1c 07 9f 65 63 10 90 43 6a 08 36 15 8c [0m
+[0;33mW (100871) ACCESS: ef 9a 11 0c 96 01 8d 80 35 01 20 0c 2c 08 9a 27 [0m
+[0;33mW (102284) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (102285) ACCESS: 00 00 3d 00 bc c2 cd 7c 18 69 48 60 20 98 6f 96 [0m
+[0;33mW (102288) ACCESS: a9 61 3e 35 05 09 c4 89 03 33 46 09 20 08 8d d6 [0m
+[0;33mW (103279) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (103280) ACCESS: 01 16 11 87 bb 03 20 c8 88 23 40 ca 81 81 8a dd [0m
+[0;33mW (103283) ACCESS: 49 85 a0 32 40 1d a7 20 0c 0b 3c 61 09 26 04 20 [0m
+[0;33mW (103947) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (103948) ACCESS: 20 81 d6 a4 96 f9 46 f2 af 70 b0 21 0b d8 8f 53 [0m
+[0;33mW (103951) ACCESS: 96 09 80 b3 b5 ba 88 28 00 20 55 ec 33 3c 02 e6 [0m
+[0;33mW (104626) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (104627) ACCESS: 02 b7 c0 30 a5 e2 c2 16 c5 90 e9 50 41 01 20 24 [0m
+[0;33mW (104630) ACCESS: 03 58 2f d1 c5 c4 6c 94 88 4e 28 38 37 01 6b f0 [0m
+[0;33mW (105910) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (105911) ACCESS: ea 48 3c 82 52 06 d1 08 99 30 33 e0 2b 2e 2d 5a [0m
+[0;33mW (105914) ACCESS: 01 2e 0e 94 76 00 20 50 96 d7 ff 16 21 cf 97 a1 [0m
+[0;33mW (106875) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (106876) ACCESS: 02 84 2b 19 20 01 20 68 4d 18 41 22 83 42 50 d6 [0m
+[0;33mW (106879) ACCESS: 32 da 1d 2e 83 08 e9 81 39 02 88 8d 6c 42 07 ac [0m
+[0;32mI (106991) ACCESS: CAM UART receiver alive (RX pending=6 bytes)[0m
+[0;33mW (107572) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (107573) ACCESS: aa 4c 95 04 06 4b f0 21 21 44 b4 81 65 62 02 20 [0m
+[0;33mW (107575) ACCESS: 01 4d ee f8 af b3 77 2a 23 88 9c 0b 4a 1d 3d a8 [0m
+[0;33mW (108106) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (108106) ACCESS: 34 44 49 16 26 e2 2e 82 8c 91 07 fc 64 ba 5c be [0m
+[0;33mW (108109) ACCESS: 3c 4a c1 f9 d8 47 60 34 a1 a2 46 18 6d 31 1a 4b [0m
+[0;33mW (108796) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (108797) ACCESS: 42 01 ac 56 44 08 a8 7b 2d dc 66 e5 07 28 d0 00 [0m
+[0;33mW (108800) ACCESS: 20 e0 10 e4 87 09 31 97 fb d0 2d 60 e1 08 8e 52 [0m
+[0;33mW (109872) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (109873) ACCESS: d0 7f 8e a6 c9 84 c5 c2 80 9c 64 8e aa 34 09 ec [0m
+[0;33mW (109876) ACCESS: 34 01 e2 0b 20 50 04 4e bc 4a 34 e0 d2 e2 1a 31 [0m
+[0;33mW (110461) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (110462) ACCESS: 42 83 f1 b7 16 15 e5 94 17 10 75 97 94 47 04 20 [0m
+[0;33mW (110465) ACCESS: a1 1b 00 06 53 b2 ae a0 80 c3 08 86 14 7d 63 66 [0m
+[0;33mW (111144) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (111145) ACCESS: 63 02 20 81 64 12 29 a5 bc 5f 10 00 28 45 90 13 [0m
+[0;33mW (111148) ACCESS: 05 42 b0 d0 05 e0 86 42 4a 0e 20 22 81 a7 22 22 [0m
+[0;33mW (111686) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (111687) ACCESS: f0 4f 88 28 9a 53 47 98 0e b1 61 10 05 bc 82 d1 [0m
+[0;33mW (111690) ACCESS: 96 cb e0 c8 d7 36 29 05 28 4f 34 40 9f 62 9d 31 [0m
+[0;33mW (113004) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (113005) ACCESS: 05 c4 ae 00 20 a0 8d d8 e7 a2 e2 ca 58 4e 80 21 [0m
+[0;33mW (113008) ACCESS: 03 60 40 aa a2 40 8d c2 84 6f 05 09 ac 6a 86 09 [0m
+[0;33mW (113407) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (113407) ACCESS: 04 a4 1a c5 4c 20 64 20 76 60 e2 41 dc a3 22 8e [0m
+[0;33mW (113410) ACCESS: b7 00 20 21 13 3e 38 40 14 13 80 11 de 80 9f 48 [0m
+[0;33mW (114583) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (114584) ACCESS: e8 89 05 cc 82 2c 94 00 20 84 60 69 30 f0 02 2e [0m
+[0;33mW (114586) ACCESS: b8 18 a0 8e 1e 94 52 04 21 a1 77 3b 20 68 d0 64 [0m
+[0;33mW (115099) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (115100) ACCESS: 4e 9b 03 e8 24 82 20 01 bc 8e 24 8c f0 a0 82 bd [0m
+[0;33mW (115103) ACCESS: 52 d1 70 47 b1 fa 14 ff 25 30 0c 86 91 45 09 01 [0m
+[0;33mW (115648) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (115649) ACCESS: c3 c4 8c 78 84 43 54 69 11 97 f5 ee b2 bc 03 20 [0m
+[0;33mW (115651) ACCESS: 1a b4 fa 25 95 c0 7b c0 35 56 35 79 4c 09 c3 59 [0m
+[0;33mW (116259) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (116260) ACCESS: 2a 10 01 20 20 f4 f0 11 03 5b bc a7 f2 c8 1b 37 [0m
+[0;33mW (116262) ACCESS: 90 10 cf be 00 34 16 a2 04 89 30 01 20 43 1b 4f [0m
+[0;33mW (116769) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (116770) ACCESS: 20 5c a3 94 f8 80 63 6e 20 46 f0 80 c6 35 61 61 [0m
+[0;33mW (116773) ACCESS: 08 a1 40 05 13 ec 81 00 fc 30 57 27 18 60 b7 9c [0m
+[0;33mW (117574) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (117575) ACCESS: 20 c6 91 ca 01 bc e4 54 07 c4 5a c9 13 e0 5d 91 [0m
+[0;33mW (117578) ACCESS: a8 c8 d8 50 04 b1 c9 04 03 20 9d dd 22 31 08 83 [0m
+[0;33mW (118852) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (118853) ACCESS: 12 36 32 1b 8c 52 00 fc d6 7c 48 f1 43 34 d8 00 [0m
+[0;33mW (118856) ACCESS: 68 21 8b fa b2 91 4e 04 00 a3 39 e1 27 35 fc 01 [0m
+[0;33mW (119826) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (119827) ACCESS: 29 ce 8a 1f 29 20 19 34 6a 94 49 38 09 fc ca b0 [0m
+[0;33mW (119830) ACCESS: 51 07 f5 5e 51 c4 5b 92 2a 66 7a 6b 3b 12 e0 30 [0m
+[0;33mW (121060) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (121061) ACCESS: 7b 48 e9 e2 44 43 80 c1 01 20 02 d6 f0 18 0c 95 [0m
+[0;33mW (121064) ACCESS: 05 c3 68 12 c0 a2 1e 5c 26 0f 53 c0 e8 fb b9 84 [0m
+[0;33mW (122172) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (122173) ACCESS: 20 05 05 f2 85 7c d1 3d d7 d0 8e c4 30 1a 70 6c [0m
+[0;33mW (122176) ACCESS: 58 10 f1 4b 20 ff 66 dc 04 20 f0 e5 6c 22 f1 c1 [0m
+[0;32mI (122429) ACCESS: CAM UART receiver alive (RX pending=1 bytes)[0m
+[0;33mW (122761) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (122761) ACCESS: de 0b 51 84 40 ab 23 0c b6 bd 23 a9 1b 4a a8 49 [0m
+[0;33mW (122764) ACCESS: 66 5f 86 5a 36 02 20 14 28 1b 94 b4 4d c9 15 f8 [0m
+[0;33mW (124500) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (124501) ACCESS: 3b 6e 04 e2 ae 13 62 5f a8 2b e2 b7 89 11 74 00 [0m
+[0;33mW (124504) ACCESS: 20 c1 4d fb 16 24 92 16 8d 96 35 7a 52 02 18 31 [0m
+[0;33mW (125432) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (125433) ACCESS: a2 b3 88 f0 90 4a d2 16 08 2c 13 75 10 ac 13 11 [0m
+[0;33mW (125436) ACCESS: ed aa 60 66 00 20 61 94 20 21 ad 15 65 7d 10 28 [0m
+[0;33mW (125814) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (125815) ACCESS: 80 aa 22 01 86 12 41 06 0b 20 a4 45 74 e8 2c 55 [0m
+[0;33mW (125818) ACCESS: 06 82 1b 4b 24 72 c8 28 45 29 5f 1e 50 88 cd 07 [0m
+[0;33mW (127405) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (127406) ACCESS: 68 40 43 00 08 c4 2c 4c 80 4a 04 20 5c 03 f8 93 [0m
+[0;33mW (127409) ACCESS: 24 16 24 24 ca 03 05 00 f2 60 61 01 2a 50 85 b5 [0m
+[0;33mW (128007) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (128008) ACCESS: fc 46 a0 17 c6 a0 8c 6d 20 33 41 30 56 41 3b 01 [0m
+[0;33mW (128010) ACCESS: 80 1e c0 c5 2f 84 c0 ab 02 20 1d 92 06 6a ca 10 [0m
+[0;33mW (128336) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (128337) ACCESS: 35 20 3c f0 4a 04 dd c5 01 20 43 63 00 01 2e 84 [0m
+[0;33mW (128340) ACCESS: 0b 53 13 04 88 26 24 08 8d 3b e8 51 14 ac f8 68 [0m
+[0;33mW (129551) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (129552) ACCESS: 25 84 35 02 3f a8 6a 04 40 a0 f3 5f c6 50 01 20 [0m
+[0;33mW (129554) ACCESS: 92 c5 d3 6a 45 42 05 09 a1 3a 19 59 2c cc 72 aa [0m
+[0;33mW (130090) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (130091) ACCESS: c7 b8 4b 01 fc 68 2c 44 a0 20 99 76 5c 64 00 90 [0m
+[0;33mW (130093) ACCESS: 9a 6c 20 31 dc 19 10 31 46 a2 56 1a 01 20 80 72 [0m
+[0;33mW (130762) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (130763) ACCESS: 3f 4a 90 5c 58 d0 64 c9 e6 24 2d 19 a4 fc 9b 19 [0m
+[0;33mW (130766) ACCESS: 73 04 bc 20 02 a9 0e 52 70 25 26 01 15 d0 00 7c [0m
+[0;33mW (131819) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (131820) ACCESS: 67 00 10 25 0c 52 f7 e7 0e 20 d1 86 1b 1e 08 23 [0m
+[0;33mW (131822) ACCESS: e7 12 02 38 b4 43 88 bc 48 d2 49 93 b0 e1 88 4c [0m
+[0;33mW (132352) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (132353) ACCESS: 56 16 ff 4a 80 36 03 88 c6 0e 88 3b ce 8f f4 65 [0m
+[0;33mW (132356) ACCESS: 1c 00 fc 80 04 e1 3b e7 e2 45 d1 17 4a 34 13 96 [0m
+[0;33mW (132911) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (132912) ACCESS: ec f9 87 c4 2e 0c 05 ac 76 86 d6 20 43 06 a5 2f [0m
+[0;33mW (132915) ACCESS: 42 43 30 a0 06 44 07 33 00 38 d9 c7 81 dd 23 09 [0m
+[0;33mW (133246) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (133247) ACCESS: 2e ce c4 c3 21 34 05 20 11 51 61 ec e3 af 5f 50 [0m
+[0;33mW (133250) ACCESS: 09 20 a1 41 32 a2 38 04 89 d3 90 ad d1 3e 29 04 [0m
+[0;33mW (134863) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (134864) ACCESS: 20 14 34 90 58 8c 10 2e 43 70 2d bb 07 08 21 60 [0m
+[0;33mW (134866) ACCESS: b3 4b 67 2d e6 da 62 09 ac 26 db aa 41 b2 8a be [0m
+[0;33mW (135216) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (135217) ACCESS: 20 91 61 44 18 26 17 73 b4 90 30 dc 19 69 ac a2 [0m
+[0;33mW (135220) ACCESS: 0c 01 10 cc bb 9a fc 56 02 20 e8 03 0c 36 f8 8b [0m
+[0;33mW (137293) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (137294) ACCESS: 05 20 d9 00 3c ab 22 0e 21 1f 97 4b 31 10 00 4a [0m
+[0;33mW (137297) ACCESS: cd 54 47 96 11 52 eb ac 63 02 20 00 a6 6c 59 e4 [0m
+[0;32mI (137876) ACCESS: CAM UART receiver alive (RX pending=8 bytes)[0m
+[0;33mW (138897) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (138898) ACCESS: 20 09 de 19 ee f5 a4 65 d5 32 9a 09 81 3b 24 56 [0m
+[0;33mW (138900) ACCESS: 94 04 72 ec 09 64 d0 0e 01 20 3e 3b de 2e 54 86 [0m
+[0;33mW (139268) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (139268) ACCESS: a0 22 25 12 86 30 aa c4 22 44 b8 1c 72 01 20 d9 [0m
+[0;33mW (139271) ACCESS: d9 44 35 09 6b 63 e2 ca e1 c8 8d 12 ba 0e 50 8c [0m
+[0;33mW (139755) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (139756) ACCESS: 20 4a 51 9c ea 1d 40 22 89 0f 24 21 9e 31 01 14 [0m
+[0;33mW (139758) ACCESS: a9 2b 00 03 cb bb 5d 10 60 04 20 a2 0c e2 aa 9c [0m
+[0;33mW (140312) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (140313) ACCESS: 26 14 00 bc 00 88 09 22 10 2b 9c bb 4b c1 29 97 [0m
+[0;33mW (140315) ACCESS: 27 80 13 51 38 54 9e 44 82 1b aa 0f 20 44 16 00 [0m
+[0;33mW (140986) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (140987) ACCESS: a7 2c 80 91 ee a0 84 3a 0b a1 81 1b 09 16 30 86 [0m
+[0;33mW (140989) ACCESS: 80 d6 33 49 69 46 03 20 40 40 e0 97 b9 16 31 50 [0m
+[0;33mW (142486) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (142487) ACCESS: 24 54 b2 12 67 f4 8c 44 59 c5 8d 2f 33 b8 76 81 [0m
+[0;33mW (142490) ACCESS: c9 21 48 40 a5 94 02 20 a4 61 08 73 67 2a 03 ee [0m
+[0;33mW (143454) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (143455) ACCESS: 14 11 aa 4b 32 c2 55 6c 20 20 74 d5 58 01 20 09 [0m
+[0;33mW (143457) ACCESS: 45 96 80 31 f4 1d b0 1e 0b 16 17 49 9a 2a 92 40 [0m
+[0;33mW (145812) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (145813) ACCESS: 10 f0 c9 40 da da c1 bd 04 57 07 20 18 80 06 00 [0m
+[0;33mW (145816) ACCESS: 87 e5 90 c7 c4 00 d3 37 35 ce 00 64 cb 14 ec a0 [0m
+[0;33mW (146219) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (146220) ACCESS: 60 40 43 01 ac fd 29 11 20 23 5c a7 9d 3b 02 a1 [0m
+[0;33mW (146223) ACCESS: 88 26 4c 20 34 63 00 93 89 61 e7 ea 00 20 88 09 [0m
+[0;33mW (147018) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (147019) ACCESS: 00 20 90 59 d8 27 9f 59 45 44 dc 29 a8 8e 2c e2 [0m
+[0;33mW (147022) ACCESS: 45 4b 9c 03 53 d8 e2 03 8c 01 20 50 ee 75 c8 1c [0m
+[0;33mW (148208) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (148209) ACCESS: 20 15 2d 28 00 4f c1 b1 a9 87 23 80 20 64 05 82 [0m
+[0;33mW (148212) ACCESS: 8c 13 d3 c0 3e 68 bc 65 03 20 c2 d4 4c 34 02 05 [0m
+[0;33mW (150410) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (150411) ACCESS: 65 ba 11 36 ce 00 1a d3 52 04 68 90 b2 8c 80 ca [0m
+[0;33mW (150414) ACCESS: 11 89 0e b1 35 ca 05 ac 2b 68 9e 23 0b c6 a7 80 [0m
+[0;33mW (150967) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (150968) ACCESS: 54 0c 66 36 14 01 20 63 a6 dc 31 40 d7 b4 80 12 [0m
+[0;33mW (150971) ACCESS: f1 1f 34 21 27 ee 09 6a a8 05 59 3d 90 5a 0c ac [0m
+[0;33mW (151694) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (151695) ACCESS: cb a0 f0 95 01 20 b0 57 48 1e 20 d6 24 c5 8c 38 [0m
+[0;33mW (151698) ACCESS: cc a9 7c 92 61 d1 b3 31 52 16 26 cf 34 0e 20 32 [0m
+[0;33mW (152301) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (152302) ACCESS: d7 5a 8b 24 10 c8 8b 00 82 85 d1 57 e9 82 ac 07 [0m
+[0;33mW (152305) ACCESS: 0f 40 d4 c9 02 00 fc e0 11 39 43 c7 76 7b 6c 41 [0m
+[0;32mI (153459) ACCESS: CAM UART receiver alive (RX pending=8 bytes)[0m
+[0;33mW (153814) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (153815) ACCESS: 19 0e c8 98 65 09 3e 91 12 b3 0f 20 41 17 24 7d [0m
+[0;33mW (153818) ACCESS: bb c2 6d c2 89 a4 60 f4 b0 35 e3 01 92 29 24 c4 [0m
+[0;33mW (154419) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (154420) ACCESS: e7 d8 73 38 ed c1 03 fc 7c 02 d6 01 24 03 a9 9d [0m
+[0;33mW (154422) ACCESS: 44 96 00 28 38 04 d3 21 f2 6a 12 91 fd 3a 77 04 [0m
+[0;33mW (155361) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (155362) ACCESS: b2 3f 49 ad 34 01 20 8d 1a 28 f0 50 53 4e 06 4d [0m
+[0;33mW (155365) ACCESS: 6e e0 73 35 40 0b c1 f2 15 3e 1d bd 88 76 03 20 [0m
+[0;33mW (157830) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (157831) ACCESS: 28 81 ce 05 b8 4b 44 7c 04 20 09 90 14 56 4e cc [0m
+[0;33mW (157834) ACCESS: 24 a6 69 1c 2a 23 5b d4 48 2e 16 60 04 a2 04 27 [0m
+[0;33mW (158465) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (158466) ACCESS: 40 82 00 8c 50 83 9c ce 1a 03 20 9c 53 8a 12 b8 [0m
+[0;33mW (158469) ACCESS: 9a ba 48 e6 6c 01 2f c2 4a 02 d8 4c c5 3c 11 cb [0m
+[0;33mW (159446) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (159447) ACCESS: 06 eb 6e 24 dc 2f 99 0e 50 fe ab 89 50 02 20 dc [0m
+[0;33mW (159449) ACCESS: 71 82 01 eb 43 0c f8 df 16 0c a4 74 0c f2 a0 8a [0m
+[0;33mW (159913) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (159914) ACCESS: 4a 82 11 03 ac a4 c0 c5 3c 33 08 00 90 20 92 90 [0m
+[0;33mW (159916) ACCESS: 05 5a 28 e0 6b 41 03 9d cb d7 24 90 06 20 c9 09 [0m
+[0;33mW (160959) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (160960) ACCESS: 3a 54 d1 b8 75 b4 40 8c 52 13 13 93 89 34 29 80 [0m
+[0;33mW (160962) ACCESS: 7d 2c 11 81 dc 20 20 ec eb 64 28 9b 66 03 74 33 [0m
+[0;33mW (161328) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (161329) ACCESS: 1a a9 22 a0 13 79 d3 79 d0 e0 81 00 20 23 80 d4 [0m
+[0;33mW (161332) ACCESS: ec 64 4c c2 a4 6e 93 50 c9 21 86 63 81 2a a0 c6 [0m
+[0;33mW (161864) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (161865) ACCESS: 2e 92 00 20 19 48 c0 b4 c1 80 7c c0 90 2d c8 c6 [0m
+[0;33mW (161868) ACCESS: 1c e9 94 4d e0 8d d4 84 92 02 02 00 ac 2d 84 64 [0m
+[0;33mW (162399) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (162400) ACCESS: 4d 26 84 27 6a 02 04 aa 54 de a0 70 01 20 70 98 [0m
+[0;33mW (162403) ACCESS: 81 42 3a ca c6 d2 e9 c9 89 e2 44 a0 37 42 09 6c [0m
+[0;32mI (162487) ACCESS: LD2410C presence=0[0m
+[0;33mW (164344) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (164345) ACCESS: 95 f5 c0 c3 90 33 0f da 82 e5 74 20 05 bc 9a 90 [0m
+[0;33mW (164348) ACCESS: de 93 d4 05 35 c0 2a d7 b2 e8 74 6e 27 12 c9 8c [0m
+[0;33mW (165074) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (165075) ACCESS: 0b 46 2c bf a8 f8 7b 05 0c 07 20 89 1c 3b 4e 3d [0m
+[0;33mW (165078) ACCESS: 7a f3 61 24 4b 8b 00 f1 28 87 40 e3 40 12 d7 b4 [0m
+[0;33mW (166577) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (166578) ACCESS: 64 40 8c 3d 8d 02 b3 83 69 82 21 8e f9 8a 09 34 [0m
+[0;33mW (166581) ACCESS: 40 03 fc 54 8f 84 c6 51 f2 37 c2 2c 50 27 b3 52 [0m
+[0;33mW (167272) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (167273) ACCESS: 20 03 e9 66 2b 6a d1 1c 81 23 32 5d 26 58 c3 00 [0m
+[0;33mW (167276) ACCESS: 14 ab 8b 61 64 00 38 91 01 20 00 00 12 31 a6 40 [0m
+[0;33mW (167745) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (167746) ACCESS: c2 d0 1b 6a 76 30 34 01 20 50 db 07 8d cd 48 48 [0m
+[0;33mW (167749) ACCESS: 14 7b 90 35 50 18 87 60 21 70 15 b0 43 0c 01 8a [0m
+[0;33mW (168197) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (168198) ACCESS: 20 aa 8c 08 01 49 24 4b 0f 01 11 e0 56 48 86 84 [0m
+[0;33mW (168201) ACCESS: a2 14 21 4c e3 93 63 84 01 20 a9 ef b8 10 15 f1 [0m
+[0;32mI (169230) ACCESS: CAM UART receiver alive (RX pending=9 bytes)[0m
+[0;33mW (169819) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (169820) ACCESS: 0c f1 a0 56 19 0f c8 13 12 5c 47 e3 ad 22 02 20 [0m
+[0;33mW (169823) ACCESS: e0 a1 ca c8 7d 32 a8 20 66 2e 70 f8 16 02 f8 00 [0m
+[0;33mW (170658) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (170659) ACCESS: 44 51 18 97 a6 08 09 16 da 14 60 12 42 9a 9c 76 [0m
+[0;33mW (170662) ACCESS: 6d 86 09 a7 ca 02 20 50 84 00 0f 51 04 ad 50 07 [0m
+[0;33mW (171275) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (171276) ACCESS: 62 27 e9 65 c4 b6 22 56 62 02 20 1e 82 91 83 43 [0m
+[0;33mW (171279) ACCESS: 22 f5 54 6d 38 85 5d 1a 02 c9 5c 81 8e 48 4c 00 [0m
+[0;33mW (171661) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (171662) ACCESS: 20 1b e9 5e 64 48 94 22 be 04 5e 54 6b 23 94 7a [0m
+[0;33mW (171664) ACCESS: 92 08 18 fa b0 50 b0 4b 01 fc 00 d5 01 ec 08 04 [0m
+[0;32mI (172187) ACCESS: LD2410C presence=1[0m
+[0;33mW (172591) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (172592) ACCESS: 20 8c c5 e2 08 e7 06 8a 23 ea a3 d6 f1 31 5e d5 [0m
+[0;33mW (172595) ACCESS: 00 21 ed a0 ea e4 36 21 d0 03 20 40 9c 85 11 39 [0m
+[0;33mW (173197) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (173198) ACCESS: 69 cd fd 06 25 9b b1 9a 1c 44 43 9e e4 d1 be 45 [0m
+[0;33mW (173200) ACCESS: 27 c4 05 bc c6 1b b0 27 8d 5c 35 a2 6f 09 87 7e [0m
+[0;33mW (174429) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (174430) ACCESS: 5a 82 48 d5 3c 1a e7 60 12 58 a4 3e ae 03 20 48 [0m
+[0;33mW (174433) ACCESS: 70 82 c5 af 50 da 38 d7 01 08 72 67 be 41 bc 96 [0m
+[0;33mW (174998) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (174998) ACCESS: 0e 25 22 15 7b 07 a0 39 93 00 a1 a2 7c 41 51 58 [0m
+[0;33mW (175001) ACCESS: f4 48 c6 10 01 20 38 a3 30 fa 91 ba 7c 22 fa 09 [0m
+[0;33mW (176230) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (176231) ACCESS: d2 fb cc 05 59 58 30 00 0c 32 a9 18 e1 f2 a1 02 [0m
+[0;33mW (176234) ACCESS: 20 59 5b cd a9 1e 50 2d b5 c0 11 46 24 a1 5a 10 [0m
+[0;33mW (176612) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (176613) ACCESS: 40 16 00 56 c5 04 20 fc 00 d8 3d 41 f0 09 00 e0 [0m
+[0;33mW (176616) ACCESS: 25 08 9e 63 13 d0 38 d2 00 30 88 83 5b af 00 02 [0m
+[0;33mW (177417) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (177418) ACCESS: 5b 02 20 80 0b 40 04 da 56 c3 48 c2 90 c1 8a d0 [0m
+[0;33mW (177421) ACCESS: 4a 4b b8 04 32 06 c3 e0 e2 04 20 b0 15 ea f2 d9 [0m
+[0;33mW (178391) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (178392) ACCESS: 94 d6 76 98 4e 9c e0 2a 88 22 8a ec 86 07 20 81 [0m
+[0;33mW (178395) ACCESS: 04 d2 75 8e fa 38 5a c4 89 9d b2 16 20 34 02 91 [0m
+[0;33mW (179040) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (179041) ACCESS: 67 df d0 7d b7 56 00 5a f4 15 4c 48 ed 71 00 20 [0m
+[0;33mW (179043) ACCESS: d0 90 32 00 3c 15 3b eb 23 12 90 86 05 2a 53 65 [0m
+[0;33mW (179531) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (179532) ACCESS: 20 84 21 25 fa 44 c6 60 dc 4a 06 a1 d0 06 28 0e [0m
+[0;33mW (179535) ACCESS: de 0b 18 0e 7a 8c f6 60 01 20 fd 64 93 97 51 be [0m
+[0;33mW (180011) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (180012) ACCESS: 20 93 6a 80 01 41 61 1a 80 90 1c 09 46 2c 83 1a [0m
+[0;33mW (180015) ACCESS: bb 49 3e d2 bb e4 91 b4 00 20 50 91 f2 8d a0 de [0m
+[0;33mW (180480) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (180481) ACCESS: 1c 20 37 04 b0 00 71 11 10 05 24 f3 19 ef a7 9c [0m
+[0;33mW (180484) ACCESS: 06 08 bc 8d 89 6c 7d 2f 09 34 13 24 30 49 f9 03 [0m
+[0;33mW (181294) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (181295) ACCESS: 01 86 11 9c cf 44 0b 20 40 6d 39 c0 68 40 a5 60 [0m
+[0;33mW (181298) ACCESS: d1 0b 08 08 04 c8 71 41 41 c5 40 7c 99 d3 04 08 [0m
+[0;33mW (182417) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (182418) ACCESS: 54 25 00 c1 cc dd b3 97 40 70 06 d5 12 04 20 d0 [0m
+[0;33mW (182421) ACCESS: 1a 3f 46 74 e2 40 70 31 ca 84 12 02 0c ee 41 c0 [0m
+[0;33mW (184458) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (184459) ACCESS: 05 12 68 0e 11 00 20 36 88 4a 69 0c c4 e4 d0 0c [0m
+[0;33mW (184462) ACCESS: 0c 20 c1 40 0e a8 92 34 7f ce 91 82 0c 65 0c 20 [0m
+[0;32mI (184658) ACCESS: CAM UART receiver alive (RX pending=13 bytes)[0m
+[0;33mW (185060) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (185060) ACCESS: 00 bc 81 cf ae 52 4c 00 a7 24 05 85 20 97 a4 47 [0m
+[0;33mW (185063) ACCESS: d9 ed f4 23 a7 05 46 22 01 20 d8 25 e8 1b d1 07 [0m
+[0;33mW (185381) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (185382) ACCESS: 2d 73 3e 03 30 49 94 9b 23 01 20 cc 1a 67 81 1a [0m
+[0;33mW (185385) ACCESS: 93 6c a7 67 58 08 06 c5 32 10 28 80 15 a9 d3 e5 [0m
+[0;33mW (186387) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (186388) ACCESS: 98 e5 47 bb 9e 19 bd 54 2b 04 43 5a c9 0b 20 92 [0m
+[0;33mW (186391) ACCESS: 08 f4 54 1a 17 01 83 05 60 81 01 e1 15 89 ad f5 [0m
+[0;33mW (186744) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (186745) ACCESS: 22 61 27 39 69 8b 96 74 00 63 7d 02 20 00 20 42 [0m
+[0;33mW (186748) ACCESS: 1c 9b ad 06 ae 05 46 0c 38 83 20 00 61 c1 cc 01 [0m
+[0;33mW (187324) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (187325) ACCESS: d1 14 a7 6c 31 40 27 ca a8 c6 5d 02 0b ac 82 6e [0m
+[0;33mW (187327) ACCESS: e4 b1 4c 16 e6 b8 43 92 04 90 18 88 04 01 6f 3c [0m
+[0;33mW (188824) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (188825) ACCESS: 08 1a 46 1e a8 52 a4 c2 0c d0 64 38 2b 1d ce 84 [0m
+[0;33mW (188828) ACCESS: 8d 02 c0 01 b9 00 20 2c 21 44 72 21 df e4 12 38 [0m
+[0;33mW (189845) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (189846) ACCESS: 4b 44 17 89 1e c6 35 09 69 01 d7 1b 43 04 20 90 [0m
+[0;33mW (189849) ACCESS: 20 0c 17 33 a1 63 a0 69 81 2d 46 79 8b 18 66 01 [0m
+[0;33mW (191753) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (191754) ACCESS: 00 02 bc 74 29 00 12 e9 50 6f 02 a0 d7 49 a6 71 [0m
+[0;33mW (191756) ACCESS: f4 d9 3c 2d 47 81 90 12 c2 01 01 20 a1 30 e0 22 [0m
+[0;33mW (193511) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (193512) ACCESS: e8 64 38 03 20 08 80 70 20 12 48 50 16 92 14 e6 [0m
+[0;33mW (193514) ACCESS: 9e 84 81 d9 e8 35 a4 2a 62 5b fe 04 fc e6 51 f4 [0m
+[0;33mW (194837) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (194838) ACCESS: 80 46 60 4c ea 50 2e 34 00 20 09 67 22 7e c9 54 [0m
+[0;33mW (194841) ACCESS: a2 5d 29 a8 61 40 f2 2e 31 38 5b 40 3b 78 c2 8b [0m
+[0;33mW (195799) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (195800) ACCESS: fc 60 18 ec 15 65 00 05 a1 08 b2 a0 75 02 bb 07 [0m
+[0;33mW (195802) ACCESS: 18 72 7e 9d e0 32 d4 0b 08 fc c0 7c 4d ca ab af [0m
+[0;33mW (196315) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (196316) ACCESS: 06 09 bc 40 29 ad 20 3a 50 8d 72 61 b1 61 fa 50 [0m
+[0;33mW (196319) ACCESS: 54 21 58 e1 00 36 02 be 95 1a c2 00 20 ae 08 2c [0m
+[0;32mI (196587) ACCESS: LD2410C presence=0[0m
+[0;33mW (196710) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (196711) ACCESS: 03 0e e4 88 08 c0 5b 57 cc 7a 63 8f 4d b1 14 2d [0m
+[0;33mW (196714) ACCESS: ba f4 70 03 ac 3c 50 34 01 0c 14 f1 44 93 2a 09 [0m
+[0;33mW (198044) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (198045) ACCESS: 23 31 52 96 54 09 80 e3 4a 95 38 53 87 ae 5e 9c [0m
+[0;33mW (198048) ACCESS: 0c 20 8b d8 25 01 17 07 e1 08 00 ac be 33 0c 56 [0m
+[0;33mW (199040) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (199041) ACCESS: bc c1 12 a8 10 a2 c4 74 68 44 02 b5 84 64 39 02 [0m
+[0;33mW (199044) ACCESS: 18 70 cd 08 78 a2 b0 32 09 20 aa a5 04 c5 92 9c [0m
+[0;33mW (199701) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (199702) ACCESS: 91 67 07 20 10 45 8d 56 00 f2 40 d1 2a ae 24 15 [0m
+[0;33mW (199705) ACCESS: da 31 44 49 99 11 75 c2 91 b1 19 01 20 b4 88 8c [0m
+[0;32mI (199714) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (200210) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (200211) ACCESS: f7 42 00 81 e4 ab 06 1e 00 f5 ff af c4 1f ac 0f [0m
+[0;33mW (200214) ACCESS: 20 00 4e 86 67 78 e0 6a 55 28 4c 7b b7 fe 64 f1 [0m
+[0;33mW (200782) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (200783) ACCESS: 54 1e 01 bc 32 b2 8e 09 81 90 a0 66 61 10 81 3b [0m
+[0;33mW (200785) ACCESS: 8a f8 71 53 1a 02 24 25 4e 14 08 02 fc 70 5f 14 [0m
+[0;33mW (201435) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (201436) ACCESS: a5 90 ca e2 06 48 d0 18 58 d5 35 79 00 48 23 01 [0m
+[0;33mW (201438) ACCESS: 20 91 14 10 81 46 86 f5 ee d3 c2 43 4a 58 21 af [0m
+[0;33mW (201844) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (201845) ACCESS: 08 7b 66 c8 5e 16 f8 01 24 a2 69 a1 56 a6 c9 00 [0m
+[0;33mW (201848) ACCESS: da f1 b0 69 d9 63 0c fc e0 08 b0 89 2f 22 c7 9b [0m
+[0;33mW (202755) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (202756) ACCESS: 66 8e 20 49 5e 23 58 19 06 20 1c 5b 08 4e a8 d6 [0m
+[0;33mW (202759) ACCESS: 1e c3 96 93 79 15 10 2e 74 9b 9e 29 da c8 c3 34 [0m
+[0;33mW (203639) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (203639) ACCESS: 20 8b 83 12 58 fc 20 26 6e cb 60 0b 3e 2e 2d 82 [0m
+[0;33mW (203642) ACCESS: 17 10 53 da 62 08 0e 01 01 20 2a 37 c9 b6 ed 1e [0m
+[0;33mW (204255) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (204256) ACCESS: c1 6e ca 01 cc 24 25 6e 48 06 40 01 20 a9 4a 09 [0m
+[0;33mW (204259) ACCESS: 44 30 34 11 16 ed f5 84 73 5f 05 11 53 a1 e9 eb [0m
+[0;32mI (204387) ACCESS: LD2410C presence=1[0m
+[0;33mW (204850) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (204851) ACCESS: 80 50 03 fc c4 79 33 2a 2f 17 46 03 a2 4a 24 13 [0m
+[0;33mW (204854) ACCESS: 25 2c 00 11 08 13 32 46 64 c2 80 05 20 53 05 31 [0m
+[0;33mW (205420) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (205421) ACCESS: 30 72 70 97 13 4d ca 33 86 c1 a8 3f 01 ac 08 a5 [0m
+[0;33mW (205424) ACCESS: 70 11 4b 7b af 24 d3 1c 53 b1 84 02 92 64 61 91 [0m
+[0;33mW (206069) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (206070) ACCESS: ed cd 30 f5 45 bc 24 01 20 80 10 17 41 e8 c4 59 [0m
+[0;33mW (206073) ACCESS: 83 89 41 67 e0 08 83 28 09 80 72 7c 42 d2 85 01 [0m
+[0;33mW (206827) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (206828) ACCESS: 00 fc 64 89 1e 61 3a d8 ff 61 84 1b fd 44 31 00 [0m
+[0;33mW (206831) ACCESS: 4a c0 49 57 85 25 84 6c 17 03 20 ea 00 22 34 e8 [0m
+[0;33mW (207281) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (207281) ACCESS: ea 12 a1 3d 00 31 d9 aa 5e d6 00 20 20 10 74 2f [0m
+[0;33mW (207284) ACCESS: d8 53 1d c2 49 19 a4 02 e2 31 c3 11 a0 83 ab 8d [0m
+[0;33mW (207710) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (207711) ACCESS: 2b ac 90 29 3b 74 46 f2 1b df 0b 03 05 20 f0 47 [0m
+[0;33mW (207714) ACCESS: 7e 02 d7 13 af c8 5e a2 ea b1 c2 9d 00 7e 94 01 [0m
+[0;33mW (209079) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (209080) ACCESS: 73 dc 36 2c 90 55 89 e0 17 dc 10 e8 04 f2 08 fc [0m
+[0;33mW (209082) ACCESS: 76 00 7e bc 67 38 ab 15 b8 d4 04 25 4c 13 14 8d [0m
+[0;33mW (209677) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (209677) ACCESS: 20 9c 6b 07 20 81 2e 31 e6 1e 00 44 6a 62 04 81 [0m
+[0;33mW (209680) ACCESS: 1c 56 60 24 41 84 81 33 42 72 61 a9 00 20 92 24 [0m
+[0;33mW (211672) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (211673) ACCESS: 22 14 ea a0 46 68 10 63 81 95 d6 b9 16 00 20 d3 [0m
+[0;33mW (211676) ACCESS: 01 17 c0 89 de c2 3d 24 01 5b 44 80 cb 1d 1e 88 [0m
+[0;33mW (212825) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (212826) ACCESS: 60 81 20 86 1d 91 22 a0 42 a6 50 55 03 20 b0 5a [0m
+[0;33mW (212828) ACCESS: a7 10 1a 7d 4c e7 4b 63 05 23 27 40 80 7f 98 30 [0m
+[0;32mI (214725) ACCESS: CAM UART receiver alive (RX pending=1 bytes)[0m
+[0;33mW (215151) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (215152) ACCESS: 66 8e 16 02 20 d8 e8 dc 93 34 38 54 19 29 03 8a [0m
+[0;33mW (215155) ACCESS: e2 8b 52 b8 fd 2c 51 84 aa 1a c6 69 00 20 08 3f [0m
+[0;32mI (215287) ACCESS: LD2410C presence=0[0m
+[0;33mW (215549) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (215550) ACCESS: fb 71 4e 03 44 29 84 11 25 ad c4 68 15 10 8a d9 [0m
+[0;33mW (215553) ACCESS: 05 00 20 b2 9c 33 93 44 e2 30 94 1a 5e 91 8a a0 [0m
+[0;33mW (216094) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (216095) ACCESS: 11 4c a6 aa f5 00 20 00 62 26 13 41 83 40 88 05 [0m
+[0;33mW (216098) ACCESS: 8b 41 9f c2 20 13 86 26 68 15 98 ce 52 01 20 08 [0m
+[0;33mW (216931) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (216931) ACCESS: 01 bd 07 75 cc 4c f6 44 62 01 20 82 cc 62 02 34 [0m
+[0;33mW (216934) ACCESS: 92 c3 d1 00 21 ca 40 03 b5 16 14 c0 73 1d 20 e1 [0m
+[0;33mW (217939) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (217940) ACCESS: 88 b8 6c 42 a2 55 54 00 c3 e8 3b 81 d3 06 20 92 [0m
+[0;33mW (217943) ACCESS: 0b 1c 1c a8 56 7c 41 d0 0c e0 62 0c a9 46 e4 a8 [0m
+[0;33mW (219812) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (219813) ACCESS: c0 0b 11 8f 54 50 40 22 09 c6 ee e0 8a 00 20 07 [0m
+[0;33mW (219816) ACCESS: 55 ea 4c ec e3 d9 ea 21 18 90 d7 83 4a 28 54 00 [0m
+[0;33mW (220351) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (220352) ACCESS: 20 14 40 ea 5c 38 3e 04 62 e1 0b 46 66 32 54 00 [0m
+[0;33mW (220355) ACCESS: 44 04 34 95 e3 81 16 00 02 20 03 86 6b 50 8c 0e [0m
+[0;33mW (221162) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (221163) ACCESS: 8a b0 a4 22 91 68 fa 38 d3 d7 44 c7 be 21 88 54 [0m
+[0;33mW (221166) ACCESS: 81 6d a8 03 20 08 62 39 4b 01 92 aa b3 00 13 0b [0m
+[0;33mW (221544) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (221545) ACCESS: 80 11 c5 78 c0 c1 20 fa 0e 49 02 20 08 4a 03 49 [0m
+[0;33mW (221547) ACCESS: 72 32 88 92 2a 3b 00 06 5a 62 e2 29 fc 77 88 12 [0m
+[0;33mW (222164) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (222165) ACCESS: 02 2d 72 59 80 b4 94 88 90 ca 73 01 20 80 20 33 [0m
+[0;33mW (222168) ACCESS: 18 71 f2 76 44 00 00 e4 f1 92 ad e0 51 81 ab 2a [0m
+[0;33mW (222963) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (222964) ACCESS: 8f 09 09 84 4e 00 8f 08 3b db c6 88 26 63 bb 39 [0m
+[0;33mW (222967) ACCESS: 54 04 20 37 34 13 c1 ca 5c c9 04 a0 9a 03 29 3c [0m
+[0;33mW (223993) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (223994) ACCESS: 08 03 1c e1 dd 10 99 01 26 56 00 20 80 e5 5c 10 [0m
+[0;33mW (223997) ACCESS: c2 8d f3 b1 d9 13 d2 04 15 58 e8 5e dc 3f 00 3d [0m
+[0;33mW (225495) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (225496) ACCESS: 00 20 20 1b 00 cf 09 80 a8 8b 2c 7e b9 99 32 69 [0m
+[0;33mW (225499) ACCESS: 52 5e 2d 84 85 17 89 85 e4 00 ac 72 8a 03 d0 c3 [0m
+[0;33mW (225885) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (225886) ACCESS: 86 ab ca ac 57 62 94 03 20 03 1c 7e 04 56 ac 2d [0m
+[0;33mW (225889) ACCESS: 01 60 0b e5 05 60 c0 00 a1 08 10 b8 20 21 a0 4e [0m
+[0;33mW (226683) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (226684) ACCESS: 93 20 e8 51 31 75 ce 4a a1 5a 05 20 f2 4f ce 01 [0m
+[0;33mW (226687) ACCESS: da 93 11 0c 92 02 55 70 53 65 35 b7 7c 04 84 1b [0m
+[0;33mW (227103) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (227104) ACCESS: 10 0b ab 60 3c a5 00 02 fc 40 98 63 95 25 36 19 [0m
+[0;33mW (227107) ACCESS: 24 58 68 04 d0 58 9a 50 c0 85 e6 c8 51 54 00 06 [0m
+[0;33mW (228168) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (228169) ACCESS: 89 42 aa 20 04 cd 37 1c 2a e4 bb fa d1 03 20 21 [0m
+[0;33mW (228172) ACCESS: b2 82 b1 01 91 fe 16 2e 42 31 b7 91 fb 89 09 da [0m
+[0;33mW (228654) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (228655) ACCESS: b8 06 92 d2 d8 04 f2 40 84 02 1a 10 3d 09 7d c5 [0m
+[0;33mW (228657) ACCESS: c4 3e 18 00 20 60 d4 0e 9f 00 12 92 4f 8e 21 88 [0m
+[0;33mW (229321) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (229322) ACCESS: aa 52 d0 28 bd 90 20 35 09 a4 04 89 33 12 5c 53 [0m
+[0;33mW (229325) ACCESS: 01 20 f0 5e 28 bc 5b 24 30 11 68 98 07 62 87 ca [0m
+[0;33mW (229932) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (229933) ACCESS: c7 c0 4c 51 cc 56 dd fe 10 09 20 60 da 36 64 37 [0m
+[0;33mW (229936) ACCESS: 21 b3 63 6b 62 40 05 c7 9c 19 62 5b 00 06 ea d5 [0m
+[0;32mI (230057) ACCESS: CAM UART receiver alive (RX pending=4 bytes)[0m
+[0;33mW (230423) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (230424) ACCESS: 8a 78 04 23 6a 2b 25 01 20 98 99 20 a1 e2 6d ed [0m
+[0;33mW (230427) ACCESS: 60 e4 4a 49 4f 49 d9 bb 75 37 52 00 f0 cc db 05 [0m
+[0;33mW (231042) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (231043) ACCESS: 0e 06 20 51 13 01 50 40 42 7c 06 52 03 83 67 28 [0m
+[0;33mW (231046) ACCESS: 48 d3 cb 07 04 20 92 c2 64 ea 06 20 58 47 40 c8 [0m
+[0;33mW (231504) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (231504) ACCESS: 22 85 67 e2 a1 06 20 b1 24 18 f0 84 9d 13 01 80 [0m
+[0;33mW (231507) ACCESS: 09 9c 11 3a 6a 45 34 3c e3 d2 28 92 11 4f 00 20 [0m
+[0;33mW (232531) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (232532) ACCESS: bc 94 21 87 bc 22 0c a8 26 1b 6a 50 93 c0 70 f6 [0m
+[0;33mW (232535) ACCESS: 48 02 17 e4 54 cd 8e 84 00 20 b8 00 ae 90 96 d4 [0m
+[0;33mW (233515) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (233516) ACCESS: 0c 3f fc 36 6f 32 8c e2 02 20 e9 c6 19 e8 44 3a [0m
+[0;33mW (233518) ACCESS: ed 51 46 bc 9b 08 c4 8a 47 e4 c0 3b 11 25 da 1b [0m
+[0;33mW (235215) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (235216) ACCESS: 50 1e 49 32 16 8d 9b 09 6a 5a 48 82 36 c0 a0 61 [0m
+[0;33mW (235219) ACCESS: 00 20 58 16 83 98 2e 92 24 09 14 a0 74 1e 89 46 [0m
+[0;33mW (238325) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (238326) ACCESS: d7 a2 38 78 38 c2 10 15 a1 4b c6 73 20 4d c5 a2 [0m
+[0;33mW (238329) ACCESS: 01 20 c0 71 5a 9b 04 ad c4 00 58 4d b8 d0 d7 83 [0m
+[0;33mW (238799) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (238799) ACCESS: 9c 4b d5 95 1d c5 00 02 20 a6 03 c0 00 0e 28 4a [0m
+[0;33mW (238802) ACCESS: 27 ed 4f d7 10 11 2d 08 20 41 15 ee 99 32 8e bf [0m
+[0;33mW (239788) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (239789) ACCESS: c8 88 70 06 20 23 59 8c d2 1e 26 54 69 d0 f2 07 [0m
+[0;33mW (239792) ACCESS: c1 21 4b 22 16 c6 8a c2 b0 03 50 16 00 fc 6a a2 [0m
+[0;33mW (240414) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (240415) ACCESS: 52 95 77 d8 87 45 27 e0 e2 28 56 00 20 c9 a4 e5 [0m
+[0;33mW (240418) ACCESS: 44 d5 bc 1c a0 91 d9 00 29 8d 00 08 18 50 13 49 [0m
+[0;33mW (241642) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (241643) ACCESS: c5 0f 0b d8 57 31 5b 4f 22 02 20 38 90 1a 21 9a [0m
+[0;33mW (241646) ACCESS: 97 d3 86 7a 6c 12 70 46 1e a3 18 20 7a 6a 62 f0 [0m
+[0;33mW (242629) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (242630) ACCESS: 41 10 70 11 18 00 26 31 94 f0 c5 04 67 87 8f 38 [0m
+[0;33mW (242633) ACCESS: cd 65 02 20 08 23 05 85 b1 16 bd 00 b3 1d 82 26 [0m
+[0;33mW (243944) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (243945) ACCESS: d0 e2 1a 1c 18 02 41 37 8c a8 f4 e0 05 20 44 05 [0m
+[0;33mW (243948) ACCESS: 3a 12 73 b9 0f e7 ea 53 c1 06 88 94 13 8b d9 b4 [0m
+[0;32mI (245107) ACCESS: CAM UART receiver alive (RX pending=1 bytes)[0m
+[0;33mW (245761) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (245762) ACCESS: c2 0f 34 8a 0e 51 a9 3c a2 09 fc d6 02 5b 67 14 [0m
+[0;33mW (245765) ACCESS: 01 9a 8b 4c 25 07 0c 22 17 54 8a 43 6b 29 70 dc [0m
+[0;33mW (246290) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (246291) ACCESS: fc 76 56 d2 db 84 72 36 0c 90 0b 26 62 00 f6 91 [0m
+[0;33mW (246294) ACCESS: f0 4d 18 88 a9 81 92 09 bc 94 55 bb 8a 99 ae cd [0m
+[0;33mW (247083) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (247085) ACCESS: 2c 44 95 3d 1b 04 69 64 28 4e 71 46 31 3c 4f df [0m
+[0;33mW (247088) ACCESS: b4 01 41 eb 98 40 07 bc 24 5b 01 71 d4 fa 87 2c [0m
+[0;33mW (247562) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (247563) ACCESS: 55 0b 0b 86 e2 81 01 20 55 9f 3a 09 22 20 e5 41 [0m
+[0;33mW (247565) ACCESS: 3b b7 41 18 28 c6 5e 0e 94 b6 72 08 83 25 c0 00 [0m
+[0;33mW (248413) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (248414) ACCESS: a3 40 61 cc 20 40 0e 44 27 30 01 20 4c 0e 04 9b [0m
+[0;33mW (248417) ACCESS: 86 25 44 54 41 c2 b1 80 71 31 3b 4c 5f b1 01 3b [0m
+[0;33mW (248974) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (248975) ACCESS: 5b 54 92 50 44 c4 40 5e a5 4d d0 50 8a 40 9f 25 [0m
+[0;33mW (248978) ACCESS: 31 07 88 eb 01 20 82 35 22 1a dd 9d c4 26 3b 9c [0m
+[0;33mW (249910) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (249911) ACCESS: 20 49 64 91 67 0c 1e f8 12 68 00 db 3f 27 20 87 [0m
+[0;33mW (249914) ACCESS: 29 50 a5 4c e7 83 51 47 00 20 08 29 8a 47 0c b8 [0m
+[0;33mW (250716) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (250717) ACCESS: 8b 32 05 41 80 40 39 b7 20 40 c0 2d 83 01 20 52 [0m
+[0;33mW (250719) ACCESS: ec 1a 10 6e 16 c1 61 81 11 5d 82 79 a9 99 0c ca [0m
+[0;33mW (252144) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (252145) ACCESS: a9 22 44 00 69 c5 60 19 1d a4 09 ef 68 e8 93 14 [0m
+[0;33mW (252147) ACCESS: 64 2e ac 39 07 20 02 34 40 02 28 95 e7 20 83 4c [0m
+[0;33mW (252604) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (252605) ACCESS: 2a a5 1c 2e 12 45 f5 c6 02 20 00 a3 51 aa eb 0f [0m
+[0;33mW (252608) ACCESS: 70 57 2a 17 0b 83 aa 29 0b 05 81 44 38 ad 41 40 [0m
+[0;33mW (253872) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (253873) ACCESS: 43 68 12 98 10 12 90 e8 12 f0 56 38 b8 1d b0 38 [0m
+[0;33mW (253876) ACCESS: 00 20 14 e0 60 75 68 2b 03 37 81 38 be 22 0e 95 [0m
+[0;33mW (254471) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (254472) ACCESS: 18 31 0b 71 32 54 0e 98 3b c4 00 20 ac bc 21 4a [0m
+[0;33mW (254475) ACCESS: 9a 1a 89 99 6f 89 b8 1f 25 1e 42 02 81 9a c4 d0 [0m
+[0;33mW (255025) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (255026) ACCESS: 90 87 ef 10 9b f2 40 07 0b 2a 98 f4 f6 9e 25 28 [0m
+[0;33mW (255029) ACCESS: 00 20 20 69 18 09 c5 4c 41 65 e4 2e 00 5d fe 38 [0m
+[0;33mW (256046) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (256047) ACCESS: ba 40 15 4e c4 62 80 c1 3c 1e 77 03 20 b0 aa 00 [0m
+[0;33mW (256050) ACCESS: 30 be 93 3e 07 24 d8 d2 d5 ea d3 70 05 10 13 23 [0m
+[0;33mW (257011) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (257011) ACCESS: 88 cc 20 03 20 40 6c 08 a0 40 15 79 ea c3 51 b2 [0m
+[0;33mW (257014) ACCESS: 61 11 06 2e 05 94 0b 11 42 1b b5 5d 02 20 92 5d [0m
+[0;33mW (257738) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (257739) ACCESS: 20 80 d9 54 f8 aa 32 57 c1 71 c4 e9 31 08 1d 85 [0m
+[0;33mW (257742) ACCESS: 42 49 7b 7b 49 0c b5 8b 00 20 71 26 aa 10 f8 72 [0m
+[0;33mW (258314) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (258315) ACCESS: 4f 06 20 12 8d 33 59 70 5d 09 ac 04 d6 c0 a1 4a [0m
+[0;33mW (258318) ACCESS: aa 64 6c 28 36 f0 79 6c ac b7 09 20 08 01 f2 a1 [0m
+[0;33mW (258909) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (258910) ACCESS: 1c 67 40 de b0 9b 3b 1b c9 8f d0 b8 96 45 a1 e4 [0m
+[0;33mW (258913) ACCESS: 0b 45 01 20 6c 4e da 53 b0 b0 b4 5a a4 54 21 e1 [0m
+[0;33mW (259651) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (259652) ACCESS: c4 af 61 14 64 e3 4b 50 28 01 20 d8 40 4e 0e 4b [0m
+[0;33mW (259655) ACCESS: 2c 0c 62 ca 3c 00 a4 20 81 4b 9a 22 36 ac 7a 62 [0m
+[0;32mI (261017) ACCESS: CAM UART receiver alive (RX pending=7 bytes)[0m
+[0;33mW (261321) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (261322) ACCESS: 4a 21 a2 46 3d e2 00 20 74 ac 4a f4 49 a1 a9 60 [0m
+[0;33mW (261324) ACCESS: 7d 61 c0 55 58 42 c1 68 4d 91 c4 e4 ae 0c b6 00 [0m
+[0;33mW (262532) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (262533) ACCESS: f3 d2 28 58 23 0e d0 a4 ae a1 0f 20 50 0c f3 88 [0m
+[0;33mW (262536) ACCESS: a1 fa 3d 14 86 0b 10 0c 99 a7 20 db 30 2d 02 18 [0m
+[0;33mW (263908) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (263909) ACCESS: 80 d2 7a c3 81 93 4e 52 03 20 f4 80 99 00 3e f2 [0m
+[0;33mW (263912) ACCESS: 28 cc 2c 07 01 c4 a0 eb 31 84 34 40 42 58 34 60 [0m
+[0;33mW (264862) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (264863) ACCESS: 1b 4e df 2a 03 20 88 6c dc 6d 15 69 77 50 4b c0 [0m
+[0;33mW (264866) ACCESS: 03 12 c1 1b 1b 4e 98 fa 51 2a f3 54 0f 0f 20 a0 [0m
+[0;33mW (265843) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (265844) ACCESS: 4e e3 4a a9 2d 5f 04 b8 91 5a d1 02 20 11 59 70 [0m
+[0;33mW (265847) ACCESS: 23 f3 e5 ee 9d 02 79 5a 12 22 82 ba 66 2d 0c e1 [0m
+[0;33mW (266789) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (266790) ACCESS: 02 48 d8 47 d0 8d 03 10 34 05 20 f4 5f 0b cb 11 [0m
+[0;33mW (266793) ACCESS: 03 86 bc 3a 40 5c d5 39 01 12 41 84 07 53 40 a6 [0m
+[0;33mW (267463) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (267464) ACCESS: 20 e2 91 8a da ff 40 4d d9 d6 1e c1 c2 ea 5f 06 [0m
+[0;33mW (267466) ACCESS: 36 22 d0 c5 9a f7 44 68 04 20 47 0e f0 22 10 c2 [0m
+[0;33mW (268555) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (268556) ACCESS: 20 a0 2b 3c c7 1f 90 34 48 80 98 9f 42 2d 45 e7 [0m
+[0;33mW (268559) ACCESS: d8 48 45 9a ce 70 bf a8 00 20 02 21 39 e6 42 80 [0m
+[0;33mW (269066) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (269067) ACCESS: a0 34 57 00 90 e8 3a 30 34 ea e2 c4 06 00 ea 9d [0m
+[0;33mW (269070) ACCESS: 28 e2 c1 01 20 ac 40 05 03 d8 80 dc d0 ca 8c df [0m
+[0;33mW (269473) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (269474) ACCESS: 77 08 00 20 00 81 76 a1 ac 01 f4 2d 80 00 a3 42 [0m
+[0;33mW (269477) ACCESS: 98 01 a2 68 cd c2 64 d0 ea 59 68 05 20 f6 f0 67 [0m
+[0;33mW (270662) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (270663) ACCESS: 20 a6 40 d9 58 07 0e 30 f7 18 60 c0 03 6a a2 f0 [0m
+[0;33mW (270665) ACCESS: a6 12 94 97 18 07 9c 78 01 20 a6 81 df 19 3c 06 [0m
+[0;33mW (271005) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (271005) ACCESS: c2 2f a3 85 89 10 6e 0b 20 81 80 74 30 29 0b 02 [0m
+[0;33mW (271008) ACCESS: 84 61 87 38 04 72 e4 a1 aa 56 44 45 84 8e 57 00 [0m
+[0;33mW (271382) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (271383) ACCESS: 6b de b3 96 83 49 55 86 e9 fd 0c 56 31 25 24 1b [0m
+[0;33mW (271386) ACCESS: ae ab 01 20 38 e6 67 40 07 23 04 28 40 c6 8a 10 [0m
+[0;33mW (271988) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (271989) ACCESS: 35 d0 0f 8d 9c e6 08 ac 97 53 21 6e d0 1b d6 d1 [0m
+[0;33mW (271992) ACCESS: 88 a1 72 24 06 00 29 40 14 b4 b3 d0 4b 80 00 20 [0m
+[0;33mW (272865) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (272866) ACCESS: 20 01 10 92 36 4b 23 76 94 96 00 68 20 09 2d b2 [0m
+[0;33mW (272869) ACCESS: e1 8f 23 5f 03 00 89 b6 05 20 50 e4 64 52 11 a6 [0m
+[0;33mW (273399) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (273400) ACCESS: 70 68 0f 02 08 31 69 50 60 e2 83 05 30 6b 8e b4 [0m
+[0;33mW (273403) ACCESS: 4a 02 20 20 82 01 48 96 8b 20 63 50 c4 98 20 01 [0m
+[0;33mW (274594) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (274595) ACCESS: 20 1c 10 42 40 94 c2 e7 4b 10 10 13 16 ea 79 36 [0m
+[0;33mW (274598) ACCESS: 4b c8 51 30 68 03 2f 80 0f 20 3d c3 1a 46 b8 44 [0m
+[0;33mW (275712) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (275713) ACCESS: 41 42 20 00 83 93 04 d3 d0 0b 80 0b 4c 0e 20 bd [0m
+[0;33mW (275716) ACCESS: cb 0c 05 ec 70 65 2a f4 3e 24 c9 21 ee be 40 e9 [0m
+[0;32mI (276166) ACCESS: CAM UART receiver alive (RX pending=3 bytes)[0m
+[0;33mW (276808) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (276809) ACCESS: 71 21 a3 01 1d d7 ca cb 06 fa 01 20 09 81 aa da [0m
+[0;33mW (276812) ACCESS: 52 01 56 24 03 41 43 07 48 de 26 05 2e 14 a0 13 [0m
+[0;33mW (277992) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (277993) ACCESS: 85 84 97 52 50 fb 02 20 32 a1 43 2a 0b 03 3d e8 [0m
+[0;33mW (277996) ACCESS: 35 f0 b2 40 c0 07 01 20 18 8c 28 47 4b 35 c6 75 [0m
+[0;33mW (278647) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (278648) ACCESS: 02 f2 21 a2 e4 26 8d 1e 3e d0 7d 27 07 71 a4 50 [0m
+[0;33mW (278651) ACCESS: 4a e9 04 12 0e 20 a0 c2 c0 38 28 2e 63 47 8b 24 [0m
+[0;33mW (280704) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (280705) ACCESS: 3f 13 6c c6 64 0e 97 69 09 20 b8 2e 73 da c0 2f [0m
+[0;33mW (280708) ACCESS: 7c 1a 60 c8 2d 22 20 14 2e 28 db 03 51 58 19 08 [0m
+[0;33mW (282361) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (282362) ACCESS: 00 b9 36 54 8b 70 00 02 20 49 31 41 81 83 11 e4 [0m
+[0;33mW (282365) ACCESS: 48 5f 62 30 84 77 39 84 a2 e6 20 f0 16 62 2b 13 [0m
+[0;33mW (283683) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (283684) ACCESS: 13 ec 17 c1 26 2d 1e 9e ec d3 01 20 a8 4d 30 4d [0m
+[0;33mW (283687) ACCESS: 80 90 88 88 5f ae e4 aa 70 89 29 30 67 40 ea c4 [0m
+[0;33mW (285026) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (285027) ACCESS: ee 17 42 60 21 03 20 b4 81 db 29 74 87 aa 80 97 [0m
+[0;33mW (285030) ACCESS: 31 46 26 d3 85 08 c9 42 ab 24 4c 81 16 55 02 20 [0m
+[0;33mW (285779) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (285779) ACCESS: c0 d5 ec e8 72 88 10 12 a1 f0 4a c4 06 58 43 e2 [0m
+[0;33mW (285782) ACCESS: db 46 09 20 96 57 a9 85 61 70 1c ad 28 39 38 82 [0m
+[0;33mW (286145) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (286146) ACCESS: af 81 28 34 45 65 12 99 08 e1 b4 83 11 67 3b a3 [0m
+[0;33mW (286148) ACCESS: 26 d4 08 00 20 41 de 87 4b ec e5 94 74 0c 42 78 [0m
+[0;33mW (287392) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (287393) ACCESS: 60 00 0f c4 56 c0 a6 e6 05 fc 10 29 46 8a e8 93 [0m
+[0;33mW (287395) ACCESS: a6 c3 88 d2 c3 0e f2 1d 5d 00 83 45 93 3a ae 42 [0m
+[0;33mW (287993) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (287994) ACCESS: 04 75 02 20 a8 bc 2c 0f 3c 67 04 8b 16 a9 ae 85 [0m
+[0;33mW (287997) ACCESS: 1e 05 05 59 62 18 37 a5 52 11 83 00 20 84 05 73 [0m
+[0;33mW (288694) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (288695) ACCESS: 10 c0 64 8e 34 28 47 85 02 fc 60 6b a8 0b 5a 87 [0m
+[0;33mW (288698) ACCESS: 9b 7a 4d 9d a0 02 8e 13 02 80 61 20 c0 0e c4 c6 [0m
+[0;33mW (290395) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (290396) ACCESS: 52 2e 69 08 39 2c 12 fe 64 44 08 a4 8c 1a 22 54 [0m
+[0;33mW (290398) ACCESS: 01 00 20 10 f2 2f 2d b1 c4 9f 97 23 53 40 00 20 [0m
+[0;32mI (291235) ACCESS: CAM UART receiver alive (RX pending=6 bytes)[0m
+[0;33mW (291541) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (291542) ACCESS: c1 19 c6 64 08 43 db a1 1b 3f 85 11 2a 3b 65 ef [0m
+[0;33mW (291545) ACCESS: c5 52 07 20 09 c8 80 10 a6 46 68 12 c6 ab 12 a0 [0m
+[0;33mW (292499) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (292500) ACCESS: 8a dc 8a 56 c1 82 63 d5 e5 03 fc 10 6c 20 1f 03 [0m
+[0;33mW (292503) ACCESS: 0c 88 00 05 01 1a 96 06 1a 2c 89 15 32 38 21 97 [0m
+[0;33mW (293497) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (293498) ACCESS: 21 35 71 74 18 a6 0b 14 84 32 2b fd 55 4f 24 a2 [0m
+[0;33mW (293501) ACCESS: ae 36 63 05 20 58 28 7e 99 eb 9e 64 31 4b 52 47 [0m
+[0;33mW (294685) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (294686) ACCESS: 90 29 00 20 01 9a 80 34 85 88 56 40 90 05 c2 08 [0m
+[0;33mW (294689) ACCESS: 42 28 cb b9 c9 1a 32 2f ad d4 05 06 20 40 49 27 [0m
+[0;33mW (295594) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (295595) ACCESS: f8 ea 96 d5 28 60 56 a4 5c 16 ce a1 14 08 20 42 [0m
+[0;33mW (295598) ACCESS: 48 24 1f 06 d8 23 94 e1 2b 08 18 10 a8 a3 0b e7 [0m
+[0;33mW (298031) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (298032) ACCESS: 83 a0 d4 e0 22 7c e0 20 18 45 69 5d 74 00 5f 0f [0m
+[0;33mW (298034) ACCESS: 20 50 31 33 68 1c ac 98 04 c0 2b ca 2e 39 e5 01 [0m
+[0;33mW (298478) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (298479) ACCESS: 04 31 2f 3c 45 08 22 81 b3 24 02 20 b9 bd 7a af [0m
+[0;33mW (298482) ACCESS: 84 9d 45 12 be 89 4e a8 84 30 fe a4 67 0f 00 64 [0m
+[0;33mW (298836) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (298837) ACCESS: 8f 08 ce 28 10 2a e8 58 86 c4 00 b1 41 03 8d 99 [0m
+[0;33mW (298840) ACCESS: d0 00 fc 18 00 f0 7f 4d 38 7c c0 6a 5e 23 16 ad [0m
+[0;33mW (300196) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (300197) ACCESS: 2b 09 11 98 17 80 09 4e 09 5a bf 85 8a 98 00 20 [0m
+[0;33mW (300200) ACCESS: 50 64 a3 44 2a 82 d2 93 10 42 48 16 5e 39 ba e2 [0m
+[0;33mW (301771) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (301772) ACCESS: 20 99 47 5d a2 6e 09 b5 0e 03 08 24 2d 06 11 ce [0m
+[0;33mW (301774) ACCESS: a8 84 00 61 a0 e4 14 44 01 20 8f 22 57 a7 05 a4 [0m
+[0;33mW (302785) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (302786) ACCESS: 20 72 10 4a 9c 0e 48 09 0b 03 09 05 0b 21 3e 01 [0m
+[0;33mW (302789) ACCESS: 85 31 66 d5 1a 81 21 02 20 2c c8 12 fb a2 4c 23 [0m
+[0;33mW (303217) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (303218) ACCESS: 03 5a 23 a1 78 06 2e 38 10 0b 10 40 88 ef b0 a2 [0m
+[0;33mW (303221) ACCESS: a4 02 eb 07 20 4c 4c 49 49 10 43 5c 91 40 0b 18 [0m
+[0;33mW (305144) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (305145) ACCESS: 50 d5 21 54 43 f9 31 5c 01 20 e1 11 95 17 3a 38 [0m
+[0;33mW (305148) ACCESS: a3 81 44 6d 45 09 36 4b 47 9a be 08 14 24 11 e4 [0m
+[0;33mW (306277) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (306278) ACCESS: cc 17 00 20 01 03 51 1f 0b 63 54 40 1c 50 d3 68 [0m
+[0;33mW (306281) ACCESS: 59 5f 18 54 64 22 50 44 b0 bc 00 00 bc 00 e9 ba [0m
+[0;32mI (306976) ACCESS: CAM UART receiver alive (RX pending=4 bytes)[0m
+[0;33mW (307292) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (307293) ACCESS: d0 57 13 00 20 39 32 8e 14 4c 62 8b 51 29 09 eb [0m
+[0;33mW (307295) ACCESS: a6 06 8e 62 a8 85 27 82 8e 46 c3 30 00 20 00 70 [0m
+[0;33mW (308404) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (308405) ACCESS: 64 21 1e 09 82 4d 51 03 f9 95 b4 b0 54 48 a2 57 [0m
+[0;33mW (308408) ACCESS: f4 f4 f6 e0 3a 02 20 24 88 04 63 58 90 26 81 6b [0m
+[0;33mW (309159) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (309159) ACCESS: 05 0b 4c a2 21 b8 0f 0e 20 10 24 65 a2 60 2c 14 [0m
+[0;33mW (309162) ACCESS: a6 06 32 41 42 e3 00 38 cb 59 29 2e 01 80 ce 74 [0m
+[0;33mW (309657) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (309658) ACCESS: 31 d3 b2 40 38 fc d8 02 20 90 88 c2 38 cc 03 f5 [0m
+[0;33mW (309661) ACCESS: 94 1b c6 08 02 9c b0 c8 51 2c 67 12 01 80 10 c4 [0m
+[0;33mW (310186) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (310187) ACCESS: c9 08 bc 90 85 7b 2a e2 e1 45 c5 b0 8c 43 17 04 [0m
+[0;33mW (310190) ACCESS: a8 c0 24 99 b2 8f fc 58 19 46 0c 20 4c 8c 2c 13 [0m
+[0;33mW (311298) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (311299) ACCESS: 1d 13 a8 0e cb 40 63 24 4d ce 64 eb c2 61 84 16 [0m
+[0;33mW (311302) ACCESS: 00 20 18 e1 d2 b0 c7 da 21 42 87 28 29 ce eb 31 [0m
+[0;33mW (311674) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (311675) ACCESS: 40 20 37 54 69 f4 ac 0f 05 fc 44 19 13 06 85 12 [0m
+[0;33mW (311678) ACCESS: eb aa c2 88 25 38 25 d7 16 85 b0 84 e1 52 25 38 [0m
+[0;33mW (312088) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (312088) ACCESS: 1c a8 8d 22 e4 c6 46 ae 36 00 a0 1e cc 46 0c 20 [0m
+[0;33mW (312091) ACCESS: 02 20 5b 6d 38 40 d1 92 5e db a7 13 86 d0 4d 62 [0m
+[0;33mW (313193) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (313194) ACCESS: a0 85 93 12 b1 06 20 1d 39 62 33 02 62 27 f5 36 [0m
+[0;33mW (313196) ACCESS: d8 a4 88 e0 8e 20 bd 47 ee ec ce 4d 05 4c 00 20 [0m
+[0;33mW (313866) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (313867) ACCESS: 85 2d 02 ac 00 37 81 3b f3 6e b8 e1 db 53 c5 26 [0m
+[0;33mW (313870) ACCESS: 46 37 2b 04 80 90 6b c2 c2 a0 b5 04 fc 06 80 70 [0m
+[0;33mW (314305) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (314306) ACCESS: 00 20 14 40 bf fa 2c 4a 7b 04 84 28 0b 9a 38 59 [0m
+[0;33mW (314309) ACCESS: 64 a1 17 22 4c 42 d4 0f d1 03 20 74 46 4f 81 be [0m
+[0;33mW (314988) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (314989) ACCESS: 54 4c 86 4c 9e 04 00 20 58 be 91 22 17 b0 41 00 [0m
+[0;33mW (314991) ACCESS: 59 60 90 60 e1 13 0c 01 01 a2 8a 9c 4c e0 02 20 [0m
+[0;32mI (315487) ACCESS: LD2410C presence=1[0m
+[0;33mW (315752) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (315753) ACCESS: 41 cf 81 84 c0 8c 47 34 d2 60 20 cf 74 8f b8 ff [0m
+[0;33mW (315755) ACCESS: 29 66 00 20 aa 10 5a b9 46 8b dd 40 88 47 18 b1 [0m
+[0;33mW (317197) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (317198) ACCESS: 2c 09 05 30 81 00 30 58 f7 3e 20 40 48 f4 5e 31 [0m
+[0;33mW (317201) ACCESS: 08 ae a0 c3 08 23 2c 8b 45 83 20 45 e7 4f 02 82 [0m
+[0;33mW (318183) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (318184) ACCESS: 01 20 92 84 1b 56 73 a5 60 c6 16 b7 70 82 cb 04 [0m
+[0;33mW (318186) ACCESS: a5 8e 9c 38 b2 c0 17 5d 02 20 10 62 4b 3c d5 00 [0m
+[0;33mW (319006) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (319006) ACCESS: 2f 97 f8 0b 9c 00 20 85 3a 52 48 c4 1e 87 b2 94 [0m
+[0;33mW (319009) ACCESS: 64 4e 25 d4 38 ed e0 72 32 92 60 da 60 58 20 a4 [0m
+[0;33mW (320246) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (320247) ACCESS: 4e 78 15 66 0c 9c e4 9c 05 13 fc 40 80 bb 29 1a [0m
+[0;33mW (320250) ACCESS: b4 27 f5 07 03 84 9a 56 19 53 c1 2f eb fe 32 c2 [0m
+[0;33mW (320678) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (320679) ACCESS: 88 a1 cb 91 33 b2 3c c0 00 20 a3 34 f4 c2 28 52 [0m
+[0;33mW (320682) ACCESS: f0 27 d8 c3 a8 90 46 c8 99 a6 cb d6 c8 92 c8 82 [0m
+[0;33mW (321208) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (321209) ACCESS: 17 19 10 12 d0 21 55 36 dd 1c 0f 3a 3e 66 37 fd [0m
+[0;33mW (321211) ACCESS: 19 b5 3b 05 20 94 cf b8 d8 86 4c b0 3f 0c 30 b8 [0m
+[0;33mW (321674) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (321675) ACCESS: a0 fa 7c 18 c6 00 20 44 5e 7c 20 43 de 54 06 80 [0m
+[0;33mW (321678) ACCESS: af 08 32 e0 9b d0 8b d0 60 e0 de b2 2f 08 b1 00 [0m
+[0;32mI (322715) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (323237) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (323238) ACCESS: 22 52 04 c6 08 22 64 d4 11 2b 60 7a 13 68 a4 32 [0m
+[0;33mW (323241) ACCESS: 20 45 20 44 4b 5c 84 fa 62 23 ed 29 e4 13 18 32 [0m
+[0;33mW (324502) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (324503) ACCESS: 44 2c 69 04 19 54 18 2e 20 f3 35 84 52 79 02 57 [0m
+[0;33mW (324506) ACCESS: c3 12 93 86 40 8c a4 f3 0b a2 00 2b 01 03 c4 0c [0m
+[0;33mW (324899) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (324900) ACCESS: 19 20 24 74 69 58 75 88 c0 86 8d 07 cc 90 dc 6f [0m
+[0;33mW (324903) ACCESS: 94 6d 29 92 62 e5 e1 a5 b8 11 20 82 a0 47 bb b9 [0m
+[0;33mW (325283) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (325284) ACCESS: 0c 09 d7 ee 88 e9 32 0e fc 4a 82 19 c4 a4 0e cc [0m
+[0;33mW (325287) ACCESS: 08 40 6f 80 12 0c 8a e0 10 42 c1 a3 e3 80 11 28 [0m
+[0;33mW (326786) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (326787) ACCESS: 80 97 c9 77 00 7b a4 f5 70 ad 3a 6c 14 42 00 fc [0m
+[0;33mW (326790) ACCESS: 68 b9 81 82 5a eb 9f c0 1f 9c 7c 52 aa b3 d4 60 [0m
+[0;33mW (327415) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (327416) ACCESS: 49 81 11 82 d4 19 5b 94 52 a6 1a 9c 18 0e a1 00 [0m
+[0;33mW (327419) ACCESS: 1c 01 20 20 4b 10 01 48 b8 80 c9 9a 54 ae 56 fe [0m
+[0;33mW (327853) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (327853) ACCESS: 24 a8 10 70 52 23 52 68 a4 b4 ed 3f c0 e0 53 00 [0m
+[0;33mW (327856) ACCESS: 20 34 9c 38 c0 c2 2a ba 00 fd b7 bc 36 79 1c 17 [0m
+[0;33mW (328515) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (328516) ACCESS: 57 09 d5 0b 56 a2 e0 16 12 25 4d 28 90 a0 04 b2 [0m
+[0;33mW (328518) ACCESS: e7 22 26 a9 f3 34 01 ac ff 63 4b dc 65 18 80 60 [0m
+[0;33mW (330094) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (330095) ACCESS: 70 10 c5 e8 b6 0b bd 6f 54 00 6f 00 fc d8 d8 5c [0m
+[0;33mW (330098) ACCESS: 45 93 21 0e 09 48 cb d0 d3 90 c0 12 de 02 c0 02 [0m
+[0;33mW (330867) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (330868) ACCESS: b5 00 3c b5 29 02 08 cc ce e0 49 d0 29 10 43 76 [0m
+[0;33mW (330871) ACCESS: 2c e9 a3 1b 33 00 fc 58 56 01 f8 da c4 7c b2 41 [0m
+[0;33mW (331742) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (331743) ACCESS: ef 95 ea 6c 6a 48 bd b5 20 9f 30 7d a3 aa 6e 03 [0m
+[0;33mW (331746) ACCESS: 20 10 a3 42 58 c1 b7 42 88 43 07 c4 c0 dd 96 ad [0m
+[0;33mW (332170) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (332171) ACCESS: 40 35 20 10 78 9b 11 c8 c9 30 a0 80 0c 0e 49 00 [0m
+[0;33mW (332174) ACCESS: c8 54 da 58 e7 d2 e8 00 20 98 00 13 b5 1d 1e ee [0m
+[0;33mW (333808) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (333809) ACCESS: 73 5b 41 05 20 00 30 00 3d 55 3d 01 46 3d 13 00 [0m
+[0;33mW (333812) ACCESS: 31 2d 80 c8 94 38 38 88 a8 2f 7e 02 20 a1 b4 05 [0m
+[0;33mW (334338) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (334339) ACCESS: da 05 90 45 2a 23 0b ba 8b 9a 1a 29 49 60 1c e2 [0m
+[0;33mW (334342) ACCESS: cc 4f 60 26 07 bc f5 51 c8 18 52 a1 84 d0 ab 26 [0m
+[0;33mW (334822) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (334823) ACCESS: 00 7c 67 01 99 5c c2 19 9f 18 55 76 20 4b 70 90 [0m
+[0;33mW (334826) ACCESS: 89 a1 73 88 20 00 20 96 11 a4 00 d8 09 50 9a 5d [0m
+[0;33mW (335862) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (335864) ACCESS: 16 17 a2 dd 80 0b 9c 19 1d f5 38 49 00 20 59 10 [0m
+[0;33mW (335866) ACCESS: db d3 46 0c 7a 02 29 29 02 44 f3 22 53 0e 62 0c [0m
+[0;33mW (336270) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (336271) ACCESS: 3c a1 c1 54 20 cf 38 2a 35 02 87 22 1c 2e 06 20 [0m
+[0;33mW (336274) ACCESS: fa 41 a5 88 c3 00 20 70 39 47 da a1 15 55 9e 90 [0m
+[0;33mW (336859) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (336860) ACCESS: 8a a7 a0 39 14 20 64 2a 23 92 68 c2 e1 25 8a 13 [0m
+[0;33mW (336863) ACCESS: 38 42 a4 34 05 a7 16 b9 92 6f f0 01 20 d3 03 75 [0m
+[0;33mW (337782) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (337783) ACCESS: 19 f9 c2 02 76 13 02 20 14 74 12 7b e8 80 48 69 [0m
+[0;33mW (337786) ACCESS: e0 81 b2 d8 08 a8 50 e8 1a 8a 39 3d 80 1c bc 62 [0m
+[0;32mI (338413) ACCESS: CAM UART receiver alive (RX pending=1 bytes)[0m
+[0;33mW (338812) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (338813) ACCESS: a9 96 b2 17 a5 6e 08 20 5a 19 20 e3 26 4d ef 14 [0m
+[0;33mW (338816) ACCESS: 86 54 66 16 c6 08 44 30 2a f0 f7 3f fd 08 d4 14 [0m
+[0;33mW (339343) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (339344) ACCESS: 3a f6 d4 34 cf 6a 8d 31 d4 cf e6 dc ff a3 01 36 [0m
+[0;33mW (339347) ACCESS: 5f 1d a1 46 9c 00 20 22 81 a0 2d a1 55 a8 30 15 [0m
+[0;33mW (339955) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (339956) ACCESS: 41 92 1a 10 88 a2 c3 1d 48 86 81 71 1f 6a 08 53 [0m
+[0;33mW (339958) ACCESS: 1a 3f 84 24 1f 6c 00 20 31 69 46 00 71 45 9d c3 [0m
+[0;33mW (340463) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (340464) ACCESS: c4 ac 5c 56 09 ad 02 fc 0c d9 04 c7 48 00 f9 63 [0m
+[0;33mW (340466) ACCESS: 98 20 77 11 12 a9 af a0 cf 2c f1 8d 68 be 23 bb [0m
+[0;33mW (341229) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (341230) ACCESS: 32 02 28 89 61 19 50 f0 fa 2c b6 5d 29 63 65 8c [0m
+[0;33mW (341233) ACCESS: ed 10 ea 03 fc e4 25 40 3d 66 84 4e 03 16 80 a2 [0m
+[0;33mW (342202) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (342202) ACCESS: 03 20 e2 1a 50 52 c6 70 00 46 74 62 84 dc 00 9d [0m
+[0;33mW (342205) ACCESS: 4a 5c 07 91 5b 33 97 bd 46 25 52 54 01 20 5d b3 [0m
+[0;33mW (342512) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (342513) ACCESS: b8 ab 93 61 68 08 34 09 5a 6d ea fa ce 30 47 1b [0m
+[0;33mW (342515) ACCESS: d1 02 73 00 20 f1 30 ee 30 20 4f 2a 04 07 8c 5e [0m
+[0;33mW (343282) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (343283) ACCESS: 15 77 ad dc 00 20 30 41 22 a8 2c 61 82 58 cb 34 [0m
+[0;33mW (343286) ACCESS: e6 06 16 ce 00 8b cd e6 9d 97 84 1b 67 75 52 00 [0m
+[0;33mW (345436) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (345437) ACCESS: 2d 85 a2 5c bd 01 20 a4 39 f6 c2 bf 71 d9 52 b1 [0m
+[0;33mW (345439) ACCESS: 5e 1c 17 3c 20 14 5d ea 43 4b 4f d5 a6 42 1a 9d [0m
+[0;33mW (346624) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (346625) ACCESS: f2 c9 a2 7a c4 63 a7 29 d1 eb 6c a8 30 a3 a6 aa [0m
+[0;33mW (346628) ACCESS: 19 02 20 06 e8 44 31 2e 8b d7 64 d3 08 74 00 f5 [0m
+[0;33mW (346978) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (346979) ACCESS: 72 80 34 28 08 34 b6 2a 82 a0 69 44 93 11 fc 3c [0m
+[0;33mW (346982) ACCESS: bb d4 d1 90 cf cc 01 20 70 2e 47 59 5e 27 38 c3 [0m
+[0;33mW (349325) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (349326) ACCESS: 62 d3 d3 02 20 45 01 2a 33 27 9c 18 01 11 19 14 [0m
+[0;33mW (349329) ACCESS: 61 70 84 42 87 87 6b 3c 7f 8d 73 56 4b 33 10 02 [0m
+[0;33mW (350757) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (350758) ACCESS: cd 2d 8c 79 c5 25 32 7d 7c 27 80 00 a6 00 20 be [0m
+[0;33mW (350761) ACCESS: 24 7d 64 0c 40 b8 c9 c1 42 3f 50 26 ca 60 5c 90 [0m
+[0;33mW (351120) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (351121) ACCESS: 92 00 b5 53 ce 06 2a 03 08 66 e2 0f 01 20 20 ae [0m
+[0;33mW (351124) ACCESS: 7c a5 46 94 fc 3c e5 13 38 49 e3 31 92 28 88 a4 [0m
+[0;33mW (352561) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (352562) ACCESS: 13 2d 32 f6 11 3d 24 9f 12 94 01 20 99 43 48 59 [0m
+[0;33mW (352565) ACCESS: 4e e4 e1 94 ca 7c 53 f1 c5 d2 29 5e 0c c1 a9 c6 [0m
+[0;33mW (352918) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (352919) ACCESS: 11 f2 be 59 16 43 15 69 cb b5 d4 39 02 20 46 60 [0m
+[0;33mW (352922) ACCESS: d9 1b 38 9a 86 5b 59 55 4c 52 a2 ca 18 7e f9 dd [0m
+[0;33mW (353442) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (353443) ACCESS: 4c b4 0e 8d 24 47 82 94 80 8d 00 86 10 d5 ee c7 [0m
+[0;33mW (353445) ACCESS: 98 85 ed a9 88 5a e1 00 5c 00 20 e4 60 04 91 47 [0m
+[0;32mI (354300) ACCESS: CAM UART receiver alive (RX pending=2 bytes)[0m
+[0;33mW (354647) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (354648) ACCESS: 86 0e 29 05 2a 95 e0 3e ed 29 34 00 20 50 1e 01 [0m
+[0;33mW (354650) ACCESS: d0 2a 15 18 24 e6 f2 a9 32 c2 03 3e 8b b9 08 cc [0m
+[0;33mW (355514) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (355515) ACCESS: fc 74 cc 56 15 21 de 89 2a 02 20 7c 0e b3 00 45 [0m
+[0;33mW (355518) ACCESS: a0 dc 04 49 c2 02 31 c0 05 48 c7 24 95 5d 39 c1 [0m
+[0;33mW (356745) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (356746) ACCESS: f5 18 f7 cd 1c 20 66 4e 91 04 b4 d0 ec e1 b4 4c [0m
+[0;33mW (356749) ACCESS: f0 58 e2 1d 06 2c 1e 83 ae ee 9a 0f 13 19 fc bc [0m
+[0;33mW (357177) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (357178) ACCESS: 21 13 f3 4a 01 01 20 63 43 10 34 2d 19 cc 31 a0 [0m
+[0;33mW (357181) ACCESS: 24 cd a8 e1 95 e1 b0 a8 ba ed db 2a 53 07 c9 c8 [0m
+[0;33mW (358100) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (358101) ACCESS: c7 52 de 66 fb 61 9c 25 79 e1 12 21 01 20 73 c2 [0m
+[0;33mW (358103) ACCESS: 04 36 e4 a0 d2 61 a7 d2 20 ee a0 09 5d 94 70 5e [0m
+[0;33mW (359440) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (359440) ACCESS: 19 45 c2 0f 48 1e 44 60 21 a5 a6 9b d1 00 72 ec [0m
+[0;33mW (359443) ACCESS: 48 fa bf 01 fc 50 cb aa 2a c3 1c fc 84 c0 c3 78 [0m
+[0;33mW (360549) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (360550) ACCESS: 54 40 b7 29 94 3d e3 ed 4c 3f 05 00 18 01 20 0e [0m
+[0;33mW (360553) ACCESS: b4 ae 2a 05 1a 8d b1 62 c3 df a1 e0 53 19 9a fd [0m
+[0;33mW (361687) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (361688) ACCESS: d0 f9 5c 95 24 30 a8 79 81 92 11 20 7b 47 74 66 [0m
+[0;33mW (361691) ACCESS: d5 db 14 51 33 2f 00 20 60 2e b3 c5 44 78 1e 9b [0m
+[0;33mW (362177) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (362178) ACCESS: 62 b4 49 23 5c a3 20 89 94 1b 28 2d 4a fc f0 a3 [0m
+[0;33mW (362181) ACCESS: eb 85 01 45 cf 3d a3 71 02 20 03 22 19 68 c9 2f [0m
+[0;33mW (363142) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (363143) ACCESS: d6 e1 e8 23 f8 82 09 53 0c 05 e9 76 a1 eb 0b 74 [0m
+[0;33mW (363146) ACCESS: d5 85 c7 6e f9 01 ac 00 51 31 78 c2 c3 ee 70 8a [0m
+[0;33mW (363978) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (363979) ACCESS: 11 2d b8 09 25 8b 40 8d 71 4d 19 23 08 40 81 c2 [0m
+[0;33mW (363982) ACCESS: ff 4c 80 29 a4 40 d2 24 00 20 08 b5 7a 22 10 53 [0m
+[0;33mW (364961) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (364962) ACCESS: 04 b7 f1 48 f4 af 2e a5 00 20 64 30 04 1e cb 83 [0m
+[0;33mW (364965) ACCESS: 3b 61 5b 31 8d df 00 80 93 ae 2d a4 16 26 5a 0f [0m
+[0;33mW (365678) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (365679) ACCESS: 36 19 62 d9 44 c1 c0 1d a9 c8 46 1b 8a a5 a4 b8 [0m
+[0;33mW (365681) ACCESS: ac 07 20 21 56 24 c4 58 97 c0 86 9c 02 02 14 d6 [0m
+[0;33mW (366376) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (366377) ACCESS: 44 1b c0 07 d0 39 bf 70 11 6c 0c b5 82 ca df cd [0m
+[0;33mW (366380) ACCESS: cc 00 20 4d 00 15 2f 64 dd 7d 91 6d 23 aa 08 12 [0m
+[0;33mW (367104) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (367105) ACCESS: 66 30 f9 1e 61 2e 73 2d 08 cc 1e 01 bc 90 84 7c [0m
+[0;33mW (367108) ACCESS: b1 14 91 fe 39 ee 44 88 89 40 f5 02 93 68 d8 e2 [0m
+[0;33mW (368224) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (368225) ACCESS: 54 11 c8 81 e3 5c b8 bb 42 d0 27 a2 17 67 e2 fc [0m
+[0;33mW (368228) ACCESS: d5 ba 5c d3 a2 54 03 20 ce 88 34 a0 62 41 ed c3 [0m
+[0;33mW (368661) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (368662) ACCESS: c3 d5 66 22 c6 8b da 3c 91 49 30 c4 fa 47 28 eb [0m
+[0;33mW (368664) ACCESS: de d4 4e 59 06 20 48 03 60 d5 56 09 c9 a0 06 38 [0m
+[0;32mI (369539) ACCESS: CAM UART receiver alive (RX pending=4 bytes)[0m
+[0;33mW (370288) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (370289) ACCESS: 72 d1 28 a0 69 fc bf db 00 86 ae 6a 04 8c 00 ac [0m
+[0;33mW (370294) ACCESS: 2a 20 84 5b 0f fa 9f c8 2a 50 97 23 89 48 62 25 [0m
+[0;33mW (371038) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (371039) ACCESS: f9 89 04 97 65 89 50 04 d3 8c 29 62 90 4a 28 dd [0m
+[0;33mW (371042) ACCESS: e4 df 06 3d 57 7c f6 f4 01 20 77 46 12 02 ce 9b [0m
+[0;33mW (371366) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (371366) ACCESS: 48 0f 49 24 70 21 ba a4 10 7b 04 20 26 53 45 a1 [0m
+[0;33mW (371369) ACCESS: fa 58 89 50 05 f4 21 c3 10 42 30 a8 10 1c ca bb [0m
+[0;33mW (372521) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (372521) ACCESS: ad 2b ff 09 70 96 74 07 20 87 a2 82 a3 a4 21 38 [0m
+[0;33mW (372525) ACCESS: 01 01 09 f1 a5 01 63 9d 56 6f f1 b8 44 54 d7 d9 [0m
+[0;33mW (372957) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (372958) ACCESS: 61 2b a6 00 20 60 48 a7 aa da 53 18 22 f8 30 92 [0m
+[0;33mW (372961) ACCESS: 59 10 c4 6f 2f 25 8a 9f 22 92 ee 5b 89 0f 10 20 [0m
+[0;33mW (373681) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (373682) ACCESS: e7 98 f8 07 20 27 10 29 23 58 12 f1 8b 43 a0 86 [0m
+[0;33mW (373685) ACCESS: 00 01 e7 01 ab 71 3f 16 9a 3d 46 4a 73 6d 70 02 [0m
+[0;33mW (374646) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (374647) ACCESS: 30 6c 87 ef 2a 9c 55 20 40 15 d1 44 92 17 94 2c [0m
+[0;33mW (374649) ACCESS: c8 80 4d 01 aa 25 31 20 22 32 e6 b8 54 09 a4 c0 [0m
+[0;33mW (375139) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (375140) ACCESS: c0 5b 17 90 bb 80 68 a8 e1 08 34 f0 c0 80 53 64 [0m
+[0;33mW (375143) ACCESS: e6 19 48 9f 14 09 a9 00 20 2c 48 89 68 45 80 6a [0m
+[0;33mW (375842) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (375843) ACCESS: 00 20 ca 02 0f cc 07 00 4e 01 4d a1 40 27 1d 72 [0m
+[0;33mW (375846) ACCESS: 00 3e 1c 72 90 06 6e 3b 86 3e 7a 63 03 fc 82 55 [0m
+[0;33mW (377103) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (377104) ACCESS: ac 51 d0 c9 f8 1a 9b 11 04 d4 b8 a9 73 0f 4d a2 [0m
+[0;33mW (377106) ACCESS: f6 12 fa 1b 84 14 d7 00 8d 00 20 4f c6 4b 49 c9 [0m
+[0;33mW (377582) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (377583) ACCESS: 62 83 28 f2 22 10 1e bb e1 68 16 40 b5 69 37 d2 [0m
+[0;33mW (377586) ACCESS: da 18 6e 85 92 d7 c8 01 fc 60 46 69 f4 b0 b7 3d [0m
+[0;33mW (379256) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (379257) ACCESS: 10 b0 33 ba 82 3a e4 92 59 23 01 19 fa 15 48 6e [0m
+[0;33mW (379259) ACCESS: 59 6e da 91 33 04 20 37 c4 ca cc cc 06 7b d4 d6 [0m
+[0;33mW (380160) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (380161) ACCESS: 29 f1 c9 28 89 00 20 92 d8 04 4c 14 d2 3d 20 05 [0m
+[0;33mW (380164) ACCESS: b1 2b 2b 29 da 11 c4 28 36 20 05 61 cd 55 58 d9 [0m
+[0;33mW (381173) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (381174) ACCESS: 00 20 c1 12 ae 5b 42 62 2d 8d 85 02 20 0e a6 c2 [0m
+[0;33mW (381177) ACCESS: 41 bf 32 2b 87 24 3d e7 5f 0b 28 cc 00 20 22 06 [0m
+[0;33mW (382048) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (382049) ACCESS: 55 41 dc b8 21 02 cf 49 51 0b 3b 49 81 2a 18 7e [0m
+[0;33mW (382052) ACCESS: 06 8f 3a 06 35 e6 e2 07 20 51 03 c1 6e b7 15 de [0m
+[0;33mW (382606) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (382607) ACCESS: bc 01 20 44 45 53 b0 7d 1e f7 49 1c b3 98 d1 ce [0m
+[0;33mW (382610) ACCESS: 7e 84 5f 29 82 b8 92 94 00 63 2c 76 a9 90 03 20 [0m
+[0;33mW (383866) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (383867) ACCESS: 73 c4 ed 38 3d 62 32 35 61 80 81 5d 4d 0c fa 3f [0m
+[0;33mW (383870) ACCESS: b5 86 b2 56 02 20 c5 50 1b 12 7c 2a 7e ba 23 2a [0m
+[0;33mW (384703) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (384704) ACCESS: 2e 9b 00 20 20 26 cc b2 f1 02 8d b1 04 49 7e 81 [0m
+[0;33mW (384706) ACCESS: 16 c4 3f 28 0e f6 33 56 37 90 af 3a bc f4 03 ac [0m
+[0;32mI (385307) ACCESS: CAM UART receiver alive (RX pending=1 bytes)[0m
+[0;33mW (385610) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (385611) ACCESS: 86 14 47 9e 04 74 76 29 88 23 1d aa 55 4f cb 9a [0m
+[0;33mW (385613) ACCESS: 06 9f 03 fc 1e 58 85 0f 54 01 10 30 21 11 22 13 [0m
+[0;33mW (386352) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (386352) ACCESS: 9a 05 c9 7c ff dc b8 9f f2 49 28 01 20 55 0f 05 [0m
+[0;33mW (386355) ACCESS: a9 42 32 f8 e2 ae 18 18 9e 0c 92 02 55 55 ce 28 [0m
+[0;33mW (387288) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (387289) ACCESS: 20 f0 de 60 00 3c fd 05 20 50 19 c7 51 00 25 f8 [0m
+[0;33mW (387292) ACCESS: f0 95 4d 40 eb c9 e1 8f 05 74 16 92 1f c0 5f ca [0m
+[0;33mW (387678) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (387679) ACCESS: 25 60 68 d9 c3 5d 93 1e 80 52 5a aa 04 55 ee a7 [0m
+[0;33mW (387682) ACCESS: 23 7b d7 fd 87 8e 4f 01 fc d0 26 a0 42 5e 9b ea [0m
+[0;33mW (387980) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (387981) ACCESS: 2a 39 24 86 3b 0c 06 da 16 39 15 a3 1f 5a 7a 43 [0m
+[0;33mW (387984) ACCESS: c9 1d 08 03 20 e0 48 8c dd a6 b5 b8 05 5e 48 07 [0m
+[0;33mW (388942) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (388943) ACCESS: 7d b1 36 45 72 e1 09 20 d7 64 f3 22 21 a5 da b5 [0m
+[0;33mW (388945) ACCESS: 85 a5 a8 01 f8 d6 14 0c 82 25 77 ee 37 90 aa 74 [0m
+[0;33mW (389807) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (389808) ACCESS: 35 31 f5 bf 30 2e e7 4a 01 20 65 c5 8e d6 00 d3 [0m
+[0;33mW (389811) ACCESS: 70 63 41 3c 80 a4 59 a5 86 a9 c1 e1 64 e8 2f e5 [0m
+[0;33mW (391078) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (391079) ACCESS: b4 8f 90 83 12 f2 29 9b 17 cf fe eb cd 7a b1 6c [0m
+[0;33mW (391081) ACCESS: 00 20 44 09 40 e8 c3 18 84 3b 12 39 0b 4f d2 3f [0m
+[0;33mW (391457) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (391458) ACCESS: f9 81 01 0f d0 af d4 14 2a 62 05 20 72 04 80 e1 [0m
+[0;33mW (391460) ACCESS: 48 1d fa d5 a0 33 47 10 80 70 31 73 7d da e2 ed [0m
+[0;33mW (391884) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (391885) ACCESS: a6 01 cd 15 f7 08 08 d7 db fa 24 48 af 00 20 02 [0m
+[0;33mW (391888) ACCESS: 05 42 88 25 59 30 f8 09 a8 95 54 87 22 16 77 cc [0m
+[0;33mW (392256) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (392257) ACCESS: 52 aa 26 af 9b 04 20 cc 76 8d ad 89 53 b0 c2 48 [0m
+[0;33mW (392260) ACCESS: a9 fd 4d d5 a4 04 81 b6 98 25 7e 26 e3 fa 2f 3e [0m
+[0;33mW (392821) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (392822) ACCESS: 2c cf 64 92 55 f1 52 49 98 1b 93 bd 84 69 02 e8 [0m
+[0;33mW (392825) ACCESS: f0 16 af 07 ac 02 12 00 42 88 50 a5 22 68 23 05 [0m
+[0;33mW (393873) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (393874) ACCESS: 1b fd 92 ba e0 f0 a4 c9 04 60 07 7a 60 2d 95 ec [0m
+[0;33mW (393877) ACCESS: b0 4e a2 ab 5d 81 ac 20 36 a6 01 3f 6c a7 d8 a4 [0m
+[0;33mW (395198) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (395199) ACCESS: 7d 12 8b b0 59 18 d6 e7 20 34 f7 10 f3 c7 d8 00 [0m
+[0;33mW (395202) ACCESS: bc 07 87 d5 91 0c 49 44 b4 41 45 8b 22 84 5c c9 [0m
+[0;33mW (396239) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (396240) ACCESS: 2a 00 95 e2 16 a5 85 83 85 1c a6 60 74 14 f9 dd [0m
+[0;33mW (396243) ACCESS: 75 05 9a 71 06 cf be 02 5c 01 20 2b 29 04 20 03 [0m
+[0;33mW (397744) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (397745) ACCESS: 20 a7 51 73 10 6d 15 46 28 70 84 35 18 39 12 14 [0m
+[0;33mW (397747) ACCESS: a5 08 da fd 45 86 45 64 8d 68 99 31 00 20 52 c2 [0m
+[0;33mW (398792) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (398793) ACCESS: 64 fe 16 3d 04 54 9d 4c 8b fd 18 cb 49 88 84 01 [0m
+[0;33mW (398796) ACCESS: 20 38 6c 10 01 54 83 58 26 d5 40 48 a8 40 c1 5b [0m
+[0;33mW (399367) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (399368) ACCESS: 0e 9f 19 e3 e3 43 4e a6 80 f0 30 32 c1 00 20 c6 [0m
+[0;33mW (399371) ACCESS: 21 60 92 00 63 50 05 61 23 02 90 47 23 12 40 a8 [0m
+[0;33mW (399830) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (399831) ACCESS: 20 c4 59 58 8d 0e cd 34 8d a1 a3 00 03 26 a6 c6 [0m
+[0;33mW (399834) ACCESS: a0 d8 30 cb c5 20 c8 42 0f 03 8f 08 bc 09 d9 d5 [0m
+[0;32mI (400542) ACCESS: CAM UART receiver alive (RX pending=6 bytes)[0m
+[0;33mW (400800) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (400801) ACCESS: 05 66 31 c0 fe da eb ac ec 52 00 20 30 46 70 98 [0m
+[0;33mW (400804) ACCESS: 51 f8 23 c7 54 a5 48 dd 55 d4 04 60 a4 3a d0 00 [0m
+[0;33mW (401115) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (401116) ACCESS: a4 f6 ed 9f e0 18 f3 00 ac 84 02 b5 85 0c f0 09 [0m
+[0;33mW (401119) ACCESS: 04 00 c4 ad d6 38 04 21 38 f5 d5 59 51 a8 cc 34 [0m
+[0;33mW (402480) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (402481) ACCESS: 30 0c f4 9f 96 0b 72 00 ae 32 86 54 2a 13 00 20 [0m
+[0;33mW (402484) ACCESS: 24 37 39 66 1c 04 ff 24 8e 48 a7 15 71 c1 65 69 [0m
+[0;33mW (403363) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (403363) ACCESS: 51 20 f9 5d 8c 08 51 45 84 9f 15 a2 26 c4 42 a6 [0m
+[0;33mW (403366) ACCESS: 83 f1 02 ff 82 e9 4b 00 fc 40 ea ad c1 09 66 1a [0m
+[0;33mW (404102) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (404103) ACCESS: c9 68 28 34 f0 07 ae c8 cd 55 12 d1 c8 c8 f5 00 [0m
+[0;33mW (404106) ACCESS: 20 59 44 96 88 1c 08 dc 5d cd e2 68 16 8c 5a 30 [0m
+[0;33mW (405361) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (405362) ACCESS: c9 40 19 e4 f4 cf f2 80 85 65 50 1a 4f 01 fc 1c [0m
+[0;33mW (405365) ACCESS: 06 b6 16 58 50 2e 90 20 15 12 f9 94 e6 13 84 4e [0m
+[0;33mW (405793) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (405794) ACCESS: 97 08 50 5f 53 3b 9e 7f 1d 7c f0 cd cd 24 ca 16 [0m
+[0;33mW (405797) ACCESS: 00 20 16 04 b4 86 39 41 09 83 55 c7 5c 82 48 25 [0m
+[0;33mW (406916) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (406917) ACCESS: 43 c1 06 20 a0 2a fa 04 c6 e5 44 94 b0 11 0e 00 [0m
+[0;33mW (406920) ACCESS: 20 61 05 08 f9 4c 22 ec 29 49 07 8d b1 12 04 0c [0m
+[0;33mW (407526) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (407527) ACCESS: cd 39 53 00 20 2d 20 67 76 06 70 98 75 d4 6f 79 [0m
+[0;33mW (407530) ACCESS: 8e 02 aa 64 70 33 d9 e9 63 ea 3a 22 6f ab 15 54 [0m
+[0;33mW (407860) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (407861) ACCESS: f8 c5 02 e4 7d 17 33 3d 2a e3 90 01 00 bc 0c 44 [0m
+[0;33mW (407863) ACCESS: 88 bd 10 d9 45 ca 20 b8 f0 97 f4 67 07 80 64 90 [0m
+[0;33mW (409012) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (409013) ACCESS: 83 f1 71 b9 81 20 b9 11 69 90 3b 8f c5 89 f3 6b [0m
+[0;33mW (409016) ACCESS: 8b 13 00 20 22 67 10 bf c3 56 de 13 97 09 0c 59 [0m
+[0;33mW (409555) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (409556) ACCESS: 00 2e 20 67 05 1b db 86 17 a0 51 79 41 65 d6 d3 [0m
+[0;33mW (409559) ACCESS: d1 82 e3 b2 99 31 17 74 14 00 20 6e c5 c7 60 32 [0m
+[0;33mW (410028) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (410029) ACCESS: 9c c7 80 42 ee 49 ac e0 b2 05 59 08 51 af 00 20 [0m
+[0;33mW (410031) ACCESS: 84 30 04 98 e5 b0 88 35 0b 2b e8 68 e9 04 b0 2d [0m
+[0;33mW (410473) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (410474) ACCESS: 4e 21 6c b8 c8 74 d6 8b a8 fd 00 20 70 b5 db 89 [0m
+[0;33mW (410477) ACCESS: 6e 20 a9 17 f8 61 04 c8 09 4b 17 e2 54 f4 2d 39 [0m
+[0;33mW (411029) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (411030) ACCESS: 66 f7 94 61 2a 11 00 68 63 ce 00 04 a7 01 20 00 [0m
+[0;33mW (411033) ACCESS: 5d fe 39 d0 de d9 11 6c 54 37 52 c0 4e 35 08 f4 [0m
+[0;33mW (411860) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (411861) ACCESS: 00 bc 42 28 0c 45 27 2e 79 bc 64 b0 1b 7b 3a 19 [0m
+[0;33mW (411864) ACCESS: 67 60 00 b6 f2 d5 62 5b 11 11 9b 10 a6 00 20 3f [0m
+[0;33mW (412202) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (412203) ACCESS: 50 4a 23 f1 f6 1c e9 02 15 cf a4 00 fc 90 42 f6 [0m
+[0;33mW (412206) ACCESS: 55 8a 46 a3 5b 01 23 33 7d c0 1a e0 00 c4 c3 7e [0m
+[0;33mW (412686) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (412687) ACCESS: 7e 45 5d 09 70 b0 8e 07 88 d0 5c d6 dd 14 ff 1c [0m
+[0;33mW (412690) ACCESS: 87 07 23 d4 b7 ad 00 fc 28 78 d1 c2 aa 33 d6 2e [0m
+[0;33mW (413179) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (413180) ACCESS: 02 03 4e 3c 94 02 63 23 38 95 18 42 cd 10 09 15 [0m
+[0;33mW (413182) ACCESS: df 00 20 01 9d d2 a1 4f a1 5c 0b 8f 28 62 d9 12 [0m
+[0;33mW (413661) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (413662) ACCESS: 1c 0c a4 d1 b7 62 b0 4a 19 58 c6 c8 21 c0 8c 29 [0m
+[0;33mW (413665) ACCESS: e9 ee fc 77 be 90 90 a5 eb 00 20 19 46 b4 60 9c [0m
+[0;33mW (414475) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (414476) ACCESS: 68 0e 00 50 6e 4b 3f 12 4d 92 11 a8 6a e9 9b 8c [0m
+[0;33mW (414479) ACCESS: eb 09 e4 00 20 a4 b6 6b 4d 5d a0 f7 d1 56 01 b1 [0m
+[0;33mW (415174) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (415175) ACCESS: 98 a1 6c 9c 03 08 a9 01 a0 31 0b c0 11 8a 4b 44 [0m
+[0;33mW (415178) ACCESS: 32 79 9d 68 92 bc 71 cc 51 00 20 28 09 c1 34 2b [0m
+[0;32mI (415588) ACCESS: CAM UART receiver alive (RX pending=2 bytes)[0m
+[0;33mW (415977) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (415978) ACCESS: 41 57 41 70 46 d2 a9 7d 05 c1 10 c6 b1 cc 19 16 [0m
+[0;33mW (415981) ACCESS: ad 48 2b 76 9f 00 20 22 82 f7 ca fa 04 db 4b b9 [0m
+[0;33mW (416769) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (416770) ACCESS: a7 6a 5e bf 79 53 01 10 54 58 eb 60 7c 60 a5 59 [0m
+[0;33mW (416773) ACCESS: f5 e5 fa d1 f2 dd d3 00 20 82 20 04 91 c0 94 cc [0m
+[0;33mW (417375) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (417376) ACCESS: 1a ce 50 8d b8 16 c2 db d2 dc d3 81 b4 81 7d c1 [0m
+[0;33mW (417379) ACCESS: 9a 1a 00 20 e0 3c 68 9e 00 01 e7 f3 7d 69 37 08 [0m
+[0;33mW (418437) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (418438) ACCESS: d8 bd b9 48 12 e4 00 e0 06 12 82 81 7a 87 b8 75 [0m
+[0;33mW (418441) ACCESS: fb f3 b8 a1 71 ff 61 62 00 bc 60 00 1c a7 65 d3 [0m
+[0;33mW (419919) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (419920) ACCESS: 0e 38 37 3d bc 60 25 94 f7 41 05 65 62 2c 62 2e [0m
+[0;33mW (419923) ACCESS: d4 c8 2f 2c e8 41 94 7a 36 42 38 a2 35 23 4c 32 [0m
+[0;33mW (420315) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (420316) ACCESS: 41 40 88 08 60 45 8e 19 85 f5 8c 58 a5 84 2e 5e [0m
+[0;33mW (420319) ACCESS: 26 1c 95 22 2f a8 36 f2 cc f0 20 23 e1 00 7b 4b [0m
+[0;33mW (420640) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (420641) ACCESS: 00 20 d1 23 12 d5 6c 70 93 be 29 10 34 e9 28 99 [0m
+[0;33mW (420643) ACCESS: 66 10 22 cb 18 fa fd fb c7 22 63 19 fb 00 20 1c [0m
+[0;33mW (421242) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (421243) ACCESS: 9c 18 ca 02 32 21 4f 40 21 05 07 18 56 ef d3 13 [0m
+[0;33mW (421246) ACCESS: 9c 5a aa 12 01 e5 68 20 03 42 44 32 25 83 0e 00 [0m
+[0;33mW (421764) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (421764) ACCESS: cd 0c 65 38 a3 27 be cb df 87 65 a4 5d a2 00 bc [0m
+[0;33mW (421767) ACCESS: a8 02 70 50 c4 d0 44 6f 2e 00 0c 40 c2 e2 21 92 [0m
+[0;33mW (422399) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (422400) ACCESS: e5 5a e9 89 cd b4 cd e9 e5 83 18 f4 18 f3 dc fa [0m
+[0;33mW (422403) ACCESS: 17 a7 b1 5c 70 88 72 20 a1 19 e6 e0 d1 c0 f2 43 [0m
+[0;33mW (423086) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (423087) ACCESS: 2f de f9 d0 78 41 09 6c 00 20 32 04 19 5a 04 84 [0m
+[0;33mW (423090) ACCESS: d3 6c 88 ca d4 64 a2 1c a2 63 88 a7 1d 93 08 5b [0m
+[0;33mW (423944) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (423945) ACCESS: 60 fc 91 f3 c8 d5 ac bd 7c 0c 94 5f 00 bc 20 45 [0m
+[0;33mW (423948) ACCESS: 26 1e 04 30 79 ae 2a 2a 26 19 59 40 89 b9 28 a5 [0m
+[0;33mW (424664) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (424665) ACCESS: 33 61 20 b8 4a 87 47 67 97 5a a8 66 24 bb 20 11 [0m
+[0;33mW (424668) ACCESS: d7 9c 20 04 16 e0 b4 09 48 ed 68 97 e5 08 04 b0 [0m
+[0;33mW (425259) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (425259) ACCESS: 20 bf c1 77 53 37 20 13 2c cd 09 04 b2 e1 79 fa [0m
+[0;33mW (425263) ACCESS: 05 00 18 82 a7 0b 3f b7 b5 9c 1c d0 21 11 fb f6 [0m
+[0;33mW (425929) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (425930) ACCESS: 15 33 28 b5 cf 55 91 a8 c4 ef 7c 4f 50 fd 13 54 [0m
+[0;33mW (425933) ACCESS: e1 92 40 e8 63 de 8a e9 20 b0 60 00 01 2c 9a 13 [0m
+[0;33mW (426544) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (426545) ACCESS: 70 98 b4 01 66 01 59 35 56 34 2c 22 20 62 38 28 [0m
+[0;33mW (426548) ACCESS: b0 46 8f 07 a8 0b 54 91 24 34 1c 01 a8 14 56 a9 [0m
+[0;33mW (427035) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (427036) ACCESS: ae 82 60 6d 8c 82 98 a5 d9 4a 7c 04 77 1d 7d ab [0m
+[0;33mW (427039) ACCESS: 00 1a 20 34 a5 4d e0 54 35 f4 03 69 f2 69 59 41 [0m
+[0;33mW (427693) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (427694) ACCESS: 00 02 fc 42 e2 92 b6 b6 71 cb df 00 ea 07 33 25 [0m
+[0;33mW (427697) ACCESS: f9 a9 20 00 00 90 81 b8 9d da 45 27 58 7c 72 24 [0m
+[0;33mW (428212) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (428213) ACCESS: 20 29 4f 25 28 d4 54 6a b6 86 15 62 f0 01 36 5d [0m
+[0;33mW (428216) ACCESS: 82 38 cc 24 6f 8d c6 f8 e8 38 0b 01 20 02 5c cd [0m
+[0;33mW (429160) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (429161) ACCESS: 05 4c ae 45 50 80 bc 0e d9 f7 64 1c f8 86 de de [0m
+[0;33mW (429163) ACCESS: f4 95 ff 7f 5a 12 02 bc 00 86 f0 c1 48 f9 e4 82 [0m
+[0;33mW (430160) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (430161) ACCESS: 2b 1a b9 0b 20 23 67 48 28 61 35 90 13 01 12 f9 [0m
+[0;33mW (430164) ACCESS: 5d dd c5 36 14 91 67 01 20 2f 3c 28 02 62 c8 f8 [0m
+[0;32mI (430695) ACCESS: CAM UART receiver alive (RX pending=4 bytes)[0m
+[0;33mW (430972) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (430973) ACCESS: a1 6c a4 90 7c f7 a1 27 11 79 cf 3d be 39 5b 36 [0m
+[0;33mW (430975) ACCESS: 50 43 1e fd 00 20 44 5d fc 30 98 b2 dd 51 28 78 [0m
+[0;33mW (432167) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (432168) ACCESS: 65 b2 2c 8a d4 01 fc 08 26 07 82 11 d5 0e 30 e2 [0m
+[0;33mW (432170) ACCESS: b1 c8 36 7c d1 a0 f1 43 98 ef 9d 53 5d 3b cf 22 [0m
+[0;33mW (432761) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (432762) ACCESS: 98 81 0e 52 2f 95 87 a2 db 26 96 85 91 13 a2 99 [0m
+[0;33mW (432765) ACCESS: 4b 26 0b 3f bc 35 02 20 61 82 a4 28 14 31 d2 f6 [0m
+[0;33mW (433925) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (433926) ACCESS: 10 18 fb 05 e7 4a 04 05 13 72 c4 12 81 8c 01 87 [0m
+[0;33mW (433929) ACCESS: f8 da be 0b 3a 0c 06 20 83 91 04 77 21 a1 b9 e7 [0m
+[0;33mW (434443) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (434444) ACCESS: c3 00 47 40 94 24 a9 68 ff f8 e4 70 88 6e 5c 01 [0m
+[0;33mW (434447) ACCESS: 20 5f f0 08 ca 9b 48 51 f0 20 22 72 00 99 9b 6b [0m
+[0;33mW (434929) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (434930) ACCESS: 7b 80 8a d1 92 38 98 84 8e 1c 63 e1 74 12 c3 55 [0m
+[0;33mW (434932) ACCESS: 5f d2 71 15 86 87 1b 02 bc 4c a2 cb 63 90 49 f7 [0m
+[0;33mW (435538) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (435539) ACCESS: 00 91 25 ed 64 a6 32 86 42 55 57 05 20 d1 88 42 [0m
+[0;33mW (435541) ACCESS: d8 4e f6 da e3 08 c6 a3 52 57 80 84 38 37 86 5b [0m
+[0;33mW (437209) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (437210) ACCESS: c0 b3 40 ee 08 78 80 ee 64 94 ce 85 5e c9 01 20 [0m
+[0;33mW (437213) ACCESS: 2e e0 9c 0b 7b e6 d9 39 6a 34 13 b1 71 6a 21 80 [0m
+[0;33mW (438189) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (438190) ACCESS: 19 d8 bf c6 95 86 8c 32 d7 9d d8 4c 63 03 18 05 [0m
+[0;33mW (438193) ACCESS: 20 00 e4 96 15 4b 71 cd c4 20 62 04 53 be b0 65 [0m
+[0;33mW (438788) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (438789) ACCESS: 78 32 0c 38 09 90 d5 42 06 20 7a 66 13 8c 2e 2a [0m
+[0;33mW (438791) ACCESS: b7 b0 79 01 9a 55 0f 10 f4 15 5a 7e 01 98 ff 07 [0m
+[0;33mW (439539) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (439540) ACCESS: 93 25 51 53 f9 ca 48 79 a1 f0 82 24 09 1c 61 c2 [0m
+[0;33mW (439543) ACCESS: 85 db 69 ba 81 a6 54 05 20 ca 24 21 1a 50 91 2d [0m
+[0;33mW (440372) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (440373) ACCESS: 87 82 2c 00 05 2e 85 f6 50 91 03 20 6d 16 e8 80 [0m
+[0;33mW (440375) ACCESS: f6 00 08 ce 8b 1a b0 7e 80 f9 a2 28 cc 90 55 62 [0m
+[0;33mW (440663) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (440664) ACCESS: e7 e8 d3 e0 8d 34 20 84 63 dc a0 32 04 18 67 8b [0m
+[0;33mW (440667) ACCESS: 42 83 41 56 8b 83 5c 98 01 23 c0 7e 82 2d a0 c4 [0m
+[0;33mW (441678) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (441679) ACCESS: b2 bb 28 fc 68 e1 6b 91 99 90 40 82 ce 04 e7 ba [0m
+[0;33mW (441682) ACCESS: 36 0c 26 7f ef e7 46 f1 e3 63 2e a4 ba 06 16 20 [0m
+[0;33mW (442028) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (442029) ACCESS: 10 82 83 4a da df 02 b3 80 d1 01 03 2a 7a 51 04 [0m
+[0;33mW (442032) ACCESS: e7 48 9c 5b ad 5e 39 84 19 fc 58 9a 18 3e b8 03 [0m
+[0;33mW (442438) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (442439) ACCESS: 20 d8 c1 44 82 2c a0 b0 47 46 14 40 d9 1c 80 d0 [0m
+[0;33mW (442442) ACCESS: 38 20 01 48 28 89 dd 69 49 1b 42 e9 68 2d 06 11 [0m
+[0;33mW (442853) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (442854) ACCESS: 42 64 53 71 1a 06 a1 c9 06 90 b4 01 f9 87 82 09 [0m
+[0;33mW (442856) ACCESS: ea 44 10 df 6e 33 97 7c 20 2a 26 a4 61 9b 00 f5 [0m
+[0;33mW (444226) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (444227) ACCESS: 20 ac 35 d9 03 98 4a d5 07 71 59 9e 51 5e 71 95 [0m
+[0;33mW (444230) ACCESS: 58 4b 48 0f f2 7f 15 07 21 23 09 20 30 12 0c 91 [0m
+[0;33mW (444925) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (444925) ACCESS: fb 31 2f 20 42 2c 34 8d 03 da 79 9d 83 cb 9a 84 [0m
+[0;33mW (444928) ACCESS: 79 3c 10 e0 6f 40 72 9f 7a c8 5e db 88 15 20 54 [0m
+[0;33mW (445405) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (445406) ACCESS: cd 20 d0 24 38 f4 d5 a0 d8 ea 09 32 ee 5e 46 12 [0m
+[0;33mW (445409) ACCESS: 20 be 12 50 54 03 1d 8e d7 30 f1 e1 97 01 34 0e [0m
+[0;33mW (445838) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (445839) ACCESS: 5c 51 00 62 a0 a5 c8 24 c8 cd f4 5e 23 2c 3a 16 [0m
+[0;33mW (445841) ACCESS: 20 62 87 50 54 2d 33 b5 60 48 86 a0 40 c9 8d 03 [0m
+[0;32mI (445955) ACCESS: CAM UART receiver alive (RX pending=5 bytes)[0m
+[0;33mW (446238) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (446239) ACCESS: 6c b8 ec ad e0 ce 9d 3a 09 45 d4 23 49 80 5a f3 [0m
+[0;33mW (446242) ACCESS: 3b 9d 5d f3 ff 8c 7d 90 33 20 6c 59 a5 a0 d7 0b [0m
+[0;33mW (446855) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (446856) ACCESS: eb 89 36 a3 28 5d 00 50 4a 02 20 52 ad a1 c0 c7 [0m
+[0;33mW (446858) ACCESS: 61 04 8e 13 90 28 13 50 f4 11 b8 9c bd 0e 42 e0 [0m
+[0;33mW (447716) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (447717) ACCESS: 96 af e1 06 09 42 a2 13 61 0e 15 20 45 22 92 b8 [0m
+[0;33mW (447719) ACCESS: 83 07 d5 16 a4 56 11 05 09 70 23 80 12 23 da c3 [0m
+[0;33mW (448374) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (448375) ACCESS: 10 f1 76 2f 35 20 46 da c1 a9 1a 20 ec 7f 23 8d [0m
+[0;33mW (448377) ACCESS: 46 d4 4d 20 a8 ca bd da cd 7a 67 b6 b4 45 5c 41 [0m
+[0;33mW (449402) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (449402) ACCESS: 50 d6 84 04 03 34 d8 c8 14 01 76 38 c8 5a 47 47 [0m
+[0;33mW (449405) ACCESS: e4 1a fc 23 98 b2 d7 51 4e 04 20 c5 01 05 13 03 [0m
+[0;33mW (449851) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (449851) ACCESS: d6 40 53 60 64 fe 2e de 5a 5a 9c 15 9f 1b ee 6e [0m
+[0;33mW (449854) ACCESS: 77 62 db 5a ea 00 88 12 6f 0c 20 94 82 11 d0 4b [0m
+[0;33mW (450849) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (450850) ACCESS: 31 c3 4c 17 e2 46 6c 5c 20 a2 6a 8a 4c 10 b9 26 [0m
+[0;33mW (450852) ACCESS: 10 db ac fc 23 f1 38 20 95 c2 08 31 38 c8 12 8a [0m
+[0;33mW (451312) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (451313) ACCESS: 9d 84 14 4b c0 c0 01 85 ff 84 19 04 16 80 4b 26 [0m
+[0;33mW (451316) ACCESS: bd 20 97 46 fb 7f cc ae 21 20 65 08 c1 1e f7 d0 [0m
+[0;33mW (451745) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (451746) ACCESS: 36 6f f1 36 1c dd 0b f3 c7 76 e7 ef e0 59 10 e0 [0m
+[0;33mW (451748) ACCESS: 1d fc 18 71 b0 f4 08 08 43 33 98 69 1f 12 18 04 [0m
+[0;33mW (452186) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (452186) ACCESS: 91 84 02 c1 1d 4a 90 4f f9 6e 0e e2 b3 4a 07 43 [0m
+[0;33mW (452189) ACCESS: 0c 20 52 10 42 30 85 71 6f 45 51 81 34 b4 65 80 [0m
+[0;33mW (452674) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (452675) ACCESS: e9 75 04 83 7d 5b eb aa 48 de c9 c3 3c 1a 17 20 [0m
+[0;33mW (452678) ACCESS: 03 07 05 30 2c 55 72 7f 09 03 51 8a e8 81 18 4b [0m
+[0;33mW (454037) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (454038) ACCESS: 56 e1 cd 2b 4c 2e 02 e9 d8 c1 0b 42 4c 64 cb f4 [0m
+[0;33mW (454041) ACCESS: de a5 21 6a fe 64 5a 42 20 05 a4 15 75 33 90 fc [0m
+[0;33mW (454707) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (454708) ACCESS: 3b 9e b1 44 18 bb 98 9f 02 20 20 11 24 d8 d5 aa [0m
+[0;33mW (454711) ACCESS: 82 34 d7 e4 8b 91 69 a8 91 6c ee b8 58 c9 e3 be [0m
+[0;33mW (455989) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (455990) ACCESS: 04 29 41 5a 2f bd a1 c0 8b e5 a1 68 d3 13 54 03 [0m
+[0;33mW (455992) ACCESS: 20 64 ce 94 16 2e c0 6b 06 75 8c 13 ea 89 d0 41 [0m
+[0;33mW (457027) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (457028) ACCESS: f0 b2 53 00 20 4c 35 2b 72 1d 61 e2 20 04 a3 d9 [0m
+[0;33mW (457030) ACCESS: 80 02 36 19 66 d4 68 86 8e 2a 36 95 2b d8 21 0c [0m
+[0;33mW (458964) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (458965) ACCESS: 49 96 70 11 db 03 b1 a6 25 54 02 20 22 69 80 97 [0m
+[0;33mW (458968) ACCESS: 47 1c c1 27 0b 60 20 5a 18 47 09 28 7f 94 e0 52 [0m
+[0;33mW (459396) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (459397) ACCESS: d9 86 17 1d 01 20 53 03 c1 c5 87 63 b1 12 a7 89 [0m
+[0;33mW (459400) ACCESS: 36 f3 44 98 d7 2b 09 f5 c9 33 bb 20 8f 26 7c 02 [0m
+[0;33mW (459965) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (459966) ACCESS: c8 01 40 0f 54 3b 34 4d 0b 3c 05 20 3a 9d 25 3a [0m
+[0;33mW (459969) ACCESS: b7 d0 c0 eb 3c 88 24 21 40 b0 31 c9 10 50 ea 57 [0m
+[0;33mW (460650) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (460651) ACCESS: 20 74 e4 98 12 c7 9d fe e1 8c 80 d8 6a cc 0f 5c [0m
+[0;33mW (460654) ACCESS: 2b eb e2 e6 f1 0b 7a a4 ac 0e 0c 20 68 63 00 51 [0m
+[0;32mI (461082) ACCESS: CAM UART receiver alive (RX pending=1 bytes)[0m
+[0;33mW (461561) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (461562) ACCESS: 16 7c a9 c1 02 20 11 29 5b 4f 14 d8 17 23 aa 4b [0m
+[0;33mW (461564) ACCESS: c1 2c 22 64 10 68 4b 27 a1 4d 50 28 13 88 91 20 [0m
+[0;33mW (462627) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (462628) ACCESS: d0 5b 56 3b 00 11 7a f7 37 89 01 e8 39 31 06 20 [0m
+[0;33mW (462631) ACCESS: 54 61 84 89 6b 40 04 01 05 21 b5 f3 84 14 54 84 [0m
+[0;33mW (463527) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (463528) ACCESS: 5c 17 01 06 41 32 ad 0b 40 10 95 6d ca 02 4c 52 [0m
+[0;33mW (463531) ACCESS: 2f 06 d2 f9 dd 24 38 0e 20 10 11 17 25 14 41 fd [0m
+[0;33mW (464366) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (464367) ACCESS: a9 f9 ae c7 e9 c4 06 20 28 53 d5 35 2a a0 c3 22 [0m
+[0;33mW (464370) ACCESS: 40 02 05 04 30 4a 8d 5c 23 2f 8d 0b dd 10 d8 4f [0m
+[0;33mW (465224) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (465225) ACCESS: ba 4a b8 4c a9 7e f9 86 65 12 1b 20 3a 46 a8 8f [0m
+[0;33mW (465228) ACCESS: 0c 00 ee 4b 88 84 00 eb 00 30 00 3c e8 22 64 4b [0m
+[0;33mW (466311) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (466312) ACCESS: f2 62 06 e8 4c 96 b8 92 20 0f 00 14 81 11 c6 ad [0m
+[0;33mW (466315) ACCESS: 62 fc 40 e6 c5 10 93 61 20 92 13 2d a1 1c 8a 2b [0m
+[0;33mW (466809) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (466810) ACCESS: 4f a0 b4 39 06 e4 72 49 18 89 27 74 6a 28 89 c6 [0m
+[0;33mW (466812) ACCESS: 04 09 ac 2c 07 20 fe 18 91 f4 5c f1 14 4e 6c 98 [0m
+[0;33mW (467088) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (467089) ACCESS: 84 7d 00 a4 c4 6a 01 5c 29 0c 02 00 18 bc c4 02 [0m
+[0;33mW (467092) ACCESS: 69 8d 04 cd d3 03 40 c0 4c f3 81 42 46 6b 87 97 [0m
+[0;33mW (468260) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (468261) ACCESS: 45 1e 20 e7 41 01 c0 ab 0b 75 da 03 69 80 d3 0b [0m
+[0;33mW (468264) ACCESS: 71 2b cc bc 10 e7 93 17 ef 06 1b ba 37 02 20 e6 [0m
+[0;33mW (469033) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (469035) ACCESS: c0 24 69 9c 02 85 da f4 32 7b 9b 02 20 64 02 4b [0m
+[0;33mW (469037) ACCESS: c5 e8 98 a7 c7 22 62 94 60 04 93 00 89 cb 26 2a [0m
+[0;33mW (469478) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (469478) ACCESS: 18 0f 4b 76 33 01 20 76 c1 65 8c 36 12 52 a0 ca [0m
+[0;33mW (469481) ACCESS: 12 c5 80 e9 01 1d 59 44 50 d7 3c 1f bd fa 1f ad [0m
+[0;33mW (470179) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (470180) ACCESS: f2 60 21 11 6a 15 82 fe e5 ac 05 b9 26 9b 00 20 [0m
+[0;33mW (470182) ACCESS: 2a 01 a8 48 08 8c 15 c5 66 a5 10 0c c3 4e da a0 [0m
+[0;33mW (471055) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (471056) ACCESS: c8 e1 cf b1 c3 de 48 a2 ea 5d ef 39 24 db 3a a2 [0m
+[0;33mW (471059) ACCESS: 9a 37 17 bc 02 76 b1 f9 80 50 12 66 71 5b 23 39 [0m
+[0;33mW (471722) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (471723) ACCESS: 20 e2 16 ba 12 c5 42 e8 e8 16 82 3c a0 29 a9 62 [0m
+[0;33mW (471726) ACCESS: 85 a6 d5 0f 27 90 a5 b2 2b 78 86 0b 20 1c e2 a8 [0m
+[0;33mW (473040) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (473041) ACCESS: b9 20 88 d7 e8 1a 81 90 6a 10 31 2c 81 6c 0f f2 [0m
+[0;33mW (473044) ACCESS: 27 12 b4 54 83 d2 40 05 fc 8c 89 80 22 1b e6 ab [0m
+[0;33mW (473564) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (473565) ACCESS: 25 40 4f 3d 22 6f 18 5b 4d d6 d7 66 25 f8 0f 09 [0m
+[0;33mW (473568) ACCESS: f7 79 02 20 02 74 00 95 a4 6e 07 81 06 45 00 04 [0m
+[0;33mW (474069) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (474070) ACCESS: e8 c3 2b 58 4f 9a 58 41 ea f0 24 80 08 9e 57 e0 [0m
+[0;33mW (474073) ACCESS: 96 92 04 20 45 a2 92 be a1 79 c1 e1 0b 09 8f 13 [0m
+[0;33mW (474697) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (474698) ACCESS: 9e bf 20 25 12 12 67 f1 7c 28 cb 2d e7 a2 af 6a [0m
+[0;33mW (474701) ACCESS: 20 23 05 d3 9d 84 05 20 2c 4a 00 73 03 12 c1 f3 [0m
+[0;33mW (475335) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (475335) ACCESS: a1 15 35 1a de 39 12 77 d2 90 10 44 91 d0 0c be [0m
+[0;33mW (475338) ACCESS: 8c ec f5 59 35 f1 3c aa 0c 20 32 00 05 05 0e 04 [0m
+[0;33mW (475810) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (475811) ACCESS: b1 7a 94 c1 b6 f5 c0 a4 55 8f 23 7f 01 20 c2 a1 [0m
+[0;33mW (475814) ACCESS: 0c 04 8a 03 f9 99 40 01 ae 58 74 24 8c 6c 44 e4 [0m
+[0;33mW (476387) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (476387) ACCESS: 83 20 91 b2 b5 b3 16 00 3c a0 f0 3f 03 75 d1 53 [0m
+[0;33mW (476390) ACCESS: 61 09 d6 d8 b8 4f bd 53 18 20 24 87 ea e5 b0 63 [0m
+[0;32mI (476692) ACCESS: CAM UART receiver alive (RX pending=0 bytes)[0m
+[0;33mW (477197) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (477197) ACCESS: fc 88 90 1b 30 f5 85 e2 57 41 49 3c b9 a3 23 45 [0m
+[0;33mW (477200) ACCESS: 24 77 50 71 ec e1 cc 85 24 82 f0 03 20 c0 2c c5 [0m
+[0;33mW (478248) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (478248) ACCESS: d3 b7 54 0b 02 29 1d d7 d7 5e e1 f0 9b 4e 00 20 [0m
+[0;33mW (478251) ACCESS: 70 53 04 76 1a ed 91 d3 f4 00 28 91 99 3c 19 74 [0m
+[0;33mW (478987) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (478988) ACCESS: 2e 11 70 3c 29 92 a7 a9 f2 26 0b 15 ed 97 dc 26 [0m
+[0;33mW (478991) ACCESS: 39 4f 18 00 20 14 21 82 09 34 63 e4 78 38 fd 1c [0m
+[0;33mW (479407) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (479408) ACCESS: 8c 37 35 8c 54 b3 10 11 a1 c3 09 bd 40 b9 50 2a [0m
+[0;33mW (479411) ACCESS: 9d 02 20 38 44 2c b3 24 3c 98 63 1e 40 09 13 02 [0m
+[0;33mW (480816) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (480816) ACCESS: fc d8 d5 d8 f8 b4 09 b6 82 bc 64 42 0b e0 97 16 [0m
+[0;33mW (480819) ACCESS: 17 d8 82 f7 b2 45 83 88 51 44 7a 01 ac 0c 53 93 [0m
+[0;33mW (482006) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (482007) ACCESS: 02 0b 4e 99 49 e0 69 5d a0 0f f9 07 20 06 e8 ed [0m
+[0;33mW (482009) ACCESS: d4 8b 5e ad d1 0f c0 14 bd 51 91 84 1a fc 29 72 [0m
+[0;33mW (483392) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (483393) ACCESS: 3d 2d fe 03 06 20 34 11 c3 1a d7 71 d9 b0 00 a0 [0m
+[0;33mW (483395) ACCESS: 02 02 67 5c 3b e5 31 64 46 1b bb 00 fd 97 b3 8b [0m
+[0;33mW (485070) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (485071) ACCESS: 20 65 20 30 70 64 10 3f a0 13 61 90 61 dc da 62 [0m
+[0;33mW (485074) ACCESS: 48 09 d1 4a 1c ce 00 0b a4 69 86 50 02 20 17 80 [0m
+[0;33mW (485614) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (485615) ACCESS: 74 4a b8 ba 91 09 6d cc 4d b8 b4 04 20 25 a2 f5 [0m
+[0;33mW (485617) ACCESS: 84 98 78 6d 14 46 30 03 01 d8 12 2a 60 dc 2d c0 [0m
+[0;33mW (486511) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (486512) ACCESS: 46 33 00 ac c5 f0 d0 61 05 16 b3 2c 59 40 dd 63 [0m
+[0;33mW (486515) ACCESS: 09 9d 82 81 14 20 07 02 c1 48 3e 12 33 c7 62 41 [0m
+[0;33mW (488163) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (488164) ACCESS: a4 18 de 53 a6 b5 41 e6 f8 01 53 50 5b 1c 31 19 [0m
+[0;33mW (488167) ACCESS: 02 cf d7 a7 22 cf 00 20 64 38 83 89 6f 60 22 c2 [0m
+[0;33mW (488705) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (488706) ACCESS: 3a a1 c8 f1 54 8f d8 33 05 00 2b 8d 68 15 32 05 [0m
+[0;33mW (488709) ACCESS: 20 25 14 08 2b 5e c9 f6 15 dc e1 08 90 e0 53 e6 [0m
+[0;33mW (490015) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (490016) ACCESS: 82 f0 e8 17 b7 35 7b e7 97 f4 c6 c0 79 e4 7d 04 [0m
+[0;33mW (490019) ACCESS: fc 08 3a ca 72 55 1e 16 11 63 07 83 14 40 42 d1 [0m
+[0;32mI (492163) ACCESS: CAM UART receiver alive (RX pending=1 bytes)[0m
+[0;33mW (492446) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (492447) ACCESS: 96 73 58 1a f8 a3 fb af d4 ec 0e 20 12 50 78 d8 [0m
+[0;33mW (492450) ACCESS: aa 16 af ad e1 b0 04 c8 ea 20 40 25 dc ba 96 b2 [0m
+[0;33mW (493693) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (493694) ACCESS: 9c 20 ad 03 fc 90 10 63 23 54 80 75 47 85 0c 41 [0m
+[0;33mW (493696) ACCESS: c2 12 20 32 41 10 b5 fe 9a 9e 5d f5 86 3f 1a 01 [0m
+[0;33mW (494574) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (494575) ACCESS: be 28 4e 3c cc 27 83 33 46 23 0f a1 85 b9 23 4b [0m
+[0;33mW (494578) ACCESS: 10 b3 7b 53 50 a3 5d c5 01 20 b2 18 d0 13 cd 54 [0m
+[0;33mW (495490) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (495490) ACCESS: 40 07 20 ce 62 d2 c3 07 90 28 49 e7 10 cc 7d a7 [0m
+[0;33mW (495493) ACCESS: 86 21 23 20 56 16 d7 fc 97 fa 11 f7 36 02 fc 88 [0m
+[0;33mW (496070) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (496071) ACCESS: 20 82 52 73 82 16 1b 7f a1 ac a1 04 83 18 c2 bc [0m
+[0;33mW (496074) ACCESS: cf 69 89 e6 3c e0 79 a3 1b 4d 1f 06 fc 4a 99 14 [0m
+[0;33mW (496696) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (496697) ACCESS: c0 a0 18 a1 fd 28 50 4b 9e 99 a0 03 20 00 20 62 [0m
+[0;33mW (496700) ACCESS: 49 56 c1 ef 30 92 b7 21 16 ca 20 9f 24 1b 05 04 [0m
+[0;33mW (498037) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (498038) ACCESS: 42 23 3e d4 10 13 e8 e2 5a 26 7f 09 b9 09 36 71 [0m
+[0;33mW (498040) ACCESS: ab c7 aa d4 5c 03 20 44 18 43 3f c6 c5 b7 36 2e [0m
+[0;33mW (499298) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (499299) ACCESS: 1e 9d 0c e9 55 93 75 4c f8 57 20 04 04 03 84 99 [0m
+[0;33mW (499301) ACCESS: fa a4 c1 00 03 89 28 0c 00 80 f8 7c 8d 8b 2b f6 [0m
+[0;33mW (499808) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (499810) ACCESS: f0 b2 88 2a 05 bc 02 24 3c 49 2f 98 94 78 14 ce [0m
+[0;33mW (499813) ACCESS: 88 07 07 20 53 ca 88 60 4b bf 9e 27 19 64 2a 76 [0m
+[0;33mW (500159) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (500160) ACCESS: 0c ad 63 25 9c 50 ae ee de 7d f1 2e 77 85 e6 d7 [0m
+[0;33mW (500163) ACCESS: 20 68 43 75 64 18 40 cc 8a e2 f3 f5 56 82 d9 f0 [0m
+[0;33mW (501134) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (501135) ACCESS: 91 2e 12 ce 60 20 91 d8 0b 0b d4 0c 86 d1 21 56 [0m
+[0;33mW (501138) ACCESS: 39 01 83 a3 50 ec 69 00 ac 8c 48 d4 4d 01 9c 75 [0m
+[0;33mW (502968) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (502969) ACCESS: 3c 80 cb 0b 0b 06 49 44 72 85 00 bc 54 92 19 a1 [0m
+[0;33mW (502972) ACCESS: 0c e4 4c a0 c6 6c a8 8a 70 d2 cb 18 04 ec 2a f1 [0m
+[0;33mW (503980) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (503981) ACCESS: 63 05 4d 00 d7 80 96 14 85 cd c8 8b 59 e0 e1 00 [0m
+[0;33mW (503984) ACCESS: 20 20 0f c4 18 18 51 74 91 02 b2 11 8a c1 05 eb [0m
+[0;33mW (504318) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (504319) ACCESS: 80 11 75 f3 88 ca 14 00 26 04 08 38 0f c5 cb 9d [0m
+[0;33mW (504322) ACCESS: d3 94 d0 ea 3f c5 32 f7 0c 20 52 2a 67 c0 06 84 [0m
+[0;33mW (505102) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (505103) ACCESS: 2a 43 80 b7 10 4a 42 e3 08 85 dc c4 c8 51 18 78 [0m
+[0;33mW (505106) ACCESS: c3 98 00 20 7c ca 0c 95 24 43 b4 02 44 d2 4d b2 [0m
+[0;33mW (506526) ACCESS: CAM UART line too long; first 32 bytes follow (hex):[0m
+[0;33mW (506527) ACCESS: 6a 84 00 67 03 e2 9c 9a 45 37 67 d1 bf 1d 5c 89 [0m
+[0;33mW (506530) ACCESS: 3c f0 fd 01 d0 43 49 16 ec 01 20 c4 43 41 5a e3 [0m

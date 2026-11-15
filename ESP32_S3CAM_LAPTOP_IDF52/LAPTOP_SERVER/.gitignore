@@ -1,0 +1,5 @@
+config.json
+models/
+data/
+__pycache__/
+.venv/

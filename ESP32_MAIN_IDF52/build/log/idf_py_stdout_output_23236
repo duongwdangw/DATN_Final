@@ -1,0 +1,804 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15632
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 15 2026 22:12:24[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=335e8h (210408) map[0m
+[0;32mI (176) esp_image: segment 1: paddr=00043610 vaddr=3ffb0000 size=04368h ( 17256) load[0m
+[0;32mI (183) esp_image: segment 2: paddr=00047980 vaddr=40080000 size=08698h ( 34456) load[0m
+[0;32mI (197) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=ae70ch (714508) map[0m
+[0;32mI (442) esp_image: segment 4: paddr=000fe734 vaddr=40088698 size=11f68h ( 73576) load[0m
+[0;32mI (484) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (484) boot: Disabling RNG early entropy source...[0m
+[0;32mI (496) cpu_start: Multicore app[0m
+[0;32mI (505) cpu_start: Pro cpu start user code[0m
+[0;32mI (505) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (505) cpu_start: Application information:[0m
+[0;32mI (508) cpu_start: Project name:     esp32main[0m
+[0;32mI (513) cpu_start: App version:      1[0m
+[0;32mI (518) cpu_start: Compile time:     Oct 15 2026 22:11:37[0m
+[0;32mI (524) cpu_start: ELF file SHA256:  57cbbd8e6...[0m
+[0;32mI (529) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (534) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (539) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (544) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (549) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (556) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (562) heap_init: At 3FFCBBF0 len 00014410 (81 KiB): DRAM[0m
+[0;32mI (568) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (574) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (581) heap_init: At 4009A600 len 00005A00 (22 KiB): IRAM[0m
+[0;32mI (588) spi_flash: detected chip: generic[0m
+[0;32mI (591) spi_flash: flash io: dio[0m
+[0;32mI (596) main_task: Started on CPU0[0m
+[0;32mI (600) main_task: Calling app_main()[0m
+[0;32mI (625) WIFI_TIME: Initializing Wi-Fi + NTP...[0m
+[0;32mI (630) wifi:wifi driver task: 3ffd4768, prio:23, stack:6656, core=0[0m
+[0;32mI (640) wifi:wifi firmware version: ff41b26[0m
+[0;32mI (640) wifi:wifi certification version: v7.0[0m
+[0;32mI (640) wifi:config NVS flash: enabled[0m
+[0;32mI (641) wifi:config nano formating: disabled[0m
+[0;32mI (645) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (650) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (654) wifi:Init management short buffer num: 32[0m
+[0;32mI (658) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (662) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (666) wifi:Init static rx buffer num: 10[0m
+[0;32mI (670) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (675) wifi_init: rx ba win: 6[0m
+[0;32mI (678) wifi_init: tcpip mbox: 32[0m
+[0;32mI (682) wifi_init: udp mbox: 6[0m
+[0;32mI (685) wifi_init: tcp mbox: 6[0m
+[0;32mI (689) wifi_init: tcp tx win: 5760[0m
+[0;32mI (693) wifi_init: tcp rx win: 5760[0m
+[0;32mI (697) wifi_init: tcp mss: 1440[0m
+[0;32mI (701) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (706) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (711) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (720) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (804) wifi:mode : sta (00:70:07:1a:13:c0)[0m
+[0;32mI (805) wifi:enable tsf[0m
+[0;32mI (808) WIFI_TIME: Connecting to Wi-Fi: Hai Dang[0m
+[0;32mI (902) wifi:new:<13,0>, old:<1,0>, ap:<255,255>, sta:<13,0>, prof:1[0m
+[0;32mI (903) wifi:state: init -> auth (b0)[0m
+[0;32mI (909) wifi:state: auth -> assoc (0)[0m
+[0;32mI (931) wifi:state: assoc -> run (10)[0m
+[0;32mI (938) wifi:<ba-add>idx:0 (ifx:0, 24:0b:2a:53:3c:39), tid:5, ssn:0, winSize:64[0m
+[0;32mI (1040) wifi:<ba-add>idx:1 (ifx:0, 24:0b:2a:53:3c:39), tid:0, ssn:1, winSize:64[0m
+[0;32mI (1042) wifi:connected with Hai Dang, aid = 7, channel 13, BW20, bssid = 24:0b:2a:53:3c:39[0m
+[0;32mI (1044) wifi:security: WPA2-PSK, phy: bgn, rssi: -39, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (1055) wifi:pm start, type: 1[0m
+
+[0;32mI (1056) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1102) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2069) esp_netif_handlers: sta ip: 192.168.1.8, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (2070) WIFI_TIME: Wi-Fi OK, IP: 192.168.1.8[0m
+[0;31mE (17323) WIFI_TIME: NTP: TIMEOUT, time not synced[0m
+[0;31mE (17323) WIFI_TIME: Skipping NTP because time sync failed[0m
+[0;32mI (17324) GSHEET: Google Sheet logging task started[0m
+[0;32mI (17329) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (17393) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;31mE (18501) ACCESS: AS608 not responding - check TX/RX, GND and AS608_BAUD[0m
+[0;32mI (18502) ACCESS: CAM UART1 framed RX started (GPIO32), buffer=18434[0m
+[0;32mI (18505) ACCESS: LD2410C presence=1[0m
+[0;32mI (18507) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (18509) ACCESS: ============================================[0m
+[0;32mI (18520) ACCESS: SYSTEM READY.[0m
+[0;32mI (18524) ACCESS: ADMIN: * | A:next | B:back/delete | C:select | #:exit[0m
+[0;32mI (18531) ACCESS: ============================================[0m
+[0;32mI (18537) main_task: Returned from app_main()[0m
+[0;32mI (21142) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (23057) ACCESS: CAM COMMAND retry=1 seq=1 cmd=PRESENCE:1[0m
+[0;32mI (23772) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (26402) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (27560) ACCESS: CAM COMMAND retry=2 seq=1 cmd=PRESENCE:1[0m
+[0;32mI (29032) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (31662) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (32063) ACCESS: CAM COMMAND retry=3 seq=1 cmd=PRESENCE:1[0m
+[0;31mE (32063) ACCESS: CAM COMMAND FAILED seq=1 cmd=PRESENCE:1[0m
+[0;32mI (34292) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (36922) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (39552) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (42182) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (44812) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (47440) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (50070) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (52702) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (55332) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (57962) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (60592) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (63222) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (65853) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (68482) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (71113) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (73743) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (76373) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (79003) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (81633) ACCESS: CAM UART HANDSHAKE PASS[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15632
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 15 2026 22:12:24[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=335e8h (210408) map[0m
+[0;32mI (176) esp_image: segment 1: paddr=00043610 vaddr=3ffb0000 size=04368h ( 17256) load[0m
+[0;32mI (183) esp_image: segment 2: paddr=00047980 vaddr=40080000 size=08698h ( 34456) load[0m
+[0;32mI (197) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=ae70ch (714508) map[0m
+[0;32mI (442) esp_image: segment 4: paddr=000fe734 vaddr=40088698 size=11f68h ( 73576) load[0m
+[0;32mI (484) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (484) boot: Disabling RNG early entropy source...[0m
+[0;32mI (496) cpu_start: Multicore app[0m
+[0;32mI (505) cpu_start: Pro cpu start user code[0m
+[0;32mI (505) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (505) cpu_start: Application information:[0m
+[0;32mI (508) cpu_start: Project name:     esp32main[0m
+[0;32mI (513) cpu_start: App version:      1[0m
+[0;32mI (518) cpu_start: Compile time:     Oct 15 2026 22:11:37[0m
+[0;32mI (524) cpu_start: ELF file SHA256:  57cbbd8e6...[0m
+[0;32mI (529) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (534) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (539) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (544) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (549) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (556) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (562) heap_init: At 3FFCBBF0 len 00014410 (81 KiB): DRAM[0m
+[0;32mI (568) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (574) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (581) heap_init: At 4009A600 len 00005A00 (22 KiB): IRAM[0m
+[0;32mI (588) spi_flash: detected chip: generic[0m
+[0;32mI (591) spi_flash: flash io: dio[0m
+[0;32mI (596) main_task: Started on CPU0[0m
+[0;32mI (600) main_task: Calling app_main()[0m
+[0;32mI (625) WIFI_TIME: Initializing Wi-Fi + NTP...[0m
+[0;32mI (630) wifi:wifi driver task: 3ffd4768, prio:23, stack:6656, core=0[0m
+[0;32mI (640) wifi:wifi firmware version: ff41b26[0m
+[0;32mI (640) wifi:wifi certification version: v7.0[0m
+[0;32mI (640) wifi:config NVS flash: enabled[0m
+[0;32mI (641) wifi:config nano formating: disabled[0m
+[0;32mI (645) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (650) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (654) wifi:Init management short buffer num: 32[0m
+[0;32mI (658) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (662) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (666) wifi:Init static rx buffer num: 10[0m
+[0;32mI (670) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (675) wifi_init: rx ba win: 6[0m
+[0;32mI (678) wifi_init: tcpip mbox: 32[0m
+[0;32mI (682) wifi_init: udp mbox: 6[0m
+[0;32mI (685) wifi_init: tcp mbox: 6[0m
+[0;32mI (689) wifi_init: tcp tx win: 5760[0m
+[0;32mI (693) wifi_init: tcp rx win: 5760[0m
+[0;32mI (697) wifi_init: tcp mss: 1440[0m
+[0;32mI (701) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (706) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (711) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (720) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (802) wifi:mode : sta (00:70:07:1a:13:c0)[0m
+[0;32mI (803) wifi:enable tsf[0m
+[0;32mI (805) WIFI_TIME: Connecting to Wi-Fi: Hai Dang[0m
+[0;32mI (880) wifi:new:<13,0>, old:<1,0>, ap:<255,255>, sta:<13,0>, prof:1[0m
+[0;32mI (882) wifi:state: init -> auth (b0)[0m
+[0;32mI (893) wifi:state: auth -> assoc (0)[0m
+[0;32mI (917) wifi:state: assoc -> run (10)[0m
+[0;32mI (929) wifi:<ba-add>idx:0 (ifx:0, 24:0b:2a:53:3c:39), tid:5, ssn:0, winSize:64[0m
+[0;32mI (1023) wifi:connected with Hai Dang, aid = 7, channel 13, BW20, bssid = 24:0b:2a:53:3c:39[0m
+[0;32mI (1024) wifi:security: WPA2-PSK, phy: bgn, rssi: -36, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (1032) wifi:pm start, type: 1[0m
+
+[0;32mI (1032) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1041) wifi:<ba-add>idx:1 (ifx:0, 24:0b:2a:53:3c:39), tid:0, ssn:2, winSize:64[0m
+[0;32mI (1081) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2052) esp_netif_handlers: sta ip: 192.168.1.8, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (2052) WIFI_TIME: Wi-Fi OK, IP: 192.168.1.8[0m
+[0;32mI (5085) WIFI_TIME: NTP: time synchronized[0m
+[0;32mI (5306) WIFI_TIME: Local time: 22:51:49 10/11/2026[0m
+[0;32mI (5307) GSHEET: Google Sheet logging task started[0m
+[0;32mI (5307) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (5369) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (5682) ACCESS: AS608 online, template capacity: 300[0m
+[0;32mI (5685) ACCESS: CAM UART1 framed RX started (GPIO32), buffer=18434[0m
+[0;32mI (5686) ACCESS: LD2410C presence=1[0m
+[0;32mI (5691) ACCESS: ============================================[0m
+[0;32mI (5695) ACCESS: SYSTEM READY.[0m
+[0;32mI (5698) ACCESS: ADMIN: * | A:next | B:back/delete | C:select | #:exit[0m
+[0;32mI (5706) ACCESS: ============================================[0m
+[0;32mI (5712) main_task: Returned from app_main()[0m
+[0;32mI (7723) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (10364) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (12238) ACCESS: CAM COMMAND retry=1 seq=1 cmd=PRESENCE:1[0m
+[0;32mI (12994) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (15624) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (16741) ACCESS: CAM COMMAND retry=2 seq=1 cmd=PRESENCE:1[0m
+[0;32mI (18254) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (20882) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (21244) ACCESS: CAM COMMAND retry=3 seq=1 cmd=PRESENCE:1[0m
+[0;31mE (21244) ACCESS: CAM COMMAND FAILED seq=1 cmd=PRESENCE:1[0m
+[0;32mI (23514) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (26144) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (28774) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (31404) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (33003) ACCESS: === AUTHENTICATION SUCCESSFUL! RFID, ID: 102 ===[0m
+[0;32mI (34034) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (34156) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (36327) ACCESS: === AUTHENTICATION SUCCESSFUL! RFID, ID: 101 ===[0m
+[0;32mI (36664) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (38980) GSHEET: Following redirect (hop 0): 302 -> https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnTxzUdJAc9-uxqVoXu15WQKlqHjKMt9-Dgp_TGr5roBupZM9R0-pHsMGGBtXl4XW5G98nnFbZ7kK-6BCIWCLLAb7zPmcn3XOSmyjM6vHkKyLawzo3OS7oCwNYOpnjIUq-wX_9Bb_3JWnHK_YCNkchVVWBqNdawr3BJkk8QrNunY2O5HRF6oW62HiaV1v6XtOwx8zQ2DjID6MIctyhneLXre7nv4IOPZMt984kTDTIEacaUdHW7sF5V-ZuvqwOW9oo2CEGsSAMTKyX52LQSOJHJpD0OQCg&lib=MvZiUbeITAqCejb-8b4VxUJ0KOsqWi_zh[0m
+[0;32mI (39294) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (39641) ACCESS: Unregistered RFID card[0m
+[0;32mI (40161) esp-x509-crt-bundle: Certificate validated[0m
+[0;33mW (41287) GSHEET: HTTP status 405, body: [0m
+[0;33mW (41895) ACCESS: Unregistered RFID card[0m
+[0;32mI (41924) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (42385) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (43584) ACCESS: === AUTHENTICATION SUCCESSFUL! RFID, ID: 105 ===[0m
+[0;32mI (44554) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (45153) ACCESS: === AUTHENTICATION SUCCESSFUL! RFID, ID: 104 ===[0m
+[0;32mI (46148) GSHEET: Following redirect (hop 0): 302 -> https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnQ1BLVhqElxIlghgPKLP_ffBYbQjYgIEz3xLt76GsUTTPN1nRXhS-f6qsMwILF_FDqq7tiAAdD8gyOm967nOn4CisuU-aq27jac9W6eQQ68I6IINwtl6liqn2M3m_WBN7lsMBqqlqh40It8KM0zPHEmUu1IUIq-YM02RuP5O2i91XCGmZlS5TypjiuXADcFWJB1Pf4UaO-kdAYqJedREZPfcejvHEzSDgWTVEAkWbsxEre0NI3LsP01iK7eyXxNqcwQv5ksG4ONaGttx1WoENBeQls9JA&lib=MvZiUbeITAqCejb-8b4VxUJ0KOsqWi_zh[0m
+[0;32mI (47184) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (47313) esp-x509-crt-bundle: Certificate validated[0m
+[0;33mW (47590) ACCESS: Unregistered RFID card[0m
+[0;33mW (48451) GSHEET: HTTP status 405, body: [0m
+[0;33mW (48899) ACCESS: Unregistered RFID card[0m
+[0;32mI (49551) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (49814) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (50399) ACCESS: Unregistered RFID card[0m
+[0;32mI (51689) ACCESS: === AUTHENTICATION SUCCESSFUL! RFID, ID: 103 ===[0m
+[0;32mI (52444) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (53828) GSHEET: Following redirect (hop 0): 302 -> https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnQe6IYvibwrYRz_7iFr8EcGMCm-Rez7y2Z20_qnXfrCGK3DXWBdcU-SAaAWHP_deEQzusLlQPFF2GpAXZHkQ-QZQBYJTQcZIQ4n1aCbxfpms6aQ0u2moQnsh0YE_nQFKVmTCY58rjFYJM7ap8a5e3bmVBi3mfFcCMrqEHOYjxVNAjQ2Ji3SQYrOg76JYepxa4AQnjKvvAB9n7NkVAsjvpt2KNVvzpAfo_ubYbvK2ePko0L637TTn5g9c3KdgRowUEMy9tkUz4zbUItBDC1vTfeonqKNmQ&lib=MvZiUbeITAqCejb-8b4VxUJ0KOsqWi_zh[0m
+[0;32mI (54993) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (55074) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (56151) GSHEET: HTTP status 405, body: [0m
+[0;32mI (57213) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (57704) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (60334) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (61099) GSHEET: Following redirect (hop 0): 302 -> https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnQwqw2CNGPbcRt4xaJ74_yd_adAXt50ZFzIodLC1FMH7_FKf3i_HU5DfxliOATwlQb8GgA1vCCM1dT1gF22xktcMz7XJl1o7oQyHDo1hkIuisMNADCYv5ypNksH_jqFJsPaJXbZmgHMTQj12TgLLeF10LqHRgNAuBxAURyYsxdIaJG5zHsyO2BWOXmrHfcUsf0f7y3VYBoS2ZgO2p8CFfkogGCHVckdaWmuBMYQi4CSC7Qt3seNC5RZFyOc4OzwDIFt6JYJcOAwACVzGKc7D69JUWU6Eg&lib=MvZiUbeITAqCejb-8b4VxUJ0KOsqWi_zh[0m
+[0;32mI (62267) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (62964) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (63403) GSHEET: HTTP status 405, body: [0m
+[0;32mI (64493) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (65594) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (68224) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (68684) GSHEET: Following redirect (hop 0): 302 -> https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnRZtCuiJzwTIJFyk6E0dOBN4shOPqrKpobcDMu-UUonS6KN6BsEApPRH-9WpAdF3v6fsuzHTUMZbUr3Wy5mnk0HVzc-YBbwd1--cP4Z6UP502BRry-jBiGWUsotqT15GyT2i14zSYScKVe7mxQBoAt0EzEOBc6_7BczYdWVBrY1DakAxWuQlhMuhbCrdZOyZUXs1iBjBDN2aQ9MJgkrVq_yRYN_z8bmsdxU19YXcx8aPfVLUEdF5_rqxo3rMotPo2M_Jm9xX1lPO-lL330DJPPoj4J80A&lib=MvZiUbeITAqCejb-8b4VxUJ0KOsqWi_zh[0m
+[0;32mI (69866) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (70854) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (71085) GSHEET: HTTP status 405, body: [0m
+[0;32mI (73484) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (76114) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (78744) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (81374) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (84004) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (86634) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (89264) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (91892) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (94524) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (97154) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (99782) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (102414) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (105044) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (107674) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (110305) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (112935) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (115563) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (118195) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (120825) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (123455) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (126085) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (128715) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (131345) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (133975) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (136605) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (139235) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (141865) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (144495) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (147125) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (149755) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (152385) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (155015) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (157645) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (160275) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (162905) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (165535) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (168165) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (170795) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (173425) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (176055) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (178685) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (181315) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (183945) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (186575) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (189205) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (191835) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (194465) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (197095) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (199725) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (202355) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (204985) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (207615) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (210245) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (212875) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (215505) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (218135) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (220765) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (223394) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (226025) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (228656) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (231286) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (233915) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (236546) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (239176) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (241806) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (244436) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (247066) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (249696) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (252326) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (254956) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (257586) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (260216) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (262846) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (265476) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (268106) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (270736) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (273366) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (275996) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (278626) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (281256) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (283886) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (286516) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (289146) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (291776) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (294406) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (297036) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (299666) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (302296) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (304926) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (307556) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (310186) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (312816) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (315446) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (318076) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (320706) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (323336) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (325966) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (328597) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (331224) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (333856) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (336486) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (339114) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (341746) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (344376) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (347007) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (349636) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (352266) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (354897) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (356092) ACCESS: LD2410C presence=0[0m
+[0;32mI (357527) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (360157) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (360592) ACCESS: CAM COMMAND retry=1 seq=2 cmd=PRESENCE:0[0m
+[0;32mI (362787) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (365095) ACCESS: CAM COMMAND retry=2 seq=2 cmd=PRESENCE:0[0m
+[0;32mI (365392) ACCESS: LD2410C presence=1[0m
+[0;32mI (365417) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (368045) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (369598) ACCESS: CAM COMMAND retry=3 seq=2 cmd=PRESENCE:0[0m
+[0;31mE (369598) ACCESS: CAM COMMAND FAILED seq=2 cmd=PRESENCE:0[0m
+[0;32mI (370677) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (373307) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (375201) ACCESS: CAM COMMAND retry=1 seq=3 cmd=PRESENCE:1[0m
+[0;32mI (375937) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (378567) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (379704) ACCESS: CAM COMMAND retry=2 seq=3 cmd=PRESENCE:1[0m
+[0;32mI (381197) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (383827) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (384207) ACCESS: CAM COMMAND retry=3 seq=3 cmd=PRESENCE:1[0m
+[0;31mE (384207) ACCESS: CAM COMMAND FAILED seq=3 cmd=PRESENCE:1[0m
+[0;32mI (386457) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (389087) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (391717) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (394347) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (396977) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (399607) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (402237) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (404867) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (407497) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (410127) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (412757) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (415387) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (418017) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (420647) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (423277) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (425907) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (428537) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (430792) ACCESS: LD2410C presence=0[0m
+[0;32mI (431167) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (432092) ACCESS: LD2410C presence=1[0m
+[0;32mI (433797) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (435292) ACCESS: CAM COMMAND retry=1 seq=4 cmd=PRESENCE:0[0m
+[0;32mI (436427) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (437293) ACCESS: LD2410C presence=0[0m
+[0;32mI (439055) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (439795) ACCESS: CAM COMMAND retry=2 seq=4 cmd=PRESENCE:0[0m
+[0;32mI (441687) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (444298) ACCESS: CAM COMMAND retry=3 seq=4 cmd=PRESENCE:0[0m
+[0;31mE (444298) ACCESS: CAM COMMAND FAILED seq=4 cmd=PRESENCE:0[0m
+[0;32mI (444317) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (446945) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (448851) ACCESS: CAM COMMAND retry=1 seq=5 cmd=PRESENCE:1[0m
+[0;32mI (449577) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (452207) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (453354) ACCESS: CAM COMMAND retry=2 seq=5 cmd=PRESENCE:1[0m
+[0;32mI (454837) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (457467) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (457857) ACCESS: CAM COMMAND retry=3 seq=5 cmd=PRESENCE:1[0m
+[0;31mE (457857) ACCESS: CAM COMMAND FAILED seq=5 cmd=PRESENCE:1[0m
+[0;32mI (458293) ACCESS: LD2410C presence=1[0m
+[0;32mI (460097) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (462737) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (464612) ACCESS: CAM COMMAND retry=1 seq=6 cmd=PRESENCE:0[0m
+[0;32mI (465367) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (467997) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (469115) ACCESS: CAM COMMAND retry=2 seq=6 cmd=PRESENCE:0[0m
+[0;32mI (470628) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (471393) ACCESS: LD2410C presence=0[0m
+[0;32mI (473257) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (473618) ACCESS: CAM COMMAND retry=3 seq=6 cmd=PRESENCE:0[0m
+[0;31mE (473618) ACCESS: CAM COMMAND FAILED seq=6 cmd=PRESENCE:0[0m
+[0;32mI (475887) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (478093) ACCESS: LD2410C presence=1[0m
+[0;32mI (478518) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (480421) ACCESS: CAM COMMAND retry=1 seq=7 cmd=PRESENCE:1[0m
+[0;32mI (481148) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (483293) ACCESS: LD2410C presence=0[0m
+[0;32mI (483778) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (484924) ACCESS: CAM COMMAND retry=2 seq=7 cmd=PRESENCE:1[0m
+[0;32mI (486408) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (489038) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (489427) ACCESS: CAM COMMAND retry=3 seq=7 cmd=PRESENCE:1[0m
+[0;31mE (489427) ACCESS: CAM COMMAND FAILED seq=7 cmd=PRESENCE:1[0m
+[0;32mI (489993) ACCESS: LD2410C presence=1[0m
+[0;32mI (491668) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (494308) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (495193) ACCESS: LD2410C presence=0[0m
+[0;33mW (496182) ACCESS: CAM COMMAND retry=1 seq=8 cmd=PRESENCE:0[0m
+[0;32mI (496938) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (499566) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (500685) ACCESS: CAM COMMAND retry=2 seq=8 cmd=PRESENCE:0[0m
+[0;32mI (502198) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (502793) ACCESS: LD2410C presence=1[0m
+[0;32mI (504828) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (505188) ACCESS: CAM COMMAND retry=3 seq=8 cmd=PRESENCE:0[0m
+[0;31mE (505188) ACCESS: CAM COMMAND FAILED seq=8 cmd=PRESENCE:0[0m
+[0;32mI (507458) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (510088) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (511991) ACCESS: CAM COMMAND retry=1 seq=9 cmd=PRESENCE:1[0m
+[0;32mI (512718) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (515346) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (516494) ACCESS: CAM COMMAND retry=2 seq=9 cmd=PRESENCE:1[0m
+[0;32mI (517978) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (520608) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (520997) ACCESS: CAM COMMAND retry=3 seq=9 cmd=PRESENCE:1[0m
+[0;31mE (520997) ACCESS: CAM COMMAND FAILED seq=9 cmd=PRESENCE:1[0m
+[0;32mI (523238) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (525878) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (527752) ACCESS: CAM COMMAND retry=1 seq=10 cmd=PRESENCE:0[0m
+[0;32mI (528508) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (531138) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (532255) ACCESS: CAM COMMAND retry=2 seq=10 cmd=PRESENCE:0[0m
+[0;32mI (533768) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (534993) ACCESS: LD2410C presence=0[0m
+[0;32mI (536398) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (536758) ACCESS: CAM COMMAND retry=3 seq=10 cmd=PRESENCE:0[0m
+[0;31mE (536758) ACCESS: CAM COMMAND FAILED seq=10 cmd=PRESENCE:0[0m
+[0;32mI (539028) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (541658) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (543561) ACCESS: CAM COMMAND retry=1 seq=11 cmd=PRESENCE:1[0m
+[0;32mI (544288) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (546918) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (548064) ACCESS: CAM COMMAND retry=2 seq=11 cmd=PRESENCE:1[0m
+[0;32mI (549548) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (552178) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (552567) ACCESS: CAM COMMAND retry=3 seq=11 cmd=PRESENCE:1[0m
+[0;31mE (552567) ACCESS: CAM COMMAND FAILED seq=11 cmd=PRESENCE:1[0m
+[0;32mI (554808) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (557438) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (558493) ACCESS: LD2410C presence=1[0m
+[0;33mW (559320) ACCESS: CAM COMMAND retry=1 seq=12 cmd=PRESENCE:0[0m
+[0;32mI (560068) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (562698) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (563823) ACCESS: CAM COMMAND retry=2 seq=12 cmd=PRESENCE:0[0m
+[0;32mI (565328) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (567958) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (568326) ACCESS: CAM COMMAND retry=3 seq=12 cmd=PRESENCE:0[0m
+[0;31mE (568326) ACCESS: CAM COMMAND FAILED seq=12 cmd=PRESENCE:0[0m
+[0;32mI (570588) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (573216) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (575130) ACCESS: CAM COMMAND retry=1 seq=13 cmd=PRESENCE:1[0m
+[0;32mI (575848) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (577593) ACCESS: LD2410C presence=0[0m
+[0;32mI (578476) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (579633) ACCESS: CAM COMMAND retry=2 seq=13 cmd=PRESENCE:1[0m
+[0;32mI (581109) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (583738) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (584136) ACCESS: CAM COMMAND retry=3 seq=13 cmd=PRESENCE:1[0m
+[0;31mE (584136) ACCESS: CAM COMMAND FAILED seq=13 cmd=PRESENCE:1[0m
+[0;32mI (586368) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (586893) ACCESS: LD2410C presence=1[0m
+[0;32mI (588999) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (590889) ACCESS: CAM COMMAND retry=1 seq=14 cmd=PRESENCE:0[0m
+[0;32mI (591629) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (594259) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (595392) ACCESS: CAM COMMAND retry=2 seq=14 cmd=PRESENCE:0[0m
+[0;32mI (596889) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (599519) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (599895) ACCESS: CAM COMMAND retry=3 seq=14 cmd=PRESENCE:0[0m
+[0;31mE (599895) ACCESS: CAM COMMAND FAILED seq=14 cmd=PRESENCE:0[0m
+[0;32mI (602149) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (604779) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (606699) ACCESS: CAM COMMAND retry=1 seq=15 cmd=PRESENCE:1[0m
+[0;32mI (607407) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (610039) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (611202) ACCESS: CAM COMMAND retry=2 seq=15 cmd=PRESENCE:1[0m
+[0;32mI (612669) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (615299) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (615703) ACCESS: CAM COMMAND retry=3 seq=15 cmd=PRESENCE:1[0m
+[0;31mE (615703) ACCESS: CAM COMMAND FAILED seq=15 cmd=PRESENCE:1[0m
+[0;32mI (617929) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (620559) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (622455) ACCESS: CAM COMMAND retry=1 seq=16 cmd=PRESENCE:0[0m
+[0;32mI (623189) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (625819) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (626958) ACCESS: CAM COMMAND retry=2 seq=16 cmd=PRESENCE:0[0m
+[0;32mI (628449) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (631079) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (631461) ACCESS: CAM COMMAND retry=3 seq=16 cmd=PRESENCE:0[0m
+[0;31mE (631462) ACCESS: CAM COMMAND FAILED seq=16 cmd=PRESENCE:0[0m
+[0;32mI (633709) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (636339) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (638215) ACCESS: CAM COMMAND retry=1 seq=17 cmd=PRESENCE:1[0m
+[0;32mI (638969) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (641599) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (642718) ACCESS: CAM COMMAND retry=2 seq=17 cmd=PRESENCE:1[0m
+[0;32mI (644229) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (646859) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;33mW (647221) ACCESS: CAM COMMAND retry=3 seq=17 cmd=PRESENCE:1[0m
+[0;31mE (647221) ACCESS: CAM COMMAND FAILED seq=17 cmd=PRESENCE:1[0m
+[0;32mI (649489) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (652119) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (654749) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (657379) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (660009) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (662639) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (665269) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (667899) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (670529) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (673159) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (675789) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (678419) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (681049) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (683679) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (686309) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (688939) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (691569) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (694197) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (696827) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (699459) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (702089) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (704720) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (707349) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (709979) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (712610) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (715240) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (717870) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (720500) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (723130) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (725760) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (728390) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (731020) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (733650) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (736280) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (738910) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (741540) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (744170) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (746800) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (749430) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (752060) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (754690) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (757320) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (759950) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (762580) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (765210) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (767840) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (770470) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (773100) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (775730) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (778360) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (780988) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (783620) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (786250) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (788880) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (791510) ACCESS: CAM UART HANDSHAKE PASS[0m
+�ets Jul 29 2019 12:21:46
+
+rst:0x3 (SW_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15632
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (180) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (180) boot: compile time Oct 15 2026 22:12:24[0m
+[0;32mI (180) boot: Multicore bootloader[0m
+[0;32mI (185) boot: chip revision: v3.1[0m
+[0;32mI (189) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (193) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (198) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (203) boot: Enabling RNG early entropy source...[0m
+[0;32mI (208) boot: Partition Table:[0m
+[0;32mI (212) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (219) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (227) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (234) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (242) boot: End of partition table[0m
+[0;32mI (246) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=335e8h (210408) map[0m
+[0;32mI (327) esp_image: segment 1: paddr=00043610 vaddr=3ffb0000 size=04368h ( 17256) load[0m
+[0;32mI (334) esp_image: segment 2: paddr=00047980 vaddr=40080000 size=08698h ( 34456) load[0m
+[0;32mI (347) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=ae70ch (714508) map[0m
+[0;32mI (592) esp_image: segment 4: paddr=000fe734 vaddr=40088698 size=11f68h ( 73576) load[0m
+[0;32mI (634) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (635) boot: Disabling RNG early entropy source...[0m
+[0;32mI (646) cpu_start: Multicore app[0m
+[0;32mI (656) cpu_start: Pro cpu start user code[0m
+[0;32mI (656) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (656) cpu_start: Application information:[0m
+[0;32mI (659) cpu_start: Project name:     esp32main[0m
+[0;32mI (664) cpu_start: App version:      1[0m
+[0;32mI (668) cpu_start: Compile time:     Oct 15 2026 22:11:37[0m
+[0;32mI (674) cpu_start: ELF file SHA256:  57cbbd8e6...[0m
+[0;32mI (680) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (685) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (689) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (694) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (699) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (706) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (712) heap_init: At 3FFCBBF0 len 00014410 (81 KiB): DRAM[0m
+[0;32mI (718) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (725) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (731) heap_init: At 400�ets Jul 29 2019 12:21:46
+
+rst:0x3 (SW_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15632
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (180) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (180) boot: compile time Oct 15 2026 22:12:24[0m
+[0;32mI (180) boot: Multicore bootloader[0m
+[0;32mI (185) boot: chip revision: v3.1[0m
+[0;32mI (189) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (193) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (198) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (203) boot: Enabling RNG early entropy source...[0m
+[0;32mI (208) boot: Partition Table:[0m
+[0;32mI (212) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (219) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (227) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (234) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (242) boot: End of partition table[0m
+[0;32mI (246) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=335e8h (210408) map[0m
+[0;32mI (327) esp_image: segment 1: paddr=00043610 vaddr=3ffb0000 size=04368h ( 17256) load[0m
+[0;32mI (334) esp_image: segment 2: paddr=00047980 vaddr=40080000 size=08698h ( 34456) load[0m
+[0;32mI (347) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=ae70ch (714508) map[0m
+[0;32mI (592) esp_image: segment 4: paddr=000fe734 vaddr=40088698 size=11f68h ( 73576) load[0m
+[0;32mI (634) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (635) boot: Disabling RNG early entropy source...[0m
+[0;32mI (646) cpu_start: Multicore app[0m
+[0;32mI (656) cpu_start: Pro cpu start user code[0m
+[0;32mI (656) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (656) cpu_start: Application information:[0m
+[0;32mI (659) cpu_start: Project name:     esp32main[0m
+[0;32mI (664) cpu_start: App version:      1[0m
+[0;32mI (668) cpu_start: Compile time:     Oct 15 2026 22:11:37[0m
+[0;32mI (674) cpu_start: ELF file SHA256:  57cbbd8e6...[0m
+[0;32mI (680) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (685) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (689) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (694) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (699) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (706) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (712) heap_init: At 3FFCBBF0 len 00014410 (81 KiB): DRAM[0m
+[0;32mI (718) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (725) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (731) heap_init: At 4009A600 len 00005A00 (22 KiB): IRAM[0m
+[0�ets Jul 29 2019 12:21:46
+
+rst:0x3 (SW_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15632
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (180) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (180) boot: compile time Oct 15 2026 22:12:24[0m
+[0;32mI (180) boot: Multicore bootloader[0m
+[0;32mI (185) boot: chip revision: v3.1[0m
+[0;32mI (189) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (193) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (198) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (203) boot: Enabling RNG early entropy source...[0m
+[0;32mI (208) boot: Partition Table:[0m
+[0;32mI (212) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (219) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (227) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (234) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (242) boot: End of partition table[0m
+[0;32mI (246) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=335e8h (210408) map[0m
+[0;32mI (327) esp_image: segment 1: paddr=00043610 vaddr=3ffb0000 size=04368h ( 17256) load[0m
+[0;32mI (334) esp_image: segment 2: paddr=00047980 vaddr=40080000 size=08698h ( 34456) load[0m
+[0;32mI (347) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=ae70ch (714508) map[0m
+[0;32mI (592) esp_image: segment 4: paddr=000fe734 vaddr=40088698 size=11f68h ( 73576) load[0m
+[0;32mI (634) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (635) boot: Disabling RNG early entropy source...[0m
+[0;32mI (646) cpu_start: Multicore app[0m
+[0;32mI (656) cpu_start: Pro cpu start user code[0m
+[0;32mI (656) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (656) cpu_start: Application information:[0m
+[0;32mI (659) cpu_start: Project name:     esp32main[0m
+[0;32mI (664) cpu_start: App version:      1[0m
+[0;32mI (668) cpu_start: Compile time:     Oct 15 2026 22:11:37[0m
+[0;32mI (674) cpu_start: ELF file SHA256:  57cbbd8e6...[0m
+[0;32mI (680) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (685) cpu_start: M

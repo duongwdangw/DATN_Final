@@ -1,0 +1,3 @@
+# OpenCV provides both YuNet face detector and SFace pre-trained CNN recognizer.
+opencv-python==4.10.0.84
+numpy==1.26.4

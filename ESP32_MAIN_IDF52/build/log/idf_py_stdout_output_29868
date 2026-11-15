@@ -1,0 +1,292 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15632
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 15 2026 22:12:24[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=33898h (211096) map[0m
+[0;32mI (177) esp_image: segment 1: paddr=000438c0 vaddr=3ffb0000 size=04368h ( 17256) load[0m
+[0;32mI (183) esp_image: segment 2: paddr=00047c30 vaddr=40080000 size=083e8h ( 33768) load[0m
+[0;32mI (197) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=ae44ch (713804) map[0m
+[0;32mI (442) esp_image: segment 4: paddr=000fe474 vaddr=400883e8 size=12218h ( 74264) load[0m
+[0;32mI (484) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (484) boot: Disabling RNG early entropy source...[0m
+[0;32mI (496) cpu_start: Multicore app[0m
+[0;32mI (505) cpu_start: Pro cpu start user code[0m
+[0;32mI (505) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (505) cpu_start: Application information:[0m
+[0;32mI (508) cpu_start: Project name:     esp32main[0m
+[0;32mI (513) cpu_start: App version:      1[0m
+[0;32mI (518) cpu_start: Compile time:     Oct 15 2026 22:11:37[0m
+[0;32mI (524) cpu_start: ELF file SHA256:  6ae93f12f...[0m
+[0;32mI (529) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (534) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (539) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (544) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (549) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (556) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (562) heap_init: At 3FFC73F0 len 00018C10 (99 KiB): DRAM[0m
+[0;32mI (568) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (574) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (581) heap_init: At 4009A600 len 00005A00 (22 KiB): IRAM[0m
+[0;32mI (588) spi_flash: detected chip: generic[0m
+[0;32mI (591) spi_flash: flash io: dio[0m
+[0;32mI (596) main_task: Started on CPU0[0m
+[0;32mI (600) main_task: Calling app_main()[0m
+[0;32mI (625) WIFI_TIME: Initializing Wi-Fi + NTP...[0m
+[0;32mI (629) wifi:wifi driver task: 3ffcf728, prio:23, stack:6656, core=0[0m
+[0;32mI (639) wifi:wifi firmware version: ff41b26[0m
+[0;32mI (639) wifi:wifi certification version: v7.0[0m
+[0;32mI (639) wifi:config NVS flash: enabled[0m
+[0;32mI (640) wifi:config nano formating: disabled[0m
+[0;32mI (644) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (649) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (653) wifi:Init management short buffer num: 32[0m
+[0;32mI (657) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (661) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (665) wifi:Init static rx buffer num: 10[0m
+[0;32mI (669) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (674) wifi_init: rx ba win: 6[0m
+[0;32mI (677) wifi_init: tcpip mbox: 32[0m
+[0;32mI (681) wifi_init: udp mbox: 6[0m
+[0;32mI (684) wifi_init: tcp mbox: 6[0m
+[0;32mI (688) wifi_init: tcp tx win: 5760[0m
+[0;32mI (692) wifi_init: tcp rx win: 5760[0m
+[0;32mI (696) wifi_init: tcp mss: 1440[0m
+[0;32mI (700) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (705) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (710) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (719) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (804) wifi:mode : sta (00:70:07:1a:13:c0)[0m
+[0;32mI (805) wifi:enable tsf[0m
+[0;32mI (808) WIFI_TIME: Connecting to Wi-Fi: Hai Dang[0m
+[0;32mI (878) wifi:new:<13,0>, old:<1,0>, ap:<255,255>, sta:<13,0>, prof:1[0m
+[0;32mI (880) wifi:state: init -> auth (b0)[0m
+[0;32mI (890) wifi:state: auth -> assoc (0)[0m
+[0;32mI (916) wifi:state: assoc -> run (10)[0m
+[0;32mI (922) wifi:<ba-add>idx:0 (ifx:0, 24:0b:2a:53:3c:39), tid:5, ssn:0, winSize:64[0m
+[0;32mI (1021) wifi:connected with Hai Dang, aid = 4, channel 13, BW20, bssid = 24:0b:2a:53:3c:39[0m
+[0;32mI (1021) wifi:security: WPA2-PSK, phy: bgn, rssi: -36, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (1029) wifi:pm start, type: 1[0m
+
+[0;32mI (1030) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1039) wifi:<ba-add>idx:1 (ifx:0, 24:0b:2a:53:3c:39), tid:0, ssn:2, winSize:64[0m
+[0;32mI (1182) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2048) esp_netif_handlers: sta ip: 192.168.1.7, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (2049) WIFI_TIME: Wi-Fi OK, IP: 192.168.1.7[0m
+[0;32mI (3002) WIFI_TIME: NTP: time synchronized[0m
+[0;32mI (3053) WIFI_TIME: Local time: 22:21:39 22/10/2026[0m
+[0;32mI (3054) GSHEET: Google Sheet logging task started[0m
+[0;32mI (3054) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3116) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3429) ACCESS: AS608 online, template capacity: 300[0m
+[0;32mI (3431) ACCESS: CAM UART receiver started: UART1 RX=GPIO32 TX=GPIO33, 115200 baud[0m
+[0;32mI (3434) ACCESS: LD2410C presence=1[0m
+[0;33mW (3439) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;32mI (3443) ACCESS: ============================================[0m
+[0;32mI (3450) ACCESS: SYSTEM READY.[0m
+[0;32mI (3453) ACCESS: ADMIN: * | A:next | B:back/delete | C:select | #:exit[0m
+[0;32mI (3460) ACCESS: ============================================[0m
+[0;32mI (3467) main_task: Returned from app_main()[0m
+[0;33mW (4205) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (4674) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (6131) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (7695) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (9567) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (10238) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (10993) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (11302) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (11640) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (11987) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (12409) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (13130) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (15388) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;32mI (15624) ACCESS: CAM UART receiver alive (RX pending=106 bytes)[0m
+[0;33mW (15635) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (15672) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (16531) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (16958) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (17568) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (18093) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (18701) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (19563) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (20193) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (20917) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (21652) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (22172) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (23056) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (24318) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (25885) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (26623) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (27784) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (28498) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (29198) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (29493) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (30895) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;32mI (30936) ACCESS: CAM UART receiver alive (RX pending=2 bytes)[0m
+[0;33mW (31255) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (31810) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (32944) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (33684) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (34071) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (35040) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (35525) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (35954) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (36314) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (37979) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (38797) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (39157) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (40003) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (40886) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (42288) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (42975) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (43335) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (44184) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (45492) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;32mI (46145) ACCESS: CAM UART receiver alive (RX pending=1 bytes)[0m
+[0;33mW (46710) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (47137) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (48218) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (48799) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (50070) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (51641) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (52277) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (52879) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (53417) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (54127) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (54600) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (54982) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (55289) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (56174) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (56664) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (57626) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (58274) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (59391) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (59775) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (60574) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;32mI (61228) ACCESS: CAM UART receiver alive (RX pending=3 bytes)[0m
+[0;33mW (61542) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (62560) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (63118) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (63577) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (64154) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (65211) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (66913) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (67999) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (69440) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (70232) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (71127) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (71949) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (72753) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (74665) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (75793) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (76394) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;32mI (76560) ACCESS: CAM UART receiver alive (RX pending=1 bytes)[0m
+[0;33mW (77070) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (77840) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (78347) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (79676) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (80938) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (82019) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (82637) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (83524) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (83884) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (84671) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (85126) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (85950) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (87017) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (87967) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (89087) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (89504) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (90689) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (91071) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (91471) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;32mI (92608) ACCESS: CAM UART receiver alive (RX pending=8 bytes)[0m
+[0;33mW (92924) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (93544) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (94863) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (95949) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (97350) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (98609) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (99035) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (99611) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (101366) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (102937) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (103585) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (104116) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (104705) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (105105) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (105785) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (107015) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (107535) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;32mI (107619) ACCESS: CAM UART receiver alive (RX pending=3 bytes)[0m
+[0;33mW (108923) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (110540) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (111647) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (112550) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (113049) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (113498) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (114189) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (115575) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (116596) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (117360) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (118143) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (118917) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (119565) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (120036) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (120540) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (121422) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (121991) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (122682) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;32mI (122970) ACCESS: CAM UART receiver alive (RX pending=4 bytes)[0m
+[0;33mW (123511) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (124281) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (124896) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (125798) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (126969) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (127645) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (128554) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (129274) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (130011) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (130750) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (132414) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (133878) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (135663) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (136801) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (137442) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;32mI (138249) ACCESS: CAM UART receiver alive (RX pending=3 bytes)[0m
+[0;33mW (138583) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (139071) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (139496) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (140921) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (143075) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (143453) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (144653) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (145000) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (146435) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (146795) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (147743) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (148500) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (149084) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (149623) ACCESS: CAM UART line too long; re-synchronizing[0m
+[0;33mW (150816) ACCESS: CAM UART line too long; re-synchronizing[0m

@@ -1,0 +1,507 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4200a48d
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x1870
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcec
+load:0x403cc700,len:0x2ec8
+entry 0x403c9918
+[0;32mI (26) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Oct 16 2026 21:11:15[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (33) boot: efuse block revision: v1.4[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (43) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (83) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=23b78h (146296) map[0m
+[0;32mI (129) esp_image: segment 1: paddr=00033ba0 vaddr=3fc9c200 size=060c8h ( 24776) load[0m
+[0;32mI (135) esp_image: segment 2: paddr=00039c70 vaddr=40374000 size=063a8h ( 25512) load[0m
+[0;32mI (141) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=ae3b8h (713656) map[0m
+[0;32mI (269) esp_image: segment 4: paddr=000ee3e0 vaddr=4037a3a8 size=11d54h ( 73044) load[0m
+[0;32mI (296) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (296) boot: Disabling RNG early entropy source...[0m
+[0;32mI (307) cpu_start: Multicore app[0m
+[0;32mI (308) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (308) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (311) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (316) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (322) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (327) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (332) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (338) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (344) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (349) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (355) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (360) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (365) esp_psram: Speed: 40MHz[0m
+[0;32mI (1100) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (1109) cpu_start: Pro cpu start user code[0m
+[0;32mI (1109) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (1109) cpu_start: Application information:[0m
+[0;32mI (1112) cpu_start: Project name:     face_cam_s3[0m
+[0;32mI (1118) cpu_start: App version:      1[0m
+[0;32mI (1122) cpu_start: Compile time:     Oct 16 2026 21:51:32[0m
+[0;32mI (1128) cpu_start: ELF file SHA256:  3dab8a6de...[0m
+[0;32mI (1134) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (1139) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (1143) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (1148) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (1153) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (1161) heap_init: At 3FCA6448 len 000432C8 (268 KiB): RAM[0m
+[0;32mI (1167) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (1173) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (1179) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (1186) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator[0m
+[0;32mI (1194) spi_flash: detected chip: boya[0m
+[0;32mI (1198) spi_flash: flash io: dio[0m
+[0;33mW (1202) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (1215) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (1226) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (1233) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (1240) main_task: Started on CPU0[0m
+[0;32mI (1244) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (1253) main_task: Calling app_main()[0m
+[0;32mI (1270) FACE_S3: PSRAM bytes=8388608[0m
+[0;32mI (1271) s3 ll_cam: DMA Channel=0[0m
+[0;32mI (1271) cam_hal: cam init ok[0m
+[0;32mI (1271) sccb: pin_sda 4 pin_scl 5[0m
+[0;32mI (1275) sccb: sccb_i2c_port=1[0m
+[0;32mI (1289) camera: Detected camera at address=0x3c[0m
+[0;32mI (1291) camera: Detected OV3660 camera[0m
+[0;32mI (1291) camera: Camera PID=0x3660 VER=0x00 MIDL=0x00 MIDH=0x00[0m
+[0;32mI (1610) cam_hal: buffer_size: 16384, half_buffer_size: 1024, node_buffer_size: 1024, node_cnt: 16, total_cnt: 60[0m
+[0;32mI (1610) cam_hal: Allocating 61440 Byte frame buffer in PSRAM[0m
+[0;32mI (1616) cam_hal: Allocating 61440 Byte frame buffer in PSRAM[0m
+[0;32mI (1623) cam_hal: cam config ok[0m
+[0;32mI (1640) ov3660: Calculated VCO: 100000000 Hz, PLLCLK: 100000000 Hz, SYSCLK: 25000000 Hz, PCLK: 5000000 Hz[0m
+[0;32mI (1675) pp: pp rom version: e7ae62f[0m
+[0;32mI (1676) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1677) wifi:wifi driver task: 3fcc28b8, prio:23, stack:6656, core=0[0m
+[0;32mI (1687) wifi:wifi firmware version: ff41b26[0m
+[0;32mI (1687) wifi:wifi certification version: v7.0[0m
+[0;32mI (1688) wifi:config NVS flash: enabled[0m
+[0;32mI (1692) wifi:config nano formating: disabled[0m
+[0;32mI (1696) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1701) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1705) wifi:Init management short buffer num: 32[0m
+[0;32mI (1709) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1713) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1717) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1722) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1725) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1730) wifi_init: rx ba win: 6[0m
+[0;32mI (1733) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1737) wifi_init: udp mbox: 6[0m
+[0;32mI (1741) wifi_init: tcp mbox: 6[0m
+[0;32mI (1745) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1749) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1754) wifi_init: tcp mss: 1440[0m
+[0;32mI (1758) wifi_init: WiFi IRAM OP enabled[0m
+[0;33mW (1761) cam_hal: NO-SOI[0m
+[0;32mI (1765) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (1771) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1791) phy_init: phy_version 711,97bcf0a2,Aug 25 2025,19:04:10[0m
+[0;33mW (1792) phy_init: failed to load RF calibration data (0xffffffff), falling back to full calibration[0m
+[0;32mI (1831) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(2)[0m
+[0;32mI (1841) wifi:mode : sta (e0:72:a1:d6:c7:e0)[0m
+[0;32mI (1841) wifi:enable tsf[0m
+[0;32mI (1843) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (1845) FACE_S3: Camera ready. Server=http://192.168.1.100:5000/api/frame[0m
+[0;31mE (1976) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1976) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1978) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2316) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2317) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2319) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2656) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2657) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2659) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2996) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2997) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2999) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (3336) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3337) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3339) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (3676) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3677) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3679) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (4017) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (4018) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (4020) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;33mW (4256) FACE_S3: Wi-Fi disconnected; reconnecting[0m
+[0;31mE (4357) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (4358) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (4360) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (4697) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (4698) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (4700) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (5037) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (5038) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (5040) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (5378) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (5379) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (5381) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (5718) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (5719) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (5721) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (6058) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (6059) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (6061) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (6398) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (6399) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (6401) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;33mW (6668) FACE_S3: Wi-Fi disconnected; reconnecting[0m
+[0;31mE (6738) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (6739) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (6741) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (7078) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (7079) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (7081) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (7418) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (7419) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (7421) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (7759) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (7760) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (7761) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (8099) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (8100) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (8102) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (8439) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (8440) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (8442) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (8779) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (8780) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (8782) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;33mW (9080) FACE_S3: Wi-Fi disconnected; reconnecting[0m
+[0;31mE (9119) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (9120) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (9122) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (9459) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (9460) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (9462) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (9799) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (9800) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (9802) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (10140) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (10141) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (10143) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (10481) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (10482) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (10484) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (10822) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (10823) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (10825) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (11163) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (11164) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (11166) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;33mW (11492) FACE_S3: Wi-Fi disconnected; reconnecting[0m
+[0;31mE (11504) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (11505) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (11507) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (11845) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (11846) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (11848) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (12186) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (12187) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (12189) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (12527) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (12528) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (12530) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (12868) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (12869) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (12871) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (13209) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (13210) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (13212) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (13550) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (13551) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (13553) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (13891) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (13892) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (13894) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;33mW (13904) FACE_S3: Wi-Fi disconnected; reconnecting[0m
+[0;31mE (14232) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (14233) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (14235) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (14573) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (14574) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (14576) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (14914) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (14915) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (14917) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (15255) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (15256) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (15258) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (15597) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (15598) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (15600) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (15937) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (15938) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (15940) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (16278) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (16279) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (16281) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;33mW (16316) FACE_S3: Wi-Fi disconnected; reconnecting[0m
+[0;31mE (16619) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (16620) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (16622) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (16960) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (16961) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (16963) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (17301) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (17302) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (17304) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (17642) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (17643) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (17646) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (17983) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (17984) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (17986) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (18324) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (18325) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (18327) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (18665) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (18666) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (18668) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;33mW (18728) FACE_S3: Wi-Fi disconnected; reconnecting[0m
+[0;31mE (19006) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (19007) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (19009) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (19347) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (19348) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (19350) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (19688) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (19689) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (19691) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (20029) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (20030) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (20032) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (20370) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (20371) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (20373) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (20711) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (20712) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (20714) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (21052) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (21053) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (21055) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;33mW (21141) FACE_S3: Wi-Fi disconnected; reconnecting[0m
+[0;31mE (21393) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (21394) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (21396) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (21734) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (21735) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (21737) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (22075) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (22076) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (22078) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (22416) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (22417) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (22419) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (22757) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (22758) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (22760) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (23098) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (23099) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (23101) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (23439) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (23440) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (23442) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;33mW (23553) FACE_S3: Wi-Fi disconnected; reconnecting[0m
+[0;31mE (23780) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (23781) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (23783) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (24121) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (24122) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (24124) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (24462) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (24463) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (24465) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (24803) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (24804) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (24806) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (25144) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (25145) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (25147) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (25485) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (25486) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (25488) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (25826) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (25827) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (25829) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;33mW (25965) FACE_S3: Wi-Fi disconnected; reconnecting[0m
+[0;31mE (26167) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (26168) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (26170) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (26508) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (26509) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (26511) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (26849) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (26850) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (26852) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (27190) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (27191) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (27193) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (27531) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (27532) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (27534) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (27872) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (27873) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (27875) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (28213) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (28214) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (28216) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;33mW (28378) FACE_S3: Wi-Fi disconnected; reconnecting[0m
+[0;31mE (28554) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (28555) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (28557) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (28895) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (28896) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (28898) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (29236) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (29237) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (29239) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (29577) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (29578) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (29580) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (29918) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (29919) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (29921) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (30259) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (30260) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (30262) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (30600) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (30601) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (30603) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;33mW (30790) FACE_S3: Wi-Fi disconnected; reconnecting[0m
+[0;31mE (30941) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (30942) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (30944) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (31282) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (31283) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (31285) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (31623) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (31624) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (31626) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (31964) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (31965) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (31967) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (32305) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (32306) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (32308) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (32646) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (32647) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (32649) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (32987) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (32988) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (32990) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;33mW (33203) FACE_S3: Wi-Fi disconnected; reconnecting[0m
+[0;31mE (33328) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (33329) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (33331) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (33669) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (33670) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (33672) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (34010) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (34011) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (34013) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (34351) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (34352) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (34354) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (34692) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (34693) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (34695) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (35033) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (35034) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (35036) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (35374) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (35375) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (35377) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;33mW (35615) FACE_S3: Wi-Fi disconnected; reconnecting[0m
+[0;31mE (35715) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (35716) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (35718) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (36056) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (36057) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (36059) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (36397) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (36398) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (36400) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (36738) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (36739) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (36741) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (37079) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (37080) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (37082) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (37420) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (37421) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (37423) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (37761) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (37762) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (37764) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;33mW (38027) FACE_S3: Wi-Fi disconnected; reconnecting[0m
+[0;31mE (38102) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (38103) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (38105) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (38443) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (38444) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (38446) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (38784) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (38785) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (38787) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (39125) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (39126) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (39128) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (39466) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (39467) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (39469) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (39807) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (39808) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (39810) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (40148) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (40149) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (40151) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;33mW (40439) FACE_S3: Wi-Fi disconnected; reconnecting[0m
+[0;31mE (40489) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (40490) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (40492) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (40830) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (40831) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (40833) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (41171) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (41172) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (41174) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (41512) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (41513) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (41515) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (41853) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (41854) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (41856) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (42194) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (42195) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (42197) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (42535) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (42536) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (42538) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;33mW (42852) FACE_S3: Wi-Fi disconnected; reconnecting[0m
+[0;31mE (42876) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (42877) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (42879) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (43218) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (43219) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (43221) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (43559) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (43560) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (43562) HTTP_CLIENT: Connection failed, sock < 0[0m

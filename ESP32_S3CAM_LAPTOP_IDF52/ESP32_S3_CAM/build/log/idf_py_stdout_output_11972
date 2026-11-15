@@ -1,0 +1,1471 @@
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3c0b002ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x420092b1
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x1870
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xc30
+load:0x403cc700,len:0x2eac
+entry 0x403c9904
+[0;32mI (26) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Nov 11 2026 22:07:18[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (33) boot: efuse block revision: v1.4[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (43) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (83) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=23bc8h (146376) map[0m
+[0;32mI (129) esp_image: segment 1: paddr=00033bf0 vaddr=3fc9c100 size=06048h ( 24648) load[0m
+[0;32mI (135) esp_image: segment 2: paddr=00039c40 vaddr=40374000 size=063d8h ( 25560) load[0m
+[0;32mI (141) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=ad3c4h (709572) map[0m
+[0;32mI (269) esp_image: segment 4: paddr=000ed3ec vaddr=4037a3d8 size=11c68h ( 72808) load[0m
+[0;32mI (295) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (295) boot: Disabling RNG early entropy source...[0m
+[0;32mI (296) cpu_start: Multicore app[0m
+[0;32mI (300) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (304) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (310) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (316) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (321) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (326) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (331) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (337) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (343) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (348) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (354) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (360) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (364) esp_psram: Speed: 40MHz[0m
+[0;32mI (1099) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (1108) cpu_start: Pro cpu start user code[0m
+[0;32mI (1108) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (1108) cpu_start: Application information:[0m
+[0;32mI (1108) cpu_start: Project name:     face_cam_s3[0m
+[0;32mI (1109) cpu_start: App version:      1[0m
+[0;32mI (1109) cpu_start: Compile time:     Nov 11 2026 22:07:22[0m
+[0;32mI (1109) cpu_start: ELF file SHA256:  6d5f65e48...[0m
+[0;32mI (1109) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (1109) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (1109) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (1110) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (1110) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (1110) heap_init: At 3FCA62C8 len 00043448 (269 KiB): RAM[0m
+[0;32mI (1110) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (1111) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (1111) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (1111) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator[0m
+[0;32mI (1112) spi_flash: detected chip: boya[0m
+[0;32mI (1112) spi_flash: flash io: dio[0m
+[0;33mW (1112) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (1113) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (1113) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (1114) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (1115) main_task: Started on CPU0[0m
+[0;32mI (1116) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (1117) main_task: Calling app_main()[0m
+[0;32mI (1129) FACE_S3: UART1 TX=GPIO43 RX=GPIO44 BAUD=115200[0m
+[0;32mI (1130) FACE_S3: PSRAM=8388608 bytes[0m
+[0;32mI (1130) s3 ll_cam: DMA Channel=0[0m
+[0;32mI (1130) cam_hal: cam init ok[0m
+[0;32mI (1131) sccb: pin_sda 4 pin_scl 5[0m
+[0;32mI (1131) sccb: sccb_i2c_port=1[0m
+[0;32mI (1141) camera: Detected camera at address=0x3c[0m
+[0;32mI (1143) camera: Detected OV3660 camera[0m
+[0;32mI (1143) camera: Camera PID=0x3660 VER=0x00 MIDL=0x00 MIDH=0x00[0m
+[0;32mI (1458) cam_hal: buffer_size: 16384, half_buffer_size: 1024, node_buffer_size: 1024, node_cnt: 16, total_cnt: 60[0m
+[0;32mI (1458) cam_hal: Allocating 61440 Byte frame buffer in PSRAM[0m
+[0;32mI (1458) cam_hal: Allocating 61440 Byte frame buffer in PSRAM[0m
+[0;32mI (1459) cam_hal: cam config ok[0m
+[0;32mI (1472) ov3660: Calculated VCO: 100000000 Hz, PLLCLK: 100000000 Hz, SYSCLK: 25000000 Hz, PCLK: 5000000 Hz[0m
+[0;32mI (1507) pp: pp rom version: e7ae62f[0m
+[0;32mI (1508) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1510) wifi:wifi driver task: 3fcc7560, prio:23, stack:6656, core=0[0m
+[0;32mI (1517) wifi:wifi firmware version: ff41b26[0m
+[0;32mI (1517) wifi:wifi certification version: v7.0[0m
+[0;32mI (1517) wifi:config NVS flash: enabled[0m
+[0;32mI (1518) wifi:config nano formating: disabled[0m
+[0;32mI (1518) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1518) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1518) wifi:Init management short buffer num: 32[0m
+[0;32mI (1518) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1519) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1519) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1519) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1519) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1520) wifi_init: rx ba win: 6[0m
+[0;32mI (1520) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1520) wifi_init: udp mbox: 6[0m
+[0;32mI (1520) wifi_init: tcp mbox: 6[0m
+[0;32mI (1521) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1521) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1521) wifi_init: tcp mss: 1440[0m
+[0;32mI (1521) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1521) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (1522) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1523) phy_init: phy_version 711,97bcf0a2,Aug 25 2025,19:04:10[0m
+[0;32mI (1573) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1614) wifi:mode : sta (e0:72:a1:d6:c7:e0)[0m
+[0;32mI (1615) wifi:enable tsf[0m
+[0;32mI (1617) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (1619) FACE_S3: Camera initialized, server=http://172.20.10.4:5000/api/frame[0m
+[0;32mI (1620) FACE_S3: UART HELLO attempt=1[0m
+[0;32mI (1625) FACE_S3: UART RX READY from MAIN[0m
+[0;32mI (1626) FACE_S3: UART HANDSHAKE PASS[0m
+[0;33mW (4029) FACE_S3: Wi-Fi disconnected[0m
+[0;33mW (6440) FACE_S3: Wi-Fi disconnected[0m
+[0;33mW (8852) FACE_S3: Wi-Fi disconnected[0m
+[0;33mW (11264) FACE_S3: Wi-Fi disconnected[0m
+[0;33mW (13675) FACE_S3: Wi-Fi disconnected[0m
+[0;33mW (16087) FACE_S3: Wi-Fi disconnected[0m
+[0;33mW (18498) FACE_S3: Wi-Fi disconnected[0m
+[0;33mW (20910) FACE_S3: Wi-Fi disconnected[0m
+[0;32mI (20916) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (20917) wifi:state: init -> auth (b0)[0m
+[0;32mI (20923) wifi:state: auth -> assoc (0)[0m
+[0;32mI (20932) wifi:state: assoc -> run (10)[0m
+[0;32mI (21294) wifi:connected with Lighthouse, aid = 1, channel 6, BW20, bssid = 72:a4:d8:cb:a2:1a[0m
+[0;32mI (21295) wifi:security: WPA2-PSK, phy: bgn, rssi: -28, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (21297) wifi:pm start, type: 0[0m
+
+[0;32mI (21297) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (21298) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (21324) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (22300) esp_netif_handlers: sta ip: 172.20.10.2, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (22301) FACE_S3: Wi-Fi IP: 172.20.10.2[0m
+[0;32mI (24909) wifi:state: run -> init (2c0)[0m
+[0;32mI (24911) wifi:pm stop, total sleep time: 0 us / 3614009 us[0m
+
+[0;32mI (24912) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;33mW (24915) FACE_S3: Wi-Fi disconnected[0m
+[0;31mE (24917) esp-tls: [sock=54] delayed connect error: Software caused connection abort[0m
+[0;31mE (24917) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (24918) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;32mI (24923) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (24923) wifi:state: init -> auth (b0)[0m
+[0;32mI (25925) wifi:state: auth -> init (200)[0m
+[0;32mI (25928) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;33mW (25929) FACE_S3: Wi-Fi disconnected[0m
+[0;32mI (25938) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (25938) wifi:state: init -> auth (b0)[0m
+[0;32mI (25948) wifi:state: auth -> assoc (0)[0m
+[0;32mI (25964) wifi:state: assoc -> run (10)[0m
+[0;32mI (26177) wifi:connected with Lighthouse, aid = 1, channel 6, BW20, bssid = 36:77:2d:05:fc:65[0m
+[0;32mI (26177) wifi:security: WPA2-PSK, phy: bgn, rssi: -31, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (26180) wifi:pm start, type: 0[0m
+
+[0;32mI (26180) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (26239) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (30682) esp_netif_handlers: sta ip: 172.20.10.2, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (30683) FACE_S3: Wi-Fi IP: 172.20.10.2[0m
+[0;31mE (36864) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (36865) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (36865) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (43200) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (43201) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (43201) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (49537) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (49538) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (49538) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (55873) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (55874) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (55874) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;32mI (269) esp_image: segment 4: paddr=000ed3ec vaddr=4037a3[0;32mI (1104) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (1113) cpu_start: Pro cpu start user code[0m
+[0;32mI (1113) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (1113) cpu_start: Application information:[0m
+[0;32mI (1113) cpu_start: Project name:     face_cam_s3[0m
+[0;32mI (1114) cpu_start: App version:      1[0m
+[0;32mI (1114) cpu_start: Compile time:     Nov 11 2026 22:07:22[0m
+[0;32mI (1114) cpu_start: ELF file SHA256:  6d5f65e48...[0m
+[0;32mI (1114) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (1115) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (1115) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (1115) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (1115) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (1115) heap_init: At 3FCA62C8 len 00043448 (269 KiB): RAM[0m
+[0;32mI (1116) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (1116) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (1116) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (1117) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator[0m
+[0;32mI (1118) spi_flash: detected chip: boya[0m
+[0;32mI (1118) spi_flash: flash io: dio[0m
+[0;33mW (1118) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (1118) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (1119) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (1119) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (1120) main_task: Started on CPU0[0m
+[0;32mI (1121) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (1122) main_task: Calling app_main()[0m
+[0;32mI (1134) FACE_S3: UART1 TX=GPIO43 RX=GPIO44 BAUD=115200[0m
+[0;32mI (1135) FACE_S3: PSRAM=8388608 bytes[0m
+[0;32mI (1135) s3 ll_cam: DMA Channel=0[0m
+[0;32mI (1136) cam_hal: cam init ok[0m
+[0;32mI (1136) sccb: pin_sda 4 pin_scl 5[0m
+[0;32mI (1136) sccb: sccb_i2c_port=1[0m
+[0;32mI (1147) camera: Detected camera at address=0x3c[0m
+[0;32mI (1149) camera: Detected OV3660 camera[0m
+[0;32mI (1149) camera: Camera PID=0x3660 VER=0x00 MIDL=0x00 MIDH=0x00[0m
+[0;32mI (1464) cam_hal: buffer_size: 16384, half_buffer_size: 1024, node_buffer_size: 1024, node_cnt: 16, total_cnt: 60[0m
+[0;32mI (1464) cam_hal: Allocating 61440 Byte frame buffer in PSRAM[0m
+[0;32mI (1464) cam_hal: Allocating 61440 Byte frame buffer in PSRAM[0m
+[0;32mI (1465) cam_hal: cam config ok[0m
+[0;32mI (1478) ov3660: Calculated VCO: 100000000 Hz, PLLCLK: 100000000 Hz, SYSCLK: 25000000 Hz, PCLK: 5000000 Hz[0m
+[0;32mI (1513) pp: pp rom version: e7ae62f[0m
+[0;32mI (1514) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1516) wifi:wifi driver task: 3fcc7560, prio:23, stack:6656, core=0[0m
+[0;32mI (1523) wifi:wifi firmware version: ff41b26[0m
+[0;32mI (1523) wifi:wifi certification version: v7.0[0m
+[0;32mI (1523) wifi:config NVS flash: enabled[0m
+[0;32mI (1524) wifi:config nano formating: disabled[0m
+[0;32mI (1524) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1524) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1524) wifi:Init management short buffer num: 32[0m
+[0;32mI (1524) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1525) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1525) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1525) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1525) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1526) wifi_init: rx ba win: 6[0m
+[0;32mI (1526) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1526) wifi_init: udp mbox: 6[0m
+[0;32mI (1526) wifi_init: tcp mbox: 6[0m
+[0;32mI (1527) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1527) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1527) wifi_init: tcp mss: 1440[0m
+[0;32mI (1527) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1527) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (1528) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1529) phy_init: phy_version 711,97bcf0a2,Aug 25 2025,19:04:10[0m
+[0;32mI (1570) wifi:mode : sta (e0:72:a1:d6:c7:e0)[0m
+[0;32mI (1571) wifi:enable tsf[0m
+[0;32mI (1573) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (1575) FACE_S3: Camera initialized, server=http://172.20.10.4:5000/api/frame[0m
+[0;32mI (1576) FACE_S3: UART HELLO attempt=1[0m
+[0;32mI (1582) FACE_S3: UART RX READY from MAIN[0m
+[0;32mI (1583) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (1584) wifi:state: init -> auth (b0)[0m
+[0;32mI (1585) FACE_S3: UART HANDSHAKE PASS[0m
+[0;32mI (1591) wifi:state: auth -> assoc (0)[0m
+[0;32mI (1598) wifi:state: assoc -> run (10)[0m
+[0;32mI (1654) wifi:connected with Lighthouse, aid = 1, channel 6, BW20, bssid = 36:77:2d:05:fc:65[0m
+[0;32mI (1655) wifi:security: WPA2-PSK, phy: bgn, rssi: -33, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (1657) wifi:pm start, type: 0[0m
+
+[0;32mI (1657) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1658) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1688) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2660) esp_netif_handlers: sta ip: 172.20.10.2, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (2661) FACE_S3: Wi-Fi IP: 172.20.10.2[0m
+[0;31mE (8917) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (8918) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (8918) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (15253) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (15254) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (15254) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (21589) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (21590) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (21590) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (27925) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (27926) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (27926) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (34261) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (34262) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (34262) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (40597) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (40598) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (40598) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (46933) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (46934) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (46934) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (53269) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (53270) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (53270) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (59605) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (59606) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (59606) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (65941) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (65942) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (65942) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (72277) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (72278) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (72278) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (78614) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (78615) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (78615) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (84951) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (84952) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (84952) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (91287) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (91288) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (91288) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (97623) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (97624) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (97624) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (103959) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (103960) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (103960) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (110296) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (110297) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (110297) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (116632) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (116633) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (116633) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (122969) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (122970) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (122970) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (129305) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (129306) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (129306) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (135642) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (135643) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (135643) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (141978) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (141979) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (141979) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (148314) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (148315) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (148315) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (154650) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (154651) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (154651) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (160986) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (160987) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (160987) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (167322) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (167323) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (167323) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (173659) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (173660) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (173660) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (179995) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (179996) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (179996) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (186331) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (186332) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (186332) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (192667) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (192668) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (192668) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (199003) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (199004) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (199004) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (205339) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (205340) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (205340) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (211676) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (211677) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (211677) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (218011) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (218012) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (218012) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (224348) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (224349) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (224349) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (230683) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (230684) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (230684) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (237020) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (237021) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (237021) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (243356) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (243357) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (243357) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (249692) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (249693) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (249693) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (256028) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (256029) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (256029) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (262365) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (262366) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (262366) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (268701) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (268702) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (268702) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;32mI (273368) wifi:<ba-add>idx:0 (ifx:0, 36:77:2d:05:fc:65), tid:0, ssn:3, winSize:64[0m
+[0;31mE (275038) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (275039) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (275039) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (281374) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (281375) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (281375) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (287711) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (287712) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (287712) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (294048) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (294049) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (294049) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (300384) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (300385) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (300385) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (306720) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (306721) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (306721) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (313056) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (313057) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (313057) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (319392) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (319393) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (319393) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (325728) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (325729) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (325729) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (332064) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (332065) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (332065) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (338401) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (338402) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (338402) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (344737) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (344738) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (344738) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (351073) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (351074) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (351074) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (357409) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (357410) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (357410) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (363745) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (363746) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (363746) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (370080) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (370081) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (370081) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (376417) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (376418) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (376418) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (382753) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (382754) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (382754) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (389089) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (389090) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (389090) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (395426) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (395427) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (395427) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (401762) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (401763) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (401763) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (408099) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (408100) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (408100) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (414435) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (414436) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (414436) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (420771) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (420772) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (420772) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (427108) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (427109) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (427109) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (433444) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (433445) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (433445) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (439780) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (439781) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (439781) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (446116) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (446117) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (446117) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (452452) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (452453) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (452453) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (458788) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (458789) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (458789) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (465125) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (465126) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (465126) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (471461) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (471462) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (471462) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (477797) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (477798) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (477798) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (484133) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (484134) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (484134) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (490470) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (490471) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (490471) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (496806) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (496807) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (496807) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (503142) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (503143) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (503143) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (509477) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (509478) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (509478) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (515813) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (515814) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (515814) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (522148) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (522149) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (522149) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (528484) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (528485) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (528485) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (534820) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (534821) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (534821) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (541155) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (541156) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (541156) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (547491) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (547492) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (547492) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (553827) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (553828) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (553828) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (560162) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (560163) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (560163) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (566499) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (566500) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (566500) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (572835) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (572836) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (572836) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (579171) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (579172) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (579172) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (585507) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (585508) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (585508) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (591843) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (591844) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (591844) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (598179) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (598180) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (598180) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (604515) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (604516) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (604516) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (610851) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (610852) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (610852) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (617187) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (617188) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (617188) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (623523) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (623524) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (623524) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;33mW (734890) FACE_S3: UART no ACK type=3 seq=2 attempt=1[0m
+[0;33mW (736654) FACE_S3: UART recovered seq=2 attempt=2[0m
+[0;32mI (736655) FACE_S3: FACE UART ACK id=101 bytes=18432[0m
+[0;33mW (861239) FACE_S3: UART no ACK type=3 seq=3 attempt=1[0m
+[0;33mW (863005) FACE_S3: UART no ACK type=3 seq=3 attempt=2[0m
+[0;33mW (864771) FACE_S3: UART no ACK type=3 seq=3 attempt=3[0m
+[0;31mE (864921) FACE_S3: UART EVENT FAILED type=3 seq=3[0m
+[0;31mE (864921) FACE_S3: FACE UART NOT ACKED id=101[0m
+[0;32mI (870355) FACE_S3: UART HELLO attempt=1[0m
+[0;32mI (870361) FACE_S3: UART RX READY from MAIN[0m
+[0;32mI (870361) FACE_S3: UART HANDSHAKE PASS[0m
+[0;32mI (871984) FACE_S3: FACE UART ACK id=101 bytes=18432[0m
+[0;31mE (886554) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (886555) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (886555) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (892890) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (892891) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (892891) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (899227) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (899228) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (899228) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (905563) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (905564) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (905564) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (911899) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (911900) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (911900) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (918234) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (918235) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (918235) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (924570) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (924571) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (924571) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (930907) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (930908) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (930908) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (937243) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (937244) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (937244) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (943579) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (943580) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (943580) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (949915) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (949916) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (949917) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (956253) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (956254) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (956254) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (962589) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (962590) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (962590) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (968926) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (968927) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (968927) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (975262) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (975263) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (975263) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (981597) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (981598) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (981598) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (987934) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (987935) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (987935) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (994269) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (994270) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (994270) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1000606) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1000607) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1000607) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1006943) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1006944) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1006944) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1013280) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1013281) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1013281) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1019616) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1019617) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1019617) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1025952) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1025953) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1025953) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1032289) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1032290) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1032290) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1038626) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1038627) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1038627) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1044962) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1044963) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1044963) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1051297) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1051298) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1051298) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1057633) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1057634) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1057634) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1063969) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1063970) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1063970) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1070305) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1070306) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1070306) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1076642) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1076643) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1076643) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1082977) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1082978) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1082978) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1089313) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1089314) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1089314) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1095650) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1095651) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1095651) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1101986) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1101987) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1101987) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1108321) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1108322) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1108322) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1114657) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1114658) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1114658) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1120994) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1120995) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1120995) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1127330) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1127331) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1127331) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1133665) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1133666) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1133666) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1140002) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1140003) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1140003) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1146339) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1146340) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1146340) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1152676) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1152677) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1152677) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1159012) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1159013) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1159013) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1165348) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1165349) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1165349) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1171685) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1171686) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1171686) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1178020) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1178021) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1178021) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1184356) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1184357) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1184357) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1190693) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1190694) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1190694) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1197029) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1197030) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1197030) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1203364) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1203365) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1203365) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1209700) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1209701) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1209701) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1216037) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1216038) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1216038) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1222372) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1222373) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1222373) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1228709) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1228710) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1228710) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1235044) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1235045) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1235045) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1241380) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1241381) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1241381) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1247716) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1247717) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1247717) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1254053) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1254054) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1254054) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1260389) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1260390) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1260390) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1266725) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1266726) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1266726) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1273062) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1273063) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1273063) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1279398) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1279399) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1279399) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1285733) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1285734) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1285734) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1292070) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1292071) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1292071) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1298406) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1298407) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1298407) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1304742) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1304743) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1304743) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1311077) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1311078) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1311078) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1317414) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1317415) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1317415) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1323751) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1323752) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1323752) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1330087) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1330088) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1330088) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1336423) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1336424) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1336424) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1342759) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1342760) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1342760) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1349096) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1349097) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1349097) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1355431) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1355432) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1355432) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1361767) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1361768) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1361768) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;32mI (1363421) FACE_S3: UART CMD PRESENCE:0 seq=2 ACK=1 duplicate=0[0m
+[0;31mE (1368104) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1368105) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1368105) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1374440) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1374441) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1374441) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1380776) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1380777) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1380777) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1387113) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1387114) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1387114) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1393450) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1393451) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1393451) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1399785) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1399786) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1399786) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1406121) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1406122) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1406122) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1412457) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1412458) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1412458) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;32mI (1414638) wifi:sta rx csa, newchan=13, old=6[0m
+[0;32mI (1414945) wifi:sta rx csa, newchan=13, old=6[0m
+[0;32mI (1415339) wifi:switch to channel 13[0m
+[0;32mI (1415339) wifi:new:<13,0>, old:<6,0>, ap:<255,255>, sta:<13,0>, prof:1[0m
+[0;31mE (1418792) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1418793) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1418793) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1425127) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1425128) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1425128) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1431464) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1431465) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1431465) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1437801) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1437802) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1437802) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1444137) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1444138) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1444138) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1450473) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1450474) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1450474) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1456809) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1456810) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1456810) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1463145) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1463146) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1463146) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1469481) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1469482) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1469482) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1475816) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1475817) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1475817) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1482152) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1482153) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1482153) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1488487) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1488488) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1488488) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1494823) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1494824) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1494824) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1501159) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1501160) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1501160) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1507494) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1507495) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1507495) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1513829) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1513830) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1513830) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1520165) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1520166) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1520166) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1526501) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1526502) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1526502) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1532837) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1532838) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1532838) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1539172) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1539173) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1539173) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1545508) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1545509) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1545509) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1551845) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1551846) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1551846) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1558181) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1558182) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1558182) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1564518) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1564519) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1564519) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1570854) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1570855) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1570855) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1577191) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1577192) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1577192) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1583526) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1583527) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1583527) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;32mI (1584120) FACE_S3: UART CMD PRESENCE:1 seq=3 ACK=1 duplicate=0[0m
+[0;31mE (1589862) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1589863) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1589863) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1596198) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1596199) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1596199) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1602533) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1602534) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1602534) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1608868) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1608869) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1608869) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1615204) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1615205) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1615205) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1621540) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1621541) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1621541) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1627877) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1627878) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1627878) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1634213) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1634214) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1634214) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1640550) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1640551) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1640551) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1646886) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1646887) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1646887) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1653222) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1653223) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1653223) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1659559) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1659560) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1659560) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1665895) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1665896) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1665896) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1672231) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1672232) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1672232) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1678567) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1678568) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1678568) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1684903) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1684904) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1684904) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1691239) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1691240) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1691240) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1697575) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1697576) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1697576) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1703911) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1703912) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1703912) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1710247) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1710248) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1710248) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1716582) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1716583) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1716583) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1722918) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1722919) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1722919) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1729254) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1729255) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1729255) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1735591) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1735592) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1735592) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1741927) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1741928) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1741928) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1748263) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1748264) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1748264) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1754599) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1754600) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1754600) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1760935) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1760936) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1760936) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1767271) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1767272) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1767272) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1773607) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1773608) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1773608) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1779943) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1779944) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1779944) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1786278) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1786279) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1786279) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1792614) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1792615) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1792615) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1798949) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1798950) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1798950) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1805285) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1805286) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1805286) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1811622) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1811623) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1811623) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1817958) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1817959) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1817959) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1824294) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1824295) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1824295) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1830630) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1830631) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1830631) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1836966) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1836967) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1836967) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1843302) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1843303) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1843303) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1849638) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1849639) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1849639) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1855974) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1855975) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1855975) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1862310) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1862311) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1862311) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1868646) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1868647) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1868647) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1874982) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1874983) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1874983) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1881318) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1881319) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1881319) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1887654) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1887655) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1887655) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1893989) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1893990) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1893990) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1900324) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1900325) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1900325) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1906660) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1906661) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1906661) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1912996) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1912997) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1912997) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1919332) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1919333) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1919333) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1925668) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1925669) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1925669) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1932003) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1932004) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1932004) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1938339) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1938340) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1938340) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1944675) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1944676) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1944676) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1951011) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1951012) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1951012) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1957347) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1957348) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1957348) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1963684) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1963685) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1963685) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1970020) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1970021) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1970021) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1976355) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1976356) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1976356) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1982691) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1982692) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1982692) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1989026) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1989027) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1989027) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (1995362) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (1995363) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (1995363) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2001698) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2001699) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2001699) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2008033) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2008034) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2008034) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2014368) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2014369) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2014369) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2020704) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2020705) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2020705) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2027040) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2027041) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2027041) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2033376) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2033377) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2033377) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2039712) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2039713) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2039713) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2046049) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2046050) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2046050) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2052385) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2052386) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2052386) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2058720) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2058721) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2058721) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2065056) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2065057) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2065057) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2071391) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2071392) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2071392) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2077727) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2077728) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2077728) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2084063) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2084064) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2084064) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2090398) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2090399) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2090399) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2096735) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2096736) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2096736) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2103070) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2103071) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2103071) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2109405) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2109406) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2109406) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2115741) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2115742) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2115742) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2122077) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2122078) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2122078) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2128412) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2128413) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2128413) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2134748) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2134749) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2134749) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2141083) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2141084) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2141084) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2147418) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2147419) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2147419) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2153754) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2153755) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2153755) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2160089) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2160090) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2160090) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2166425) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2166426) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2166426) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2172761) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2172762) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2172762) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2179097) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2179098) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2179098) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2185433) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2185434) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2185434) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2191769) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2191770) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2191770) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2198105) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2198106) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2198106) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2204440) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2204441) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2204441) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2210775) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2210776) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2210776) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2217110) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2217111) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2217111) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2223446) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2223447) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2223447) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2229782) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2229783) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2229783) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2236118) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2236119) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2236119) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2242454) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2242455) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2242455) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2248790) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2248791) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2248791) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2255126) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2255127) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2255127) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2261461) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2261462) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2261462) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2267797) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2267798) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2267798) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2274132) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2274133) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2274133) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2280467) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2280468) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2280468) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2286802) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2286803) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2286803) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2293137) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2293138) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2293138) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2299472) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2299473) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2299473) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2305808) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2305809) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2305809) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2312143) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2312144) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2312144) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2318479) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2318480) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2318480) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2324816) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2324817) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2324817) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2331151) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2331152) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2331152) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2337486) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2337487) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2337487) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2343822) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2343823) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2343823) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2350157) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2350158) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2350158) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2356493) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2356494) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2356494) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2362828) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2362829) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2362829) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2369163) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2369164) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2369164) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2375498) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2375499) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2375499) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2381833) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2381834) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2381834) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2388169) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2388170) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2388170) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2394505) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2394506) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2394506) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2400841) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2400842) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2400842) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2407177) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2407178) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2407178) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2413512) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2413513) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2413514) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2419848) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2419849) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2419849) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2426184) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2426185) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2426185) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2432520) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2432521) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2432521) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2438856) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2438857) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2438857) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2445192) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2445193) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2445193) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2451528) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2451529) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2451529) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2457864) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2457865) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2457865) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2464199) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2464200) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2464200) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2470535) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2470536) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2470536) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2476870) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2476871) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2476871) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2483206) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2483207) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2483207) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2489542) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2489543) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2489543) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2495877) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2495878) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2495878) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2502213) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2502214) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2502214) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2508548) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2508549) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2508549) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2514884) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2514885) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2514885) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2521220) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2521221) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2521221) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2527556) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2527557) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2527557) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2533891) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2533892) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2533892) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2540227) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2540228) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2540228) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2546564) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2546565) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2546565) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2552900) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2552901) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2552901) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2559236) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2559237) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2559237) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2565572) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2565573) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2565573) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2571908) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2571909) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2571909) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2578244) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2578245) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2578245) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2584579) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2584580) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2584580) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2590914) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2590915) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2590915) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2597250) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2597251) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2597251) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2603585) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2603586) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2603586) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2609921) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2609922) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2609922) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2616256) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2616257) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2616257) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2622592) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2622593) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2622593) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2628928) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2628929) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2628929) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2635264) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2635265) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2635265) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2641599) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2641600) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2641600) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2647935) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2647936) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2647936) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2654270) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2654271) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2654271) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2660605) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2660606) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2660606) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2666940) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2666941) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2666941) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2673276) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2673277) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2673277) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2679612) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2679613) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2679613) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2685948) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2685949) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2685949) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2692284) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2692285) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2692285) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2698620) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2698621) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2698621) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2704956) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2704957) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2704957) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2711291) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2711292) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2711292) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2717627) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2717628) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2717628) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2723962) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2723963) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2723963) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2730297) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2730298) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2730298) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2736633) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2736634) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2736634) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2742968) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2742969) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2742969) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2749304) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2749305) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2749305) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;31mE (2755640) esp-tls: [sock=54] select() timeout[0m
+[0;31mE (2755641) transport_base: Failed to open a new connection: 32774[0m
+[0;31mE (2755641) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;

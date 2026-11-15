@@ -1,0 +1,14 @@
+{
+  "bind": "0.0.0.0",
+  "port": 5000,
+  "device_key": "REPLACE_WITH_LONG_RANDOM_DEVICE_KEY",
+  "admin_key": "REPLACE_WITH_ANOTHER_RANDOM_ADMIN_KEY",
+  "minimum_cosine": 0.43,
+  "minimum_margin": 0.025,
+  "required_confirmations": 3,
+  "minimum_face_width": 65,
+  "minimum_blur_variance": 28.0,
+  "enroll_images": 30,
+  "enroll_interval_seconds": 1.0,
+  "match_cooldown_seconds": 10.0
+}
