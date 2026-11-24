@@ -519,6 +519,8 @@ class FaceRequest(BaseHTTPRequestHandler):
                 )
 
                 if content_type != "image/jpeg":
+                    with self.server.engine.lock:
+                        self.server.engine.reset_verification()
                     self.send_data(
                         415,
                         b"",
@@ -527,17 +529,21 @@ class FaceRequest(BaseHTTPRequestHandler):
 
                     return
 
-                img = self.request_body(180000)
-
                 try:
+                    img = self.request_body(180000)
                     out = (
-                        self.server.engine.process(img)
+                        self.server.engine.process(
+                            img, stream=self.client_address[0],
+                            reset=self.headers.get('X-Face-Reset') == '1'
+                        )
                     )
 
                 except Exception as exc:
+                    with self.server.engine.lock:
+                        self.server.engine.reset_verification()
                     print(
                         "[AI] process failed:",
-                        repr(exc),
+                        type(exc).__name__,
                         flush=True
                     )
 

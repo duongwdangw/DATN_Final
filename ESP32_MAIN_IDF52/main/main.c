@@ -3228,6 +3228,8 @@ static void cam_handle_face(
         return;
     }
 
+    ESP_LOGI(TAG, "FACE RX id=%u authorization=PASS; checking attendance state", (unsigned)emp);
+
     memcpy(
         face_photo,
         payload + 2,
@@ -3247,6 +3249,8 @@ static void cam_handle_face(
 
     if (grant("FACE", idstr)) {
         tft_face_photo_screen(idstr);
+    } else {
+        ESP_LOGI(TAG, "FACE ATTENDANCE REJECT id=%u reason=BUSY_OR_COOLDOWN", (unsigned)emp);
     }
 }
 
@@ -3435,6 +3439,12 @@ static void cam_task(void *arg)
             h.type != FL_TYPE_FACE &&
             h.type != FL_TYPE_STATUS
         ) {
+            continue;
+        }
+
+        if (!cam_link_ready) {
+            ESP_LOGW(TAG, "CAM UART REJECT type=%" PRIu32 " reason=NO_HANDSHAKE", h.type);
+            (void)fl_send_frame(CAM_UART, cam_tx_mutex, FL_TYPE_NACK, h.seq, NULL, 0, 0);
             continue;
         }
 
