@@ -1,17 +1,27 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>ESP32 Face AI — Quản lý khuôn mặt</title>
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Đồ án tốt nghiệp | Dương Hải Đăng</title>
 
   <style>
+    /* =========================================
+           GLOBAL
+        ========================================= */
+
     :root {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #17324d;
-      background: #f1f5f9;
+      --primary: #861c2c;
+      --primary-dark: #651321;
+      --gold: #b99048;
+      --background: #f5f3ef;
+      --surface: #ffffff;
+      --text: #262b34;
+      --muted: #6c717b;
+      --border: #e6e0d8;
     }
 
     * {
@@ -20,317 +30,982 @@
 
     body {
       margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--background);
+      color: var(--text);
     }
+
+
+    /* =========================================
+           HEADER
+        ========================================= */
 
     header {
-      background: #0f3154;
-      color: white;
-      padding: 24px max(20px, calc((100% - 1120px)/2));
+      background: white;
+      border-top: 5px solid var(--primary);
+      border-bottom: 1px solid var(--border);
     }
 
-    header h1 {
+    .masthead {
+      max-width: 1260px;
+      margin: auto;
+      padding: 24px 28px;
+
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .identity {
+      flex: 1;
+    }
+
+    .academy {
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      margin: 0 0 10px;
+      text-align: center;
+    }
+
+    .faculty {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      margin: 0 0 12px;
+      text-align: center;
+    }
+
+    .identity h1 {
+      font-size: 24px;
+      letter-spacing: 0.5px;
+      color: var(--primary);
+      margin: 0 0 10px;
+    }
+
+    .topic {
+      font-size: 19px;
+      line-height: 1.5;
+      font-weight: 600;
       margin: 0;
-      font-size: 27px;
+      max-width: 720px;
     }
 
-    header p {
-      margin: 8px 0 0;
-      color: #cfddf0;
+    .student {
+      border-left: 2px solid var(--gold);
+      padding: 10px 0 10px 22px;
+      min-width: 200px;
     }
+
+    .student small {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 1px;
+      margin-bottom: 9px;
+    }
+
+    .student strong {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .student span {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+
+    /* =========================================
+           NAVIGATION BAR
+        ========================================= */
+
+    .bar {
+      background: var(--primary-dark);
+      color: white;
+    }
+
+    .bar-inner {
+      max-width: 1260px;
+      margin: auto;
+      padding: 14px 28px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+
+      font-size: 13px;
+    }
+
+    .bar strong {
+      letter-spacing: 0.8px;
+    }
+
+    .bar span {
+      color: #ead6ba;
+    }
+
+
+    /* =========================================
+           MAIN CONTENT
+        ========================================= */
 
     main {
-      max-width: 1120px;
-      margin: 24px auto;
-      padding: 0 16px;
+      max-width: 1260px;
+      margin: auto;
+      padding: 28px;
+    }
+
+    .intro {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      margin-bottom: 22px;
+      gap: 16px;
+    }
+
+    .intro h2 {
+      font-size: 26px;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .intro p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 20px;
+      grid-template-columns: 1.18fr 1fr;
+      gap: 22px;
+      align-items: stretch;
     }
 
+
+    /* =========================================
+           PANEL
+        ========================================= */
+
     .panel {
-      background: white;
-      border: 1px solid #dbe3ec;
+      background: var(--surface);
+      border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 20px;
+
+      padding: 24px;
+      min-width: 0;
+
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.025);
+    }
+
+    .panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+
       margin-bottom: 20px;
     }
 
     .panel h2 {
-      margin: 0 0 18px;
-      font-size: 20px;
+      font-size: 19px;
+      margin: 0;
     }
 
+    .eyebrow {
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      color: var(--primary);
+      margin: 0 0 8px;
+    }
+
+    .tag {
+      color: #76603d;
+      background: #f7f1e5;
+      border: 1px solid #e9ddc5;
+
+      padding: 6px 9px;
+      border-radius: 5px;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+
+    /* =========================================
+           CAMERA PREVIEW
+        ========================================= */
+
+    .camera-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+
+      background: #171c24;
+      border-radius: 8px;
+      overflow: hidden;
+
+      display: grid;
+      place-items: center;
+    }
+
+    .preview {
+      position: absolute;
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+      background: #171c24;
+    }
+
+    .preview:not([src]) {
+      visibility: hidden;
+    }
+
+    .placeholder {
+      display: grid;
+      justify-items: center;
+      gap: 14px;
+
+      color: #b0b8c5;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .placeholder svg {
+      width: 48px;
+      height: 48px;
+      color: #84909f;
+    }
+
+    .camera-frame:has(.preview[src]) .placeholder {
+      display: none;
+    }
+
+    .status-line {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+
+      margin: 18px 0 10px;
+
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #a79c89;
+      flex-shrink: 0;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .metrics {
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+
+
+    /* =========================================
+           FORM
+        ========================================= */
+
     .field {
-      margin-bottom: 14px;
+      margin: 0 0 16px;
     }
 
     label {
       display: block;
-      margin-bottom: 7px;
+      margin-bottom: 8px;
+
+      font-size: 13px;
       font-weight: 600;
-      font-size: 14px;
     }
 
     input {
       display: block;
       width: 100%;
-      font-size: 16px;
-      padding: 12px;
-      border: 1px solid #b9c8d5;
+
+      font-family: inherit;
+      font-size: 14px;
+
+      padding: 12px 13px;
+
+      border: 1px solid #d8d5d0;
       border-radius: 7px;
+
+      color: var(--text);
+      background: white;
+
+      transition: border-color 0.2s;
     }
 
     input:focus {
-      outline: 2px solid #2a7cbd;
+      outline: 2px solid #b9904840;
+      border-color: var(--gold);
     }
+
+    input::placeholder {
+      color: #9a9da3;
+    }
+
+
+    /* =========================================
+           BUTTON
+        ========================================= */
 
     .btns {
       display: flex;
-      gap: 10px;
       flex-wrap: wrap;
+      gap: 10px;
     }
 
     button {
-      padding: 11px 14px;
-      background: #1468af;
-      color: white;
-      border: 0;
-      border-radius: 7px;
+      font-family: inherit;
+      font-size: 13px;
       font-weight: 600;
+
       cursor: pointer;
+
+      padding: 12px 16px;
+
+      border: 1px solid transparent;
+      border-radius: 7px;
+
+      color: white;
+      background: var(--primary);
+
+      transition: background 0.2s,
+        border-color 0.2s;
+    }
+
+    button:hover {
+      background: var(--primary-dark);
     }
 
     button.secondary {
-      background: #687887;
+      color: var(--primary);
+      background: white;
+      border-color: #cdb8b9;
+    }
+
+    button.secondary:hover {
+      background: #f8eeee;
     }
 
     button.danger {
-      background: #bd3d43;
+      color: #a32e37;
+      background: white;
+      border-color: #e5c8ca;
+    }
+
+    button.danger:hover {
+      background: #fbeeee;
     }
 
     button:disabled {
-      opacity: 0.55;
+      opacity: 0.5;
       cursor: not-allowed;
     }
 
-    .preview {
-      width: 100%;
-      aspect-ratio: 4/3;
-      background: #dce5ed;
-      object-fit: contain;
-      border-radius: 7px;
+    .divider {
+      border: 0;
+      border-top: 1px solid var(--border);
+      margin: 20px 0;
     }
+
+
+    /* =========================================
+           ENROLLMENT STATUS
+        ========================================= */
 
     #notice {
-      padding: 12px;
-      border-radius: 8px;
-      background: #edf4fb;
+      color: #655740;
+      background: #f8f6f1;
+      border: 1px solid #eee7d9;
+
+      font-size: 13px;
+      line-height: 1.5;
+
+      padding: 12px 14px;
+      border-radius: 7px;
+
+      margin-top: 16px;
       min-height: 44px;
-      margin-top: 12px;
+
       white-space: pre-wrap;
+      overflow-wrap: anywhere;
     }
 
-    .muted {
-      color: #607587;
-      font-size: 14px;
+    .progress-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      font-size: 12px;
+      color: var(--muted);
+
+      margin-top: 20px;
     }
 
-    .metrics {
-      margin-top: 10px;
+    #progressTitle {
+      margin: 0;
+      color: #363b44;
+      font-weight: 600;
     }
 
     progress {
       width: 100%;
-      height: 18px;
+      height: 9px;
+
+      margin-top: 11px;
+
+      appearance: none;
+      border: 0;
+      border-radius: 10px;
+
+      overflow: hidden;
+      accent-color: var(--primary);
+    }
+
+    progress::-webkit-progress-bar {
+      background: #ebe7e2;
+    }
+
+    progress::-webkit-progress-value {
+      background: var(--primary);
+    }
+
+    progress::-moz-progress-bar {
+      background: var(--primary);
+    }
+
+
+    /* =========================================
+           EMPLOYEE TABLE
+        ========================================= */
+
+    .roster {
+      margin-top: 22px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
+      font-size: 14px;
     }
 
     th,
     td {
-      padding: 11px 9px;
+      padding: 14px 12px;
       text-align: left;
-      border-bottom: 1px solid #e4eaf0;
+
+      border-bottom: 1px solid #eee9e3;
     }
 
-    td:last-child {
+    th {
+      color: #65616a;
+      background: #f8f6f3;
+
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    td:last-child,
+    th:last-child {
       text-align: right;
     }
 
-    @media (max-width: 760px) {
+    td[colspan] {
+      text-align: center;
+      color: var(--muted);
+      padding: 28px;
+    }
+
+    tbody tr:hover {
+      background: #fcfaf7;
+    }
+
+
+    /* =========================================
+           FOOTER
+        ========================================= */
+
+    footer {
+      max-width: 1260px;
+
+      margin: 0 auto;
+      padding: 0 28px 28px;
+
+      color: var(--muted);
+      font-size: 12px;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+
+    /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+    @media (max-width: 850px) {
+
       .grid {
         grid-template-columns: 1fr;
       }
 
-      main {
-        margin: 14px auto;
+      .masthead {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 20px;
       }
 
-      header {
-        padding: 22px 16px;
+      .logo {
+        width: 76px;
+        height: 76px;
       }
+
+      .identity {
+        min-width: 220px;
+      }
+
+      .identity h1 {
+        font-size: 20px;
+      }
+
+      .topic {
+        font-size: 16px;
+      }
+
+      .bar-inner,
+      main {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .intro h2 {
+        font-size: 23px;
+      }
+
+    }
+
+    @media (max-width: 480px) {
+
+      .student {
+        width: 100%;
+        border-left: 0;
+        border-top: 1px solid var(--border);
+        padding: 14px 0 0;
+      }
+
+      .bar-inner,
+      footer {
+        flex-wrap: wrap;
+      }
+
+      .panel {
+        padding: 16px;
+      }
+
+      .intro {
+        display: block;
+      }
+
+      .intro>.tag {
+        display: none;
+      }
+
+      .academy {
+        font-size: 11px;
+      }
+
     }
   </style>
+
 </head>
 
 <body>
+
+  <!-- =========================================
+         HEADER
+    ========================================== -->
+
   <header>
-    <h1>ESP32 Face AI</h1>
-    <p>
-      ESP32-S3 OV3660 · YuNet + SFace ·
-      Một ID dùng chung RFID, vân tay và khuôn mặt
-    </p>
+
+    <div class="masthead">
+
+      <img class="logo" src="/logo.png" alt="Logo Học viện Kỹ thuật Mật mã">
+
+      <div class="identity">
+
+        <p class="academy">
+          HỌC VIỆN KỸ THUẬT MẬT MÃ
+        </p>
+
+        <p class="faculty">
+          KHOA ĐIỆN TỬ – VI MẠCH
+        </p>
+
+        <h1>
+          ĐỒ ÁN TỐT NGHIỆP ĐẠI HỌC
+        </h1>
+
+        <p class="topic">
+          THIẾT KẾ HỆ THỐNG CHẤM CÔNG VÀ KIỂM SOÁT <br> RA VÀO ĐA PHƯƠNG THỨC
+        </p>
+
+      </div>
+
+      <div class="student">
+
+        <small>
+          SINH VIÊN THỰC HIỆN
+        </small>
+
+        <strong>
+          Dương Hải Đăng
+        </strong>
+
+        <span>
+          DT060206
+        </span>
+
+      </div>
+
+    </div>
+
   </header>
 
+
+  <!-- =========================================
+         NAVIGATION
+    ========================================== -->
+
+  <div class="bar">
+
+    <div class="bar-inner">
+
+      <strong>
+        QUẢN LÝ HỆ THỐNG
+      </strong>
+
+      <span>
+        RFID &nbsp; / &nbsp;
+        Vân tay &nbsp; / &nbsp;
+        Khuôn mặt
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
   <main>
+
+    <div class="intro">
+
+      <div>
+
+        <h2>
+          Quản lý khuôn mặt
+        </h2>
+
+        <p>
+          Giám sát camera và quản lý hồ sơ nhân viên
+        </p>
+
+      </div>
+
+      <span class="tag">
+        ESP32-S3-CAM · YuNet / SFace
+      </span>
+
+    </div>
+
+
     <div class="grid">
 
-      <!-- CAMERA PREVIEW -->
+      <!-- CAMERA -->
 
       <section class="panel">
-        <h2>Hình ảnh từ camera</h2>
 
-        <img
-          class="preview"
-          id="camera"
-          alt="Hình ảnh mới nhất từ ESP32-S3-CAM"
-        >
+        <div class="panel-head">
 
-        <p
-          class="metrics"
-          id="cameraStatus"
-        >
-          Chưa kết nối
+          <div>
+
+            <p class="eyebrow">
+              01 / GIÁM SÁT
+            </p>
+
+            <h2>
+              Hình ảnh camera
+            </h2>
+
+          </div>
+
+          <span class="tag">
+            OV3660
+          </span>
+
+        </div>
+
+
+        <div class="camera-frame">
+
+          <div class="placeholder">
+
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+
+              <rect x="5" y="13" width="38" height="28" rx="4" />
+
+              <path d="M15 13l4-6h10l4 6" />
+
+              <circle cx="24" cy="27" r="8" />
+
+            </svg>
+
+            <span>
+              Chưa có hình ảnh
+            </span>
+
+          </div>
+
+          <img id="camera" class="preview" alt="Hình ảnh từ camera">
+
+        </div>
+
+
+        <div class="status-line">
+
+          <span class="dot"></span>
+
+          <span id="cameraStatus">
+            Chưa kết nối
+          </span>
+
+        </div>
+
+        <p class="metrics muted" id="metrics">
+          Chưa có dữ liệu
         </p>
 
-        <p
-          class="muted"
-          id="metrics"
-        >
-          Đang chờ dữ liệu...
-        </p>
       </section>
+
 
       <!-- FACE ENROLLMENT -->
 
       <section class="panel">
-        <h2>Đăng ký khuôn mặt mới</h2>
+
+        <div class="panel-head">
+
+          <div>
+
+            <p class="eyebrow">
+              02 / HỒ SƠ
+            </p>
+
+            <h2>
+              Đăng ký khuôn mặt
+            </h2>
+
+          </div>
+
+        </div>
+
 
         <div class="field">
+
           <label for="key">
-            Khóa quản trị (admin_key trong config.json)
+            Khóa quản trị
           </label>
 
-          <input
-            id="key"
-            type="password"
-            autocomplete="off"
-            placeholder="Nhập khóa quản trị"
-          >
+          <input id="key" type="password" autocomplete="off" placeholder="Nhập khóa quản trị">
+
         </div>
 
+
+        <button class="secondary" id="connectBtn">
+          Kết nối / Tải lại
+        </button>
+
+
+        <hr class="divider">
+
+
         <div class="field">
+
           <label for="empId">
-            Mã nhân viên (đã có RFID + vân tay trên MAIN)
+            Mã nhân viên
           </label>
 
-          <input
-            id="empId"
-            inputmode="numeric"
-            maxlength="5"
-            placeholder="Ví dụ: 101"
-          >
+          <input id="empId" inputmode="numeric" maxlength="5" placeholder="Nhập mã nhân viên">
+
         </div>
+
 
         <div class="field">
+
           <label for="empName">
-            Họ tên
+            Họ và tên
           </label>
 
-          <input
-            id="empName"
-            maxlength="64"
-            placeholder="Họ tên nhân viên"
-          >
+          <input id="empName" maxlength="64" placeholder="Nhập họ và tên">
+
         </div>
+
 
         <div class="btns">
-          <button id="connectBtn">
-            Kết nối / tải lại
-          </button>
 
           <button id="startBtn">
-            Bắt đầu chụp 30 ảnh
+            Bắt đầu đăng ký
           </button>
 
-          <button
-            id="cancelBtn"
-            class="danger"
-          >
+          <button id="cancelBtn" class="danger">
             Hủy
           </button>
+
         </div>
 
-        <div
-          id="notice"
-          role="status"
-        >
-          Nhập khóa quản trị rồi chọn Kết nối.
+
+        <div id="notice" role="status">
+          Chưa kết nối quản trị.
         </div>
 
-        <p id="progressTitle">
-          Không đăng ký
-        </p>
 
-        <progress
-          id="progress"
-          value="0"
-          max="30"
-        ></progress>
+        <div class="progress-head">
 
-        <p class="muted">
-          Hệ thống sẽ hỏi ESP32 MAIN để kiểm tra
-          RFID và mẫu vân tay của ID trước khi
-          cho phép chụp ảnh. Một ID chỉ có một
-          hồ sơ mặt đang hoạt động.
-        </p>
+          <p id="progressTitle">
+            Chưa đăng ký
+          </p>
+
+          <span>
+            30 mẫu
+          </span>
+
+        </div>
+
+
+        <progress id="progress" value="0" max="30"></progress>
+
       </section>
 
     </div>
 
-    <!-- REGISTERED PEOPLE -->
 
-    <section class="panel">
-      <h2>Nhân viên đã đăng ký khuôn mặt</h2>
+    <!-- =====================================
+             EMPLOYEE LIST
+        ====================================== -->
 
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Họ tên</th>
-            <th>Số mẫu</th>
-            <th>Quản lý</th>
-          </tr>
-        </thead>
+    <section class="panel roster">
 
-        <tbody id="people">
-          <tr>
-            <td colspan="4">
-              Chưa tải dữ liệu
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="panel-head">
+
+        <div>
+
+          <p class="eyebrow">
+            03 / DANH SÁCH
+          </p>
+
+          <h2>
+            Nhân viên đã đăng ký
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="table-wrap">
+
+        <table>
+
+          <thead>
+
+            <tr>
+              <th>Mã nhân viên</th>
+              <th>Họ và tên</th>
+              <th>Số mẫu</th>
+              <th>Thao tác</th>
+            </tr>
+
+          </thead>
+
+          <tbody id="people">
+
+            <tr>
+
+              <td colspan="4">
+                Chưa tải dữ liệu
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
     </section>
+
   </main>
 
+
+  <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+  <footer>
+
+    <span>
+      Học viện Kỹ thuật Mật mã · Đồ án tốt nghiệp
+    </span>
+
+    <span>
+      Dương Hải Đăng · DT060206
+    </span>
+
+  </footer>
+
+
+  <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
   <script>
+
     'use strict';
 
     const $ = id => document.getElementById(id);
@@ -338,329 +1013,548 @@
     let active = false;
     let lastError = '';
 
+
     function message(text) {
+
       $('notice').textContent = text;
+
     }
 
+
     function headers(json = false) {
+
       const h = {
         'X-Admin-Key': $('key').value
       };
 
       if (json) {
+
         h['Content-Type'] = 'application/json';
+
       }
 
       return h;
+
     }
+
 
     async function api(
       path,
       method = 'GET',
       payload = null
     ) {
+
       const args = {
+
         method,
+
         headers: headers(payload !== null),
+
         cache: 'no-store'
+
       };
 
       if (payload !== null) {
+
         args.body = JSON.stringify(payload);
+
       }
 
       const resp = await fetch(path, args);
+
       const data = await resp.json();
 
       if (!resp.ok) {
+
         throw new Error(
           data.error || `HTTP ${resp.status}`
         );
+
       }
 
       return data;
+
     }
+
 
     function personId() {
+
       return $('empId').value.trim();
+
     }
 
+
     function row(person) {
+
       const tr = document.createElement('tr');
 
+
       const id = document.createElement('td');
+
       id.textContent = person.id;
 
+
       const name = document.createElement('td');
+
       name.textContent = person.name;
 
+
       const images = document.createElement('td');
+
       images.textContent = person.images;
 
+
       const action = document.createElement('td');
+
 
       const button = document.createElement('button');
 
       button.className = 'danger';
+
       button.textContent = 'Xóa khuôn mặt';
 
+
       button.addEventListener(
+
         'click',
+
         async () => {
+
           const confirmed = window.confirm(
+
             `Xóa khuôn mặt ID ${person.id}? ` +
+
             `RFID và vân tay không bị xóa.`
+
           );
 
+
           if (!confirmed) {
+
             return;
+
           }
 
+
           try {
+
             await api(
+
               '/api/people/delete',
+
               'POST',
-              {id: person.id}
+
+              {
+                id: person.id
+              }
+
             );
 
+
             message(
-              `Đã yêu cầu xóa mặt ID ${person.id}.`
+
+              `Đã yêu cầu xóa khuôn mặt ID ${person.id}.`
+
             );
+
 
             await refresh();
 
+
           } catch (e) {
+
             message(
+
               'Lỗi xóa: ' + e.message
+
             );
+
           }
+
         }
+
       );
+
 
       action.appendChild(button);
 
+
       tr.append(
+
         id,
+
         name,
+
         images,
+
         action
+
       );
 
+
       return tr;
+
     }
 
+
     async function refresh() {
+
       if (
+
         !active ||
+
         document.visibilityState === 'hidden'
+
       ) {
+
         return;
+
       }
 
+
       try {
+
         const [status, people] = await Promise.all([
+
           api('/api/status'),
+
           api('/api/people')
+
         ]);
+
 
         const list = $('people');
 
+
         list.replaceChildren();
 
+
         if (!people.people.length) {
+
           const tr = document.createElement('tr');
+
           const td = document.createElement('td');
 
+
           td.colSpan = 4;
+
           td.textContent =
-            'Chưa có nhân viên đăng ký mặt';
+            'Chưa có hồ sơ khuôn mặt';
+
 
           tr.appendChild(td);
+
           list.appendChild(tr);
 
+
         } else {
+
           people.people.forEach(
+
             person => list.appendChild(
+
               row(person)
+
             )
+
           );
+
         }
 
+
         $('cameraStatus').textContent =
+
           `Trạng thái: ${status.status || 'Chờ ảnh'}`;
 
+
         $('metrics').textContent =
+
           `Số khuôn mặt: ${status.face_count ?? 0}` +
+
           ` | Điểm cosine: ${status.score ?? '-'}` +
+
           ` | Số nhân viên: ${status.people_count ?? 0}`;
+
 
         const enrollment = status.enrollment;
 
-        // MAIN is checking RFID and fingerprint.
 
         if (status.pending) {
+
           message(
-            'Đang chờ ESP32 MAIN kiểm tra ID ' +
-            status.pending.id +
-            ': phải có đủ RFID và vân tay.'
+
+            'Đang xác minh ID ' +
+
+            status.pending.id
+
           );
 
+
           $('progressTitle').textContent =
+
             'Đang xác minh nhân viên';
 
+
           $('progress').value = 0;
 
-        // MAIN rejected or request expired.
 
         } else if (status.pending_error) {
+
           message(
+
             'Không thể đăng ký: ' +
+
             status.pending_error
+
           );
 
+
           $('progressTitle').textContent =
+
             'Chưa đăng ký';
 
+
           $('progress').value = 0;
 
-        // Camera is capturing enrollment frames.
 
         } else if (
+
           enrollment &&
+
           typeof enrollment === 'object' &&
+
           (
+
             enrollment.id ||
+
             enrollment.count
+
           )
+
         ) {
+
           const count = enrollment.count ?? 0;
+
           const target = enrollment.target ?? 30;
+
           const id = enrollment.id ?? '-';
 
+
           $('progressTitle').textContent =
+
             `Đang chụp ${count}/${target} ảnh ` +
+
             `(ID ${id})`;
 
+
           $('progress').max = target;
+
           $('progress').value = count;
 
+
         } else {
+
           $('progressTitle').textContent =
-            'Không đăng ký';
+
+            'Chưa đăng ký';
+
 
           $('progress').value = 0;
+
         }
 
-        // Update the live preview.
 
         const picture = await fetch(
+
           '/api/preview',
+
           {
+
             headers: headers(),
+
             cache: 'no-store'
+
           }
+
         );
 
+
         if (picture.ok) {
+
           const blob = await picture.blob();
+
 
           const url = URL.createObjectURL(blob);
 
+
           const old = $('camera').dataset.url;
 
+
           $('camera').src = url;
+
           $('camera').dataset.url = url;
 
+
           if (old) {
+
             URL.revokeObjectURL(old);
+
           }
+
         }
+
 
         lastError = '';
 
+
       } catch (e) {
+
         if (e.message !== lastError) {
+
           message(
+
             'Lỗi kết nối: ' + e.message
+
           );
+
         }
 
+
         lastError = e.message;
+
       }
+
     }
 
+
     $('connectBtn').onclick = async () => {
+
       active = true;
+
       lastError = '';
+
 
       message('Đang kết nối...');
 
+
       await refresh();
+
     };
+
 
     $('startBtn').onclick = async () => {
+
       if (!active) {
-        message('Hãy kết nối trước.');
+
+        message('Chưa kết nối quản trị.');
+
         return;
+
       }
 
+
       try {
+
         const result = await api(
+
           '/api/enroll/start',
+
           'POST',
+
           {
+
             id: personId(),
+
             name: $('empName').value.trim()
+
           }
+
         );
+
 
         if (result.pending) {
+
           message(
-            'Đã gửi yêu cầu. ' +
-            'Đang chờ ESP32 MAIN kiểm tra ID...'
+
+            'Đang xác minh nhân viên...'
+
           );
+
         }
+
 
         await refresh();
 
+
       } catch (e) {
+
         message(
+
           'Không thể bắt đầu: ' + e.message
+
         );
+
       }
+
     };
+
 
     $('cancelBtn').onclick = async () => {
+
       try {
+
         await api(
+
           '/api/enroll/cancel',
+
           'POST',
+
           {}
+
         );
 
+
         message(
+
           'Đã hủy yêu cầu đăng ký.'
+
         );
+
 
         await refresh();
 
+
       } catch (e) {
+
         message(
+
           'Không thể hủy: ' + e.message
+
         );
+
       }
+
     };
 
-    // Refresh status automatically.
 
     setInterval(
+
       () => {
+
         if (active) {
+
           refresh();
+
         }
+
       },
+
       1200
+
     );
+
   </script>
+
 </body>
+
 </html>

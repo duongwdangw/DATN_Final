@@ -18,8 +18,8 @@
 #include "esp_timer.h"
 #include "esp_sntp.h"
 
-#define WIFI_SSID       "Hai Dang"
-#define WIFI_PASSWORD   "22226666"
+#define WIFI_SSID       "Lighthouse"
+#define WIFI_PASSWORD   "261220044"
 
 #define NTP_SERVER_1    "pool.ntp.org"
 #define NTP_SERVER_2    "time.google.com"

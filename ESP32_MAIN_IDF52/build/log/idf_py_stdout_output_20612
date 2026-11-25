@@ -1,0 +1,372 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15632
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 15 2026 22:12:24[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=338a8h (211112) map[0m
+[0;32mI (177) esp_image: segment 1: paddr=000438d0 vaddr=3ffb0000 size=04368h ( 17256) load[0m
+[0;32mI (183) esp_image: segment 2: paddr=00047c40 vaddr=40080000 size=083d8h ( 33752) load[0m
+[0;32mI (197) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=aeb1ch (715548) map[0m
+[0;32mI (442) esp_image: segment 4: paddr=000feb44 vaddr=400883d8 size=12228h ( 74280) load[0m
+[0;32mI (485) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (485) boot: Disabling RNG early entropy source...[0m
+[0;32mI (497) cpu_start: Multicore app[0m
+[0;32mI (506) cpu_start: Pro cpu start user code[0m
+[0;32mI (506) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (506) cpu_start: Application information:[0m
+[0;32mI (509) cpu_start: Project name:     esp32main[0m
+[0;32mI (514) cpu_start: App version:      f9147c5-dirty[0m
+[0;32mI (520) cpu_start: Compile time:     Nov 24 2026 21:24:01[0m
+[0;32mI (526) cpu_start: ELF file SHA256:  13be97489...[0m
+[0;32mI (531) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (536) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (541) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (545) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (550) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (557) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (563) heap_init: At 3FFCFC10 len 000103F0 (64 KiB): DRAM[0m
+[0;32mI (570) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (576) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (582) heap_init: At 4009A600 len 00005A00 (22 KiB): IRAM[0m
+[0;32mI (590) spi_flash: detected chip: generic[0m
+[0;32mI (593) spi_flash: flash io: dio[0m
+[0;32mI (598) main_task: Started on CPU0[0m
+[0;32mI (602) main_task: Calling app_main()[0m
+[0;32mI (627) WIFI_TIME: Initializing Wi-Fi + NTP...[0m
+[0;32mI (632) wifi:wifi driver task: 3ffd87b8, prio:23, stack:6656, core=0[0m
+[0;32mI (642) wifi:wifi firmware version: ff41b26[0m
+[0;32mI (642) wifi:wifi certification version: v7.0[0m
+[0;32mI (643) wifi:config NVS flash: enabled[0m
+[0;32mI (643) wifi:config nano formating: disabled[0m
+[0;32mI (647) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (652) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (656) wifi:Init management short buffer num: 32[0m
+[0;32mI (660) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (664) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (668) wifi:Init static rx buffer num: 10[0m
+[0;32mI (672) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (677) wifi_init: rx ba win: 6[0m
+[0;32mI (680) wifi_init: tcpip mbox: 32[0m
+[0;32mI (684) wifi_init: udp mbox: 6[0m
+[0;32mI (687) wifi_init: tcp mbox: 6[0m
+[0;32mI (691) wifi_init: tcp tx win: 5760[0m
+[0;32mI (695) wifi_init: tcp rx win: 5760[0m
+[0;32mI (699) wifi_init: tcp mss: 1440[0m
+[0;32mI (703) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (708) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (714) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (736) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (813) wifi:mode : sta (00:70:07:1a:13:c0)[0m
+[0;32mI (814) wifi:enable tsf[0m
+[0;32mI (817) WIFI_TIME: Connecting to Wi-Fi: Hai Dang[0m
+[0;32mI (877) wifi:new:<13,0>, old:<1,0>, ap:<255,255>, sta:<13,0>, prof:1[0m
+[0;32mI (878) wifi:state: init -> auth (b0)[0m
+[0;32mI (888) wifi:state: auth -> assoc (0)[0m
+[0;32mI (898) wifi:state: assoc -> run (10)[0m
+[0;32mI (903) wifi:<ba-add>idx:0 (ifx:0, 24:0b:2a:53:3c:39), tid:5, ssn:0, winSize:64[0m
+[0;32mI (1006) wifi:<ba-add>idx:1 (ifx:0, 24:0b:2a:53:3c:39), tid:0, ssn:1, winSize:64[0m
+[0;32mI (1009) wifi:connected with Hai Dang, aid = 4, channel 13, BW20, bssid = 24:0b:2a:53:3c:39[0m
+[0;32mI (1010) wifi:security: WPA2-PSK, phy: bgn, rssi: -31, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (1023) wifi:pm start, type: 1[0m
+
+[0;32mI (1023) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1078) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2034) esp_netif_handlers: sta ip: 192.168.1.7, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (2035) WIFI_TIME: Wi-Fi OK, IP: 192.168.1.7[0m
+[0;31mE (17288) WIFI_TIME: NTP: TIMEOUT, time not synced[0m
+[0;31mE (17288) WIFI_TIME: Skipping NTP because time sync failed[0m
+[0;32mI (17289) GSHEET: Google Sheet logging task started[0m
+[0;32mI (17294) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (17357) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;31mE (18447) ACCESS: AS608 not responding - check TX/RX, GND and AS608_BAUD[0m
+[0;32mI (18449) ACCESS: CAM UART1 framed RX started (GPIO32), buffer=18434[0m
+[0;32mI (18451) ACCESS: LD2410C presence=1[0m
+[0;32mI (18457) ACCESS: ============================================[0m
+[0;32mI (18461) ACCESS: SYSTEM READY.[0m
+[0;32mI (18465) ACCESS: ADMIN: * | A:next | B:back/delete | C:select | #:exit[0m
+[0;32mI (18472) ACCESS: ============================================[0m
+[0;32mI (18479) main_task: Returned from app_main()[0m
+[0;32mI (18809) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (18817) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:4:1[0m
+[0;32mI (18824) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (18831) ACCESS: CAM STATUS: FACE_SYNC_END:4:1[0m
+[0;32mI (18831) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (18857) ACCESS: CAM COMMAND ACK seq=1 cmd=PRESENCE:1[0m
+[0;32mI (25981) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:5:1[0m
+[0;32mI (25988) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (25995) ACCESS: CAM STATUS: FACE_SYNC_END:5:1[0m
+[0;32mI (25995) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (33793) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:6:1[0m
+[0;32mI (33800) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (33807) ACCESS: CAM STATUS: FACE_SYNC_END:6:1[0m
+[0;32mI (33807) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (41442) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:7:1[0m
+[0;32mI (41449) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (41456) ACCESS: CAM STATUS: FACE_SYNC_END:7:1[0m
+[0;32mI (41457) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (50146) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:8:1[0m
+[0;32mI (50153) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (50160) ACCESS: CAM STATUS: FACE_SYNC_END:8:1[0m
+[0;32mI (50161) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (56312) ACCESS: CAM STATUS: FACE_UNKNOWN[0m
+[0;32mI (57808) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:9:1[0m
+[0;32mI (57815) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (57822) ACCESS: CAM STATUS: FACE_SYNC_END:9:1[0m
+[0;32mI (57823) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (66146) ACCESS: FACE RX CRC PASS seq=20 bytes=18434[0m
+[0;32mI (66150) ACCESS: FACE RX id=101 authorization=PASS; checking attendance state[0m
+[0;32mI (66151) ACCESS: === AUTHENTICATION SUCCESSFUL! FACE, ID: 101 ===[0m
+[0;32mI (66194) ACCESS: CAM LINK stats pass=20 fail=0 duplicate=0[0m
+[0;32mI (66224) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:10:1[0m
+[0;32mI (66230) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (66240) ACCESS: CAM STATUS: FACE_SYNC_END:10:1[0m
+[0;32mI (66241) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (67283) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (73795) GSHEET: Following redirect (hop 0): 302 -> https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnSK3QDoOOrmudW5AVyM4FLjKgrjaM-cLNht655ddg8XirJwa4ya45wUxkcs7dKtzbVfYCW83Mx6D__gntXjLViHGn1adT81PnKnN_gpDX02tclKje7o5f5wjehZPBw3cMkGXqt_b5FXsTNTEJdWq6Oc299dw61Wdm-luZD1nFotPW-YMKs9G87PDES2MkyQAAz-URQSTKmuKvND2kx_6wYhuySPUcbXPUB7szKXtG0fc2yOtKSq0hCEG8dYzUUYAqGxUvIhJx9I2MzPou7-oggaJ9IaGg&lib=MvZiUbeITAqCejb-8b4VxUJ0KOsqWi_zh[0m
+[0;32mI (74112) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:11:1[0m
+[0;32mI (74119) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (74126) ACCESS: CAM STATUS: FACE_SYNC_END:11:1[0m
+[0;32mI (74127) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (75002) esp-x509-crt-bundle: Certificate validated[0m
+[0;33mW (77135) GSHEET: HTTP status 405, body: [0m
+[0;32mI (81548) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:12:1[0m
+[0;32mI (81555) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (81562) ACCESS: CAM STATUS: FACE_SYNC_END:12:1[0m
+[0;32mI (81563) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (88855) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:13:1[0m
+[0;32mI (88862) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (88869) ACCESS: CAM STATUS: FACE_SYNC_END:13:1[0m
+[0;32mI (88869) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (96947) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:14:1[0m
+[0;32mI (96954) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (96961) ACCESS: CAM STATUS: FACE_SYNC_END:14:1[0m
+[0;32mI (96961) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (104624) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:15:1[0m
+[0;32mI (104631) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (104638) ACCESS: CAM STATUS: FACE_SYNC_END:15:1[0m
+[0;32mI (104639) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (113942) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:16:1[0m
+[0;32mI (113949) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (113949) ACCESS: CAM LINK stats pass=40 fail=0 duplicate=0[0m
+[0;32mI (113956) ACCESS: CAM STATUS: FACE_SYNC_END:16:1[0m
+[0;32mI (113956) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (122035) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:17:1[0m
+[0;32mI (122040) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (122049) ACCESS: CAM STATUS: FACE_SYNC_END:17:1[0m
+[0;32mI (122049) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (129227) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:18:1[0m
+[0;32mI (129234) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (129241) ACCESS: CAM STATUS: FACE_SYNC_END:18:1[0m
+[0;32mI (129242) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (136279) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:19:1[0m
+[0;32mI (136286) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (136294) ACCESS: CAM STATUS: FACE_SYNC_END:19:1[0m
+[0;32mI (136294) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (143743) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:20:1[0m
+[0;32mI (143750) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (143757) ACCESS: CAM STATUS: FACE_SYNC_END:20:1[0m
+[0;32mI (143757) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (156534) ACCESS: FACE RX CRC PASS seq=54 bytes=18434[0m
+[0;32mI (156539) ACCESS: FACE RX id=101 authorization=PASS; checking attendance state[0m
+[0;32mI (156539) ACCESS: === AUTHENTICATION SUCCESSFUL! FACE, ID: 101 ===[0m
+[0;32mI (156952) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:21:1[0m
+[0;32mI (156959) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (156967) ACCESS: CAM STATUS: FACE_SYNC_END:21:1[0m
+[0;32mI (156967) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (157671) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (162065) GSHEET: Following redirect (hop 0): 302 -> https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnQa90aiUdY6vTbwyDLgcoZWvv0G8L5nP-FRFbmvN29IVKzL45zlK5HiS2IiX9EGmBIUDfHC5GTt_kGrrLmHWgkzQJUm5JTSP_Amov-NKT6Qz1Q3St7cqtfmpUT5x9_6R5OPziyRfhYCx133MLl7igPl873CXbuazgXLJ9_kY613gTakiNyJyJkX75wszDILMGotoS6hFqbDlTNVatRXtGjWAsSvFLEisKLXNceIHG1kPMRqvrJKs4PKagpTYJxnjYH8wNxn25T6GTMEcQtOojpzfg1RSQ&lib=MvZiUbeITAqCejb-8b4VxUJ0KOsqWi_zh[0m
+[0;32mI (163253) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (164631) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:22:1[0m
+[0;32mI (164638) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (164645) ACCESS: CAM STATUS: FACE_SYNC_END:22:1[0m
+[0;32mI (164645) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (164646) ACCESS: CAM LINK stats pass=60 fail=0 duplicate=0[0m
+[0;33mW (165815) GSHEET: HTTP status 405, body: [0m
+[0;32mI (173169) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:23:1[0m
+[0;32mI (173178) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (173185) ACCESS: CAM STATUS: FACE_SYNC_END:23:1[0m
+[0;32mI (173186) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (181025) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:24:1[0m
+[0;32mI (181032) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (181039) ACCESS: CAM STATUS: FACE_SYNC_END:24:1[0m
+[0;32mI (181040) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15632
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 15 2026 22:12:24[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=338a8h (211112) map[0m
+[0;32mI (177) esp_image: segment 1: paddr=000438d0 vaddr=3ffb0000 size=04368h ( 17256) load[0m
+[0;32mI (183) esp_image: segment 2: paddr=00047c40 vaddr=40080000 size=083d8h ( 33752) load[0m
+[0;32mI (197) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=aeb1ch (715548) map[0m
+[0;32mI (442) esp_image: segment 4: paddr=000feb44 vaddr=400883d8 size=12228h ( 74280) load[0m
+[0;32mI (485) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (485) boot: Disabling RNG early entropy source...[0m
+[0;32mI (497) cpu_start: Multicore app[0m
+[0;32mI (506) cpu_start: Pro cpu start user code[0m
+[0;32mI (506) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (506) cpu_start: Application information:[0m
+[0;32mI (509) cpu_start: Project name:     esp32main[0m
+[0;32mI (514) cpu_start: App version:      f9147c5-dirty[0m
+[0;32mI (520) cpu_start: Compile time:     Nov 24 2026 21:24:01[0m
+[0;32mI (526) cpu_start: ELF file SHA256:  13be97489...[0m
+[0;32mI (531) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (536) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (541) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (545) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (550) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (558) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (563) heap_init: At 3FFCFC10 len 000103F0 (64 KiB): DRAM[0m
+[0;32mI (570) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (576) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (582) heap_init: At 4009A600 len 00005A00 (22 KiB): IRAM[0m
+[0;32mI (590) spi_flash: detected chip: generic[0m
+[0;32mI (593) spi_flash: flash io: dio[0m
+[0;32mI (598) main_task: Started on CPU0[0m
+[0;32mI (602) main_task: Calling app_main()[0m
+[0;32mI (627) WIFI_TIME: Initializing Wi-Fi + NTP...[0m
+[0;32mI (632) wifi:wifi driver task: 3ffd87b8, prio:23, stack:6656, core=0[0m
+[0;32mI (642) wifi:wifi firmware version: ff41b26[0m
+[0;32mI (642) wifi:wifi certification version: v7.0[0m
+[0;32mI (643) wifi:config NVS flash: enabled[0m
+[0;32mI (643) wifi:config nano formating: disabled[0m
+[0;32mI (647) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (652) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (656) wifi:Init management short buffer num: 32[0m
+[0;32mI (660) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (664) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (668) wifi:Init static rx buffer num: 10[0m
+[0;32mI (672) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (677) wifi_init: rx ba win: 6[0m
+[0;32mI (680) wifi_init: tcpip mbox: 32[0m
+[0;32mI (684) wifi_init: udp mbox: 6[0m
+[0;32mI (687) wifi_init: tcp mbox: 6[0m
+[0;32mI (691) wifi_init: tcp tx win: 5760[0m
+[0;32mI (695) wifi_init: tcp rx win: 5760[0m
+[0;32mI (699) wifi_init: tcp mss: 1440[0m
+[0;32mI (703) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (708) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (714) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (722) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (805) wifi:mode : sta (00:70:07:1a:13:c0)[0m
+[0;32mI (806) wifi:enable tsf[0m
+[0;32mI (808) WIFI_TIME: Connecting to Wi-Fi: Hai Dang[0m
+[0;32mI (1006) wifi:new:<13,0>, old:<1,0>, ap:<255,255>, sta:<13,0>, prof:1[0m
+[0;32mI (1007) wifi:state: init -> auth (b0)[0m
+[0;32mI (1014) wifi:state: auth -> assoc (0)[0m
+[0;32mI (1032) wifi:state: assoc -> run (10)[0m
+[0;32mI (1040) wifi:<ba-add>idx:0 (ifx:0, 24:0b:2a:53:3c:39), tid:5, ssn:0, winSize:64[0m
+[0;32mI (1143) wifi:<ba-add>idx:1 (ifx:0, 24:0b:2a:53:3c:39), tid:0, ssn:1, winSize:64[0m
+[0;32mI (1145) wifi:connected with Hai Dang, aid = 4, channel 13, BW20, bssid = 24:0b:2a:53:3c:39[0m
+[0;32mI (1148) wifi:security: WPA2-PSK, phy: bgn, rssi: -34, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (1158) wifi:pm start, type: 1[0m
+
+[0;32mI (1159) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1207) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2172) esp_netif_handlers: sta ip: 192.168.1.7, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (2173) WIFI_TIME: Wi-Fi OK, IP: 192.168.1.7[0m
+[0;32mI (2370) WIFI_TIME: NTP: time synchronized[0m
+[0;32mI (2426) WIFI_TIME: Local time: 21:27:49 24/11/2026[0m
+[0;32mI (2427) GSHEET: Google Sheet logging task started[0m
+[0;32mI (2427) gpio: GPIO[35]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (2490) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;31mE (3581) ACCESS: AS608 not responding - check TX/RX, GND and AS608_BAUD[0m
+[0;32mI (3583) ACCESS: CAM UART1 framed RX started (GPIO32), buffer=18434[0m
+[0;33mW (3584) ACCESS: CAM UART REJECT type=7 reason=NO_HANDSHAKE[0m
+[0;32mI (3591) ACCESS: LD2410C presence=1[0m
+[0;32mI (3598) ACCESS: ============================================[0m
+[0;33mW (3599) ACCESS: CAM UART REJECT type=7 reason=NO_HANDSHAKE[0m
+[0;32mI (3608) ACCESS: SYSTEM READY.[0m
+[0;32mI (3611) ACCESS: ADMIN: * | A:next | B:back/delete | C:select | #:exit[0m
+[0;32mI (3618) ACCESS: ============================================[0m
+[0;32mI (3625) main_task: Returned from app_main()[0m
+[0;32mI (8694) ACCESS: CAM UART HANDSHAKE PASS[0m
+[0;32mI (8702) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:26:1[0m
+[0;32mI (8709) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (8716) ACCESS: CAM STATUS: FACE_SYNC_END:26:1[0m
+[0;32mI (8716) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (8747) ACCESS: CAM COMMAND ACK seq=1 cmd=PRESENCE:1[0m
+[0;32mI (16073) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:27:1[0m
+[0;32mI (16080) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (16087) ACCESS: CAM STATUS: FACE_SYNC_END:27:1[0m
+[0;32mI (16087) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (23133) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:28:1[0m
+[0;32mI (23140) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (23147) ACCESS: CAM STATUS: FACE_SYNC_END:28:1[0m
+[0;32mI (23147) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (30575) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:29:1[0m
+[0;32mI (30582) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (30590) ACCESS: CAM STATUS: FACE_SYNC_END:29:1[0m
+[0;32mI (30590) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (39265) ACCESS: FACE RX CRC PASS seq=13 bytes=18434[0m
+[0;32mI (39270) ACCESS: FACE RX id=101 authorization=PASS; checking attendance state[0m
+[0;32mI (39271) ACCESS: === AUTHENTICATION SUCCESSFUL! FACE, ID: 101 ===[0m
+[0;32mI (39407) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:30:1[0m
+[0;32mI (39417) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (39424) ACCESS: CAM STATUS: FACE_SYNC_END:30:1[0m
+[0;32mI (39425) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (40412) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (44129) GSHEET: Following redirect (hop 0): 302 -> https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnR4lVefDkGbBoA6dyCcwSojkb2pz6CRI0WJHJkDmzrUtzcUHi9ibjSM2GuWEbHPuRPwG3taTohec8FTDDo8Fq2pyxNN0LaVqpX4Jw_cJm1PidH2SmqcEbUnRVWttV6XfzKSmS8zutF-D4C03BKThu4ZV5DuoID8qf8bcNbWXX5aY8jcrG2oS80laviaCuEENVsdg57QtkmwTZrTdM1JX4DWlpBoHbrHEl395G6arhILkV9uKrXqd2SEbIcjDBsBR4Lo1PFKrfyPRinMr1vxjcFoxXq2og&lib=MvZiUbeITAqCejb-8b4VxUJ0KOsqWi_zh[0m
+[0;32mI (45321) esp-x509-crt-bundle: Certificate validated[0m
+[0;33mW (46428) GSHEET: HTTP status 405, body: [0m
+[0;32mI (47815) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:31:1[0m
+[0;32mI (47822) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (47829) ACCESS: CAM STATUS: FACE_SYNC_END:31:1[0m
+[0;32mI (47830) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (55493) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:32:1[0m
+[0;32mI (55494) ACCESS: CAM LINK stats pass=20 fail=0 duplicate=0[0m
+[0;32mI (55500) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (55507) ACCESS: CAM STATUS: FACE_SYNC_END:32:1[0m
+[0;32mI (55508) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (61487) ACCESS: FACE RX CRC PASS seq=23 bytes=18434[0m
+[0;32mI (61492) ACCESS: FACE RX id=101 authorization=PASS; checking attendance state[0m
+[0;32mI (61492) ACCESS: === AUTHENTICATION SUCCESSFUL! FACE, ID: 101 ===[0m
+[0;32mI (62629) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (63158) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:33:1[0m
+[0;32mI (63166) ACCESS: CAM STATUS: FACE_SYNC_ID:101[0m
+[0;32mI (63173) ACCESS: CAM STATUS: FACE_SYNC_END:33:1[0m
+[0;32mI (63173) ACCESS: FACE ROSTER SYNC PASS count=1[0m
+[0;32mI (66448) GSHEET: Following redirect (hop 0): 302 -> https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnStiFu7aHBnFgyZT0Z71vrm_Vmp5CgLjbOWxU-XCARdFcMkjqlzpb8GekF-PuWdOI1wJuDFxYKLOkPuncZVuVI9KwVy5qvybcerglt5nn6ArOtywgZL5_YQYxkLyPYT5N0qX-g0i0bF6y1WhyMC6h1Cc6ofRm70vis1OZJGdqpuYwWjCtTBf_k796bqgEQocWGGl9LCZh3Q22zTjYFjsIk7oVF3YroE5eKe58hRRj2CBDofzOEw-iz6hgPzNyK39Mj3_kU26NDcDKvBrexyRtlxd56mTQ&lib=MvZiUbeITAqCejb-8b4VxUJ0KOsqWi_zh[0m
+[0;32mI (70243) ACCESS: CAM STATUS: FACE_SYNC_BEGIN:34:1[

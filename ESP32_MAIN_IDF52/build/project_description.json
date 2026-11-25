@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "esp32main",
-    "project_version":    "f9147c5-dirty",
+    "project_version":    "b8247d3-dirty",
     "project_path":       "D:/DATN/DATN_V5/DATN_V5/ESP32_MAIN_IDF52",
     "idf_path":           "E:/Espressif/frameworks/esp-idf-v5.2.7",
     "build_dir":          "D:/DATN/DATN_V5/DATN_V5/ESP32_MAIN_IDF52/build",

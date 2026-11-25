@@ -224,6 +224,20 @@ class FaceRequest(BaseHTTPRequestHandler):
     def do_GET(self):
         path = urlsplit(self.path).path
 
+        # Logo Hoc vien Ky thuat Mat ma
+        if path == "/logo.png":
+            logo = ROOT / "templates" / "logo.png"
+
+            if not logo.is_file():
+                self.json(404, {"error": "Logo not found"})
+            else:
+                self.send_data(
+                    200,
+                    logo.read_bytes(),
+                    "image/png"
+                )
+
+            return
         # ----------------------------------------------------
         # Website home page
         # ----------------------------------------------------
